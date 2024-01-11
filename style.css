@@ -1,0 +1,58 @@
+img.loading {
+    width: min(50%, 5rem);
+    display: block;
+    margin: auto;
+    animation: spin 1.75s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.topic {
+    background-color: var(--topic-light);
+    color: black;
+}
+
+body[data-bs-theme="dark"] .topic {
+    background-color: var(--topic-dark);
+    color: white;
+}
+
+body[data-bs-theme="dark"] footer a {
+    color: white;
+}
+
+body[data-bs-theme="dark"] footer img,
+body[data-bs-theme="dark"] ul.navbar-nav img {
+    filter: invert(1);
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+}
+
+main#home img {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+#toggle-theme {
+    position: absolute;
+    right: var(--bs-navbar-brand-margin-end);
+}
+
+svg {
+    color: var(--bs-body-color) !important;
+}
