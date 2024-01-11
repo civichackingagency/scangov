@@ -85,10 +85,10 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <h2 class="fw-bold">Score</h2>
                     <div class="card-group mb-3 mt-3">
-                        <div class="card text-bg-dark pt-3 mb-3" style="max-width: 18rem;">
+                        <div class="card text-bg-dark pt-3 mb-3"">
                             <div class="card-body text-center">
                                 <p class="display-1 fw-bold">50%</p>
                             </div>
@@ -96,11 +96,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <h2 class="fw-bold">Website</h2>
                     <div class="list-group mb-4 mt-3">
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-laptop"></i> Visit whitehouse.gov</a>
                         <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-laptop-code"></i> View metadata</a>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <h2 class="fw-bold">Share</h2>
+                    <div class="list-group mb-4 mt-3">
+                        <a href="javascript:void(0);"
+                            onclick="navigator.clipboard.writeText('{{ site.url }}{{ page.url }}')"
+                            title="Copy link to clipboard"
+                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-solid fa-copy text-white"></i>
+                            Copy link to clipboard</a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}&source={{ site.title }}"
+                            rel="nofollow" target="_blank" title="Share on LinkedIn"
+                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-linkedin-in text-white"></i>
+                            LinkedIn</a>
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&via={{ site.twitter-username }}&url={{ site.url }}{{ page.url }}"
+                            rel="nofollow" target="_blank" title="Share on Twitter"
+                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-x-twitter text-white"></i>
+                            Twitter</a>
+                        <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow"
+                            target="_blank" title="Share on Facebook"
+                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-facebook-f text-white"></i>
+                            Facebook</a>
                     </div>
                 </div>
             </div>
@@ -152,55 +178,6 @@
                     </div>
                 </div>
             </div>
-            <!--
-            <div class="row">
-                <div class="col-12">
-                    <div class="mt-5 pt-3">
-                        <h2 class="h4 fw-bold">Share this</h2>
-                        <a href="javascript:void(0);"
-                            onclick="navigator.clipboard.writeText('{{ site.url }}{{ page.url }}')"
-                            title="Copy link to clipboard"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-solid fa-copy text-white"></i>
-                            Copy link to clipboard</a>
-                        <a href="mailto:?subject={{ page.title }}body=FYI on GovFresh: '{{ page.title }}': {{ site.url }}{{ page.url }}"
-                            rel="nofollow" target="_blank" title="Email"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-solid fa-envelope text-white"></i>
-                            Email</a>
-                        <a href="https://mail.google.com/mail/?view=cm&to=%7Bemail_address%7D&su={{ page.title }}&body=FYI on GovFresh: '{{ page.title }}': {{ site.url }}{{ page.url }}&bcc=%7Bemail_address%7D&cc=%7Bemail_address%7D"
-                            target="_blank" rel="nofollow noopener" title="Share on Gmail"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-google text-white"></i>
-                            Gmail</a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}&source={{ site.title }}"
-                            rel="nofollow" target="_blank" title="Share on LinkedIn"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-linkedin-in text-white"></i>
-                            LinkedIn</a>
-                        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&via={{ site.twitter-username }}&url={{ site.url }}{{ page.url }}"
-                            rel="nofollow" target="_blank" title="Share on Twitter"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-x-twitter text-white"></i>
-                            Twitter</a>
-                        <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow"
-                            target="_blank" title="Share on Facebook"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-facebook-f text-white"></i>
-                            Facebook</a>
-                        <a href="whatsapp://send?text=" rel="nofollow" target="_blank" title="Share on Facebook"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-whatsapp text-white"></i>
-                            WhatsApp</a>
-                        <a href="https://www.tumblr.com/widgets/share/tool?url={{ site.url }}{{ page.url }}&title={{ site.url }}{{ page.title }}"
-                            rel="nofollow" target="_blank" title="Share on Tumblr"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start">
-                            <i class="fa-brands fa-tumblr text-white"></i>
-                            Tumblr</a>
-                    </div>
-                </div>
-            </div>
-            -->
         </div>
     </main>
     <footer>
