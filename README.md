@@ -3,9 +3,7 @@ Metadata information for official government websites.
 
 ## About
 
-.gov metadata is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
-
-* Website: [dotgov-metadata.civichackingagency.org](https://dotgov-metadata.civichackingagency.org)
+[dotgov-metadata.civichackingagency.org](https://dotgov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
 
 ## Metadata guide
 
