@@ -7,105 +7,130 @@ Metadata information for official government websites.
 
 * Website: [dotgov-metadata.civichackingagency.org](https://dotgov-metadata.civichackingagency.org)
 
-## Data
-
-* Top-level .gov domains: [Federal Register](#)
-
 ## Metadata guide
 
 ```html
+<meta charset="UTF-8">
+<!-- Set character encoding to UTF-8 in HTML. -->
 
-<title>###</title>
-<!-- Defines the title of the web page displayed in the browser tab. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Define viewport settings for responsive web design. -->
 
-<meta charset="utf-8">
-<!-- Declares the character encoding for the document as UTF-8. -->
+<meta name="keywords" content="your, keywords, here">
+<!-- Meta tag for defining keywords relevant to the webpage content -->
 
-<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-<!-- Sets the viewport properties for responsive design. -->
+<meta name="description" content="Your website description">
+<!-- Meta tag for providing a brief description of the webpage content -->
 
-<meta name="description" content="###">
-<!-- Provides a brief description of the content of the web page. -->
+<title>Your Website Title</title>
+<!-- Title tag for setting the title of the webpage -->
 
-<meta name="keywords" content="###">
-<!-- Specifies keywords related to the content of the web page. -->
+<link rel="stylesheet" href="styles.css">
+<!-- Link tag to include an external stylesheet for styling the webpage -->
 
-<meta name="author" content="###">
-<!-- Identifies the author of the web page. -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Link tag to specify the favicon for the webpage -->
 
+<script src="script.js" defer></script>
+<!-- Script tag to include an external JavaScript file with deferred execution -->
+
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="Your Open Graph Title">
+<!-- Open Graph meta tag for setting the title of the content when shared on social media -->
+
+<meta property="og:description" content="Your Open Graph Description">
+<!-- Open Graph meta tag for providing a brief description of the content when shared on social media -->
+
+<meta property="og:image" content="URL to your image">
+<!-- Open Graph meta tag for specifying the image associated with the content when shared on social media -->
+
+<meta property="og:url" content="URL to your page">
+<!-- Open Graph meta tag for defining the URL of the content when shared on social media -->
+
+<meta property="og:type" content="website">
+<!-- Open Graph meta tag for specifying the type of content (e.g., website, article) -->
+
+<meta property="og:locale" content="en_US">
+<!-- Open Graph meta tag for setting the locale (language and country) of the content -->
+
+<meta property="article:published_time" content="2024-01-11T12:34:56Z">
+<!-- Open Graph meta tag for indicating the publish time of an article -->
+
+<meta property="article:modified_time" content="2024-02-15T15:45:00Z">
+<!-- Open Graph meta tag for indicating the last modification time of an article -->
+
+<!-- Twitter meta tags -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- Twitter meta tag for specifying the type of Twitter card to use when sharing the content -->
+
+<meta name="twitter:title" content="Your Twitter Title">
+<!-- Twitter meta tag for setting the title of the content when shared on Twitter -->
+
+<meta name="twitter:description" content="Your Twitter Description">
+<!-- Twitter meta tag for providing a brief description of the content when shared on Twitter -->
+
+<meta name="twitter:image" content="URL to your image">
+<!-- Twitter meta tag for specifying the image associated with the content when shared on Twitter -->
+
+<meta name="twitter:url" content="URL to your page">
+<!-- Twitter meta tag for defining the URL of the content when shared on Twitter -->
+
+<meta name="article:published_time" content="2024-01-11T12:34:56Z">
+<!-- Twitter meta tag for indicating the publish time of an article -->
+
+<meta name="article:modified_time" content="2024-02-15T15:45:00Z">
+<!-- Twitter meta tag for indicating the last modification time of an article -->
+
+<!-- Content Security Policy (CSP) -->
+<meta http-equiv="Content-Security-Policy" content="your-csp-directives-here">
+<!-- Meta tag for specifying the Content Security Policy directives -->
+
+<!-- Robots meta tag -->
 <meta name="robots" content="index, follow">
-<!-- Instructs search engine robots to index and follow the links on the page. -->
+<!-- Meta tag for instructing search engine robots to index and follow links on the webpage -->
 
+<!-- Googlebot meta tag -->
 <meta name="googlebot" content="index, follow">
-<!-- Specifically instructs Googlebot to index and follow the links on the page. -->
+<!-- Meta tag for instructing Googlebot to index and follow links on the webpage -->
 
-<meta name="dc.date" content="###" />
-<!-- Specifies the Dublin Core date of the content. -->
+<!-- Locale meta tag -->
+<meta name="locale" content="en_US">
+<!-- Meta tag for defining the locale (language and country) of the webpage content -->
 
-<meta name="dc.date.created" content="###" />
-<!-- Specifies the Dublin Core creation date of the content. -->
+<!-- Canonical URL -->
+<link rel="canonical" href="URL to your canonical page">
+<!-- Link tag for specifying the canonical URL of the webpage -->
 
-<meta name="dcterms.created" content="###" />
-<!-- Specifies the Dublin Core creation date using dcterms. -->
+<!-- Dublin Core meta tags -->
+<meta name="DC.title" content="Your Dublin Core Title">
+<!-- Dublin Core meta tag for setting the title of the webpage -->
 
-<meta property="og:locale" content="en_US" />
-<!-- Sets the Open Graph locale for the page. -->
+<meta name="DC.creator" content="Your Dublin Core Creator">
+<!-- Dublin Core meta tag for specifying the creator or author of the content -->
 
-<meta property="og:site_name" content="###">
-<!-- Specifies the Open Graph site name for social media sharing. -->
+<meta name="DC.subject" content="Your Dublin Core Subject">
+<!-- Dublin Core meta tag for defining the subject or topic of the content -->
 
-<meta property="og:type" content="article">
-<!-- Defines the type of Open Graph object (in this case, an article). -->
+<meta name="DC.description" content="Your Dublin Core Description">
+<!-- Dublin Core meta tag for providing a brief description of the content -->
 
-<meta property="og:title" content="###">
-<!-- Specifies the Open Graph title for social media sharing. -->
+<meta name="DC.publisher" content="Your Dublin Core Publisher">
+<!-- Dublin Core meta tag for indicating the publisher of the content -->
 
-<meta property="og:description" content="###">
-<!-- Provides the Open Graph description for social media sharing. -->
+<meta name="DC.date" content="2024-01-11T12:34:56Z">
+<!-- Dublin Core meta tag for specifying the date of creation or publication of the content -->
 
-<meta property="og:url" content="###">
-<!-- Specifies the Open Graph URL for social media sharing. -->
+<meta name="DC.language" content="en_US">
+<!-- Dublin Core meta tag for setting the language of the content -->
 
-<meta property="article:published_time" content="###" />
-<!-- Indicates the published time of the article. -->
-
-<meta property="article:author" content="###">
-<!-- Specifies the author of the article for Open Graph. -->
-
-<meta property="linkedin:site" content="###"/>
-<!-- Specifies the LinkedIn site associated with the content. -->
-
-<meta name="twitter:site" content="@###">
-<!-- Specifies the Twitter username associated with the content. -->
-
-<meta name="twitter:card" content="###">
-<!-- Specifies the type of Twitter card to be used for the content. -->
-
-<meta name="twitter:title" content="###">
-<!-- Specifies the Twitter title for social media sharing. -->
-
-<meta name="twitter:description" content="###">
-<!-- Provides the Twitter description for social media sharing. -->
-
-<meta property="twitter:image" content="###">
-<!-- Specifies the Twitter image URL for social media sharing. -->
-
-<meta property="og:image" content="###">
-<!-- Specifies the Open Graph image URL for social media sharing. -->
-
-<meta property="og:image:width" content="1200">
-<!-- Specifies the width of the Open Graph image. -->
-
-<meta property="og:image:height" content="630">
-<!-- Specifies the height of the Open Graph image. -->
-
-<meta property="og:image:alt" content="###">
-<!-- Specifies the alternative text for the Open Graph image. -->
-
-<link rel="canonical" href="###" />
-<!-- Specifies the canonical URL of the page to avoid duplicate content issues. -->
-
+<!-- gmpg metadata -->
+<link rel="gmpg" href="http://gmpg.org/xfn/11">
+<!-- Link tag for including Global Multimedia Protocols Group (gmpg) metadata -->
 ```
+
+## Data
+
+* Top-level .gov domains: [Federal Register](#)
 
 ## Resources
 
