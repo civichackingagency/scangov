@@ -1,4 +1,4 @@
-# .gov metadat
+# .gov metadata
 Metadata information for official government websites.
 
 ## About
