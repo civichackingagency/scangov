@@ -7,21 +7,21 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="description" content="Metadata information for official government websites.">
     <meta name="keywords" content="government, websites">
-    <meta name="author" content="Civcity Hacking Agency">
+    <meta name="author" content="Civic Hacking Agency">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <meta property="og:locale" content="en_US" />
-    <link rel="canonical" href="https://dotgov-metadata.civichackingagency.org" />
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://dotgov-metadata.civichackingagency.org">
     <title>Metadata information for official government websites. - .gov metadata</title>
     <meta property="og:site_name" content=".gov metadata">
     <meta property="og:type" content="website">
     <meta property="og:title" content=".gov metadata">
     <meta property="og:description" content="Metadata information for official government websites.">
     <meta property="og:url" content="https://dotgov-metadata.civichackingagency.org">
-    <meta property="article:published_time" content="2024-01-08 00:00:00 -0800" />
-    <meta name="dc.date" content="2024-01-08 00:00:00 -0800" />
-    <meta name="dc.date.created" content="2024-01-08 00:00:00 -0800" />  
-    <meta name="dcterms.created" content="2024-01-08 00:00:00 -0800" />
+    <meta property="article:published_time" content="2024-01-08 00:00:00 -0800">
+    <meta name="dc.date" content="2024-01-08 00:00:00 -0800">
+    <meta name="dc.date.created" content="2024-01-08 00:00:00 -0800">
+    <meta name="dcterms.created" content="2024-01-08 00:00:00 -0800">
     <meta property="article:author" content="Civic Hacking Agency">
     <meta name="twitter:site" content="@civic_hacking">
     <meta name="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@
     <meta property="twitter:image" content="/assets/img/dotgov-metadata-twitter.png">
     <meta property="og:image" content="/assets/img/dotgov-metadata-og.png">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630"> 
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="U.S. flag">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -49,33 +49,12 @@
 </head>
 
 <body data-bs-theme="dark">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/img/1F1FA-1F1F8.svg" width="30" height="30" class="d-inline-block align-top"
-                    alt="U.S. flag">
-                .gov metadata
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
-                aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item" id="nav-about">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item" id="toggle-theme">
-                        <a class="nav-link" href="javascript:void(0)" onclick="
-                        localStorage.setItem('theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-                        document.body.setAttribute('data-bs-theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-                        document.querySelector('#toggle-theme img').src = 'icons/' + ( document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
-                        "><img id="theme-icon" src="/assets/img/sun.svg" alt="Toggle theme" style="width: 1rem;"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <script src="includes/include.js"></script>
+    <script>
+        include('nav', 'nav');
+        include('footer', 'footer');
+    </script>
+    <nav class="navbar navbar-expand-lg" id="nav"></nav>
     <main id="home">
         <div class="p-5 mb-5 bg-tertiary border-bottom border-top">
             <div class="container py-1">
@@ -96,9 +75,9 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col">Agency</th>
-                                    <th scope="col">Website</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Details</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Report</th>
                                 </tr>
                             </thead>
                             <tbody id="table">
@@ -109,20 +88,9 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container-fluid mt-5 pb-5">
-            <div class="row text-center">
-                <div class="col-sm-12">
-                    <p><i class="fa-solid fa-code"></i> by <a href="https://civichackingagency.org">Civic Hacking
-                            Agency</a> 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--
+    <footer id="footer"></footer>
+    <script src="variables.js"></script>
     <script src="script.js"></script>
-    -->
 </body>
 
 </html>

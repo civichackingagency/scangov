@@ -55,4 +55,13 @@ main#home img {
 
 svg {
     color: var(--bs-body-color) !important;
+    fill: var(--bs-body-color);
+}
+
+svg.fa-circle-check {
+    fill: var(--bs-success);
+}
+
+svg.fa-circle-xmark {
+    fill: var(--bs-danger);
 }
