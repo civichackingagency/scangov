@@ -5,7 +5,17 @@ Metadata information for official government websites.
 
 [.gov metadata](https://dotgov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
 
+## Scoring
+
+Scores are based on metatags we deem important.
+
+## Grading
+
+Grading is based on metatags we deem necessary.
+
 ## Metadata guide
+
+Complete list of metadata tags with descriptions for each:
 
 ```html
 <meta charset="UTF-8">
