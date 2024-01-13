@@ -5,17 +5,47 @@ Metadata information for official government websites.
 
 [.gov metadata](https://dotgov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
 
-## Scoring
+## Scoring/grading
 
-Scores are based on metatags we deem important.
+Scores and grades are based on inclusion of these metatags:
 
-## Grading
+* `<title>`
+* `<meta name="description">`
+* `<meta name="keywords">`
+* `<meta name="robots">`
+* `<meta name="viewport">`
+* `<link rel="canonical">`
+* `<meta name="og:locale">`
+* `<meta name="og:site_name">`
+* `<meta name="og:type">`
+* `<meta name="og:title">`
+* `<meta name="og:description">`
+* `<meta name="og:url">`
+* `<meta name="og:image">`
+* `<meta name="og:image:width">`
+* `<meta name="og:image:height">`
+* `<meta name="og:image:alt">`
+* `<meta name="twitter:card">`
+* `<meta name="twitter:title">`
+* `<meta name="twitter:description">`
+* `<meta name="twitter:image">`
 
-Grading is based on metatags we deem necessary.
+## Metadata
 
-## Metadata guide
+### About
 
-Complete list of metadata tags with descriptions for each:
+Website metadata refers to the information embedded in a web page's HTML code that provides additional details about the webpage. This metadata is not visible on the webpage itself but is used by browsers, search engines, and other web services to understand and categorize the content. (<a href="https://developer.mozilla.org">Mozilla Developer Network</a>)
+
+### Protocol
+
+* [General](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
+* [Open Graph](https://ogp.me/)
+* [Dublin Core](https://www.dublincore.org/)
+* [Twitter](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started)
+
+### Tags
+
+Complete list of metadata tags and descriptions for each:
 
 ```html
 <meta charset="UTF-8">
@@ -61,10 +91,10 @@ Complete list of metadata tags with descriptions for each:
 <meta property="og:locale" content="en_US">
 <!-- Open Graph meta tag for setting the locale (language and country) of the content -->
 
-<meta property="article:published_time" content="2024-01-11T12:34:56Z">
+<meta property="article:published_time" content="YYYY-MM-DDTHH:mm:ssZ" />
 <!-- Open Graph meta tag for indicating the publish time of an article -->
 
-<meta property="article:modified_time" content="2024-02-15T15:45:00Z">
+<meta property="article:modified_time" content="YYYY-MM-DDTHH:mm:ssZ" />
 <!-- Open Graph meta tag for indicating the last modification time of an article -->
 
 <!-- Twitter meta tags -->
@@ -82,12 +112,6 @@ Complete list of metadata tags with descriptions for each:
 
 <meta name="twitter:url" content="URL to your page">
 <!-- Twitter meta tag for defining the URL of the content when shared on Twitter -->
-
-<meta name="article:published_time" content="2024-01-11T12:34:56Z">
-<!-- Twitter meta tag for indicating the publish time of an article -->
-
-<meta name="article:modified_time" content="2024-02-15T15:45:00Z">
-<!-- Twitter meta tag for indicating the last modification time of an article -->
 
 <!-- Content Security Policy (CSP) -->
 <meta http-equiv="Content-Security-Policy" content="your-csp-directives-here">
@@ -136,11 +160,7 @@ Complete list of metadata tags with descriptions for each:
 <!-- Link tag for including Global Multimedia Protocols Group (gmpg) metadata -->
 ```
 
-## Data
-
-* Top-level .gov domains: [Federal Register](#)
-
-## Resources
+### Recommended reading
 
 * [Metadata, Open Graph and government websites](https://govfresh.com/thoughts/metadata-open-graph-government-websites) (GovFresh)
 * [Metadata and tags you should include in your website](https://search.gov/indexing/metadata.html) (search.gov)

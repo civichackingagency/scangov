@@ -59,8 +59,8 @@
         <div class="p-5 mb-5 bg-tertiary border-bottom border-top">
             <div class="container py-1">
                 <h1 class="display-5 fw-bold" id="jumbotron-title"><span id="site"></span> metadata</h1>
-                <p class="lead" id="jumbotron-subtitle"><span id="name"></span> website metadata
-                    information.</p>
+                <p class="lead" id="jumbotron-subtitle">Website metadata
+                    score, grade and status for <span id="name"></span>.</p>
             </div>
         </div>
         <div class="container">
@@ -87,37 +87,24 @@
                     </div>
                 </div>
                 <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <h2 class="fw-bold">Share</h2>
+                    <h2 class="fw-bold">About</h2>
                     <div class="list-group mb-4 mt-3">
-                        <a href="javascript:void(0);" onclick="navigator.clipboard.writeText(location.href);"
-                            title="Copy link to clipboard"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
-                            <i class="fa-solid fa-copy"></i>
-                            Copy link to clipboard</a>
-                        <a href="#" id="linkedin" rel="nofollow" target="_blank" title="Share on LinkedIn"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            LinkedIn</a>
-                        <a href="#" id="twitter" rel="nofollow" target="_blank" title="Share on Twitter"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
-                            <i class="fa-brands fa-x-twitter"></i>
-                            Twitter</a>
-                        <a href="#" id="facebook" rel="nofollow" target="_blank" title="Share on Facebook"
-                            class="text-decoration-none d-block btn btn-dark btn-sm mb-1 py-3 text-start list-group-item list-group-item-action">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            Facebook</a>
+                        <a href="https://github.com/civichackingagency/dotgov-metadata#scoringgrading"
+                        class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Scoring/grading</a>
+                        <a href="https://github.com/civichackingagency/dotgov-metadata#metadata"
+                        class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Metadata</a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h2 class="fw-bold">Status</h2>
-                    <div class="table-responsive">
-                        <table class="table mt-3">
+                    <h2 class="fw-bold mt-3">Status</h2>
+                    <div class="table-responsive table-hover">
+                        <table class="table table-responsive table-hover mt-3 mb-5">
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col">Tag</th>
-                                    <th scope="col">Purpose</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>
@@ -126,6 +113,32 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-6">
+                    <h2 class="fw-bold">Share</h2>
+                    <div class="list-group mb-4 mt-3">
+                        <a href="javascript:void(0);" onclick="navigator.clipboard.writeText(location.href);"
+                            title="Copy link to clipboard"
+                            class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy link to clipboard</a>
+                        <a href="#" id="linkedin" rel="nofollow" target="_blank" title="Share on LinkedIn"
+                            class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            LinkedIn</a>
+                        <a href="#" id="twitter" rel="nofollow" target="_blank" title="Share on Twitter"
+                            class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            Twitter</a>
+                        <a href="#" id="facebook" rel="nofollow" target="_blank" title="Share on Facebook"
+                            class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            Facebook</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                </div>
+            </div>            
         </div>
     </main>
     <footer id="footer"></footer>

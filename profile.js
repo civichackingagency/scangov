@@ -47,10 +47,10 @@ fetch('data.json').then(res => res.json()).then(data => {
     if (url.endsWith('/'))
         url = url.slice(0, -1);
     document.getElementById('site').innerHTML = url;
-    document.getElementById('name').innerHTML = data.name;
+    document.getElementById('name').innerHTML = url;
     const percent = Math.round(successes.length / variables.length * 100);
     document.getElementById('percent').innerHTML = percent;
-    document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length;
+    document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
     document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
     document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
 

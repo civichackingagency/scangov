@@ -37,11 +37,12 @@ fetch('data.json').then(res => res.json()).then(data => {
         let url = agency.url.replace(/http(s|)\:\/\//, '').replace('www.', '');
         if (url.endsWith('/'))
             url = url.slice(0, -1);
+        const percent = successes.length / variables.length;
         tr.innerHTML = `
                 <td scope="row">
-                    ${url.substring(0, ((url.indexOf('/') + 1) || url.length + 1) - 1)}
+                    ${url}
                     <br>
-                    ${agency.name}
+                    <small>${agency.name}</small>
                 </td>
                 <td>
                     ${agency.status == 200 ?
@@ -51,8 +52,8 @@ fetch('data.json').then(res => res.json()).then(data => {
                 : agency.status
             }
                 </td>
-                <td>${agency.status == 200 ? Math.round(successes.length / variables.length * 100) : 0}%</td>
-                <td><a href="profile.html?agency=${agency.name}"><svg class="svg-inline--fa fa-file-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM288 368a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm211.3-43.3c-6.2-6.2-16.4-6.2-22.6 0L416 385.4l-28.7-28.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l40 40c6.2 6.2 16.4 6.2 22.6 0l72-72c6.2-6.2 6.2-16.4 0-22.6z"/></svg></a></td>
+                <td><span class="badge text-bg-danger font-weight-normal bg-opacity-75">${agency.status == 200 ? (percent >= 0.9 ? 'A' : percent >= 0.8 ? 'B' : percent >= 0.7 ? 'C' : percent >= 0.6 ? 'D' : 'F') : 'F'}</span></td>
+                <td class="text-end"><a href="profile.html?agency=${agency.name}" aria-label="View report"><svg class="svg-inline--fa fa-circle-play" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg></a></td>
         `;
         table.appendChild(tr);
     }
