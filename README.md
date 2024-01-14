@@ -7,7 +7,15 @@ Metadata information for official government websites.
 
 ## Scoring/grading
 
-Scores and grades are based on inclusion of these metatags:
+Grade scale:
+
+* A: 90 - 100
+* B: 80 - 89
+* C: 70 - 79
+* D: 60 - 69
+* F: < 60
+
+Scores/grades are based on inclusion of these metatags:
 
 * `<title>`
 * `<meta name="description">`
