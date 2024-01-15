@@ -5,6 +5,17 @@ Metadata information for official government websites.
 
 [.gov metadata](https://dotgov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
 
+* Number of domains: Approximately 1,300
+* Current average score: 22%
+
+## Data
+
+* [Federal .gov domains](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv) (Cybersecurity and Infrastructure Security Agency)
+
+## Last updated
+
+January 15, 2024
+
 ## Scoring/grading
 
 Grade scale:
