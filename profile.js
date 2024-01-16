@@ -21,18 +21,28 @@ const descriptions = [
     'The URL of the image to use in the card'
 ];
 
-const agencyName = new URLSearchParams(location.search).get('agency');
+const agencyURL = new URLSearchParams(location.search).get('agency');
 
-fetch('data.json').then(res => res.json()).then(data => {
-    for (const agency of data)
-        if (agency.name == agencyName) {
-            data = agency;
+fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
+    let currentAgency;
+    let total = 0, count = 0;
+    for (const agency of data) {
+        if (agency.status === 200) {
+            for (const variable of variables)
+                if (agency[variable])
+                    total++;
+            count++;
+        }
+        if (agency.url == agencyURL) {
+            currentAgency = agency;
             break;
         }
+    }
+    data = currentAgency;
 
     const successes = [], dangers = [];
     for (let i = 0; i < variables.length; i++)
-        if (data[variables[i]])
+        if (data[variables[i]] && data.status === 200)
             if (properties[i].includes('"'))
                 successes.push([(!properties[i].includes('canonical') ? '&lt;meta ' : '&lt;link ') + properties[i] + '&gt;', i]);
             else
@@ -43,14 +53,25 @@ fetch('data.json').then(res => res.json()).then(data => {
             else
                 dangers.push([properties[i].replace('<', '&lt;') + '&gt;', i]);
 
-    let url = data.url.replace(/http(s|)\:\/\//, '').replace('www.', '');
-    if (url.endsWith('/'))
-        url = url.slice(0, -1);
-    document.getElementById('site').innerHTML = url;
-    document.getElementById('name').innerHTML = url;
+    document.getElementById('site').innerHTML = data.url;
+    document.getElementById('name').innerHTML = data.url;
     const percent = Math.round(successes.length / variables.length * 100);
-    document.getElementById('percent').innerHTML = percent;
-    document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
+    if (data.status === 200) {
+        document.getElementById('percent').innerHTML = percent;
+        document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
+        document.getElementById('average').innerHTML = Math.round(total / count / variables.length * 100);
+    }
+    else {
+        document.getElementById('score-title').innerHTML = 'Status';
+        document.getElementById('score').innerHTML = `
+            <div class="card-body text-center">
+                <p class="display-1 fw-bold">
+                    ${data.status}
+                </p>
+            </div>
+            <div class="card-footer text-center">${data.url} didn't respond</div>
+        `;
+    }
     document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
     document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
 
@@ -84,7 +105,7 @@ fetch('data.json').then(res => res.json()).then(data => {
             </tr>
         `;
 
-    document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${document.title}&summary=${agencyName}%20website%20metadata%20information.&source=Civic%20Hacking%20Agency`;
-    document.getElementById('twitter').href = `https://twitter.com/intent/tweet?text=${agencyName}%20website%20metadata%20information.&via=civic_hacking&url=${encodeURIComponent(location.href)}`;
+    document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${document.title}&summary=${data.url}%20website%20metadata%20information.&source=Civic%20Hacking%20Agency`;
+    document.getElementById('twitter').href = `https://twitter.com/intent/tweet?text=${data.url}%20website%20metadata%20information.&via=civic_hacking&url=${encodeURIComponent(location.href)}`;
     document.getElementById('facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`;
 });
