@@ -59,7 +59,6 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
     if (data.status === 200) {
         document.getElementById('percent').innerHTML = percent;
         document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
-        document.getElementById('average').innerHTML = Math.round(total / count / variables.length * 100);
     }
     else {
         document.getElementById('score-title').innerHTML = 'Status';

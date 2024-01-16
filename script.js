@@ -10,6 +10,23 @@ const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" fo
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
 fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
+    let total = 0, count = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].status != 200)
+            continue;
+
+        count++;
+        for (const variable of variables) {
+            if (data[i][variable])
+                total++;
+        }
+    }
+    const percent = Math.round(total / count / variables.length * 100);
+    document.getElementById('percent').innerHTML = Math.round(total / count / variables.length * 100);
+    document.getElementById('amount').innerHTML = Math.round(total / count) + ' of ' + variables.length + ' tags';
+    document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
+    document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
+
     displayAgencies(data, search);
 
     searchInput.onkeyup = e => {
