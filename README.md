@@ -27,6 +27,8 @@ Grade scale:
 * D: 60 - 69
 * F: < 60
 
+Some sites are inacessible (status 400/401/403/404/500), whether they've blocked bots in the metadata or server side. We haven't given them a score, but graded them as as 'F' for access reasons.
+
 Scores/grades are based on inclusion of these metatags:
 
 * `<title>`
