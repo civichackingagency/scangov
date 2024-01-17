@@ -55,10 +55,15 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
 
     document.getElementById('site').innerHTML = data.url;
     document.getElementById('name').innerHTML = data.url;
+    document.getElementById('name').href = 'http://' + data.url;
+    document.getElementById('parent').innerHTML = data.name;
+    document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
     const percent = Math.round(successes.length / variables.length * 100);
     if (data.status === 200) {
         document.getElementById('percent').innerHTML = percent;
         document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
+        document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
+        document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
     }
     else {
         document.getElementById('score-title').innerHTML = 'Status';
@@ -70,9 +75,8 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
             </div>
             <div class="card-footer text-center">${data.url} didn't respond</div>
         `;
+        document.getElementById('grade').innerHTML = '－';
     }
-    document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
-    document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
 
     const table = document.getElementById('table');
     for (const success of successes)
@@ -99,9 +103,9 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
                     ${descriptions[danger[1]]}    
                 </td>
                 <td>
-                    <i class="fa-solid fa-circle-xmark text-danger"></i> <span class="d-none d-xl-inline">Missing</span>
-                </td>
-            </tr>
+                    <i class="fa-solid ${data.status === 200 ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 ? 'Missing' : 'Can\'t access'}</span>
+                </td >
+            </tr >
         `;
 
     document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${document.title}&summary=${data.url}%20website%20metadata%20information.&source=Civic%20Hacking%20Agency`;

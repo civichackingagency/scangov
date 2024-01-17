@@ -1,5 +1,6 @@
 const params = new URLSearchParams(location.search);
 const pageNumber = parseInt(params.get('page')) || 1;
+let agencyPage = parseInt(params.get('agency'));
 const search = params.get('search') || '';
 const searchInput = document.getElementById('search');
 searchInput.value = search;
@@ -10,9 +11,20 @@ const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" fo
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
 fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
+    if (agencyPage) {
+        document.getElementById('jumbotron').innerHTML = `
+            <h1 class="display-5 fw-bold">${search}</h1>
+            <p class="lead mb-4" id="jumbotron-subtitle">.gov domains managed by ${search}.</p>
+        `;
+        document.getElementById('level').innerHTML = 'Metadata';
+    }
+
     let total = 0, count = 0;
     for (let i = 0; i < data.length; i++) {
         if (data[i].status != 200)
+            continue;
+
+        if (agencyPage && data[i].name.toLowerCase() !== search.toLowerCase())
             continue;
 
         count++;
@@ -37,6 +49,7 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
 });
 
 const displayAgencies = (agencies, filter) => {
+    filter = filter.toLowerCase();
     table.innerHTML = '';
 
     const data = agencies.sort((a, b) => {
@@ -55,7 +68,6 @@ const displayAgencies = (agencies, filter) => {
         }
         return bTotal - aTotal;
     }).filter(agency => agency.name.toLowerCase().includes(filter) || agency.url.includes(filter));
-    console.log(pageNumber, data.length);
 
     pagination.innerHTML = '<li class="page-item"><a class="page-link ' + (pageNumber == 1 ? 'disabled' : '') + '" href="?page=' + (pageNumber - 1) + '&search=' + filter + '">Previous</a></li>';
     for (let page = 0; page < data.length / 100; page++) {
@@ -83,18 +95,18 @@ const displayAgencies = (agencies, filter) => {
                 <td scope="row">
                     ${agency.url}
                     <br>
-                    <small>${agency.name}</small>
+                    <a href="?search=${agency.name}&agency=1"><small>${agency.name}</small></a>
                 </td>
                 <td>
                     ${agency.status == 200 ?
                 `${successes.map(success => `<span title="${success}">${check}</span>`).join('\n')}
                                 <br>
                                 ${dangers.map(danger => `<span title="${danger}">${x}</span>`).join('\n')}`
-                : agency.status
+                : '<span title="Inaccessible (status ' + agency.status + ')"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></span>'
             }
                 </td>
-                <td><span class="badge text-bg-${agency.status !== 200 ? 'danger' : (percent >= 0.9 ? 'success' : (percent >= 0.7 ? 'warning' : 'danger'))} font-weight-normal bg-opacity-75" title="${percent * 100}%">${agency.status == 200 ? (percent >= 0.9 ? 'A' : percent >= 0.8 ? 'B' : percent >= 0.7 ? 'C' : percent >= 0.6 ? 'D' : 'F') : 'F'}</span></td>
-                <td class="text-end"><a href="profile.html?agency=${agency.url}" aria-label="View report"><svg class="svg-inline--fa fa-circle-play" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg></a></td>
+                <td class="text-center"><span class="badge text-bg-${agency.status !== 200 ? 'danger' : (percent >= 0.9 ? 'success' : (percent >= 0.7 ? 'warning' : 'danger'))} font-weight-normal bg-opacity-75" title="${percent * 100}%">${agency.status == 200 ? (percent >= 0.9 ? 'A' : percent >= 0.8 ? 'B' : percent >= 0.7 ? 'C' : percent >= 0.6 ? 'D' : 'F') : 'F'}</span></td>
+                <td class="text-center"><a href="profile.html?agency=${agency.url}" aria-label="View report"><svg class="svg-inline--fa fa-file-lines" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-lines" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></a></td>
         `;
         table.appendChild(tr);
     }

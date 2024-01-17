@@ -45,12 +45,6 @@
       href="/assets/font-awesome/css/all.min.css"
       crossorigin="anonymous">
     <script src="/assets/font-awesome/js/all.min.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
 
   <body data-bs-theme="dark">
@@ -62,9 +56,9 @@
     <nav class="navbar navbar-expand-lg" id="nav"></nav>
     <main id="home">
       <div class="p-5 mb-5 bg-tertiary border-bottom border-top">
-        <div class="container py-1">
+        <div class="container py-1" id="jumbotron">
           <h1 class="display-5 fw-bold" id="jumbotron-title">.gov metadata</h1>
-          <p class="lead mb-4" id="jumbotron-subtitle">Metadata information for official government websites.</p>
+          <p class="lead" id="jumbotron-subtitle">Metadata information for official government websites.</p>
           <form>
             <label class="visually-hidden">
               Search:
@@ -80,10 +74,10 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="fw-bold">U.S. federal government</h2>
+            <h2 class="fw-bold mb-4 display-6" id="level">U.S. federal government</h2>
           </div>
         </div>
-        <div class="row mt-3">
+        <div class="row">
           <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <h3 class="fw-bold" id="score-title">Average score</h3>
             <div class="card-group mb-3 mt-3">
@@ -109,7 +103,7 @@
           <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <h3 class="fw-bold">About</h3>
             <div class="list-group mb-4 mt-3">
-              <a href="https://github.com/civichackingagency/dotgov-metadata#scoringgrading" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Scoring/grading</a>
+              <a href="https://github.com/civichackingagency/dotgov-metadata#scoringgrading" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Scoring / grading</a>
               <a href="https://github.com/civichackingagency/dotgov-metadata#metadata" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Metadata</a>
             </div>
           </div>
@@ -122,8 +116,8 @@
                   <tr>
                     <th scope="col" style="width: 500px;">Domain</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Grade</th>
-                    <th scope="col" class="text-end">Report</th>
+                    <th scope="col" class="text-center">Grade</th>
+                    <th scope="col" class="text-center">Report</th>
                   </tr>
                 </thead>
                 <tbody id="table"></tbody>

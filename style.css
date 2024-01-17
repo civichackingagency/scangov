@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Public Sans Bold";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Public Sans Regular";
+    src: url("/assets/fonts/public-sans/ttf/public-sans-regular.ttf") format("truetype");
+}
+
 img.loading {
     width: min(50%, 5rem);
     display: block;
@@ -35,7 +45,7 @@ body[data-bs-theme="dark"] ul.navbar-nav img {
 }
 
 body {
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Public Sans Regular', sans-serif;
 }
 
 main#home img {
@@ -64,4 +74,8 @@ svg.fa-circle-check {
 
 svg.fa-circle-xmark {
     fill: var(--bs-danger);
+}
+
+svg.fa-circle-exclamation {
+    fill: var(--bs-warning);
 }
