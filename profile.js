@@ -21,7 +21,7 @@ const descriptions = [
     'The URL of the image to use in the card'
 ];
 
-const agencyURL = new URLSearchParams(location.search).get('agency');
+const agencyURL = new URLSearchParams(location.search).get('domain');
 
 fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
     let currentAgency;
@@ -66,15 +66,8 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
         document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
     }
     else {
-        document.getElementById('score-title').innerHTML = 'Status';
-        document.getElementById('score').innerHTML = `
-            <div class="card-body text-center">
-                <p class="display-1 fw-bold">
-                    ${data.status}
-                </p>
-            </div>
-            <div class="card-footer text-center">${data.url} didn't respond</div>
-        `;
+        document.getElementById('percent').innerHTML = '－';
+        document.getElementById('amount').innerHTML = agencyURL + ' didn\'t respond';
         document.getElementById('grade').innerHTML = '－';
     }
 
@@ -103,7 +96,7 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
                     ${descriptions[danger[1]]}    
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status === 200 ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 ? 'Missing' : 'Can\'t access'}</span>
+                    <i class="fa-solid ${data.status === 200 ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 ? 'Missing' : 'Can\'t access (' + data.status + ')'}</span>
                 </td >
             </tr >
         `;

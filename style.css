@@ -25,16 +25,6 @@ img.loading {
     }
 }
 
-.topic {
-    background-color: var(--topic-light);
-    color: black;
-}
-
-body[data-bs-theme="dark"] .topic {
-    background-color: var(--topic-dark);
-    color: white;
-}
-
 body[data-bs-theme="dark"] footer a {
     color: white;
 }
