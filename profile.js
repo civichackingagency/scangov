@@ -23,7 +23,7 @@ const descriptions = [
 
 const agencyURL = new URLSearchParams(location.search).get('domain');
 
-fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
+fetch('data.json').then(res => res.json()).then(data => {
     let currentAgency;
     let total = 0, count = 0;
     for (const agency of data) {
@@ -70,6 +70,8 @@ fetch('data-all-dotgov.json').then(res => res.json()).then(data => {
         document.getElementById('amount').innerHTML = agencyURL + ' didn\'t respond';
         document.getElementById('grade').innerHTML = '－';
     }
+    document.getElementById('visit').innerHTML = data.url;
+    document.getElementById('visit-link').href = 'http://' + data.url;
 
     const table = document.getElementById('table');
     for (const success of successes)

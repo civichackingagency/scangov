@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="description" content="Metadata information for official government websites.">
-    <meta name="keywords" content="government, websites">
+    <meta name="keywords" content="government, websites, metadata">
     <meta name="author" content="Civic Hacking Agency">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -60,10 +60,11 @@
           <h1 class="display-5 fw-bold" id="jumbotron-title">.gov metadata</h1>
           <p class="lead" id="jumbotron-subtitle">Metadata information for official government websites.</p>
           <form>
-            <label class="visually-hidden">
+            <label class="visually-hidden" for="search">
               Search:
             </label>
             <input
+              name="search"
               type="text"
               class="form-control form-control-lg w-50"
               placeholder="Search .gov domains"
@@ -101,12 +102,18 @@
             </div>
           </div>
           <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <h3 class="fw-bold">About</h3>
+            <h3 class="fw-bold">Source</h3>
             <div class="list-group mb-4 mt-3">
-              <a href="https://github.com/civichackingagency/dotgov-metadata#status" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Status</a>
-              <a href="https://github.com/civichackingagency/dotgov-metadata#scoringgrading" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Scoring / grading</a>
-              <a href="https://github.com/civichackingagency/dotgov-metadata#metadata" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Metadata</a>
+              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.json" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                <i class="fa-solid fa-database"></i>
+                Data (.json)</a>
+              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.csv" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                <i class="fa-solid fa-file-csv"></i>
+                Data (.csv)</a>
             </div>
+            <p class="text-muted">Updated:
+              <span id="updated"></span>
+            </p>
           </div>
         </div>
         <div class="row">
@@ -138,6 +145,7 @@
     <footer id="footer"></footer>
     <script src="variables.js"></script>
     <script src="script.js"></script>
+    <script src="profile.js"></script>
   </body>
 
 </html>

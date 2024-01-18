@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="description" content="Metadata information for official government websites.">
-    <meta name="keywords" content="government, websites">
+    <meta name="keywords" content="government, websites, metadata">
     <meta name="author" content="Civic Hacking Agency">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -68,7 +68,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="col-12">
             <h2 class="fw-bold mb-3 display-6">Metadata</h2>
           </div>
         </div>
@@ -96,12 +96,25 @@
             </div>
           </div>
           <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <h3 class="fw-bold">About</h3>
+            <h3 class="fw-bold">Source</h3>
             <div class="list-group mb-4 mt-3">
-              <a href="https://github.com/civichackingagency/dotgov-metadata#status" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Status</a>
-              <a href="https://github.com/civichackingagency/dotgov-metadata#scoringgrading" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Scoring / grading</a>
-              <a href="https://github.com/civichackingagency/dotgov-metadata#metadata" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">Metadata</a>
+              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.json" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                <i class="fa-solid fa-database"></i>
+                Data (.json)</a>
+              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.csv" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
+                <i class="fa-solid fa-file-csv"></i>
+                Data (.csv)</a>
+              <a
+                class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action"
+                id="visit-link"
+                target="_blank">
+                <i class="fa-solid fa-up-right-from-square"></i>
+                <span id="visit"></span>
+              </a>
             </div>
+            <p class="text-muted">Updated:
+              <span id="updated"></span>
+            </p>
           </div>
         </div>
         <div class="row">
@@ -121,52 +134,12 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <h2 class="fw-bold">Share</h2>
-            <div class="list-group mb-4 mt-3">
-              <a
-                href="javascript:void(0);"
-                onclick="navigator.clipboard.writeText(location.href);"
-                title="Copy link to clipboard"
-                class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-solid fa-copy"></i>
-                Copy link to clipboard</a>
-              <a
-                href="#"
-                id="linkedin"
-                rel="nofollow"
-                target="_blank"
-                title="Share on LinkedIn"
-                class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-brands fa-linkedin-in"></i>
-                LinkedIn</a>
-              <a
-                href="#"
-                id="twitter"
-                rel="nofollow"
-                target="_blank"
-                title="Share on Twitter"
-                class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-brands fa-x-twitter"></i>
-                Twitter</a>
-              <a
-                href="#"
-                id="facebook"
-                rel="nofollow"
-                target="_blank"
-                title="Share on Facebook"
-                class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-brands fa-facebook-f"></i>
-                Facebook</a>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
     <footer id="footer"></footer>
     <script src="variables.js"></script>
     <script src="profile.js"></script>
+    <script src="updated.js"></script>
   </body>
 
 </html>
