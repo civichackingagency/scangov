@@ -21,7 +21,7 @@ January 17, 2024
 
 * Active: Metatag was found.
 * Missing: No metatag was found.
-* Can't access: Site crawling is inaccessible (status 400/401/403/404/500,503). Domain manager has blocked bots in the metadata or server side. These domains don't have scores/grades and aren't factored into the averages.
+* Can't access: Site scraping is inaccessible (status 400/401/403/404/500,503). Domain manager has blocked bots in the metadata or server side or the domain doesn't exist. These domains don't have scores/grades and aren't factored into the averages.
 
 ## Scoring/grading
 
