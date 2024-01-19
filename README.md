@@ -13,10 +13,6 @@ Metadata information for official government websites.
 
 * [Federal .gov domains](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv) (Cybersecurity and Infrastructure Security Agency)
 
-## Last updated
-
-January 17, 2024
-
 ## Status
 
 * Active: Metatag was found.
