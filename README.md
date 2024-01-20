@@ -33,7 +33,6 @@ Scores/grades are based on inclusion of these metatags:
 
 * `<title>`
 * `<meta name="description">`
-* `<meta name="keywords">`
 * `<meta name="robots">`
 * `<meta name="viewport">`
 * `<link rel="canonical">`
@@ -44,13 +43,7 @@ Scores/grades are based on inclusion of these metatags:
 * `<meta name="og:description">`
 * `<meta name="og:url">`
 * `<meta name="og:image">`
-* `<meta name="og:image:width">`
-* `<meta name="og:image:height">`
 * `<meta name="og:image:alt">`
-* `<meta name="twitter:card">`
-* `<meta name="twitter:title">`
-* `<meta name="twitter:description">`
-* `<meta name="twitter:image">`
 
 ## Metadata
 
