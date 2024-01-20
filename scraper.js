@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import pThrottle from 'p-throttle';
 import fetch from 'node-fetch';
 
@@ -14,8 +14,32 @@ const variables = properties.map(property => {
     else
         property = property.substring(property.indexOf('<') + 1);
     return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
-});;
-properties = properties.map(property => new RegExp(property.replaceAll('"', '("|)'), 'gm'));
+});
+const csvVariables = [
+    "Title",
+    "Description",
+    "Keywords",
+    "Robots",
+    "Viewport",
+    "Canonical",
+    "OG Locale",
+    "OG Site Name",
+    "OG Type",
+    "OG Title",
+    "OG Description",
+    "OG Url",
+    "OG Image",
+    "OG Image Width",
+    "OG Image Height",
+    "OG Image Alt",
+    "Twitter Card",
+    "Twitter Title",
+    "Twitter Description",
+    "Twitter Image"
+];
+
+let csv = 'Domain,Agency,Status,' + csvVariables.join(',') + '\n';
+properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 
 const outcomes = [];
 const errors = [];
@@ -37,14 +61,48 @@ const fetchPromise = agency => {
         const controller = new AbortController();
         const signal = controller.signal;
         const timeout = setTimeout(() => controller.abort(), 30000);
-        fetch('http://' + agencyData[0], { method: 'GET', signal }).then(async res => {
+        fetch('http://' + agencyData[0], {
+            method: 'GET', signal,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+            }
+        }).then(async res => {
             let data = await res.text();
-            data = data.replaceAll('\'', '"');
+            data = data.replaceAll('\'', '"').toLowerCase();
 
             const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
             for (let i = 0; i < properties.length; i++)
-                if (res.status == 200)
-                    outcome[variables[i]] = !!data.match(properties[i]);
+                if (res.status == 200) {
+                    let index = data.match(properties[i].regex);
+                    if (!index) {
+                        outcome[variables[i]] = false;
+                        continue;
+                    }
+                    if (i == 0) {
+                        outcome[variables[i]] = true;
+                        continue;
+                    }
+                    index = index.index;
+                    let openIndex;
+                    for (let j = index; j >= 0; j--)
+                        if (data[j] == '<') {
+                            openIndex = j;
+                            break;
+                        }
+                    const tag = data.substring(openIndex, data.indexOf('>', openIndex));
+                    const contentIndex = tag.indexOf((properties[i].string.includes('rel') ? 'href=' : 'content='));
+                    const contentLength = properties[i].string.includes('rel') ? 5 : 8;
+                    //console.log(agencyData[0], data.includes('rel="canonical"'), tag, contentIndex, contentLength);
+                    if (contentIndex == -1) {
+                        outcome[variables[i]] = false;
+                        continue;
+                    }
+                    outcome[variables[i]] = (tag.charAt(contentIndex + contentLength) == '"' && tag.charAt(contentIndex + contentLength + 1) != '"') || (tag.charAt(contentIndex + 8) != " ");
+                }
                 else
                     outcome[variables[i]] = false;
             outcomes.push(outcome);
@@ -66,7 +124,7 @@ const fetchPromise = agency => {
         }).finally(() => {
             clearTimeout(timeout);
 
-            writeFileSync('data.json', JSON.stringify(outcomes));
+            writeFileSync('data.json', JSON.stringify(outcomes, null, 4));
 
             done++;
             console.log('Done with', agencyData[0], done + '/' + agencies.length, 'in', Math.round((Date.now() - start) / 1000 / 60 * 100) / 100, 'minutes');
@@ -90,5 +148,17 @@ agencies = agencies.filter(a => {
 });
 
 const promises = [];
-for (const agency of agencies)
-    promises.push(throttleFetch(agency));
+for (let i = 0; i < agencies.length; i++)
+    promises.push(throttleFetch(agencies[i]));
+
+await Promise.all(promises);
+
+const jsonData = JSON.parse(readFileSync('data.json', 'utf8'));
+for (const agency of jsonData) {
+    csv += agency.url + ',' + agency.name + ',' + agency.status;
+    for (let i = 0; i < variables.length; i++)
+        csv += ',' + agency[variables[i]];
+    csv += '\n';
+}
+
+writeFileSync('data.csv', csv);
