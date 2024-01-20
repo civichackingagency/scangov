@@ -96,12 +96,12 @@ const fetchPromise = agency => {
                     const tag = data.substring(openIndex, data.indexOf('>', openIndex));
                     const contentIndex = tag.indexOf((properties[i].string.includes('rel') ? 'href=' : 'content='));
                     const contentLength = properties[i].string.includes('rel') ? 5 : 8;
-                    //console.log(agencyData[0], data.includes('rel="canonical"'), tag, contentIndex, contentLength);
                     if (contentIndex == -1) {
                         outcome[variables[i]] = false;
                         continue;
                     }
-                    outcome[variables[i]] = (tag.charAt(contentIndex + contentLength) == '"' && tag.charAt(contentIndex + contentLength + 1) != '"') || (tag.charAt(contentIndex + 8) != " ");
+                    const charAfter = tag.charAt(contentIndex + contentLength);
+                    outcome[variables[i]] = (charAfter == '"' && tag.charAt(contentIndex + contentLength + 1) != '"') || (charAfter != '"' && charAfter != ' ' && charAfter != '/' && charAfter != '>');
                 }
                 else
                     outcome[variables[i]] = false;
