@@ -1,26 +1,3 @@
-const descriptions = [
-    'Defines the document\'s title that is shown in a browser\'s title bar or a page\'s tab',
-    'A short and accurate summary of the content of the page',
-    'Words relevant to the page\'s content separated by commas',
-    'The behavior that cooperative crawlers, or "robots", should use with the page',
-    'Gives hints about the size of the initial size of the viewport',
-    'Indicates that another page is representative of the content on the page',
-    'The locale these tags are marked up in',
-    'The name which should be displayed for the overall site',
-    'The type of the object',
-    'The title of the object as it should appear within the graph',
-    'A one to two sentence description of the object',
-    'The canonical URL of the object that will be used as its permanent ID in the graph',
-    'An image URL which should represent the object within the graph',
-    'The width of the image in pixels',
-    'The height of the image in pixels',
-    'A description of what is in the image',
-    'The card type',
-    'The title of the content',
-    'A description of the content',
-    'The URL of the image to use in the card'
-];
-
 const agencyURL = new URLSearchParams(location.search).get('domain');
 
 fetch('data.json').then(res => res.json()).then(data => {
@@ -41,8 +18,9 @@ fetch('data.json').then(res => res.json()).then(data => {
     data = currentAgency;
 
     const successes = [], dangers = [];
+    const redirect = data.redirect && !data.redirect.includes(data.url);
     for (let i = 0; i < variables.length; i++)
-        if (data[variables[i]] && data.status === 200)
+        if (data[variables[i]] && data.status === 200 && !redirect)
             if (properties[i].includes('"'))
                 successes.push([(!properties[i].includes('canonical') ? '&lt;meta ' : '&lt;link ') + properties[i] + '&gt;', i]);
             else
@@ -59,16 +37,19 @@ fetch('data.json').then(res => res.json()).then(data => {
     document.getElementById('parent').innerHTML = data.name;
     document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
     const percent = Math.round(successes.length / variables.length * 100);
-    if (data.status === 200) {
+    if (data.status === 200 && !redirect) {
         document.getElementById('percent').innerHTML = percent;
         document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
         document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
         document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
     }
     else {
-        document.getElementById('percent').innerHTML = '－';
-        document.getElementById('amount').innerHTML = agencyURL + ' didn\'t respond';
-        document.getElementById('grade').innerHTML = '－';
+        document.getElementById('percent').innerHTML = '-';
+        if (data.status !== 200)
+            document.getElementById('amount').innerHTML = agencyURL + ' didn\'t respond';
+        else
+            document.getElementById('amount').innerHTML = agencyURL + ' redirected';
+        document.getElementById('grade').innerHTML = '-';
     }
     document.getElementById('visit').innerHTML = data.url;
     document.getElementById('visit-link').href = 'http://' + data.url;
@@ -98,7 +79,7 @@ fetch('data.json').then(res => res.json()).then(data => {
                     ${descriptions[danger[1]]}    
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status === 200 ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 ? 'Missing' : 'Can\'t access (' + data.status + ')'}</span>
+                    <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
                 </td >
             </tr >
         `;

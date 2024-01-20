@@ -69,3 +69,7 @@ svg.fa-circle-xmark {
 svg.fa-circle-exclamation {
     fill: var(--bs-warning);
 }
+
+svg.fa-circle-right {
+    fill: var(--bs-info);
+}
