@@ -16,29 +16,29 @@ const variables = properties.map(property => {
     return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
 });
 const csvVariables = [
-    "Title",
-    "Description",
-    "Keywords",
-    "Robots",
-    "Viewport",
-    "Canonical",
-    "OG Locale",
-    "OG Site Name",
-    "OG Type",
-    "OG Title",
-    "OG Description",
-    "OG Url",
-    "OG Image",
-    "OG Image Width",
-    "OG Image Height",
-    "OG Image Alt",
-    "Twitter Card",
-    "Twitter Title",
-    "Twitter Description",
-    "Twitter Image"
+    'Title',
+    'Description',
+    'Keywords',
+    'Robots',
+    'Viewport',
+    'Canonical',
+    'OG Locale',
+    'OG Site Name',
+    'OG Type',
+    'OG Title',
+    'OG Description',
+    'OG Url',
+    'OG Image',
+    'OG Image Width',
+    'OG Image Height',
+    'OG Image Alt',
+    'Twitter Card',
+    'Twitter Title',
+    'Twitter Description',
+    'Twitter Image'
 ];
 
-let csv = 'Domain,Agency,Status,' + csvVariables.join(',') + '\n';
+let csv = 'Domain,Redirect,Agency,Status,' + csvVariables.join(',') + '\n';
 properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 
 const outcomes = [];
@@ -65,7 +65,7 @@ const fetchPromise = agency => {
             method: 'GET', signal,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*\/\*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
@@ -74,7 +74,7 @@ const fetchPromise = agency => {
             let data = await res.text();
             data = data.replaceAll('\'', '"').toLowerCase();
 
-            const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
+            const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: res.url };
             for (let i = 0; i < properties.length; i++)
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
@@ -113,7 +113,7 @@ const fetchPromise = agency => {
             outcomes.push(outcome);
 
             try {
-                errors.push({ agencyData, cause: err.cause });
+                errors.push({ agencyData, error: err.name + ': ' + err.message });
                 writeFileSync('errors.json', JSON.stringify(errors));
             }
             catch (err) {
@@ -124,7 +124,7 @@ const fetchPromise = agency => {
         }).finally(() => {
             clearTimeout(timeout);
 
-            writeFileSync('data.json', JSON.stringify(outcomes, null, 4));
+            writeFileSync('data.json', JSON.stringify(outcomes));
 
             done++;
             console.log('Done with', agencyData[0], done + '/' + agencies.length, 'in', Math.round((Date.now() - start) / 1000 / 60 * 100) / 100, 'minutes');
@@ -155,10 +155,15 @@ await Promise.all(promises);
 
 const jsonData = JSON.parse(readFileSync('data.json', 'utf8'));
 for (const agency of jsonData) {
-    csv += agency.url + ',' + agency.name + ',' + agency.status;
+    csv += agency.url + ',' + agency.redirect + ',' + agency.name + ',' + agency.status;
     for (let i = 0; i < variables.length; i++)
         csv += ',' + agency[variables[i]];
     csv += '\n';
 }
-
 writeFileSync('data.csv', csv);
+
+const errorData = JSON.parse(readFileSync('errors.json', 'utf8'));
+let errorCsv = 'Domain,Error,Email\n';
+for (const error of errorData)
+    errorCsv += error.agencyData[0] + ',"' + error.error.replaceAll('\n', ' ') + '",' + error.agencyData[6] + '\n';
+writeFileSync('errors.csv', errorCsv);
