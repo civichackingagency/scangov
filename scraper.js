@@ -65,7 +65,7 @@ const fetchPromise = agency => {
             method: 'GET', signal,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*\/\*;q=0.8',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
@@ -73,6 +73,20 @@ const fetchPromise = agency => {
         }).then(async res => {
             let data = await res.text();
             data = data.replaceAll('\'', '"').toLowerCase();
+
+            if (data.includes('http-equiv="refresh"')) {
+                let index = data.indexOf('http-equiv="refresh"');
+                index = data.indexOf('url=', index) + 4;
+                let url = data.substring(index);
+                if (url.startsWith('"'))
+                    url = url.substring(1);
+                url = url.substring(0, url.indexOf('"'));
+                if (!url.startsWith('//') && url.startsWith('/'))
+                    url = 'http://' + agencyData[0] + url;
+                console.log(url);
+
+                data = (await (await fetch(url)).text()).replaceAll('\'', '"').toLowerCase();
+            }
 
             const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: res.url };
             for (let i = 0; i < properties.length; i++)
