@@ -73,22 +73,27 @@ const fetchPromise = agency => {
         }).then(async res => {
             let data = await res.text();
             data = data.replaceAll('\'', '"').toLowerCase();
+            let url;
 
-            if (data.includes('http-equiv="refresh"')) {
-                let index = data.indexOf('http-equiv="refresh"');
-                index = data.indexOf('url=', index) + 4;
-                let url = data.substring(index);
-                if (url.startsWith('"'))
-                    url = url.substring(1);
-                url = url.substring(0, url.indexOf('"'));
-                if (!url.startsWith('//') && url.startsWith('/'))
-                    url = 'http://' + agencyData[0] + url;
-                console.log(url);
+            const checkForRefresh = async html => {
+                if (html.includes('http-equiv="refresh"')) {
+                    let index = html.indexOf('http-equiv="refresh"');
+                    index = html.indexOf('url=', index) + 4;
+                    let redirectUrl = html.substring(index);
+                    if (redirectUrl.startsWith('"'))
+                        redirectUrl = redirectUrl.substring(1);
+                    redirectUrl = redirectUrl.substring(0, redirectUrl.indexOf('"'));
+                    if (!redirectUrl.startsWith('//') && redirectUrl.startsWith('/'))
+                        redirectUrl = (url || ('http://' + agencyData[0])) + redirectUrl;
+                    url = redirectUrl;
 
-                data = (await (await fetch(url)).text()).replaceAll('\'', '"').toLowerCase();
+                    data = (await (await fetch(redirectUrl)).text()).replaceAll('\'', '"').toLowerCase();
+                    await checkForRefresh(data);
+                }
             }
+            await checkForRefresh(data);
 
-            const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: res.url };
+            const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: url || res.url };
             for (let i = 0; i < properties.length; i++)
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
@@ -141,7 +146,7 @@ const fetchPromise = agency => {
             writeFileSync('data.json', JSON.stringify(outcomes));
 
             done++;
-            console.log('Done with', agencyData[0], done + '/' + agencies.length, 'in', Math.round((Date.now() - start) / 1000 / 60 * 100) / 100, 'minutes');
+            console.log(`Done with ${agencyData[0]} ${done}/${agencies.length} ${Math.round(done / agencies.length * 100)}% in ${Math.round((Date.now() - start) / 1000 / 60)}:${Math.round((Date.now() - start) / 1000)}`);
 
             resolve();
         });
