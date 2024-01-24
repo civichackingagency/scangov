@@ -77,9 +77,9 @@ const displayAgencies = (agencies, filter) => {
     }).filter(agency => agency.name.toLowerCase().includes(filter) || agency.url.includes(filter));
 
     if (filter)
-        document.getElementById('score-card').style.display = 'none';
+        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = 'none';
     else
-        document.getElementById('score-card').style.display = '';
+        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = '';
 
     pagination.innerHTML = '<li class="page-item"><a class="page-link ' + (pageNumber == 1 ? 'disabled' : '') + '" href="?page=' + (pageNumber - 1) + '&search=' + filter + '">Previous</a></li>';
     for (let page = 0; page < data.length / 100; page++) {
