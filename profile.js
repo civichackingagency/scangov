@@ -79,7 +79,7 @@ fetch('data.json').then(res => res.json()).then(data => {
                     ${descriptions[danger[1]]}    
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
+                    <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
                 </td >
             </tr >
         `;

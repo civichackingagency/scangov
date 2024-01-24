@@ -76,6 +76,11 @@ const displayAgencies = (agencies, filter) => {
         return bTotal - aTotal;
     }).filter(agency => agency.name.toLowerCase().includes(filter) || agency.url.includes(filter));
 
+    if (filter)
+        document.getElementById('score-card').style.display = 'none';
+    else
+        document.getElementById('score-card').style.display = '';
+
     pagination.innerHTML = '<li class="page-item"><a class="page-link ' + (pageNumber == 1 ? 'disabled' : '') + '" href="?page=' + (pageNumber - 1) + '&search=' + filter + '">Previous</a></li>';
     for (let page = 0; page < data.length / 100; page++) {
         pagination.innerHTML += `<li class="page-item ${page == pageNumber - 1 ? 'active' : ''}"><a class="page-link" href="?page=${page + 1}&search=${filter}">${page + 1}</a></li>`
