@@ -31,13 +31,21 @@
             onclick="
                 localStorage.setItem('theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
                 document.body.setAttribute('data-bs-theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-                document.querySelector('#toggle-theme img').src = 'assets/img/' + ( document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
+                document.querySelector('#toggle-theme img').src = 'assets/img/' + (document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
                 ">
             <img
               id="theme-icon"
               src="/assets/img/sun.svg"
               alt="Toggle theme"
-              style="width: 1rem;"></a>
+              style="width: 1rem;"
+              onload="
+                let theme = localStorage.getItem('theme');
+                if (!theme)
+                  return;
+                document.body.setAttribute('data-bs-theme', theme);
+                document.querySelector('#toggle-theme img').src = 'assets/img/' + (theme == 'light' ? 'moon' : 'sun') + '.svg';
+              ">
+          </a>
         </li>
       </ul>
     </div>

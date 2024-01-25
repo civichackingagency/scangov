@@ -34,6 +34,7 @@ fetch('data.json').then(res => res.json()).then(data => {
     document.getElementById('site').innerHTML = data.url;
     document.getElementById('parent').innerHTML = data.name;
     document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
+    document.getElementById('visit-link').href = data.redirect;
     const percent = Math.round(successes.length / variables.length * 100);
     if (data.status === 200 && !redirect) {
         document.getElementById('percent').innerHTML = percent;
@@ -55,7 +56,7 @@ fetch('data.json').then(res => res.json()).then(data => {
         table.innerHTML += `
             <tr>
                 <td>
-                    <pre><code>${success[0]}</code></pre>
+                    <pre><code class="text-wrap">${success[0]}</code></pre>
                 </td> 
                 <td>
                     ${descriptions[success[1]]}

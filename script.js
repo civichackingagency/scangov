@@ -13,7 +13,7 @@ const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" fo
 fetch('data.json').then(res => res.json()).then(data => {
     if (agencyPage) {
         document.getElementById('jumbotron').innerHTML = `
-            <h1 class="display-5 fw-bold">${search}</h1>
+            <h1 class="display-6 fw-bold">${search}</h1>
             <p id="jumbotron-subtitle">Domains managed by ${search}.</p>
         `;
         document.getElementById('level').innerHTML = 'Metadata';
