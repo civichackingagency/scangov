@@ -40,7 +40,7 @@ fetch('data.json').then(res => res.json()).then(data => {
     document.getElementById('percent').innerHTML = Math.round(total / count / variables.length * 100);
     document.getElementById('amount').innerHTML = Math.round(total / count) + ' of ' + variables.length + ' tags';
     document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
-    document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
+    document.getElementById('grade-card').classList.add('text-bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
 
     displayAgencies(data, search);
 

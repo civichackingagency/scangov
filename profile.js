@@ -38,7 +38,7 @@ fetch('data.json').then(res => res.json()).then(data => {
     if (data.status === 200 && !redirect) {
         document.getElementById('percent').innerHTML = percent;
         document.getElementById('amount').innerHTML = successes.length + ' of ' + variables.length + ' tags ';
-        document.getElementById('grade-card').classList.add('bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
+        document.getElementById('grade-card').classList.add('text-bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
         document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
     }
     else {
