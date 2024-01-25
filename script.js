@@ -14,7 +14,7 @@ fetch('data.json').then(res => res.json()).then(data => {
     if (agencyPage) {
         document.getElementById('jumbotron').innerHTML = `
             <h1 class="display-5 fw-bold">${search}</h1>
-            <p class="lead mb-4" id="jumbotron-subtitle">.gov domains managed by ${search}.</p>
+            <p id="jumbotron-subtitle">Domains managed by ${search}.</p>
         `;
         document.getElementById('level').innerHTML = 'Metadata';
     }

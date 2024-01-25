@@ -32,8 +32,6 @@ fetch('data.json').then(res => res.json()).then(data => {
                 dangers.push([properties[i].replace('<', '&lt;') + '&gt;', i]);
 
     document.getElementById('site').innerHTML = data.url;
-    document.getElementById('name').innerHTML = data.url;
-    document.getElementById('name').href = 'http://' + data.url;
     document.getElementById('parent').innerHTML = data.name;
     document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
     const percent = Math.round(successes.length / variables.length * 100);
@@ -51,8 +49,6 @@ fetch('data.json').then(res => res.json()).then(data => {
             document.getElementById('amount').innerHTML = agencyURL + ' redirected';
         document.getElementById('grade').innerHTML = '-';
     }
-    document.getElementById('visit').innerHTML = data.url;
-    document.getElementById('visit-link').href = 'http://' + data.url;
 
     const table = document.getElementById('table');
     for (const success of successes)

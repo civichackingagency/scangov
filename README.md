@@ -1,13 +1,13 @@
-# .gov metadata
+# gov metadata
 Metadata information for official government websites.
 
 ## About
 
-[.gov metadata](https://dotgov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://dotgov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
+[gov metadata](https://gov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://gov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
 
 ## Data
 
-* [Federal .gov domains](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv) (Cybersecurity and Infrastructure Security Agency)
+* [Federal .gov domains](https://github.com/cisagov/gov-data/blob/main/current-federal.csv) (Cybersecurity and Infrastructure Security Agency)
 
 ## Status
 
@@ -175,8 +175,8 @@ Complete list of metadata tags and descriptions for each:
 ### Recommended reading
 
 * [Metadata, Open Graph and government websites](https://govfresh.com/thoughts/metadata-open-graph-government-websites) (GovFresh)
-* [Metadata and tags you should include in your website](https://search.gov/indexing/metadata.html) (search.gov)
+* [Metadata and tags you should include in your website](https://searchgov/indexing/metadata.html) (searchgov)
 
 ## Feedback
 
-[Submit an issue](https://github.com/civichackingagency/dotgov-metadata/issues/new)
+[Submit an issue](https://github.com/civichackingagency/gov-metadata/issues/new)

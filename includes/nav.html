@@ -1,24 +1,45 @@
-<div class="container">
+<nav class="navbar fixed-top bg-body-tertiary border-bottom">
+  <div class="container">
     <a class="navbar-brand" href="/">
-        <img src="/assets/img/1F1FA-1F1F8.svg" width="30" height="30" class="d-inline-block align-top" alt="U.S. flag">
-        .gov metadata
+      <img
+        src="/assets/img/1F1FA-1F1F8.svg"
+        width="30"
+        height="30"
+        class="d-inline-block align-top"
+        alt="U.S. flag">
+      gov metadata
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
-        aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navContent"
+      aria-controls="navContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item" id="toggle-theme">
-                <a class="nav-link" href="javascript:void(0)" onclick="
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item" id="toggle-theme">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="
                 localStorage.setItem('theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
                 document.body.setAttribute('data-bs-theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
                 document.querySelector('#toggle-theme img').src = 'assets/img/' + ( document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
-                "><img id="theme-icon" src="/assets/img/sun.svg" alt="Toggle theme" style="width: 1rem;"></a>
-            </li>
-        </ul>
+                ">
+            <img
+              id="theme-icon"
+              src="/assets/img/sun.svg"
+              alt="Toggle theme"
+              style="width: 1rem;"></a>
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+</nav>

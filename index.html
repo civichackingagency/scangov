@@ -11,13 +11,13 @@
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta property="og:locale" content="en_US">
-    <link rel="canonical" href="https://dotgov-metadata.civichackingagency.org">
-    <title>Metadata information for official government websites. - .gov metadata</title>
-    <meta property="og:site_name" content=".gov metadata">
+    <link rel="canonical" href="https://gov-metadata.civichackingagency.org">
+    <title>Metadata information for official government websites. - gov metadata</title>
+    <meta property="og:site_name" content="gov metadata">
     <meta property="og:type" content="website">
-    <meta property="og:title" content=".gov metadata">
+    <meta property="og:title" content="gov metadata">
     <meta property="og:description" content="Metadata information for official government websites.">
-    <meta property="og:url" content="https://dotgov-metadata.civichackingagency.org">
+    <meta property="og:url" content="https://gov-metadata.civichackingagency.org">
     <meta property="article:published_time" content="2024-01-08 00:00:00 -0800">
     <meta name="dc.date" content="2024-01-08 00:00:00 -0800">
     <meta name="dc.date.created" content="2024-01-08 00:00:00 -0800">
@@ -25,10 +25,10 @@
     <meta property="article:author" content="Civic Hacking Agency">
     <meta name="twitter:site" content="@civic_hacking">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content=".gov metadata">
+    <meta name="twitter:title" content="gov metadata">
     <meta name="twitter:description" content="Metadata information for official government websites.">
-    <meta property="twitter:image" content="/assets/img/dotgov-metadata-twitter.png">
-    <meta property="og:image" content="/assets/img/dotgov-metadata-og.png">
+    <meta property="twitter:image" content="/assets/img/gov-metadata-twitter.png">
+    <meta property="og:image" content="/assets/img/gov-metadata-og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="U.S. flag">
@@ -55,9 +55,9 @@
     </script>
     <nav class="navbar navbar-expand-lg" id="nav"></nav>
     <main id="home">
-      <div class="p-5 mb-5 bg-tertiary border-bottom border-top">
+      <div class="p-4 mb-5 bg-tertiary border-bottom mt-5">
         <div class="container py-1" id="jumbotron">
-          <h1 class="display-5 fw-bold" id="jumbotron-title">.gov metadata</h1>
+          <h1 class="display-5 fw-bold" id="jumbotron-title">gov metadata</h1>
           <p class="lead" id="jumbotron-subtitle">Metadata information for official government websites.</p>
           <form>
             <label class="visually-hidden" for="search">
@@ -66,23 +66,46 @@
             <input
               name="search"
               type="text"
-              class="form-control form-control-lg w-50"
-              placeholder="Search .gov domains"
+              class="form-control form-control-lg w-50 mb-3"
+              placeholder="search gov domains"
               id="search">
           </form>
         </div>
       </div>
       <div class="container">
         <div class="row" id="level-card">
-          <div class="col-12">
-            <h2 class="fw-bold mb-4 display-6" id="level">U.S. federal government</h2>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h2 class="fw-bold display-6" id="level">U.S. federal government</h2>
+            <p class="text-muted">
+              <small>Updated:
+                <span id="updated"></span>
+              </small>
+            </p>
           </div>
         </div>
         <div class="row" id="score-card">
-          <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <h3 class="fw-bold" id="score-title">Average score</h3>
-            <div class="card-group mb-3 mt-3">
-              <div class="card pt-3 mb-3" id="score">
+          <div class="card-group mb-2 mt-2">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+              <div
+                class="card mb-3 bg-opacity-75"
+                id="grade-card"
+                style="width: 98%;">
+                <div class="card-header">
+                  Average grade
+                </div>
+                <div class="card-body text-center pt-5">
+                  <p class="display-1 fw-bold" id="grade"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+              <div
+                class="card mb-3"
+                id="score"
+                style="width: 98%;">
+                <div class="card-header">
+                  Average score
+                </div>
                 <div class="card-body text-center">
                   <p class="display-1 fw-bold">
                     <span id="percent"></span>%</p>
@@ -90,32 +113,6 @@
                 <div class="card-footer text-center" id="amount"></div>
               </div>
             </div>
-          </div>
-          <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <h3 class="fw-bold">Average grade</h3>
-            <div class="card-group mb-3 mt-3">
-              <div class="card pt-3 mb-3 bg-opacity-75" id="grade-card">
-                <div class="card-body text-center">
-                  <p class="display-1 fw-bold" id="grade"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <h3 class="fw-bold">Source</h3>
-            <div class="list-group mb-4 mt-3">
-              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.json" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-solid fa-database"></i>
-                Data (.json)</a>
-              <a href="https://github.com/civichackingagency/dotgov-metadata/blob/main/data.csv" class="text-decoration-none d-block btn btn-dark btn-sm py-3 text-start list-group-item list-group-item-action">
-                <i class="fa-solid fa-file-csv"></i>
-                Data (.csv)</a>
-            </div>
-            <p class="text-muted">
-              <small>Updated:
-                <span id="updated"></span>
-              </small>
-            </p>
           </div>
         </div>
         <div class="row">
