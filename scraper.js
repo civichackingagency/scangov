@@ -41,6 +41,8 @@ const csvVariables = [
 let csv = 'Domain,Redirect,Agency,Status,' + csvVariables.join(',') + '\n';
 properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 
+let historyData = readFileSync('data.json', 'utf8');
+historyData = historyData.includes('[') ? JSON.parse(historyData) : [];
 const outcomes = [];
 const errors = [];
 
@@ -93,8 +95,15 @@ const fetchPromise = agency => {
             }
             await checkForRefresh(data);
 
+            const past = historyData.find(h => h.url == agencyData[0]);
+            let history = (past && past.history) ? past.history : [];
+            let oldData = { time: Date.now(), status: past ? past.status : null };
+            if (past)
+                for (let i = 0; i < variables.length; i++)
+                    oldData[variables[i]] = past[variables[i]];
+            let changed = false;
             const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: url || res.url };
-            for (let i = 0; i < properties.length; i++)
+            for (let i = 0; i < properties.length; i++) {
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
                     if (!index) {
@@ -124,6 +133,14 @@ const fetchPromise = agency => {
                 }
                 else
                     outcome[variables[i]] = false;
+
+                if (!changed && oldData[variables[i]] != outcome[variables[i]])
+                    changed = true;
+            }
+
+            if (changed && past)
+                history.push(oldData);
+            outcome.history = history;
             outcomes.push(outcome);
         }).catch(err => {
             const outcome = { status: (err.name === 'AbortError' ? 408 : 500), url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
@@ -146,7 +163,7 @@ const fetchPromise = agency => {
             writeFileSync('data.json', JSON.stringify(outcomes));
 
             done++;
-            console.log(`Done with ${agencyData[0]} ${done}/${agencies.length} ${Math.round(done / agencies.length * 100)}% in ${Math.round((Date.now() - start) / 1000 / 60)}:${Math.round((Date.now() - start) / 1000)}`);
+            console.log(`Done with ${agencyData[0]} ${done}/${agencies.length} ${Math.round(done / agencies.length * 100)}% in ${(Math.round((Date.now() - start) / 1000 / 60)).toString().padStart(2, '0')}:${(Math.round((Date.now() - start) / 1000) % 60).toString().padStart(2, '0')}`);
 
             resolve();
         });
@@ -158,9 +175,61 @@ const throttleFetch = pThrottle({
     interval: 1000
 })(fetchPromise);
 
-const data = await (await fetch('https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-federal.csv')).text();
+const data = readFileSync('current-federal.csv', 'utf8');
 let agencies = data.split('\n');
 agencies.shift();
+agencies = [
+    'ALABAMA.GOV,,State of Alabama,,',
+    'ALASKA.GOV,,State of Alaska,,',
+    'AZ.GOV,,State of Arizona,,',
+    'ARKANSAS.GOV,,State of Arkansas,,',
+    'CA.GOV,,State of California,,',
+    'COLORADO.GOV,,State of Colorado,,',
+    'CT.GOV,,State of Connecticut,,',
+    'DE.GOV,,State of Delaware,,',
+    'MYFLORIDA.COM,,State of Florida,,',
+    'GEORGIA.GOV,,State of Georgia,,',
+    'HAWAII.GOV,,State of Hawaii,,',
+    'IDAHO.GOV,,State of Idaho,,',
+    'ILLINOIS.GOV,,State of Illinois,,',
+    'IN.GOV,,State of Indiana,,',
+    'IOWA.GOV,,State of Iowa,,',
+    'KANSAS.GOV,,State of Kansas,,',
+    'KENTUCKY.GOV,,State of Kentucky,,',
+    'LOIUSIANA.GOV,,State of Louisiana,,',
+    'MAINE.GOV,,State of Maine,,',
+    'MARYLAND.GOV,,State of Maryland,,',
+    'MASS.GOV,,State of Massachusett,,',
+    'MICHIGAN.GOV,,State of Michigan,,',
+    'MN.GOV,,State of Minnesota,,',
+    'MISSISSIPPI.GOV,,State of Mississippi,,',
+    'MO.GOV,,State of Missouri,,',
+    'MT.GOV,,State of Montana,,',
+    'NEBRASKA.GOV,,State of Nebraska,,',
+    'NV.GOV,,State of Nevada,,',
+    'NH.GOV,,State of New Hampshire,,',
+    'NJ.GOV,,State of New Jersey,,',
+    'NM.GOV,,State of New Mexico,,',
+    'NY.GOV,,State of New York,,',
+    'NC.GOV,,State of North Carolina,,',
+    'ND.GOV,,State of North Dakota,,',
+    'OHIO.GOV,,State of Ohio,,',
+    'OKLAHOMA.GOV,,State of Oklahoma,,',
+    'OREGON.GOV,,State of Oregon,,',
+    'PA.GOV,,State of Pennsylvania,,',
+    'RI.GOV,,State of Rhode Island,,',
+    'SC.GOV,,State of South Carolina,,',
+    'SD.GOV,,State of South Dakota,,',
+    'TN.GOV,,State of Tennessee,,',
+    'TX.GOV,,State of Texas,,',
+    'UTAH.GOV,,State of Utah,,',
+    'VERMONT.GOV,,State of Vermont,,',
+    'VIRGINIA.GOV,,State of Virginia,,',
+    'WA.GOV,,State of Washington,,',
+    'WV.GOV,,State of West Virginia,,',
+    'WISCONSIN.GOV,,State of Wisconsin,,',
+    'WYO.GOV,,State of Wyoming,,'
+].concat(agencies);
 agencies = agencies.filter(a => {
     const agencyData = a.split(',');
     return !(agencyData.length < 3 || agencyData[0].length == 0 || agencyData[2] === 'National Archives and Records Administration');
