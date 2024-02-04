@@ -48,9 +48,10 @@ const errors = [];
 
 const capitalizeFirstLetters = str => {
     let string = str.toLowerCase();
-    string = string[0].toUpperCase() + string.substring(1);
+    if (string.length > 0)
+        string = string[0].toUpperCase() + string.substring(1);
     for (let i = 0; i < string.length; i++)
-        if (string[i] == ' ' || string[i] == '-' || string[i] == '.' && string[i + 1])
+        if (string[i + 1] && string[i] == ' ' || string[i] == '-' || string[i] == '.' && string[i + 1])
             string = string.substring(0, i + 1) + string[i + 1].toUpperCase() + string.substring(i + 2);
     return string;
 };
@@ -62,17 +63,24 @@ const fetchPromise = agency => {
         agencyData[0] = agencyData[0].toLowerCase();
         const controller = new AbortController();
         const signal = controller.signal;
-        const timeout = setTimeout(() => controller.abort(), 30000);
-        fetch('http://' + agencyData[0], {
-            method: 'GET', signal,
+        const timeout = setTimeout(() => {
+            console.error('Aborting', agencyData[0]);
+            clearTimeout(timeout);
+            controller.abort();
+            reject('Timeout');
+        }, 30000);
+        const options = {
+            method: 'GET',
+            signal,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*\/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
             }
-        }).then(async res => {
+        };
+        fetch('http://' + agencyData[0], options).then(async res => {
             let data = await res.text();
             data = data.replaceAll('\'', '"').toLowerCase();
             let url;
@@ -97,12 +105,28 @@ const fetchPromise = agency => {
 
             const past = historyData.find(h => h.url == agencyData[0]);
             let history = (past && past.history) ? past.history : [];
-            let oldData = { time: Date.now(), status: past ? past.status : null };
+            let oldData = { time: Date.now(), status: past ? past.status : null, /*sitemap: past ? past.sitemap : null,*/ dotgov: past ? past.dotgov : null, https: past ? past.https : null };
             if (past)
                 for (let i = 0; i < variables.length; i++)
                     oldData[variables[i]] = past[variables[i]];
             let changed = false;
-            const outcome = { status: res.status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]), redirect: url || res.url };
+            const redirect = url || res.url;
+            let tld = redirect.substring(redirect.indexOf('//') + 2);
+            tld = tld.substring(0, tld.indexOf('/'));
+            tld = tld.substring(tld.lastIndexOf('.') + 1);
+            const baseUrl = redirect.substring(0, redirect.indexOf('/', redirect.indexOf('//') + 2));
+
+            //const sitemapReq = await fetch(baseUrl + '/sitemap.xml', options);
+            //const sitemap = res.status < 300 && sitemapReq.status < 300 && sitemapReq.url.includes('sitemap.xml');
+            const outcome = {
+                status: res.status,
+                url: agencyData[0],
+                name: capitalizeFirstLetters(agencyData[2]),
+                redirect,
+                dotgov: tld == 'gov',
+                https: res.url.startsWith('https://'),
+                //sitemap
+            };
             for (let i = 0; i < properties.length; i++) {
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
@@ -175,6 +199,7 @@ const throttleFetch = pThrottle({
     interval: 1000
 })(fetchPromise);
 
+// https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv
 const data = readFileSync('current-federal.csv', 'utf8');
 let agencies = data.split('\n');
 agencies.shift();
@@ -230,6 +255,14 @@ agencies = [
     'WISCONSIN.GOV,,State of Wisconsin,,',
     'WYO.GOV,,State of Wyoming,,'
 ].concat(agencies);
+// https://github.com/GSA/govt-urls/blob/main/2_govt_urls_federal_only.csv
+let nonDotGov = readFileSync('non-dotgov.csv', 'utf8').split('\n').filter(d => d.split(',')[4] == 'Federal');
+nonDotGov.shift();
+nonDotGov = nonDotGov.map(a => {
+    const domain = a.split(',');
+    return domain[0] + ',,' + domain[1] || 'undefined' + ',,,,';
+});
+agencies = agencies.concat(nonDotGov);
 agencies = agencies.filter(a => {
     const agencyData = a.split(',');
     return !(agencyData.length < 3 || agencyData[0].length == 0 || agencyData[2] === 'National Archives and Records Administration');
@@ -237,9 +270,12 @@ agencies = agencies.filter(a => {
 
 const promises = [];
 for (let i = 0; i < agencies.length; i++)
-    promises.push(throttleFetch(agencies[i]));
+    promises.push(throttleFetch(agencies[i]).catch(err => {
+        console.error(err);
+    }));
 
 await Promise.all(promises);
+console.log('Done fetching');
 
 const jsonData = JSON.parse(readFileSync('data.json', 'utf8'));
 for (const agency of jsonData) {
