@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Public Sans Regular";
-    src: url("/assets/fonts/public-sans/ttf/public-sans-regular.ttf") format("truetype");
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Regular.ttf") format("truetype");
 }
 
 img.loading {
@@ -44,7 +44,7 @@ main#home img {
     margin-bottom: 0.5rem;
 }
 
-.navbar-nav {
+.navbar {
     width: 100%;
 }
 
@@ -72,4 +72,42 @@ svg.fa-circle-exclamation {
 
 svg.fa-circle-right {
     fill: var(--bs-info);
+}
+
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+}
+
+.timeline .timeline-item {
+    position: relative;
+}
+
+.timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .timeline-item:after {
+    background-color: hsl(0, 0%, 90%);
+    left: -38px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle svg {
+    color: var(--bs-btn-color) !important;
+    transition: 0.15s color;
+}
+
+.dropdown-toggle:hover svg, .dropdown-toggle:focus svg {
+    color: var(--bs-btn-hover-color) !important;
 }

@@ -39,11 +39,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
     <link rel="icon" href="/assets/img/1F1FA-1F1F8.svg">
-      <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="/assets/font-awesome/css/all.min.css"
-      crossorigin="anonymous">
     <script src="/assets/font-awesome/js/all.min.js" crossorigin="anonymous"></script>
   </head>
 
@@ -55,36 +50,58 @@
     </script>
     <nav class="navbar navbar-expand-lg" id="nav"></nav>
     <main id="home">
-      <div class="p-4 mb-5 bg-tertiary border-bottom mt-5">
-        <div class="container py-1" id="jumbotron">
-          <h1 class="display-5 fw-bold" id="jumbotron-title">gov metadata</h1>
-          <p class="lead" id="jumbotron-subtitle">Metadata information for official government websites.</p>
-          <form>
+      <div class="p-5 mb-5 bg-tertiary border-bottom">
+        <div class="container py-1">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10" id="jumbotron">
+              <h1 class="display-5 fw-bold" id="jumbotron-title">gov metadata</h1>
+              <p class="lead" id="jumbotron-subtitle">Metadata information for official government websites.</p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-end" id="share"></div>
+          </div>
+          <form id="search-form">
             <label class="visually-hidden" for="search">
               Search:
             </label>
-            <input
-              name="search"
-              type="text"
-              class="form-control form-control-lg w-50 mb-3"
-              placeholder="search gov domains"
-              id="search">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6">
+              <input
+                name="search"
+                type="text"
+                class="form-control form-control-lg mb-3"
+                placeholder="search gov domains"
+                id="search">
+            </div>
+          <!--
+            <div class="border-top mt-4 pt-4 col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6">
+  <label class="pb-2" for="inlineFormSelectPref">Filter:</label>
+              <select class="form-select form-control-lg" aria-label="Default select example">
+                <option value="1">all gov domains</option>
+                <option value="2">federal gov domains</option>
+                <option value="3">state gov domains</option>
+              </select>
+            </div>
+          </div>
+          -->
           </form>
         </div>
       </div>
       <div class="container">
         <div class="row" id="level-card">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <h2 class="fw-bold h2" id="level">U.S. federal government</h2>
+            <h2 class="fw-bold" id="level">Federal government</h2>
             <p class="text-muted">
               <small>Updated:
                 <span id="updated"></span>
+                (<a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.json">.json</a>
+                /
+                <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.csv">
+                  .csv</a>)
               </small>
             </p>
           </div>
         </div>
         <div class="row" id="score-card">
-          <div class="card-group mb-2 mt-2">
+          <div class="card-group mb-4 mt-2">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
               <div
                 class="card mb-3"
@@ -115,6 +132,22 @@
             </div>
           </div>
         </div>
+        <div class="row" id="changelog">
+          <div class="col-12">
+            <h3 class="fw-bold">Changelog</h3>
+            <section class="py-4">
+              <ul class="timeline" id="timeline"></ul>
+            </section>
+            <p class="mb-5 mt-0 pt-0">
+              <a href="changelog.html" class="btn btn-sm btn-outline-primary">Full changelog</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h3 class="fw-bold">Domains</h3>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">
@@ -143,6 +176,7 @@
     </main>
     <footer id="footer"></footer>
     <script src="variables.js"></script>
+    <script src="util.js"></script>
     <script src="script.js"></script>
     <script src="updated.js"></script>
   </body>

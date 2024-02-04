@@ -12,10 +12,9 @@ const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" fo
 
 fetch('data.json').then(res => res.json()).then(data => {
     if (agencyPage) {
-        document.getElementById('jumbotron').innerHTML = `
-            <h1 class="display-6 fw-bold">${search}</h1>
-            <p id="jumbotron-subtitle">Domains managed by ${search}.</p>
-        `;
+        document.getElementById('jumbotron-title').innerText = search;
+        document.getElementById('jumbotron-subtitle').innerText = 'Domains managed by ' + search;
+        document.getElementById('search-form').style.display = 'none';
         document.getElementById('level').innerHTML = 'Metadata';
     }
 
@@ -37,9 +36,9 @@ fetch('data.json').then(res => res.json()).then(data => {
         }
     }
     const percent = Math.round(total / count / variables.length * 100);
-    document.getElementById('percent').innerHTML = Math.round(total / count / variables.length * 100);
-    document.getElementById('amount').innerHTML = Math.round(total / count) + ' of ' + variables.length + ' tags';
-    document.getElementById('grade').innerHTML = percent >= 90 ? 'A' : percent >= 80 ? 'B' : percent >= 70 ? 'C' : percent >= 60 ? 'D' : 'F';
+    document.getElementById('percent').innerText = Math.round(total / count / variables.length * 100);
+    document.getElementById('amount').innerText = Math.round(total / count) + ' of ' + variables.length + ' tags';
+    document.getElementById('grade').innerText = getGrade(percent);
     document.getElementById('grade-card').classList.add('text-bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
 
     displayAgencies(data, search);
@@ -76,16 +75,25 @@ const displayAgencies = (agencies, filter) => {
         return bTotal - aTotal;
     }).filter(agency => agency.name.toLowerCase().includes(filter) || agency.url.includes(filter));
 
-    if (filter)
-        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = 'none';
-    else
-        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = '';
+    if (!filter)
+        showChangelog(data, 3, 5);
 
-    pagination.innerHTML = '<li class="page-item"><a class="page-link ' + (pageNumber == 1 ? 'disabled' : '') + '" href="?page=' + (pageNumber - 1) + '&search=' + filter + '">Previous</a></li>';
-    for (let page = 0; page < data.length / 100; page++) {
-        pagination.innerHTML += `<li class="page-item ${page == pageNumber - 1 ? 'active' : ''}"><a class="page-link" href="?page=${page + 1}&search=${filter}">${page + 1}</a></li>`
+    if (filter) {
+        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = 'none';
+        document.getElementById('changelog').style.display = document.getElementById('level-card').style.display = 'none';
+        include('share', 'share');
     }
-    pagination.innerHTML += '<li class="page-item"><a class="page-link ' + ((pageNumber == Math.floor(data.length / 100) + 1) ? 'disabled' : '') + '" href="?page=' + (pageNumber + 1) + '&search=' + filter + '">Next</a></li>';
+    else {
+        document.getElementById('score-card').style.display = document.getElementById('level-card').style.display = 'initial';
+        document.getElementById('changelog').style.display = document.getElementById('level-card').style.display = 'revert';
+        document.getElementById('share').innerHTML = '';
+    }
+
+    let paginationString = '<li class="page-item"><a class="page-link ' + (pageNumber == 1 ? 'disabled' : '') + '" href="?page=' + (pageNumber - 1) + '&search=' + filter + '">Previous</a></li>';
+    for (let page = 0; page < data.length / 100; page++)
+        paginationString += `<li class="page-item ${page == pageNumber - 1 ? 'active' : ''}"><a class="page-link" href="?page=${page + 1}&search=${filter}">${page + 1}</a></li>`
+    paginationString += '<li class="page-item"><a class="page-link ' + ((pageNumber == Math.floor(data.length / 100) + 1) ? 'disabled' : '') + '" href="?page=' + (pageNumber + 1) + '&search=' + filter + '">Next</a></li>';
+    pagination.innerHTML = paginationString;
 
     for (let i = 100 * (pageNumber - 1); i < Math.min(100 * pageNumber, data.length); i++) {
         const agency = data[i];

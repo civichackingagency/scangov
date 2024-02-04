@@ -1,0 +1,65 @@
+<div class="dropdown">
+  <button
+    class="btn btn-outline-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    <i class="fa-solid fa-share-nodes"></i>
+    Share
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="small">
+      <a
+        href="javascript:void(0);"
+        onclick="navigator.clipboard.writeText(location.href);"
+        title="Copy link to clipboard"
+        class="dropdown-item">
+        <i class="fa-solid fa-copy"></i>
+        Copy link to clipboard</a>
+    </li>
+    <li class="small">
+      <a
+        href="#"
+        id="linkedin"
+        rel="nofollow"
+        target="_blank"
+        title="Share on LinkedIn"
+        class="dropdown-item">
+        <i class="fa-brands fa-linkedin-in"></i>
+        LinkedIn</a>
+    </li>
+    <li class="small">
+      <a
+        href="#"
+        id="twitter"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Twitter"
+        class="dropdown-item">
+        <i class="fa-brands fa-x-twitter"></i>
+        Twitter</a>
+    </li>
+    <li class="small">
+      <a
+        href="#"
+        id="facebook"
+        rel="nofollow"
+        target="_blank"
+        title="Share on Facebook"
+        class="dropdown-item">
+        <i class="fa-brands fa-facebook-f"></i>
+        Facebook</a>
+    </li>
+  </ul>
+</div>
+<img
+  src="x"
+  style="display: none;"
+  onerror="
+    const url = new URLSearchParams(window.location.search).get('domain');
+    document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${document.title}&summary=${url}%20website%20metadata%20information.&source=Civic%20Hacking%20Agency`;
+    document.getElementById('twitter').href = `https://twitter.com/intent/tweet?text=${url}%20website%20metadata%20information.&via=civic_hacking&url=${encodeURIComponent(location.href)}`;
+    document.getElementById('facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`;
+    this.parentElement.removeChild(this);
+">
