@@ -1,0 +1,1 @@
+const include = (includeName, element) => fetch('includes/' + includeName + '.html').then(res => res.text()).then(data => document.getElementById(element).innerHTML = data);

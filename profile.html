@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="Metadata information for official government websites.">
+    <meta name="keywords" content="government, websites, metadata">
+    <meta name="author" content="Civic Hacking Agency">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://gov-metadata.civichackingagency.org">
+    <title>Metadata information for official government websites. - gov metadata</title>
+    <meta property="og:site_name" content="gov metadata">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="gov metadata">
+    <meta property="og:description" content="Metadata information for official government websites.">
+    <meta property="og:url" content="https://gov-metadata.civichackingagency.org">
+    <meta property="article:published_time" content="2024-01-08 00:00:00 -0800">
+    <meta name="dc.date" content="2024-01-08 00:00:00 -0800">
+    <meta name="dc.date.created" content="2024-01-08 00:00:00 -0800">
+    <meta name="dcterms.created" content="2024-01-08 00:00:00 -0800">
+    <meta property="article:author" content="Civic Hacking Agency">
+    <meta name="twitter:site" content="@civic_hacking">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="gov metadata">
+    <meta name="twitter:description" content="Metadata information for official government websites.">
+    <meta property="twitter:image" content="/assets/img/gov-metadata-twitter.png">
+    <meta property="og:image" content="/assets/img/gov-metadata-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="U.S. flag">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <link rel="icon" href="/assets/img/1F1FA-1F1F8.svg">
+    <!-- Font Awesome -->
+    <script src="/assets/font-awesome/js/all.min.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body data-bs-theme="dark">
+    <script src="includes/include.js"></script>
+    <script>
+        include('nav', 'nav');
+        include('share', 'share');
+        include('footer', 'footer');
+    </script>
+    <nav class="navbar navbar-expand-lg" id="nav"></nav>
+    <main id="home">
+      <div class="p-4 mb-5 bg-tertiary border-bottom">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+              <h1 class="display-6 fw-bold" id="jumbotron-title">
+                <span id="site"></span>
+              </h1>
+              <p id="jumbotron-subtitle">
+                Managed by:
+                <a id="parent"></a>
+              </p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-end" id="share"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+            <div class="list-group mb-5">
+              <a href="#" class="list-group-item list-group-item-action disabled">
+                <i class="fa-solid fa-database"></i>
+                <small>Metadata</small>
+              </a>
+              <a
+                class="list-group-item list-group-item-action"
+                id="visit-link"
+                target="_blank">
+                <i class="fa-solid fa-up-right-from-square"></i>
+                <small>Visit site</small>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+            <h2 class="fw-bold h2">Metadata</h2>
+            <p class="text-muted">
+              <small>Updated:
+                <span id="updated"></span>
+                (<a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.json">.json</a>
+                /
+                <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.csv">
+                  .csv</a>) &middot;
+                <a href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+                  Request update</a>
+              </small>
+            </p>
+            <div class="row">
+              <div class="card-group mb-2 mt-2">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+                  <div
+                    class="card mb-3"
+                    id="grade-card"
+                    style="width: 98%;">
+                    <div class="card-header">
+                      Grade
+                    </div>
+                    <div class="card-body text-center pt-5">
+                      <p class="display-1 fw-bold" id="grade"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+                  <div
+                    class="card mb-3 text-bg-dark"
+                    id="score"
+                    style="width: 98%;">
+                    <div class="card-header">
+                      Score
+                    </div>
+                    <div class="card-body text-center">
+                      <p class="display-1 fw-bold">
+                        <span id="percent"></span>%</p>
+                    </div>
+                    <div class="card-footer text-center" id="amount"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3 class="fw-bold mt-3">Status</h3>
+                <div class="table-responsive table-hover">
+                  <table class="table table-responsive table-bordered table-hover mt-3 mb-5">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Tag</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h2 class="fw-bold">Changelog</h2>
+                <section class="py-4">
+                  <ul class="timeline" id="timeline"></ul>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="util.js"></script>
+    <script src="variables.js"></script>
+    <script src="profile.js"></script>
+    <script src="updated.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Public Sans Bold";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Public Sans Regular";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Regular.ttf") format("truetype");
+}
+
+img.loading {
+    width: min(50%, 5rem);
+    display: block;
+    margin: auto;
+    animation: spin 1.75s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body[data-bs-theme="dark"] footer a {
+    color: white;
+}
+
+body[data-bs-theme="dark"] footer img,
+body[data-bs-theme="dark"] ul.navbar-nav img {
+    filter: invert(1);
+}
+
+body {
+    font-family: 'Public Sans Regular', sans-serif;
+}
+
+main#home img {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+
+.navbar {
+    width: 100%;
+}
+
+#toggle-theme {
+    position: absolute;
+    right: var(--bs-navbar-brand-margin-end);
+}
+
+svg {
+    color: var(--bs-body-color) !important;
+    fill: var(--bs-body-color);
+}
+
+svg.fa-circle-check {
+    fill: var(--bs-success);
+}
+
+svg.fa-circle-xmark {
+    fill: var(--bs-danger);
+}
+
+svg.fa-circle-exclamation {
+    fill: var(--bs-warning);
+}
+
+svg.fa-circle-right {
+    fill: var(--bs-info);
+}
+
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+}
+
+.timeline .timeline-item {
+    position: relative;
+}
+
+.timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .timeline-item:after {
+    background-color: hsl(0, 0%, 90%);
+    left: -38px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle svg {
+    color: var(--bs-btn-color) !important;
+    transition: 0.15s color;
+}
+
+.dropdown-toggle:hover svg, .dropdown-toggle:focus svg {
+    color: var(--bs-btn-hover-color) !important;
+}
