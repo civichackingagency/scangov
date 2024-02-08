@@ -1,6 +1,7 @@
 import { writeFileSync, readFileSync } from 'fs';
 import pThrottle from 'p-throttle';
 import fetch from 'node-fetch';
+import { exit } from 'process';
 
 const start = Date.now();
 
@@ -184,10 +185,8 @@ const fetchPromise = agency => {
         }).finally(() => {
             clearTimeout(timeout);
 
-            writeFileSync('data.json', JSON.stringify(outcomes));
-
             done++;
-            console.log(`Done with ${agencyData[0]} ${done}/${agencies.length} ${Math.round(done / agencies.length * 100)}% in ${(Math.round((Date.now() - start) / 1000 / 60)).toString().padStart(2, '0')}:${(Math.round((Date.now() - start) / 1000) % 60).toString().padStart(2, '0')}`);
+            console.log(`Done with ${agencyData[0]} ${done}/${promises.length} ${Math.round(done / promises.length * 100)}% in ${(Math.round((Date.now() - start) / 1000 / 60)).toString().padStart(2, '0')}:${(Math.round((Date.now() - start) / 1000) % 60).toString().padStart(2, '0')}`);
 
             resolve();
         });
@@ -269,16 +268,29 @@ agencies = agencies.filter(a => {
 });
 
 const promises = [];
-for (let i = 0; i < agencies.length; i++)
-    promises.push(throttleFetch(agencies[i]).catch(err => {
-        console.error(err);
-    }));
+let domain = process.argv[2];
+for (let i = 0; i < agencies.length; i++) {
+    const name = agencies[i].split(',')[0].toLowerCase();
+    if (!domain || (domain && domain == name))
+        promises.push(throttleFetch(agencies[i]).catch(err => console.error(err)));
+    else {
+        let agencyData;
+        for (let j = 0; j < historyData.length; j++)
+            if (historyData[j].url == name) {
+                agencyData = historyData[j];
+                break;
+            }
+        if (agencyData)
+            outcomes.push(agencyData);
+    }
+}
 
 await Promise.all(promises);
 console.log('Done fetching');
 
-const jsonData = JSON.parse(readFileSync('data.json', 'utf8'));
-for (const agency of jsonData) {
+writeFileSync('data.json', JSON.stringify(outcomes));
+
+for (const agency of outcomes) {
     csv += agency.url + ',' + agency.redirect + ',' + agency.name + ',' + agency.status;
     for (let i = 0; i < variables.length; i++)
         csv += ',' + agency[variables[i]];
@@ -291,3 +303,5 @@ let errorCsv = 'Domain,Error,Email\n';
 for (const error of errorData)
     errorCsv += error.agencyData[0] + ',"' + error.error.replaceAll('\n', ' ') + '",' + error.agencyData[6] + '\n';
 writeFileSync('errors.csv', errorCsv);
+console.log('Done writing');
+exit();
