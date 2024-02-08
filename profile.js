@@ -8,6 +8,7 @@ fetch('data.json').then(res => res.json()).then(data => {
             currentAgency = agency;
             break;
         }
+    const listData = data;
     data = currentAgency;
 
     const successes = [], dangers = [];
@@ -28,8 +29,25 @@ fetch('data.json').then(res => res.json()).then(data => {
     document.getElementById('parent').innerText = data.name;
     document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
     document.getElementById('visit-link').href = data.redirect;
+    const viewRedirect = document.getElementById('view-redirect');
+    if (redirect) {
+        let redirectDomain;
+        for (let i = 0; i < listData.length; i++)
+            if (data.redirect.includes(listData[i].url)) {
+                redirectDomain = listData[i].url;
+                break;
+            }
+        if (redirectDomain) {
+            viewRedirect.href = 'profile.html?domain=' + redirectDomain;
+            viewRedirect.classList.remove('d-none');
+        }
+        else
+            viewRedirect.parentElement.removeChild(viewRedirect);
+    }
+    else
+        viewRedirect.parentElement.removeChild(viewRedirect);
     const percent = Math.round(successes.length / variables.length * 100);
-    if (data.status === 200 && !redirect) {
+    if (data.status == 200 && !redirect) {
         document.getElementById('percent').innerText = percent;
         document.getElementById('amount').innerText = successes.length + ' of ' + variables.length + ' tags ';
         document.getElementById('grade-card').classList.add('text-bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
@@ -37,13 +55,15 @@ fetch('data.json').then(res => res.json()).then(data => {
     }
     else {
         document.getElementById('percent').innerText = '-';
-        if (data.status !== 200)
+        if (data.status != 200)
             document.getElementById('amount').innerText = agencyURL + ' didn\'t respond';
         else
             document.getElementById('amount').innerText = agencyURL + ' redirected';
         document.getElementById('grade').innerText = '-';
     }
 
+    const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
+        x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
     const table = document.getElementById('table');
     for (const success of successes)
         table.innerHTML += `
@@ -55,7 +75,7 @@ fetch('data.json').then(res => res.json()).then(data => {
                     ${descriptions[success[1]]}
                 </td>
                 <td>
-                    <i class="fa-solid fa-circle-check text-success"></i> <span class="d-none d-xl-inline">Active</span>
+                    ${check} <span class="d-none d-xl-inline">Active</span>
                 </td>
             </tr>
         `;
@@ -70,12 +90,15 @@ fetch('data.json').then(res => res.json()).then(data => {
                 </td>
                 <td>
                     <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
-                </td >
+                </td>
             </tr >
         `;
 
-    const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
-        x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
+    if (redirect) {
+        const changelog = document.getElementById('changelog');
+        changelog.parentElement.removeChild(changelog);
+        return;
+    }
     const timeline = document.getElementById('timeline');
     timeline.innerHTML = `
         <li class="timeline-item mb-5">

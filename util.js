@@ -13,10 +13,13 @@ const getGrade = score => {
 const showChangelog = (data, changesToShow, domainsPerChange) => {
     let changes = new Map();
     for (let i = 0; i < data.length; i++) {
-        if (data[i].status != 200)
+        if (data[i].status != 200 || !data[i].redirect.includes(data[i].url))
             continue;
 
         for (let j = 0; j < data[i].history.length; j++) {
+            if (data[i].history[j].status != 200)
+                continue;
+
             let date = new Date(data[i].history[j].time);
             date = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
             const item = {
