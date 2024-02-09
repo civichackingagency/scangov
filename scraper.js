@@ -39,7 +39,6 @@ const csvVariables = [
     'Twitter Image'
 ];
 
-let csv = 'Domain,Redirect,Agency,Status,' + csvVariables.join(',') + '\n';
 properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 
 let historyData = readFileSync('data.json', 'utf8');
@@ -81,32 +80,16 @@ const fetchPromise = agency => {
                 'Connection': 'keep-alive',
             }
         };
+        const fetchStart = Date.now();
         fetch('http://' + agencyData[0], options).then(async res => {
+            const fetchEnd = Date.now();
             let data = await res.text();
             data = data.replaceAll('\'', '"').toLowerCase();
             let url;
 
-            const checkForRefresh = async html => {
-                if (html.includes('http-equiv="refresh"')) {
-                    let index = html.indexOf('http-equiv="refresh"');
-                    index = html.indexOf('url=', index) + 4;
-                    let redirectUrl = html.substring(index);
-                    if (redirectUrl.startsWith('"'))
-                        redirectUrl = redirectUrl.substring(1);
-                    redirectUrl = redirectUrl.substring(0, redirectUrl.indexOf('"'));
-                    if (!redirectUrl.startsWith('//') && redirectUrl.startsWith('/'))
-                        redirectUrl = (url || ('http://' + agencyData[0])) + redirectUrl;
-                    url = redirectUrl;
-
-                    data = (await (await fetch(redirectUrl)).text()).replaceAll('\'', '"').toLowerCase();
-                    await checkForRefresh(data);
-                }
-            }
-            await checkForRefresh(data);
-
             const past = historyData.find(h => h.url == agencyData[0]);
             let history = (past && past.history) ? past.history : [];
-            let oldData = { time: Date.now(), status: past ? past.status : null, /*sitemap: past ? past.sitemap : null,*/ dotgov: past ? past.dotgov : null, https: past ? past.https : null };
+            let oldData = { time: Date.now(), status: past ? past.status : null, /*sitemap: past ? past.sitemap : null,*/ dotgov: past ? past.dotgov : null, https: past ? past.https : null, redirect: past ? past.redirect : null, responseTime: past ? past.responseTime : null };
             if (past)
                 for (let i = 0; i < variables.length; i++)
                     oldData[variables[i]] = past[variables[i]];
@@ -126,8 +109,36 @@ const fetchPromise = agency => {
                 redirect,
                 dotgov: tld == 'gov',
                 https: res.url.startsWith('https://'),
+                responseTime: fetchEnd - fetchStart
                 //sitemap
             };
+
+            let recursions = 0;
+            const checkForRefresh = async html => {
+                if (recursions >= 5) {
+                    for (const variable of variables)
+                        outcome[variable] = false;
+                    history.push(oldData);
+                    outcome.history = history;
+                }
+                else if (html.includes('http-equiv="refresh"')) {
+                    let index = html.indexOf('http-equiv="refresh"');
+                    index = html.indexOf('url=', index) + 4;
+                    let redirectUrl = html.substring(index);
+                    if (redirectUrl.startsWith('"'))
+                        redirectUrl = redirectUrl.substring(1);
+                    redirectUrl = redirectUrl.substring(0, redirectUrl.indexOf('"'));
+                    if (!redirectUrl.startsWith('//') && redirectUrl.startsWith('/'))
+                        redirectUrl = (url || ('http://' + agencyData[0])) + redirectUrl;
+                    url = redirectUrl;
+
+                    data = (await (await fetch(redirectUrl)).text()).replaceAll('\'', '"').toLowerCase();
+                    recursions++;
+                    await checkForRefresh(data);
+                }
+            }
+            await checkForRefresh(data);
+
             for (let i = 0; i < properties.length; i++) {
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
@@ -290,8 +301,9 @@ console.log('Done fetching');
 
 writeFileSync('data.json', JSON.stringify(outcomes));
 
+let csv = 'Domain,Redirect,Agency,Status,Response Time' + csvVariables.join(',') + '\n';
 for (const agency of outcomes) {
-    csv += agency.url + ',' + agency.redirect + ',' + agency.name + ',' + agency.status;
+    csv += agency.url + ',' + agency.redirect + ',' + agency.name + ',' + agency.status + ',' + agency.responseTime;
     for (let i = 0; i < variables.length; i++)
         csv += ',' + agency[variables[i]];
     csv += '\n';
