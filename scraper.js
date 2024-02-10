@@ -80,6 +80,7 @@ const fetchPromise = agency => {
                 'Connection': 'keep-alive',
             }
         };
+        let outcome;
         const fetchStart = Date.now();
         fetch('http://' + agencyData[0], options).then(async res => {
             const fetchEnd = Date.now();
@@ -102,7 +103,7 @@ const fetchPromise = agency => {
 
             //const sitemapReq = await fetch(baseUrl + '/sitemap.xml', options);
             //const sitemap = res.status < 300 && sitemapReq.status < 300 && sitemapReq.url.includes('sitemap.xml');
-            const outcome = {
+            outcome = {
                 status: res.status,
                 url: agencyData[0],
                 name: capitalizeFirstLetters(agencyData[2]),
@@ -178,8 +179,11 @@ const fetchPromise = agency => {
                 history.push(oldData);
             outcome.history = history;
             outcomes.push(outcome);
+
+            return outcome;
         }).catch(err => {
-            const outcome = { status: (err.name === 'AbortError' ? 408 : 500), url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
+            const status = (err.name === 'AbortError' ? 408 : 500);
+            outcome = { status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
             for (let i = 0; i < properties.length; i++)
                 outcome[variables[i]] = false;
             outcomes.push(outcome);
@@ -197,7 +201,11 @@ const fetchPromise = agency => {
             clearTimeout(timeout);
 
             done++;
-            console.log(`Done with ${agencyData[0]} ${done}/${promises.length} ${Math.round(done / promises.length * 100)}% in ${(Math.round((Date.now() - start) / 1000 / 60)).toString().padStart(2, '0')}:${(Math.round((Date.now() - start) / 1000) % 60).toString().padStart(2, '0')}`);
+            let total = 0;
+            for (let i = 0; i < variables.length; i++)
+                if (outcome[variables[i]])
+                    total++;
+            console.log(`Done with ${agencyData[0]} (${outcome.status}, ${total}/${variables.length}) ${done}/${promises.length} ${Math.round(done / promises.length * 100)}% in ${(Math.round((Date.now() - start) / 1000 / 60)).toString().padStart(2, '0')}:${(Math.round((Date.now() - start) / 1000) % 60).toString().padStart(2, '0')}`);
 
             resolve();
         });
