@@ -102,7 +102,7 @@ fetch('data.json').then(res => res.json()).then(data => {
     const timeline = document.getElementById('timeline');
     timeline.innerHTML = `
         <li class="timeline-item mb-5">
-            <h5 class="fw-bold">Grade: ${getGrade(percent)} / Score: ${percent}% (${successes.length} of ${variables.length} tags)</h5>
+            <h5 class="fw-bold">Status: ${data.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${successes.length} of ${variables.length} tags)</h5>
             <p class="mb-1 text-muted">Current</p>
             <p>${successes.map(success => {
         let property = properties[success[1]];
@@ -142,7 +142,7 @@ fetch('data.json').then(res => res.json()).then(data => {
         }
         timeline.innerHTML += `
             <li class="timeline-item mb-5">
-                <h5 class="fw-bold">Grade: ${getGrade(percent)} / Score: ${percent}% (${updateTotal} of ${variables.length} tags)</h5>
+                <h5 class="fw-bold">Status: ${update.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${updateTotal} of ${variables.length} tags)</h5>
                 <p class="mb-1 text-muted">${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}</p>
                 <p>${updateSuccesses.map(success => `<span title="${success}">${check}</span>`).join(' ')} ${updateDangers.map(danger => `<span title="${danger}">${x}</span>`).join(' ')}</p>
             </li>
