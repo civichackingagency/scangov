@@ -16,6 +16,7 @@ const variables = properties.map(property => {
         property = property.substring(property.indexOf('<') + 1);
     return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
 });
+properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 const csvVariables = [
     'Title',
     'Description',
@@ -38,8 +39,6 @@ const csvVariables = [
     'Twitter Description',
     'Twitter Image'
 ];
-
-properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 
 let historyData = readFileSync('data.json', 'utf8');
 historyData = historyData.includes('[') ? JSON.parse(historyData) : [];
@@ -73,7 +72,7 @@ const fetchPromise = agency => {
             method: 'GET',
             signal,
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'User-Agent': 'CivicHackingAgency/1.0 gov-metadata',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*\/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'gzip, deflate, br',
@@ -309,7 +308,7 @@ console.log('Done fetching');
 
 writeFileSync('data.json', JSON.stringify(outcomes));
 
-let csv = 'Domain,Redirect,Agency,Status,Response Time' + csvVariables.join(',') + '\n';
+let csv = 'Domain,Redirect,Agency,Status,Response Time,' + csvVariables.join(',') + '\n';
 for (const agency of outcomes) {
     csv += agency.url + ',' + agency.redirect + ',' + agency.name + ',' + agency.status + ',' + agency.responseTime;
     for (let i = 0; i < variables.length; i++)
