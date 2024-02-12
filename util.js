@@ -49,8 +49,7 @@ const showChangelog = (data, changesToShow, domainsPerChange) => {
     for (const entry of changes.entries())
         changes.set(entry[0], entry[1].sort((a, b) => (b.new - b.old) - (a.new - a.old)))
     const timeline = document.getElementById('timeline');
-    let html = '';
-    changes = [...changes.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+    changes = [...changes.entries()].sort((a, b) => new Date(b[0]) - new Date(a[0]));
     if (changesToShow)
         changes = changes.slice(0, changesToShow);
     for (const change of changes) {

@@ -1,8 +1,9 @@
-const params = new URLSearchParams(location.search);
+let params = new URLSearchParams(location.search);
 const pageNumber = parseInt(params.get('page')) || 1;
-let agencyPage = parseInt(params.get('agency'));
+const federalPage = params.get('federal'), statePage = params.get('state'),
+    agencyPage = parseInt(params.get('agency'));
 const search = params.get('search') || '';
-const searchInput = document.getElementById('search');
+const searchInput = document.getElementById('search'), filterInput = document.getElementById('filter');
 searchInput.value = search;
 
 const table = document.getElementById('table');
@@ -11,7 +12,19 @@ const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" fo
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
 fetch('data.json').then(res => res.json()).then(data => {
-    if (agencyPage) {
+    if (federalPage) {
+        document.getElementById('jumbotron-subtitle').innerText = 'Metadata for federal domains';
+        document.getElementById('level').innerHTML = 'Federal government';
+        data = data.filter(domain => !domain.name.startsWith('State Of'));
+        filterInput.value = 2;
+    }
+    else if (statePage) {
+        document.getElementById('jumbotron-subtitle').innerText = 'Metadata for state domains';
+        document.getElementById('level').innerHTML = 'State governments';
+        data = data.filter(domain => domain.name.startsWith('State Of'));
+        filterInput.value = 3;
+    }
+    else if (agencyPage) {
         document.getElementById('jumbotron-title').innerText = search;
         document.getElementById('jumbotron-subtitle').innerText = 'Domains managed by ' + search;
         document.getElementById('search-form').style.display = 'none';
@@ -48,6 +61,21 @@ fetch('data.json').then(res => res.json()).then(data => {
             location.search = 'search=' + searchInput.value;
         displayAgencies(data, searchInput.value);
     };
+    filterInput.onchange = e => {
+        if (e.target.value == 1) {
+            location.search = '';
+            return;
+        }
+        else if (e.target.value == 2) {
+            params.delete('state');
+            params.set('federal', '1');
+        }
+        else {
+            params.delete('federal');
+            params.set('state', '1');
+        }
+        location.search = params.toString();
+    }
 });
 
 const displayAgencies = (agencies, filter) => {
