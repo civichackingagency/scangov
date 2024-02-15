@@ -277,7 +277,10 @@ let nonDotGov = readFileSync('non-dotgov.csv', 'utf8').split('\n').filter(d => d
 nonDotGov.shift();
 nonDotGov = nonDotGov.map(a => {
     const domain = a.split(',');
-    return domain[0] + ',,' + domain[1] || 'undefined' + ',,,,';
+    let name = domain[1] || 'undefined';
+    if (name.includes(' ('))
+        name = name.substring(0, name.indexOf(' ('));
+    return domain[0] + ',,' + name + ',,,,';
 });
 agencies = agencies.concat(nonDotGov);
 agencies = agencies.filter(a => {
