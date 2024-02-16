@@ -5,15 +5,20 @@ import { exit } from 'process';
 
 const start = Date.now();
 
+// Tags to search for
 let properties = ['<title', 'name="description"', 'name="keywords"', 'name="robots"', 'name="viewport"', 'rel="canonical"',
     'property="og:locale"', 'property="og:site_name"', 'property="og:type"', 'property="og:title"', 'property="og:description"', 'property="og:url"',
     'property="og:image"', 'property="og:image:width"', 'property="og:image:height"', 'property="og:image:alt"', 'name="twitter:site"', 'name="twitter:card"',
     'name="twitter:title"', 'name="twitter:description"', 'name="twitter:image"'];
+// Their names in the code
 const variables = properties.map(property => {
+    // Take the property inside quotes
     if (property.includes('"'))
         property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
+    // or cut out < in title
     else
         property = property.substring(property.indexOf('<') + 1);
+    // Remove symbols and capitalize first letter of each word
     return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
 });
 properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
@@ -40,6 +45,7 @@ const csvVariables = [
     'Twitter Image'
 ];
 
+// Initialize data
 let historyData = readFileSync('data.json', 'utf8');
 historyData = historyData.includes('[') ? JSON.parse(historyData) : [];
 const outcomes = [];
@@ -50,7 +56,7 @@ const capitalizeFirstLetters = str => {
     if (string.length > 0)
         string = string[0].toUpperCase() + string.substring(1);
     for (let i = 0; i < string.length; i++)
-        if (string[i + 1] && string[i] == ' ' || string[i] == '-' || string[i] == '.' && string[i + 1])
+        if (string[i + 1] && (string[i] == ' ' || string[i] == '-' || string[i] == '.') && string[i + 1])
             string = string.substring(0, i + 1) + string[i + 1].toUpperCase() + string.substring(i + 2);
     return string;
 };
@@ -58,8 +64,11 @@ const capitalizeFirstLetters = str => {
 let done = 0;
 const fetchPromise = agency => {
     return new Promise(async (resolve, reject) => {
+        // Parse CSV
         const agencyData = agency.split(',');
         agencyData[0] = agencyData[0].toLowerCase();
+
+        // Timeout requests
         const controller = new AbortController();
         const signal = controller.signal;
         const timeout = setTimeout(() => {
@@ -87,6 +96,7 @@ const fetchPromise = agency => {
             data = data.replaceAll('\'', '"').toLowerCase();
             let url;
 
+            // Get data before update
             const past = historyData.find(h => h.url == agencyData[0]);
             let history = (past && past.history) ? past.history : [];
             let oldData = { time: Date.now(), status: past ? past.status : null, /*sitemap: past ? past.sitemap : null,*/ dotgov: past ? past.dotgov : null, https: past ? past.https : null, redirect: past ? past.redirect : null, responseTime: past ? past.responseTime : null };
@@ -94,14 +104,17 @@ const fetchPromise = agency => {
                 for (let i = 0; i < variables.length; i++)
                     oldData[variables[i]] = past[variables[i]];
             let changed = false;
+
             const redirect = url || res.url;
             let tld = redirect.substring(redirect.indexOf('//') + 2);
             tld = tld.substring(0, tld.indexOf('/'));
             tld = tld.substring(tld.lastIndexOf('.') + 1);
-            const baseUrl = redirect.substring(0, redirect.indexOf('/', redirect.indexOf('//') + 2));
 
+            //const baseUrl = redirect.substring(0, redirect.indexOf('/', redirect.indexOf('//') + 2));
             //const sitemapReq = await fetch(baseUrl + '/sitemap.xml', options);
             //const sitemap = res.status < 300 && sitemapReq.status < 300 && sitemapReq.url.includes('sitemap.xml');
+
+            // Initialize result
             outcome = {
                 status: res.status,
                 url: agencyData[0],
@@ -113,6 +126,7 @@ const fetchPromise = agency => {
                 //sitemap
             };
 
+            // Check if the domain redirects in the http-equiv tag
             let recursions = 0;
             const checkForRefresh = async html => {
                 if (recursions >= 5) {
@@ -139,6 +153,7 @@ const fetchPromise = agency => {
             }
             await checkForRefresh(data);
 
+            // Check for properties
             for (let i = 0; i < properties.length; i++) {
                 if (res.status == 200) {
                     let index = data.match(properties[i].regex);
@@ -157,6 +172,7 @@ const fetchPromise = agency => {
                             openIndex = j;
                             break;
                         }
+                    // Ensure the tag isn't blank
                     const tag = data.substring(openIndex, data.indexOf('>', openIndex));
                     const contentIndex = tag.indexOf((properties[i].string.includes('rel') ? 'href=' : 'content='));
                     const contentLength = properties[i].string.includes('rel') ? 5 : 8;
@@ -174,12 +190,11 @@ const fetchPromise = agency => {
                     changed = true;
             }
 
+            // Push to history
             if (changed && past)
                 history.push(oldData);
             outcome.history = history;
             outcomes.push(outcome);
-
-            return outcome;
         }).catch(err => {
             const status = (err.name === 'AbortError' ? 408 : 500);
             outcome = { status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
@@ -189,7 +204,7 @@ const fetchPromise = agency => {
 
             try {
                 errors.push({ agencyData, error: err.name + ': ' + err.message });
-                writeFileSync('errors.json', JSON.stringify(errors));
+                JSON.stringify(errors);
             }
             catch (err) {
                 errors.pop();
@@ -211,6 +226,7 @@ const fetchPromise = agency => {
     })
 };
 
+// Limit request speed to prevent timeouts
 const throttleFetch = pThrottle({
     limit: 5,
     interval: 1000
@@ -283,6 +299,7 @@ nonDotGov = nonDotGov.map(a => {
     return domain[0] + ',,' + name + ',,,,';
 });
 agencies = agencies.concat(nonDotGov);
+// Don't use archived sites
 agencies = agencies.filter(a => {
     const agencyData = a.split(',');
     return !(agencyData.length < 3 || agencyData[0].length == 0 || agencyData[2] === 'National Archives and Records Administration');
@@ -292,8 +309,10 @@ const promises = [];
 let domain = process.argv[2];
 for (let i = 0; i < agencies.length; i++) {
     const name = agencies[i].split(',')[0].toLowerCase();
+    // Check if only scraping one site
     if (!domain || (domain && domain == name))
         promises.push(throttleFetch(agencies[i]).catch(err => console.error(err)));
+    // Only update the selected domain
     else {
         let agencyData;
         for (let j = 0; j < historyData.length; j++)
