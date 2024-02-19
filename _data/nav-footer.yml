@@ -1,0 +1,32 @@
+docs_list_title: nav-footer
+docs:
+
+- 
+  - title: About
+    url: /about/
+
+  - title: Blog
+    url: /blog/
+
+  - title: Press
+    url: /press/
+
+-
+
+  - title: Changelog
+    url: /changelog/
+
+  - title: Docs
+    url: /docs/
+
+  - title: Help
+    url: /help/
+
+#  - title: About
+#    url: /about/
+
+#  - title: Blog
+#    url: /blog/
+
+#  - title: Press
+#    url: /press/

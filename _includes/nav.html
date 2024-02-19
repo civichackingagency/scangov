@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img
+        src="{{ site.baseurl }}/assets/img/1F1FA-1F1F8.svg"
+        width="30"
+        height="30"
+        class="d-inline-block align-top"
+        alt="U.S. flag">
+      {{ site.title }}
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navContent"
+      aria-controls="navContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav mr-auto">
+        {% for item in site.data.nav.docs %}
+          {% if item.url %}
+            <li class="nav-item">
+              <a class="nav-link {% if page.url contains item.url %}active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        <li class="nav-item" id="toggle-theme">
+          <a
+            class="nav-link"
+            href="javascript:void(0)"
+            onclick="
+            localStorage.setItem('theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+            document.body.setAttribute('data-bs-theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+            document.querySelector('#toggle-theme img').src = '/assets/img/' + (document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
+            ">
+            <img
+              id="theme-icon"
+              src="/assets/img/sun.svg"
+              alt="Toggle theme"
+              style="width: 1rem;">
+            <script>
+              let colorTheme = localStorage.getItem('theme');
+              if (colorTheme) {
+                document.body.setAttribute('data-bs-theme', colorTheme);
+                document.querySelector('#toggle-theme img').src = '/assets/img/' + (colorTheme == 'light' ? 'moon' : 'sun') + '.svg';
+              }
+            </script>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

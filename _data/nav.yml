@@ -1,0 +1,11 @@
+docs_list_title: nav
+docs:
+
+- title: About
+  url: /about/
+
+- title: Changelog
+  url: /changelog/
+
+- title: Docs
+  url: /docs/

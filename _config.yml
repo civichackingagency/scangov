@@ -1,0 +1,76 @@
+title: gov metadata
+description: Scanning government domains
+url: https://gov-metadata.civichackingagency.org
+org: Civic Hacking Agency
+org-url: https://civichackingagency.org
+repo: https://github.com/civichackingagency/gov-metadata
+rss: https://gov-metadata.civichackingagency.org/blog/feed.xml
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Social
+
+github-url: https://github.com/civichackingagency
+linkedin-url: https://www.linkedin.com/company/civic-hacking-agency
+twitter-url: https://twitter.com/civic_hacking
+
+twitter-username: civic_hacking
+twitter: "@civichacking"
+
+# Date/time
+date: "%B %-d, %Y"
+timezone: America/Los_Angeles
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:title
+  pages:
+    output: true
+    permalink: :title
+  posts:
+    output: true
+    permalink: /blog/:title
+
+# Defaults
+defaults:
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: "docs"
+      parent: "docs"
+      short: "true"
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
+      parent: ""
+      short: "true"
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      folder: "Posts"
+      img-path: "posts"
+      parent: "posts"
+      layout: "post"
+      short: "true"
+
+# Pagination
+paginate: 12
+paginate_path: "/blog/page:num/"
+
+# Exclude
+exclude:
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

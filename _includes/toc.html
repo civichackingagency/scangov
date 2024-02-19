@@ -1,0 +1,21 @@
+{% assign chapters = include.html | split: '<h' %}
+{% if chapters.size > 1 %}
+  <div class="d-none d-md-block">
+    <p>On this page</p>
+    <ul class="nav flex-column">
+      {% for chapter in chapters %}
+        {% if chapter != chapters[0] %}
+          {% assign id = chapter | split: 'id="' %}
+          {% assign id = id[1] | split: '"' %}
+          {% assign id = id[0] %}
+          {% assign title = chapter | split: '>' %}
+          {% assign title = title[1] | split: '</h' %}
+          {% assign title = title[0] %}
+          <li class="mb-1">
+            <a href="#{{ id }}">{{ title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

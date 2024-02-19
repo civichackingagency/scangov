@@ -1,0 +1,10 @@
+<script src="{{ site.baseurl }}/assets/bootstrap/js/popper.min.js"></script>
+<script src="{{ site.baseurl }}/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    let theme = localStorage.getItem('theme');
+    if (!theme)
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+    document.body.setAttribute('data-bs-theme', theme);
+    if (theme === 'light')
+      document.getElementById('theme-toggle-icon').outerHTML = `<i class='fa-solid fa-moon' id='theme-toggle-icon'></i>`;
+</script>

@@ -1,0 +1,21 @@
+---
+layout: default
+title: Changelog
+description: Updates to our data and website.
+permalink: /changelog/
+redirect_from:
+  - /changelog.html
+---
+
+<div class="col-12">
+  <section class="py-4">
+    <ul class="timeline" id="timeline"></ul>
+  </section>
+</div>
+<script src="/scripts/util.js"></script>
+<script>
+      fetch('/data/data.json').then(res => res.json()).then(data => {
+        showChangelog(data, 0, 0);
+      });
+</script>
+<script src="/scripts/variables.js"></script></body></html>

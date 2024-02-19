@@ -1,0 +1,81 @@
+<div id="main-content">
+  {% if page.layout == "home" %}
+    <div class="py-5 mb-5 border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            {% if page.description %}
+              <h1 id="jumbotron-title" class="display-5">{{ page.hero-title }}</h1>
+              <p class="lead" id="jumbotron-subtitle">{{ page.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="row">
+          <form id="search-form">
+            <label class="visually-hidden" for="search">
+              Search:
+            </label>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6">
+              <input
+                name="search"
+                type="text"
+                class="form-control form-control-lg mb-3"
+                placeholder="search gov domains"
+                id="search">
+            </div>
+            <div class="border-top mt-4 pt-4 col-12 col-sm-12 col-md-12 col-lg-8 col-xl-6">
+              <label class="pb-2" for="filter">Filter:</label>
+              <select
+                class="form-select form-control-lg"
+                aria-label="Default select example"
+                id="filter">
+                <option value="1">all gov domains</option>
+                <option value="2">federal gov domains</option>
+                <option value="3">state gov domains</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% elsif page.title == "Profile" %}
+    <div class="py-5 mb-5 border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+            <h1 class="display-4" id="jumbotron-title">
+              <span id="site">.gov</span>
+            </h1>
+            <p id="jumbotron-subtitle">
+              Managed by:
+              <a id="parent"></a>
+            </p>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-end">{% include share.html %}</div>
+        </div>
+      </div>
+    </div>
+  {% elsif page.layout == "docs" %}
+    {% if page.title %}
+      <h1 class="display-4">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="lead pb-3 mb-5">{{ page.description }}</p>
+    {% endif %}
+  {% else %}
+    <div class="pt-5 pb-4 mb-5 border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {% if page.title %}
+              <h1 class="display-4">{{ page.title }}</h1>
+            {% endif %}
+            {% if page.description %}
+              <p class="lead">{{ page.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

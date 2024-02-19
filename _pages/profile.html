@@ -1,0 +1,122 @@
+---
+layout: default
+title: Profile
+description: Profile.
+permalink: /profile/
+---
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+    <div class="list-group mb-5">
+      <a href="#" class="list-group-item list-group-item-action disabled">
+        <i class="fa-solid fa-database"></i>
+        <small>Metadata</small>
+      </a>
+      <a
+        class="list-group-item list-group-item-action"
+        id="visit-link"
+        target="_blank"
+        href="">
+        <i class="fa-solid fa-up-right-from-square"></i>
+        <small>Visit site</small>
+      </a>
+      <a
+        class="list-group-item list-group-item-action d-none"
+        id="view-redirect"
+        href="">
+        <i class="fa-solid fa-circle-right"></i>
+        <small>View redirect</small>
+      </a>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+    <h2 class=" h2">Metadata</h2>
+    <p class="text-muted">
+      <small>Updated:
+        <span id="updated"></span>
+        (<a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.json">.json</a>
+        /
+        <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data.csv">
+          .csv</a>) &middot;
+        <a href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+          Request update</a>
+      </small>
+    </p>
+    <div class="row">
+      <div class="card-group mb-2 mt-2">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+          <div
+            class="card mb-3"
+            id="grade-card"
+            style="width: 98%;">
+            <div class="card-header">
+              Grade
+            </div>
+            <div class="card-body text-center pt-5">
+              <p class="display-1" id="grade"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+          <div
+            class="card mb-3 text-bg-dark"
+            id="score"
+            style="width: 98%;">
+            <div class="card-header">
+              Score
+            </div>
+            <div class="card-body text-center">
+              <p class="display-1">
+                <span id="percent"></span>%
+              </p>
+            </div>
+            <div class="card-footer text-center" id="amount"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class=" mt-3">Status</h3>
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-5">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="changelog">
+      <div class="col-12">
+        <h2>Changelog</h2>
+        <section class="py-4">
+          <ul class="timeline" id="timeline"></ul>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class=" mt-3">Documentation</h3>
+        <ul>
+          {% for page in site.docs %}
+            {% if page.keywords == "metadata" %}
+              <li>
+                <a href="{{ page.url }}">{{ page.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/scripts/util.js"></script>
+<script src="/scripts/variables.js"></script>
+<script src="/scripts/profile.js"></script>
+<script src="/scripts/updated.js"></script>

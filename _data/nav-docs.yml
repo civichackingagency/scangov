@@ -1,0 +1,17 @@
+docs_list_title: nav-docs
+docs:
+
+- title: Grades
+  url: grades
+
+- title: Scores
+  url: scores
+
+- title: Status
+  url: status
+
+- title: Data
+  url: data
+
+- title: Metadata
+  url: metadata

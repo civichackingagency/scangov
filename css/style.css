@@ -1,0 +1,142 @@
+@import url('code.css');
+
+@font-face {
+    font-family: "Public Sans Bold";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Public Sans Regular";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Regular.ttf") format("truetype");
+}
+
+/* General */
+
+body {
+    font-family: "Public Sans Regular", sans-serif;
+}
+
+.navbar-brand, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4 {
+    font-family: "Public Sans Bold", sans-serif;
+}
+
+body.docs h2, body.page h2 {
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+body[data-bs-theme="dark"] footer a {
+    color: white;
+}
+
+body[data-bs-theme="dark"] footer img,
+body[data-bs-theme="dark"] ul.navbar-nav img {
+    filter: invert(1);
+}
+
+/* Cards */
+
+.card {
+    width: 100%;
+}
+
+/* Images */
+
+img.loading {
+    width: min(50%, 5rem);
+    display: block;
+    margin: auto;
+    animation: spin 1.75s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+main#home img {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+
+svg {
+    color: var(--bs-body-color) !important;
+    fill: var(--bs-body-color);
+}
+
+svg.fa-circle-check {
+    fill: var(--bs-success);
+}
+
+svg.fa-circle-xmark {
+    fill: var(--bs-danger);
+}
+
+svg.fa-circle-exclamation {
+    fill: var(--bs-warning);
+}
+
+svg.fa-circle-right {
+    fill: var(--bs-info);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle svg {
+    color: var(--bs-btn-color) !important;
+    transition: 0.15s color;
+}
+
+.dropdown-toggle:hover svg, .dropdown-toggle:focus svg {
+    color: var(--bs-btn-hover-color) !important;
+}
+
+#toggle-theme {
+    position: absolute;
+    right: var(--bs-navbar-brand-margin-end);
+}
+
+/* Timeline */
+
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+}
+
+.timeline .timeline-item {
+    position: relative;
+}
+
+.timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .timeline-item:after {
+    background-color: hsl(0, 0%, 90%);
+    left: -38px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+}
+
+/* Anchor links */
+
+h2 a#heading-hashtag, h3 a#heading-hashtag {
+    display: none;
+}
+
+h2:hover a#heading-hashtag, h3:hover a#heading-hashtag {
+    display: revert;
+}
