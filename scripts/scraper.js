@@ -6,22 +6,36 @@ import { exit } from 'process';
 const start = Date.now();
 
 // Tags to search for
-let properties = ['<title', 'name="description"', 'name="keywords"', 'name="robots"', 'name="viewport"', 'rel="canonical"',
+const properties = ['<title', 'name="description"', 'name="keywords"', 'name="robots"', 'name="viewport"', 'rel="canonical"',
     'property="og:locale"', 'property="og:site_name"', 'property="og:type"', 'property="og:title"', 'property="og:description"', 'property="og:url"',
     'property="og:image"', 'property="og:image:width"', 'property="og:image:height"', 'property="og:image:alt"', 'name="twitter:site"', 'name="twitter:card"',
-    'name="twitter:title"', 'name="twitter:description"', 'name="twitter:image"'];
+    'name="twitter:title"', 'name="twitter:description"', 'name="twitter:image"']
+    // Regular expressions for tags
+    .map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
 // Their names in the code
-const variables = properties.map(property => {
-    // Take the property inside quotes
-    if (property.includes('"'))
-        property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
-    // or cut out < in title
-    else
-        property = property.substring(property.indexOf('<') + 1);
-    // Remove symbols and capitalize first letter of each word
-    return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
-});
-properties = properties.map(property => { return { string: property, regex: new RegExp(property.replaceAll('"', '("|)'), 'm') } });
+const variables = [
+    'title',
+    'description',
+    'keywords',
+    'robots',
+    'viewport',
+    'canonical',
+    'ogLocale',
+    'ogSiteName',
+    'ogType',
+    'ogTitle',
+    'ogDescription',
+    'ogUrl',
+    'ogImage',
+    'ogImageWidth',
+    'ogImageHeight',
+    'ogImageAlt',
+    'twitterSite',
+    'twitterCard',
+    'twitterTitle',
+    'twitterDescription',
+    'twitterImage'
+];
 const csvVariables = [
     'Title',
     'Description',
@@ -46,7 +60,7 @@ const csvVariables = [
 ];
 
 // Initialize data
-let historyData = readFileSync('data.json', 'utf8');
+let historyData = readFileSync('data/data.json', 'utf8');
 historyData = historyData.includes('[') ? JSON.parse(historyData) : [];
 const outcomes = [];
 const errors = [];
@@ -76,7 +90,7 @@ const fetchPromise = agency => {
             clearTimeout(timeout);
             controller.abort();
             reject('Timeout');
-        }, 30000);
+        }, 60000);
         const options = {
             method: 'GET',
             signal,
@@ -198,6 +212,15 @@ const fetchPromise = agency => {
         }).catch(err => {
             const status = (err.name === 'AbortError' ? 408 : 500);
             outcome = { status, url: agencyData[0], name: capitalizeFirstLetters(agencyData[2]) };
+            const past = historyData.find(h => h.url == agencyData[0]);
+            let history = (past && past.history) ? past.history : [];
+            let oldData = { time: Date.now(), status: past ? past.status : null, /*sitemap: past ? past.sitemap : null,*/ dotgov: past ? past.dotgov : null, https: past ? past.https : null, redirect: past ? past.redirect : null, responseTime: past ? past.responseTime : null };
+            if (past)
+                for (let i = 0; i < variables.length; i++)
+                    oldData[variables[i]] = past[variables[i]];
+            if (status != past.status)
+                history.push(oldData);
+            outcome.history = history;
             for (let i = 0; i < properties.length; i++)
                 outcome[variables[i]] = false;
             outcomes.push(outcome);
@@ -233,7 +256,7 @@ const throttleFetch = pThrottle({
 })(fetchPromise);
 
 // https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv
-const data = readFileSync('current-federal.csv', 'utf8');
+const data = readFileSync('data/current-federal.csv', 'utf8');
 let agencies = data.split('\n');
 agencies.shift();
 agencies = [
@@ -289,7 +312,7 @@ agencies = [
     'WYO.GOV,,State of Wyoming,,'
 ].concat(agencies);
 // https://github.com/GSA/govt-urls/blob/main/2_govt_urls_federal_only.csv
-let nonDotGov = readFileSync('non-dotgov.csv', 'utf8').split('\n').filter(d => d.split(',')[4] == 'Federal');
+let nonDotGov = readFileSync('data/non-dotgov.csv', 'utf8').split('\n').filter(d => d.split(',')[4] == 'Federal');
 nonDotGov.shift();
 nonDotGov = nonDotGov.map(a => {
     const domain = a.split(',');
@@ -328,7 +351,7 @@ for (let i = 0; i < agencies.length; i++) {
 await Promise.all(promises);
 console.log('Done fetching');
 
-writeFileSync('data.json', JSON.stringify(outcomes));
+writeFileSync('data/data.json', JSON.stringify(outcomes));
 
 let csv = 'Domain,Redirect,Agency,Status,Response Time,' + csvVariables.join(',') + '\n';
 for (const agency of outcomes) {
@@ -337,12 +360,12 @@ for (const agency of outcomes) {
         csv += ',' + agency[variables[i]];
     csv += '\n';
 }
-writeFileSync('data.csv', csv);
+writeFileSync('data/data.csv', csv);
 
-const errorData = JSON.parse(readFileSync('errors.json', 'utf8'));
+const errorData = JSON.parse(readFileSync('data/errors.json', 'utf8'));
 let errorCsv = 'Domain,Error,Email\n';
 for (const error of errorData)
     errorCsv += error.agencyData[0] + ',"' + error.error.replaceAll('\n', ' ') + '",' + error.agencyData[6] + '\n';
-writeFileSync('errors.csv', errorCsv);
+writeFileSync('data/errors.csv', errorCsv);
 console.log('Done writing');
 exit();
