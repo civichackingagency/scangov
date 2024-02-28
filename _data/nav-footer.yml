@@ -22,11 +22,7 @@ docs:
   - title: Help
     url: /help/
 
-#  - title: About
-#    url: /about/
+-
 
-#  - title: Blog
-#    url: /blog/
-
-#  - title: Press
-#    url: /press/
+  - title: Submit an issue
+    url: https://github.com/civichackingagency/gov-metadata/issues/new/choose
