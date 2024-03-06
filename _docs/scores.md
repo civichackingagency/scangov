@@ -2,7 +2,7 @@
 title: "Scores"
 date: 2024-02-17
 description: "How we score."
-keywords: metadata
+keywords: metadata, url, sitemap
 ---
 
 ## Metadata

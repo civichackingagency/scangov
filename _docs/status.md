@@ -2,7 +2,7 @@
 title: "Status"
 date: 2024-02-17
 description: "Status types and descriptions."
-keywords: metadata
+keywords: metadata, url, sitemap
 ---
 
 * Active: Source was found.
