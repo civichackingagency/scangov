@@ -14,21 +14,10 @@ export const options = {
     }
 };
 
-export const capitalizeFirstLetters = str => {
-    let string = str.toLowerCase();
-    if (string.length > 0)
-        string = string[0].toUpperCase() + string.substring(1);
-    for (let i = 0; i < string.length; i++)
-        if (string[i + 1] && (string[i] == ' ' || string[i] == '-' || string[i] == '.') && string[i + 1])
-            string = string.substring(0, i + 1) + string[i + 1].toUpperCase() + string.substring(i + 2);
-    return string;
-};
-
-
 // https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv
-let domains = readFileSync('data/current-federal.csv', 'utf8').split('\n');
-domains.shift();
-domains = [
+let domainsList = readFileSync('data/current-federal.csv', 'utf8').split('\n');
+domainsList.shift();
+domainsList = [
     'ALABAMA.GOV,,State of Alabama,,',
     'ALASKA.GOV,,State of Alaska,,',
     'AZ.GOV,,State of Arizona,,',
@@ -79,7 +68,7 @@ domains = [
     'WV.GOV,,State of West Virginia,,',
     'WISCONSIN.GOV,,State of Wisconsin,,',
     'WYO.GOV,,State of Wyoming,,'
-].concat(domains);
+].concat(domainsList);
 // https://github.com/GSA/govt-urls/blob/main/2_govt_urls_federal_only.csv
 let nonDotGov = readFileSync('data/non-dotgov.csv', 'utf8').split('\n').filter(d => d.split(',')[4] == 'Federal');
 nonDotGov.shift();
@@ -90,42 +79,41 @@ nonDotGov = nonDotGov.map(a => {
         name = name.substring(0, name.indexOf(' ('));
     return domain[0] + ',,' + name + ',,,,';
 });
-domains = domains.concat(nonDotGov);
+domainsList = domainsList.concat(nonDotGov);
 // Don't use archived sites
-domains = domains.filter(a => {
+domainsList = domainsList.filter(a => {
     const domainData = a.split(',');
     return !(domainData.length < 3 || domainData[0].length == 0 || domainData[2] === 'National Archives and Records Administration');
 });
+export const domains = domainsList;
 
-export const scrape = (callback, domain = undefined) => {
-    const fetchPromise = domainData => new Promise((resolve, reject) => {
-        domainData[0] = domainData[0].toLowerCase();
-        callback(domainData, resolve, reject);
+/**
+ * 
+ * @param {Array<{url: string, name: string}>} queue 
+ * @param {Promise} callback 
+ * @param {number} instances 
+ * @param {number} interval 
+ */
+export const scrape = (queue, callback, instances, interval) => {
+    const runningArray = [];
+    return new Promise((resolve, reject) => {
+        let running = 0;
+        const loop = setInterval(() => {
+            if (queue.length === 0 && running === 0) {
+                clearInterval(loop);
+                resolve();
+            }
+
+            const current = running;
+            for (let i = 0; i < (instances - current) && queue.length; i++) {
+                running++;
+                const args = queue.shift();
+                runningArray.push(args);
+                callback(args).then(() => {
+                    running--;
+                    runningArray.splice(runningArray.indexOf(args), 1);
+                });
+            }
+        }, interval);
     });
-
-    const throttleFetch = pThrottle({
-        limit: 5,
-        interval: 1000
-    })(fetchPromise);
-
-    const promises = [];
-    for (let i = 0; i < domains.length; i++) {
-        const name = domains[i].split(',')[0].toLowerCase();
-        // Check if only scraping one site
-        if (!domain || (domain && domain == name))
-            promises.push(throttleFetch(domains[i].split(',')).catch(err => console.error(err)));
-        // Only update the selected domain
-        /*else {
-            let agencyData;
-            for (let j = 0; j < historyData.length; j++)
-                if (historyData[j].url == name) {
-                    agencyData = historyData[j];
-                    break;
-                }
-            if (agencyData)
-                outcomes.push(agencyData);
-        }*/
-    }
-
-    return Promise.all(promises);
 };
