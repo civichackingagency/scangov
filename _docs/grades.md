@@ -2,7 +2,7 @@
 title: "Grades"
 date: 2024-02-17
 description: "How we grade."
-keywords: metadata
+keywords: metadata, url, sitemap
 ---
 
 Grades are based on scores, converted into the standard A-F academic grading scale.

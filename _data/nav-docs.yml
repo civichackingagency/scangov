@@ -13,8 +13,11 @@ docs:
 - title: Data
   url: data
 
+- title: URL
+  url: url
+
 - title: Metadata
   url: metadata
 
-- title: URL
-  url: url
+- title: Sitemap
+  url: sitemap

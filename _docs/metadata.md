@@ -5,6 +5,10 @@ description: "About metadata and tags we validate."
 keywords: metadata
 ---
 
+## Guidance
+
+All government websites must have basic metadata.
+
 ## About
 
 Website metadata refers to the information embedded in a web page's HTML code that provides additional details about the webpage. This metadata is not visible on the webpage itself but is used by browsers, search engines, and other web services to understand and categorize the content. (<a href="https://developer.mozilla.org">Mozilla Developer Network</a>)
