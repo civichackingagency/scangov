@@ -4,7 +4,7 @@ title: Changelog
 description: Updates to our data and website.
 permalink: /changelog/
 redirect_from:
-  - /changelog.html
+- /changelog.html
 ---
 
 <div class="col-12">
@@ -14,8 +14,11 @@ redirect_from:
 </div>
 <script src="/scripts/util.js"></script>
 <script>
-      fetch('/data/data.json').then(res => res.json()).then(data => {
-        showChangelog(data, 0, 0);
-      });
+  fetch('/data/metadata.json').then(res => res.json()).then(data => {
+    showChangelog(data, 0, 0);
+  });
 </script>
-<script src="/scripts/variables.js"></script></body></html>
+<script src="/scripts/variables.js"></script>
+</body>
+
+</html>
