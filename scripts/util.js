@@ -10,6 +10,14 @@ const getGrade = score => {
     return 'F';
 };
 
+const getColor = score => {
+    if (score >= 90)
+        return 'success';
+    if (score >= 70)
+        return 'warning';
+    return 'danger';
+}
+
 const showChangelog = (data, changesToShow, domainsPerChange) => {
     let changes = new Map();
     for (let i = 0; i < data.length; i++) {

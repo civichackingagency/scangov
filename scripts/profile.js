@@ -1,5 +1,8 @@
 const agencyURL = new URLSearchParams(location.search).get('domain');
-const table = document.getElementById('table'), gradeCard = document.getElementById('grade-card'), docs = document.getElementById('docs');
+const table = document.getElementById('table'),
+    gradeCard = document.getElementById('grade-card'),
+    docs = document.getElementById('docs'),
+    pageTitle = document.getElementById('page');
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
@@ -12,12 +15,14 @@ const load = async page => {
         table.removeChild(table.lastChild);
     if (gradeCard.classList.length === 3)
         gradeCard.classList.remove('text-bg-success', 'text-bg-warning', 'text-bg-danger');
+    document.getElementById('specific').classList = '';
+    document.getElementById('overview').classList = 'd-none';
     document.getElementById('amount').style.display = 'initial';
     document.getElementById('changelog').style.display = 'none';
     docs.innerHTML = '';
 
     if (page === '#url') {
-        document.getElementById('page').innerText = 'URL';
+        pageTitle.innerText = 'URL';
         if (!urlLoaded) {
             const data = await (await fetch('/data/url.json')).json();
             for (const domain of data)
@@ -97,7 +102,7 @@ const load = async page => {
         `;
     }
     else if (page === '#sitemap') {
-        document.getElementById('page').innerText = 'Sitemap';
+        pageTitle.innerText = 'Sitemap';
         if (!sitemapLoaded) {
             const data = await (await fetch('/data/sitemap.json')).json();
             for (const domain of data)
@@ -115,14 +120,25 @@ const load = async page => {
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
         document.getElementById('visit-link').href = data.redirect;
 
-        const score = ((data.status === 200) + data.xml) / 2;
-        document.getElementById('percent').innerText = Math.round(100 * score);
+        const score = 100 * ((data.status === 200) + data.xml) / 2;
+        document.getElementById('percent').innerText = Math.round(score);
         document.getElementById('amount').style.display = 'none';
-        gradeCard.classList.add('text-bg-' + (score >= 0.9 ? 'success' : score >= 0.7 ? 'warning' : 'danger'));
-        document.getElementById('grade').innerText = getGrade(score * 100);
+        gradeCard.classList.add('text-bg-' + getColor(score));
+        document.getElementById('grade').innerText = getGrade(score);
 
         //const pdfs = data.items > 0 ? data.pdfs / data.items : 1;
         table.innerHTML += `
+            <tr>
+                <td>
+                    <pre><code>Status</code></pre>
+                </td>
+                <td>
+                    The HTTP status code of /sitemap.xml.
+                </td>
+                <td>
+                    <span class="badge d-xl-inline text-bg-${data.status < 300 ? 'success' : 'danger'}">${data.status}</span>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <pre><code>XML</code></pre>
@@ -134,7 +150,7 @@ const load = async page => {
                     <i class="fa-solid ${data.xml ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-none d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
-            `;
+        `;
         /*
         <tr>
             <td>
@@ -161,10 +177,10 @@ const load = async page => {
             </li>
         `;
     }
-    else {
+    else if (page === '#metadata') {
         document.getElementById('changelog').style.display = 'initial';
-        document.getElementById('page').innerText = 'Metadata';
-        if (!metadataLoaded) {
+        pageTitle.innerText = 'Metadata';
+        if (!metadataJson) {
             const data = await (await fetch('/data/metadata.json')).json();
             let currentAgency;
             for (const agency of data)
@@ -220,7 +236,7 @@ const load = async page => {
         if (data.status == 200 && !redirect) {
             document.getElementById('percent').innerText = percent;
             document.getElementById('amount').innerText = successes.length + ' of ' + variables.length + ' tags';
-            gradeCard.classList.add('text-bg-' + (percent >= 90 ? 'success' : percent >= 70 ? 'warning' : 'danger'));
+            gradeCard.classList.add('text-bg-' + getColor(percent));
             document.getElementById('grade').innerText = getGrade(percent);
         }
         else {
@@ -333,6 +349,79 @@ const load = async page => {
                 <a href="/docs/status">Status</a>
             </li>
         `;
+    }
+    else {
+        document.getElementById('specific').classList = 'd-none';
+        document.getElementById('overview').classList = '';
+        pageTitle.innerText = 'Overview';
+
+        const metadataCard = document.getElementById('metadata-card');
+        if (metadataCard.classList.length > 2)
+            return;
+
+        const showMetadata = () => {
+            let total = 0;
+            for (const variable of variables)
+                if (metadataJson[variable])
+                    total++;
+            document.getElementById('metadata').innerText = getGrade(total / variables.length * 100);
+            metadataCard.classList.add('text-bg-' + getColor(Math.round(total / variables.length * 100)));
+        };
+        if (!metadataJson)
+            fetch('/data/metadata.json').then(res => res.json()).then(data => {
+                let currentDomain;
+                for (const domain of data)
+                    if (domain.url == agencyURL) {
+                        currentDomain = domain;
+                        break;
+                    }
+                metadataJson = currentDomain;
+                showMetadata();
+            });
+        else
+            showMetadata();
+
+        const showUrl = () => {
+            document.getElementById('url').innerText = getGrade(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3);
+            document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3)));
+        };
+        if (!urlLoaded)
+            fetch('/data/url.json').then(res => res.json()).then(data => {
+                let currentDomain;
+                for (const domain of data)
+                    if (domain.url == agencyURL) {
+                        currentDomain = domain;
+                        break;
+                    }
+                urlJson = currentDomain;
+                urlLoaded = true;
+                showUrl();
+            });
+        else
+            showUrl();
+
+        const showSitemap = () => {
+            document.getElementById('site').innerText = sitemapJson.url;
+            document.getElementById('parent').innerText = sitemapJson.name;
+
+            const percent = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
+            document.getElementById('sitemap').innerText = getGrade(percent);
+            document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(percent));
+        };
+        if (!sitemapLoaded)
+            fetch('/data/sitemap.json').then(res => res.json()).then(data => {
+                let currentDomain;
+                for (const domain of data)
+                    if (domain.url == agencyURL) {
+                        currentDomain = domain;
+                        break;
+                    }
+                sitemapJson = currentDomain;
+                sitemapLoaded = true;
+                showSitemap();
+            });
+        else
+            showSitemap();
     }
 };
 
