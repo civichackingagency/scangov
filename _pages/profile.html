@@ -8,6 +8,10 @@ permalink: /profile/
 <div class="row">
   <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
     <div class="list-group mb-5">
+      <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa-solid fa-house"></i>
+        <small>Dashboard</small>
+      </a>
       <a href="#metadata" class="list-group-item list-group-item-action">
         <i class="fa-solid fa-database"></i>
         <small>Metadata</small>
@@ -35,71 +39,107 @@ permalink: /profile/
     <p class="text-muted">
       <small>Updated:
         <span id="updated"></span>
-        (<a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/data.json">.json</a>
+        (<a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.json">.json</a>
         /
-        <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/data.csv">
+        <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.csv">
           .csv</a>) &middot;
         <a
-          href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+          href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
           Request update</a>
       </small>
     </p>
-    <div class="row">
-      <div class="card-group mb-2 mt-2">
+    <div id="overview" class="d-none">
+      <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-          <div class="card mb-3" id="grade-card">
+          <a class="card mb-3" id="metadata-card" href="#metadata">
             <div class="card-header">
-              Grade
+              Metadata
             </div>
             <div class="card-body text-center pt-5">
-              <p class="display-1" id="grade"></p>
+              <p class="display-1" id="metadata"></p>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-          <div class="card mb-3 text-bg-dark" id="score">
+          <a class="card mb-3" id="url-card" href="#url">
             <div class="card-header">
-              Score
+              URL
             </div>
-            <div class="card-body text-center">
-              <p class="display-1">
-                <span id="percent"></span>%
-              </p>
+            <div class="card-body text-center pt-5">
+              <p class="display-1" id="url"></p>
             </div>
-            <div class="card-footer text-center" id="amount"></div>
+        </div>
+        </a>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+          <a class="card mb-3" id="sitemap-card" href="#sitemap">
+            <div class="card-header">
+              Sitemap
+            </div>
+            <div class="card-body text-center pt-5">
+              <p class="display-1" id="sitemap"></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="specific">
+      <div class="row">
+        <div class="card-group mb-2 mt-2">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+            <div class="card mb-3" id="grade-card">
+              <div class="card-header">
+                Grade
+              </div>
+              <div class="card-body text-center pt-5">
+                <p class="display-1" id="grade"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+            <div class="card mb-3 text-bg-dark" id="score">
+              <div class="card-header">
+                Score
+              </div>
+              <div class="card-body text-center">
+                <p class="display-1">
+                  <span id="percent"></span>%
+                </p>
+              </div>
+              <div class="card-footer text-center" id="amount"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 class=" mt-3">Status</h3>
-        <div class="table-responsive table-hover">
-          <table class="table table-responsive table-bordered table-hover mt-3 mb-5">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Tag</th>
-                <th scope="col">Description</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody id="table"></tbody>
-          </table>
+      <div class="row">
+        <div class="col-12">
+          <h3 class=" mt-3">Status</h3>
+          <div class="table-responsive table-hover">
+            <table class="table table-responsive table-bordered table-hover mt-3 mb-5">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Tag</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="table"></tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row" id="changelog">
-      <div class="col-12">
-        <h2>Changelog</h2>
-        <section class="py-4">
-          <ul class="timeline" id="timeline"></ul>
-        </section>
+      <div class="row" id="changelog">
+        <div class="col-12">
+          <h2>Changelog</h2>
+          <section class="py-4">
+            <ul class="timeline" id="timeline"></ul>
+          </section>
+        </div>
       </div>
-    </div>
-    <div class="col-12">
-      <h3 class="mt-3">Documentation</h3>
-      <ul id="docs">
-      </ul>
+      <div class="col-12">
+        <h3 class="mt-3">Documentation</h3>
+        <ul id="docs">
+        </ul>
+      </div>
     </div>
   </div>
 </div>
