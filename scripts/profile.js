@@ -2,7 +2,10 @@ const agencyURL = new URLSearchParams(location.search).get('domain');
 const table = document.getElementById('table'),
     gradeCard = document.getElementById('grade-card'),
     docs = document.getElementById('docs'),
-    pageTitle = document.getElementById('page');
+    pageTitle = document.getElementById('page'),
+    changelog = document.getElementById('changelog'),
+    json = document.getElementById('data-json'),
+    csv = document.getElementById('data-csv');
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
@@ -17,12 +20,18 @@ const load = async page => {
         gradeCard.classList.remove('text-bg-success', 'text-bg-warning', 'text-bg-danger');
     document.getElementById('specific').classList = '';
     document.getElementById('overview').classList = 'd-none';
+    document.getElementById('data-specific').classList = '';
+    document.getElementById('data-overview').classList = 'd-none';
     document.getElementById('amount').style.display = 'initial';
     document.getElementById('changelog').style.display = 'none';
     docs.innerHTML = '';
 
     if (page === '#url') {
         pageTitle.innerText = 'URL';
+        changelog.style.display = 'none';
+        json.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/url.json';
+        csv.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/url.csv';
+
         if (!urlLoaded) {
             const data = await (await fetch('/data/url.json')).json();
             for (const domain of data)
@@ -103,6 +112,10 @@ const load = async page => {
     }
     else if (page === '#sitemap') {
         pageTitle.innerText = 'Sitemap';
+        changelog.style.display = 'none';
+        json.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/sitemap.json';
+        csv.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/sitemap.csv';
+
         if (!sitemapLoaded) {
             const data = await (await fetch('/data/sitemap.json')).json();
             for (const domain of data)
@@ -118,7 +131,6 @@ const load = async page => {
         document.getElementById('site').innerText = data.url;
         document.getElementById('parent').innerText = data.name;
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
-        document.getElementById('visit-link').href = data.redirect;
 
         const score = 100 * ((data.status === 200) + data.xml) / 2;
         document.getElementById('percent').innerText = Math.round(score);
@@ -178,8 +190,11 @@ const load = async page => {
         `;
     }
     else if (page === '#metadata') {
-        document.getElementById('changelog').style.display = 'initial';
         pageTitle.innerText = 'Metadata';
+        changelog.style.display = 'initial';
+        json.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.json';
+        csv.href = 'https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.csv';
+
         if (!metadataJson) {
             const data = await (await fetch('/data/metadata.json')).json();
             let currentAgency;
@@ -213,7 +228,6 @@ const load = async page => {
         document.getElementById('site').innerText = data.url;
         document.getElementById('parent').innerText = data.name;
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
-        document.getElementById('visit-link').href = data.redirect;
         /*const viewRedirect = document.getElementById('view-redirect');
         if (redirect) {
             let redirectDomain;
@@ -353,6 +367,8 @@ const load = async page => {
     else {
         document.getElementById('specific').classList = 'd-none';
         document.getElementById('overview').classList = '';
+        document.getElementById('data-specific').classList = 'd-none';
+        document.getElementById('data-overview').classList = '';
         pageTitle.innerText = 'Overview';
 
         const metadataCard = document.getElementById('metadata-card');
@@ -395,6 +411,7 @@ const load = async page => {
                     }
                 urlJson = currentDomain;
                 urlLoaded = true;
+                document.getElementById('visit-link').href = data.redirect;
                 showUrl();
             });
         else
@@ -403,6 +420,7 @@ const load = async page => {
         const showSitemap = () => {
             document.getElementById('site').innerText = sitemapJson.url;
             document.getElementById('parent').innerText = sitemapJson.name;
+            document.getElementById('parent').href = '/?search=' + sitemapJson.name + '&agency=1';
 
             const percent = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
             document.getElementById('sitemap').innerText = getGrade(percent);
