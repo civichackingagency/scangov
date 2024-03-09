@@ -22,7 +22,6 @@ const load = async page => {
     document.getElementById('overview').classList = 'd-none';
     document.getElementById('data-specific').classList = '';
     document.getElementById('data-overview').classList = 'd-none';
-    document.getElementById('amount').style.display = 'initial';
     document.getElementById('changelog').style.display = 'none';
     docs.innerHTML = '';
 
@@ -68,21 +67,10 @@ const load = async page => {
                     <pre><code>HTTPS</code></pre>
                 </td> 
                 <td>
-                    A secure data transfer protocol.    
+                    Privacy and integrity protection.    
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.https ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-none d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.https ? 'Active' : 'Missing'}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre><code>.gov</code></pre>
-                </td> 
-                <td>
-                    An authoritative top level domain.    
-                </td>
-                <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.dotgov ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-none d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.dotgov ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.https ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.https ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
             <tr>
@@ -90,10 +78,21 @@ const load = async page => {
                     <pre><code>www</code></pre>
                 </td> 
                 <td>
-                    www canonicalization.    
+                    Resolves with www and non-www input.  
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.www ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-none d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.www ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.www ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.www ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>sTLD</code></pre>
+                </td> 
+                <td>
+                    Sponsored top-level domain (.gov / .edu / .mil).   
+                </td>
+                <td>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.dotgov ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.dotgov ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
         `;
@@ -133,8 +132,8 @@ const load = async page => {
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
 
         const score = 100 * ((data.status === 200) + data.xml) / 2;
-        document.getElementById('percent').innerText = Math.round(score);
-        document.getElementById('amount').style.display = 'none';
+        document.getElementById('percent').innerText = score;
+        document.getElementById('amount').innerText = 2 * score / 100 + ' of 2 elements';
         gradeCard.classList.add('text-bg-' + getColor(score));
         document.getElementById('grade').innerText = getGrade(score);
 
@@ -145,10 +144,10 @@ const load = async page => {
                     <pre><code>Status</code></pre>
                 </td>
                 <td>
-                    The HTTP status code of /sitemap.xml.
+                    The HTTP status of /sitemap.xml is OK.
                 </td>
                 <td>
-                    <span class="badge d-xl-inline text-bg-${data.status < 300 ? 'success' : 'danger'}">${data.status}</span>
+                    <i class="fa-solid ${data.status < 300 ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status < 300 ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
             <tr>
@@ -156,10 +155,10 @@ const load = async page => {
                     <pre><code>XML</code></pre>
                 </td>
                 <td>
-                    If the file type of the sitemap is XML.
+                    The sitemap file type is XML.
                 </td>
                 <td>
-                    <i class="fa-solid ${data.xml ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-none d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.xml ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
         `;
@@ -272,7 +271,7 @@ const load = async page => {
                         ${descriptions[success[1]]}
                     </td>
                     <td>
-                        ${check} <span class="d-none d-xl-inline">Active</span>
+                        ${check} <span class="d-xl-inline">Active</span>
                     </td>
                 </tr>
             `;
@@ -286,7 +285,7 @@ const load = async page => {
                         ${descriptions[danger[1]]}    
                     </td>
                     <td>
-                        <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-none d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
+                        <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
                     </td>
                 </tr>
             `;
@@ -380,7 +379,7 @@ const load = async page => {
             for (const variable of variables)
                 if (metadataJson[variable])
                     total++;
-            document.getElementById('metadata').innerText = getGrade(total / variables.length * 100);
+            document.getElementById('metadata-grade').innerText = getGrade(total / variables.length * 100);
             metadataCard.classList.add('text-bg-' + getColor(Math.round(total / variables.length * 100)));
         };
         if (!metadataJson)
@@ -398,7 +397,7 @@ const load = async page => {
             showMetadata();
 
         const showUrl = () => {
-            document.getElementById('url').innerText = getGrade(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3);
+            document.getElementById('url-grade').innerText = getGrade(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3);
             document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3)));
         };
         if (!urlLoaded)
@@ -423,7 +422,7 @@ const load = async page => {
             document.getElementById('parent').href = '/?search=' + sitemapJson.name + '&agency=1';
 
             const percent = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
-            document.getElementById('sitemap').innerText = getGrade(percent);
+            document.getElementById('sitemap-grade').innerText = getGrade(percent);
             document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(percent));
         };
         if (!sitemapLoaded)

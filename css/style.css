@@ -59,6 +59,11 @@ body[data-bs-theme="dark"] ul.navbar-nav img {
 
 a.card {
     text-decoration: none;
+    transition: 0.25s filter;
+}
+
+a.card:hover {
+    filter: brightness(1.25);
 }
 
 /* Images */
