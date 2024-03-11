@@ -368,7 +368,7 @@ const load = async page => {
         document.getElementById('overview').classList = '';
         document.getElementById('data-specific').classList = 'd-none';
         document.getElementById('data-overview').classList = '';
-        pageTitle.innerText = 'Overview';
+        pageTitle.innerText = 'Dashboard';
 
         const metadataCard = document.getElementById('metadata-card');
         if (metadataCard.classList.length > 2)

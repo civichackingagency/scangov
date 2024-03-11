@@ -1,8 +1,8 @@
 ---
 title: "Sitemap"
 date: 2024-03-05
-description: "Inform search engines about web pages available for crawling."
-keywords: sitemap
+description: "Directory of website pages."
+keywords: sitemap, grades, scores
 ---
 
 ## Guidance
@@ -21,14 +21,12 @@ The sitemap is an Extensible Markup Language (XML) file on the website’s root 
 * how often it usually changes
 * how important it is, relative to other URLs in the site
 
-## Example sitemaps
-
-Example sitemaps:
+## Examples
 
 * [https://www.usa.gov/sitemap.xml](https://www.usa.gov/sitemap.xml)
 * [https://digital.gov/sitemap.xml](https://digital.gov/sitemap.xml)
 
-## Example code
+## Code
 
 Example sitemap code:
 

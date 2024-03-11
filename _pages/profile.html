@@ -9,7 +9,7 @@ permalink: /profile/
   <div class="list-group mb-5">
     <a href="#/" class="list-group-item list-group-item-action">
       <i class="fa-solid fa-gauge"></i>
-      <small>Overview</small>
+      <small>Dashboard</small>
     </a>
     <a href="#metadata" class="list-group-item list-group-item-action">
       <i class="fa-solid fa-database"></i>
@@ -23,18 +23,25 @@ permalink: /profile/
       <i class="fa-solid fa-map"></i>
       <small>Sitemap</small>
     </a>
-    <a class="list-group-item list-group-item-action d-none" id="view-redirect" href="">
+    <a
+      class="list-group-item list-group-item-action d-none"
+      id="view-redirect"
+      href="">
       <i class="fa-solid fa-circle-right"></i>
       <small>View redirect</small>
     </a>
-    <a class="list-group-item list-group-item-action" id="visit-link" target="_blank" href="">
+    <a
+      class="list-group-item list-group-item-action"
+      id="visit-link"
+      target="_blank"
+      href="">
       <i class="fa-solid fa-up-right-from-square"></i>
       <small>Visit site</small>
     </a>
   </div>
 </div>
 <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-  <h2 class="h2" id="page">Overview</h2>
+  <h2 class="h2" id="page">Dashboard</h2>
   <p class="text-muted">
     <small>Updated:
       <span id="updated"></span>
@@ -42,22 +49,28 @@ permalink: /profile/
         <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/" target="_blank">Data</a>
       </span>
       <span id="data-specific">
-        <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.json" id="data-json"
+        <a
+          href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.json"
+          id="data-json"
           target="_blank">.json</a>
         /
-        <a href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.csv" id="data-csv"
+        <a
+          href="https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.csv"
+          id="data-csv"
           target="_blank">
           .csv</a>
       </span>) &middot;
-      <a
-        href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+      <a href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
         Request update</a>
     </small>
   </p>
   <div id="overview" class="d-none">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-        <a class="card mb-3" id="metadata-card" href="#metadata">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+        <a
+          class="card mb-3"
+          id="metadata-card"
+          href="#metadata">
           <div class="card-header">
             Metadata
           </div>
@@ -66,8 +79,11 @@ permalink: /profile/
           </div>
         </a>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-        <a class="card mb-3" id="url-card" href="#url">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+        <a
+          class="card mb-3"
+          id="url-card"
+          href="#url">
           <div class="card-header">
             URL
           </div>
@@ -76,8 +92,11 @@ permalink: /profile/
           </div>
         </a>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-        <a class="card mb-3" id="sitemap-card" href="#sitemap">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+        <a
+          class="card mb-3"
+          id="sitemap-card"
+          href="#sitemap">
           <div class="card-header">
             Sitemap
           </div>
@@ -90,7 +109,7 @@ permalink: /profile/
   </div>
   <div id="specific">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
         <div class="card mb-3" id="grade-card">
           <div class="card-header">
             Grade
@@ -100,7 +119,7 @@ permalink: /profile/
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
         <div class="card mb-3 text-bg-dark" id="score">
           <div class="card-header">
             Score
@@ -141,8 +160,7 @@ permalink: /profile/
     </div>
     <div class="col-12">
       <h3 class="mt-3">Documentation</h3>
-      <ul id="docs">
-      </ul>
+      <ul id="docs"></ul>
     </div>
   </div>
 </div>

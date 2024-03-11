@@ -1,6 +1,9 @@
 docs_list_title: nav-docs
 docs:
 
+- title: Guidance
+  url: guidance
+
 - title: Grades
   url: grades
 
@@ -15,6 +18,15 @@ docs:
 
 - title: URL
   url: url
+
+- title: HTTPS
+  url: https
+
+- title: Canonicalization
+  url: canonicalization
+
+- title: sTLD
+  url: stld
 
 - title: Metadata
   url: metadata

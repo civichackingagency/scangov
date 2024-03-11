@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
-  <div class="container">
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
+  <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <img
         src="{{ site.baseurl }}/assets/img/1F1FA-1F1F8.svg"
@@ -10,47 +10,28 @@
       {{ site.title }}
     </a>
     <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navContent"
-      aria-controls="navContent"
+      aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      aria-label="Toggle navigation">
+      aria-label="Toggle navigation"
+      class="navbar-toggler ml-auto collapsed"
+      data-target="#navbarSupportedContent"
+      data-toggle="collapse"
+      type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navContent">
-      <ul class="navbar-nav mr-auto">
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         {% for item in site.data.nav.docs %}
           {% if item.url %}
-            <li class="nav-item">
-              <a class="nav-link {% if page.url contains item.url %}active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-item nav-link mx-1 text-white {% if page.url contains item.url %}active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">
+                <i class="fa-solid fa-{{ item.icon }}"></i>
+                {{ item.title }}
+              </a>
             </li>
           {% endif %}
         {% endfor %}
-        <li class="nav-item" id="toggle-theme">
-          <a
-            class="nav-link"
-            href="javascript:void(0)"
-            onclick="
-            localStorage.setItem('theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-            document.body.setAttribute('data-bs-theme', document.body.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-            document.querySelector('#toggle-theme img').src = '/assets/img/' + (document.body.getAttribute('data-bs-theme') == 'light' ? 'moon' : 'sun') + '.svg';
-            ">
-            <img
-              id="theme-icon"
-              src="/assets/img/sun.svg"
-              alt="Toggle theme"
-              style="width: 1rem;">
-            <script>
-              let colorTheme = localStorage.getItem('theme');
-              if (colorTheme) {
-                document.body.setAttribute('data-bs-theme', colorTheme);
-                document.querySelector('#toggle-theme img').src = '/assets/img/' + (colorTheme == 'light' ? 'moon' : 'sun') + '.svg';
-              }
-            </script>
-          </a>
-        </li>
       </ul>
     </div>
   </div>

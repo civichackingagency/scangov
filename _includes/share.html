@@ -1,6 +1,6 @@
 <div class="dropdown">
   <button
-    class="btn btn-outline-secondary dropdown-toggle"
+    class="btn dropdown-toggle"
     type="button"
     id="dropdownMenuButton"
     data-bs-toggle="dropdown"
@@ -54,10 +54,10 @@
   </ul>
 </div>
 <script>
-  const params = new URLSearchParams(location.search);
-  let url = params.get('domain');
-  if (!url && params.get('agency') == 1)
-      url = params.get('search');
+  const shareParams = new URLSearchParams(location.search);
+  let url = shareParams.get('domain');
+  if (!url && shareParams.get('agency') == 1)
+      url = shareParams.get('search');
   document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(location.href)}&title=${document.title}&summary=${url}%20website%20metadata%20information.&source=Civic%20Hacking%20Agency`;
   document.getElementById('twitter').href = `https://twitter.com/intent/tweet?text=${url}%20website%20metadata%20information.&via=civic_hacking&url=${encodeURIComponent(location.href)}`;
   document.getElementById('facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`;

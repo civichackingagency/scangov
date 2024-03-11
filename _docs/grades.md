@@ -2,10 +2,10 @@
 title: "Grades"
 date: 2024-02-17
 description: "How we grade."
-keywords: metadata, url, sitemap
+keywords: metadata, url, sitemap, scores
 ---
 
-Grades are based on scores, converted into the standard A-F academic grading scale.
+Grades are based on [scores](/docs/scores), converted into the standard A-F academic grading scale.
 
 * A: 90 - 100
 * B: 80 - 89

@@ -2,7 +2,7 @@
 title: "Metadata"
 date: 2024-02-17
 description: "About metadata and tags we validate."
-keywords: metadata
+keywords: metadata, grades, scores
 ---
 
 ## Guidance

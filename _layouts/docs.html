@@ -6,20 +6,20 @@ layout: docs
 {% include nav.html %}
 <main>
   <article>
-    <div class="container mt-5">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-          <ul class="nav flex-column">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border-end py-5 g-0">
+          <ul class="nav flex-column list-group border-0">
             {% for item in site.data.nav-docs.docs %}
-              <li class="mb-1">
-                <a href="{{ site.baseurl }}{{ item.url }}">
+              <li class="list-group-flush border-0 border-bottom">
+                <a href="{{ site.baseurl }}{{ item.url }}" class="list-group-item list-group-item-action">
                   {{ item.title }}
                 </a>
               </li>
             {% endfor %}
           </ul>
         </div>
-        <div class="post col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+        <div class="post col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 py-5">
           <div class="container">
             <div class="row">
               <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">

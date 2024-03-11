@@ -1,11 +1,22 @@
 docs_list_title: nav
 docs:
 
-- title: About
-  url: /about/
+#- title: Domains
+#  icon: fa-solid fa-laptop
+#  url: /domains/
+
+#- title: Filter
+#  icon: fa-solid fa-filter
+#  url: /filter/
 
 - title: Changelog
+  icon: fa-solid fa-code
   url: /changelog/
 
 - title: Docs
+  icon: fa-solid fa-book
   url: /docs/
+
+- title: About
+  icon: fa-solid fa-circle-info
+  url: /about/

@@ -5,8 +5,8 @@
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {% if page.description %}
-              <h1 id="jumbotron-title" class="display-5">{{ page.hero-title }}</h1>
-              <p class="lead" id="jumbotron-subtitle">{{ page.description }}</p>
+              <h1 id="jumbotron-title" class="display-5 mb-3">{{ page.hero-title }}</h1>
+              <!-- <p class="lead" id="jumbotron-subtitle">{{ page.description }}</p> -->
             {% endif %}
           </div>
         </div>
@@ -39,11 +39,11 @@
       </div>
     </div>
   {% elsif page.title == "Profile" %}
-    <div class="py-5 mb-5 border-bottom">
-      <div class="container">
+    <div class="py-4 mb-3 border-bottom">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-            <h1 class="display-4" id="jumbotron-title">
+          <div class="col-12">
+            <h1 class="display-6" id="jumbotron-title">
               <span id="site">.gov</span>
             </h1>
             <p id="jumbotron-subtitle">
@@ -51,13 +51,12 @@
               <a id="parent"></a>
             </p>
           </div>
-          <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 text-end">{% include share.html %}</div>
         </div>
       </div>
     </div>
   {% elsif page.layout == "docs" %}
     {% if page.title %}
-      <h1 class="display-4">{{ page.title }}</h1>
+      <h1 class="display-5">{{ page.title }}</h1>
     {% endif %}
     {% if page.description %}
       <p class="lead pb-3 mb-5">{{ page.description }}</p>
