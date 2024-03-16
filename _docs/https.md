@@ -17,6 +17,8 @@ HTTPS is indicated by a lock icon and/or `https://` in the browser bar.
 
 ## Examples
 
+Example government websites with HTTPS:
+
 * <https://digital.gov>
 * <https://whitehouse.gov>
 

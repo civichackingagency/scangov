@@ -141,4 +141,4 @@ Complete list of metadata tags and descriptions for each:
 * [Metadata, Open Graph and government websites](https://govfresh.com/thoughts/metadata-open-graph-government-websites) (GovFresh)
 * [Analyzing U.S. federal and state government website metadata
 ](https://govfresh.com/thoughts/analyzing-government-website-metadata) (GovFresh)
-* [Metadata and tags you should include in your website](https://searchgov/indexing/metadata.html) (searchgov)
+* [Metadata and tags you should include in your website](https://search.gov/indexing/metadata.html) (searchgov)
