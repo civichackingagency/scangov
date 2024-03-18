@@ -1,4 +1,5 @@
 const agencyURL = new URLSearchParams(location.search).get('domain');
+document.getElementById('visit-link').href = 'http://' + agencyURL;
 const table = document.getElementById('table'),
     gradeCard = document.getElementById('grade-card'),
     docs = document.getElementById('docs'),
@@ -18,7 +19,7 @@ const load = async page => {
         gradeCard.classList.remove('text-bg-success', 'text-bg-warning', 'text-bg-danger');
     document.getElementById('specific').classList = '';
     document.getElementById('overview').classList = 'd-none';
-    document.getElementById('changelog').style.display = 'none';
+    changelog.style.display = 'none';
     docs.innerHTML = '';
 
     if (page === '#url') {
@@ -40,7 +41,6 @@ const load = async page => {
         document.getElementById('site').innerText = data.url;
         document.getElementById('parent').innerText = data.name;
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
-        document.getElementById('visit-link').href = data.redirect;
 
         const score = (data.https + data.www + data.dotgov) / 3;
         if (data.status == 200) {
@@ -154,19 +154,6 @@ const load = async page => {
                 </td>
             </tr>
         `;
-        /*
-        <tr>
-            <td>
-                <pre><code>PDFs</code></pre>
-            </td>
-            <td>
-                The percent of items that are PDF files.
-            </td>
-            <td>
-                <span class="d-xl-inline text-bg-${pdfs <= 0.1 ? 'success' : pdfs <= 0.3 ? 'warning' : 'danger'}">${Math.round(100 * pdfs)}%</span>
-            </td>
-        </tr>
-        `;*/
 
         docs.innerHTML = `
             <li>
@@ -280,30 +267,15 @@ const load = async page => {
                 </tr>
             `;
 
-        if (redirect) {
-            const changelog = document.getElementById('changelog');
-            changelog.parentElement.removeChild(changelog);
-            return;
-        }
         const timeline = document.getElementById('timeline');
         timeline.innerHTML = `
             <li class="timeline-item mb-5">
                 <h5 class="fw-bold">Status: ${data.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${successes.length} of ${variables.length} tags)</h5>
                 <p class="mb-1 text-muted">Current</p>
                 <p>${successes.map(success => {
-            let property = properties[success[1]];
-            if (property.includes('"'))
-                property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
-            else
-                property = property.substring(1);
-            return `<span title="${property}">${check}</span>`;
+            return `<span title="${names[success[1]]}">${check}</span>`;
         }).join(' ')} ${dangers.map(danger => {
-            let property = properties[danger[1]];
-            if (property.includes('"'))
-                property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
-            else
-                property = property.substring(1);
-            return `<span title="${property}">${x}</span>`;
+            return `<span title="${names[danger[1]]}">${x}</span>`;
         }).join(' ')}</p>
             </li>`;
         for (let i = data.history.length - 1; i >= 0; i--) {
@@ -315,17 +287,9 @@ const load = async page => {
             const percent = Math.round(updateTotal / variables.length * 100);
             const date = new Date(update.time);
             const updateSuccesses = [], updateDangers = [];
-            for (let j = 0; j < variables.length; j++) {
-                let property = properties[j];
-                if (property.includes('"'))
-                    property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
-                else
-                    property = property.substring(1);
-                if (update[variables[j]])
-                    updateSuccesses.push(property);
-                else
-                    updateDangers.push(property);
-            }
+            for (let j = 0; j < variables.length; j++)
+                (update[variables[j]] ? updateSuccesses : updateDangers).push(names[j]);
+
             timeline.innerHTML += `
                 <li class="timeline-item mb-5">
                     <h5 class="fw-bold">Status: ${update.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${updateTotal} of ${variables.length} tags)</h5>
@@ -398,7 +362,6 @@ const load = async page => {
                     }
                 urlJson = currentDomain;
                 urlLoaded = true;
-                document.getElementById('visit-link').href = data.redirect;
                 showUrl();
             });
         else
