@@ -2,15 +2,15 @@
   <footer class="pt-5 border-top">
     <div class="row">
       {% for col in site.data.nav-footer.docs %}
-        <div class="col-4 mb-3">
-          <ul class="nav flex-column">
-            {% for item in col %}
-              <li>
-                <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link p-0 text-body-secondary">{{ item.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+      <div class="col-4 mb-3">
+        <ul class="nav flex-column">
+          {% for item in col %}
+          <li>
+            <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link p-0 text-body-secondary">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
       {% endfor %}
     </div>
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
@@ -20,26 +20,28 @@
       </p>
       <ul class="list-unstyled d-flex">
         {% if site.repo %}
-          <li class="ms-3">
-            <a href="{{ site.repo }}">
-              <span class="sr-only">GitHub</span>
-              <i class="fa-brands fa-github fa-xl" aria-hidden="true"></i>
-            </a>
-          </li>
+        <li class="ms-3">
+          <a href="{{ site.repo }}">
+            <span class="sr-only">GitHub</span>
+            <i class="fa-brands fa-github fa-xl" aria-hidden="true"></i>
+          </a>
+        </li>
         {% endif %}
         {% if site.rss %}
-          <li class="ms-3">
-            <a href="{{ site.rss }}">
-              <span class="sr-only">RSS</span>
-              <i class="fa-solid fa-rss fa-xl" aria-hidden="true"></i>
-            </a>
-          </li>
+        <li class="ms-3">
+          <a href="{{ site.rss }}">
+            <span class="sr-only">RSS</span>
+            <i class="fa-solid fa-rss fa-xl" aria-hidden="true"></i>
+          </a>
+        </li>
         {% endif %}
       </ul>
     </div>
   </footer>
 </div>
 {% if jekyll.environment == 'production' %}
-  {% include analytics.html %}
+<!-- TODO: add analytics -->
 {% endif %}
-{% include js.html %}</body></html>
+{% include js.html %}</body>
+
+</html>

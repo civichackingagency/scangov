@@ -9,62 +9,58 @@ layout: cards
     <div class="row">
       <div class="card-group">
         {% if include.limit %}
-          {% assign limitVar = include.limit | plus: 0 %}
+        {% assign limitVar = include.limit | plus: 0 %}
         {% endif %}
         {% if page.title == "Press" %}
-          {% for item in site.data.press.docs limit: limitVar %}
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex align-items-stretch">
-              <div class="card mx-1 my-1">
-                <div class="card-body">
-                  <h2 class="card-title h5">
-                    <a
-                      href="{{ site.baseurl }}{{ item.url }}"
-                      class="stretched-link"
-                      target="_blank">
-                      {{ item.title }}
-                    </a>
-                  </h2>
-                </div>
-                <div class="card-footer">
-                  {{ item.source }}
-                </div>
-              </div>
+        {% for item in site.data.press.docs limit: limitVar %}
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex align-items-stretch">
+          <div class="card mx-1 my-1">
+            <div class="card-body">
+              <h2 class="card-title h5">
+                <a href="{{ site.baseurl }}{{ item.url }}" class="stretched-link" target="_blank">
+                  {{ item.title }}
+                </a>
+              </h2>
             </div>
-          {% endfor %}
+            <div class="card-footer">
+              {{ item.source }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
         {% elsif page.title == "Blog" %}
-          {% for item in site.posts limit: limitVar %}
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex align-items-stretch">
-              <div class="card mx-1 my-1">
-                <div class="card-body">
-                  <h2 class="h3">
-                    <a href="{{ site.baseurl }}{{ item.url }}" class="stretched-link">{{ item.title }}</a>
-                  </h2>
-                  <p class="card-text">{{ item.description }}</p>
-                </div>
-                <div class="card-footer text-muted">
-                  {% include date.html %}
-                </div>
-              </div>
+        {% for item in site.posts limit: limitVar %}
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex align-items-stretch">
+          <div class="card mx-1 my-1">
+            <div class="card-body">
+              <h2 class="h3">
+                <a href="{{ site.baseurl }}{{ item.url }}" class="stretched-link">{{ item.title }}</a>
+              </h2>
+              <p class="card-text">{{ item.description }}</p>
             </div>
-          {% endfor %}
+            <div class="card-footer text-muted">
+              {% include date.html %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
         {% else %}
-          {% assign sorted_docs = site.docs | sort: 'title' %}
-          {% for item in sorted_docs %}
-            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
-              <div class="card mx-1 my-1">
-                <div class="card-body">
-                  <h2 class="h4">
-                    <a href="{{ site.baseurl }}{{ item.url }}" class="stretched-link">{{ item.title }}</a>
-                  </h2>
-                  <p class="description">{{ item.description }}</p>
-                </div>
-              </div>
+        {% assign sorted_docs = site.docs | sort: 'title' %}
+        {% for item in sorted_docs %}
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+          <div class="card mx-1 my-1">
+            <div class="card-body">
+              <h2 class="h4">
+                <a href="{{ site.baseurl }}{{ item.url }}" class="stretched-link">{{ item.title }}</a>
+              </h2>
+              <p class="description">{{ item.description }}</p>
             </div>
-          {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
         {% endif %}
       </div>
     </div>
   </div>
 </main>
-{% include analytics.html %}
 {% include footer.html %}
