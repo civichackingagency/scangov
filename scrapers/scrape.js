@@ -14,6 +14,7 @@ export const options = {
     }
 };
 
+// To run your own, domains, delete everything until the export statement
 // https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv
 let domainsList = readFileSync('data/current-federal.csv', 'utf8').split('\n');
 domainsList.shift();
@@ -85,6 +86,7 @@ domainsList = domainsList.filter(a => {
     const domainData = a.split(',');
     return !(domainData.length < 3 || domainData[0].length == 0 || domainData[2] === 'National Archives and Records Administration');
 });
+// To run your own domains, create domainsList here
 export const domains = domainsList;
 
 /**
