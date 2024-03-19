@@ -15,5 +15,7 @@ Domain canonicalization allows access to the intended website address, whether u
 
 ## Examples
 
+Example of a government website with `www` and non-`www` resolution:
+
 * <https://digital.gov>
 * <https://www.digital.gov>

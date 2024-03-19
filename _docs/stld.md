@@ -19,6 +19,8 @@ A `.gov` / `.edu` / `.mil` extension verifies that the website is managed by a U
 
 ## Examples
 
+Example of government websites with a `.gov` sTLD:
+
 * [digital.gov](https://digital.gov)
 * [whitehouse.gov](https://whitehouse.gov)
 

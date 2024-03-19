@@ -23,8 +23,10 @@ The sitemap is an Extensible Markup Language (XML) file on the website’s root 
 
 ## Examples
 
+Example government website sitemaps:
+
 * [https://www.usa.gov/sitemap.xml](https://www.usa.gov/sitemap.xml)
-* [https://digital.gov/sitemap.xml](https://digital.gov/sitemap.xml)
+* [https://18f.gov/sitemap.xml](https://18f.gov/sitemap.xml)
 
 ## Code
 

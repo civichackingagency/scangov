@@ -17,5 +17,7 @@ Properly configured government URLs include:
 
 ## Examples
 
+Example government URLs:
+
 * <https://digital.gov>
 * <https://whitehouse.gov>
