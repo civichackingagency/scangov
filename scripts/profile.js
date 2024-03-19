@@ -1,4 +1,5 @@
 const agencyURL = new URLSearchParams(location.search).get('domain');
+document.title = agencyURL + ' - gov metadata';
 document.getElementById('visit-link').href = 'http://' + agencyURL;
 const table = document.getElementById('table'),
     gradeCard = document.getElementById('grade-card'),
@@ -169,7 +170,7 @@ const load = async page => {
     }
     else if (page === '#metadata') {
         pageTitle.innerText = 'Metadata';
-        changelog.style.display = 'initial';
+        changelog.style.display = 'revert';
 
         if (!metadataJson) {
             const data = await (await fetch('/data/metadata.json')).json();
@@ -269,7 +270,7 @@ const load = async page => {
 
         const timeline = document.getElementById('timeline');
         timeline.innerHTML = `
-            <li class="timeline-item mb-5">
+            <li class="timeline-item">
                 <h5 class="fw-bold">Status: ${data.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${successes.length} of ${variables.length} tags)</h5>
                 <p class="mb-1 text-muted">Current</p>
                 <p>${successes.map(success => {
@@ -291,7 +292,7 @@ const load = async page => {
                 (update[variables[j]] ? updateSuccesses : updateDangers).push(names[j]);
 
             timeline.innerHTML += `
-                <li class="timeline-item mb-5">
+                <li class="timeline-item">
                     <h5 class="fw-bold">Status: ${update.status} / Grade: ${getGrade(percent)} / Score: ${percent}% (${updateTotal} of ${variables.length} tags)</h5>
                     <p class="mb-1 text-muted">${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}</p>
                     <p>${updateSuccesses.map(success => `<span title="${success}">${check}</span>`).join(' ')} ${updateDangers.map(danger => `<span title="${danger}">${x}</span>`).join(' ')}</p>
