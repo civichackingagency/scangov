@@ -65,8 +65,12 @@ const outcomes = [];
 
 const queue = [];
 const domains = JSON.parse(readFileSync('data/url.json'));
+const specificDomain = process.argv[2];
 for (const domain of domains)
-    queue.push({ url: domain.url, redirect: domain.redirect, name: domain.name, status: domain.status });
+    if (!specificDomain || specificDomain === domain.url)
+        queue.push({ url: domain.url, redirect: domain.redirect, name: domain.name, status: domain.status });
+    else
+        outcomes.push(historyData.find(h => h.url === domain.url));
 
 let done = 0;
 const start = Date.now();

@@ -1,13 +1,20 @@
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { scrape, options, domains } from './scrape.js';
 import { exit } from 'process';
 
+const outcomes = [];
+const historyData = JSON.parse(readFileSync('data/sitemap.json', 'utf8'));
 const queue = [];
-for (let i = 0; i < domains.length; i++)
-    queue.push({ url: domains[i].split(',')[0].toLowerCase(), name: domains[i].split(',')[2] });
+const specificDomain = process.argv[2];
+for (const domain of domains) {
+    const domainData = domain.split(',');
+    if (!specificDomain || specificDomain === domainData[0].toLowerCase())
+        queue.push({ url: domainData[0].toLowerCase(), name: domainData[2] });
+    else
+        outcomes.push(historyData.find(d => d.url === domainData[0].toLowerCase()));
+}
 
 let done = 0;
-const outcomes = [];
 const start = Date.now();
 await scrape(queue, args => new Promise(async (resolve, reject) => {
     const controller = new AbortController();
