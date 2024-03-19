@@ -3,6 +3,7 @@
 To use the tool for your own set of domains:
 - Clone the repository
 - Delete all files in `/data`
+- Run `npm install`
 - Open `scrapers/scrape.js`
 - Install [NodeJS](https://nodejs.org/en/download/current) and [Jekyll](https://jekyllrb.com/docs/)
 - Delete the lines for all the domains (comments give instructions)
