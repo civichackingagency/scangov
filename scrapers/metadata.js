@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
 import fetch from 'node-fetch';
 import { exit } from 'process';
 import { options, scrape } from './scrape.js';
@@ -59,7 +59,7 @@ const csvVariables = [
 ];
 
 // Initialize data
-let historyData = readFileSync('data/metadata.json', 'utf8');
+let historyData = existsSync('data/metadata.json') ? readFileSync('data/metadata.json', 'utf8') : [];
 historyData = historyData.includes('[') ? JSON.parse(historyData) : [];
 const outcomes = [];
 

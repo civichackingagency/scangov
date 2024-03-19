@@ -1,9 +1,9 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { scrape, options, domains } from './scrape.js';
 import { exit } from 'process';
 
 const outcomes = [];
-const historyData = JSON.parse(readFileSync('data/url.json', 'utf8'));
+const historyData = existsSync('data/url.json') ? JSON.parse(readFileSync('data/url.json', 'utf8')) : [];
 const queue = [];
 const specificDomain = process.argv[2];
 for (let i = 0; i < domains.length; i++) {
