@@ -1,13 +1,36 @@
 const properties = ['<title', 'name="description"', 'name="robots"', 'name="viewport"', 'rel="canonical"',
     'property="og:locale"', 'property="og:site_name"', 'property="og:type"', 'property="og:title"', 'property="og:description"', 'property="og:url"',
     'property="og:image"', 'property="og:image:alt"'];
-const variables = properties.map(property => {
-    if (property.includes('"'))
-        property = property.substring(property.indexOf('"') + 1, property.lastIndexOf('"'));
-    else
-        property = property.substring(property.indexOf('<') + 1);
-    return property.replaceAll(/(?:\:|_)([a-z])/g, match => match[1].toUpperCase());
-});
+const names = [
+    'title',
+    'description',
+    'robots',
+    'viewport',
+    'canonical',
+    'og:locale',
+    'og:site:name',
+    'og:type',
+    'og:title',
+    'og:description',
+    'og:url',
+    'og:image',
+    'og:image:alt'
+]
+const variables = [
+    'title',
+    'description',
+    'robots',
+    'viewport',
+    'canonical',
+    'ogLocale',
+    'ogSiteName',
+    'ogType',
+    'ogTitle',
+    'ogDescription',
+    'ogUrl',
+    'ogImage',
+    'ogImageAlt'
+];
 const descriptions = [
     'Defines the document\'s title that is shown in a browser\'s title bar or a page\'s tab',
     'A short and accurate summary of the content of the page',
