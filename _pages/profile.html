@@ -35,10 +35,9 @@ permalink: /profile/
 </div>
 <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
   <h2 class="h2" id="page">Dashboard</h2>
-  {% include updated.html %}
   <div id="overview" class="d-none">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
         <a class="card mb-3" id="metadata-card" href="#metadata">
           <div class="card-header">
             Metadata
@@ -48,7 +47,7 @@ permalink: /profile/
           </div>
         </a>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
         <a class="card mb-3" id="url-card" href="#url">
           <div class="card-header">
             URL
@@ -58,7 +57,7 @@ permalink: /profile/
           </div>
         </a>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
         <a class="card mb-3" id="sitemap-card" href="#sitemap">
           <div class="card-header">
             Sitemap
@@ -72,7 +71,7 @@ permalink: /profile/
   </div>
   <div id="specific">
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
         <div class="card mb-3" id="grade-card">
           <div class="card-header">
             Grade
@@ -82,7 +81,7 @@ permalink: /profile/
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-stretch">
+      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
         <div class="card mb-3 text-bg-dark" id="score">
           <div class="card-header">
             Score
@@ -98,9 +97,9 @@ permalink: /profile/
     </div>
     <div class="row">
       <div class="col-12">
-        <h3 class=" mt-3">Status</h3>
+        <h3 class="mt-3">Status</h3>
         <div class="table-responsive table-hover">
-          <table class="table table-responsive table-bordered table-hover mt-3 mb-5">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
             <thead class="table-dark">
               <tr>
                 <th scope="col">Tag</th>
@@ -116,18 +115,19 @@ permalink: /profile/
     <div class="row" id="changelog">
       <div class="col-12">
         <h2>Changelog</h2>
-        <section class="py-4">
+        <section class="pt-2">
           <ul class="timeline" id="timeline"></ul>
         </section>
       </div>
     </div>
-    <div class="col-12">
-      <h3 class="mt-3">Documentation</h3>
-      <ul id="docs"></ul>
+    <div class="row mt-3">
+      <div class="col-12">
+        <h3>Documentation</h3>
+        <ul id="docs"></ul>
+      </div>
     </div>
   </div>
 </div>
 <script src="/scripts/util.js"></script>
 <script src="/scripts/variables.js"></script>
 <script src="/scripts/profile.js"></script>
-<script src="/scripts/updated.js"></script>
