@@ -1,7 +1,4 @@
-import { writeFileSync, readFileSync } from 'fs';
-import pThrottle from 'p-throttle';
-
-const start = Date.now();
+import { readFileSync } from 'fs';
 
 export const options = {
     method: 'GET',

@@ -167,14 +167,18 @@ if (field === 'url')
             domain.failures = [];
 
             if (domain.status !== 200) {
-                domain.failures.push('HTTPS', 'WWW', 'sTLD');
+                domain.failures.push('HTTPS');
+                if (CHECK_WWW)
+                    domain.failures.push('WWW');
+                domain.failures.push('sTLD');
                 domain.score = 0;
                 domain.grade = 'F';
                 continue;
             }
 
             domain[(domain.https ? 'successes' : 'failures')].push('HTTPS');
-            domain[(domain.www ? 'successes' : 'failures')].push('WWW');
+            if (CHECK_WWW)
+                domain[(domain.www ? 'successes' : 'failures')].push('WWW');
             domain[(domain.dotgov ? 'successes' : 'failures')].push('sTLD');
             total += domain.successes.length;
             count++;
@@ -189,7 +193,7 @@ if (field === 'url')
         });
         json = data;
 
-        showScore(total / count / 3, 3, 'elements');
+        showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
         show('url');
     });
 else if (field === 'sitemap')

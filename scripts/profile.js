@@ -43,10 +43,10 @@ const load = async page => {
         document.getElementById('parent').innerText = data.name;
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
 
-        const score = (data.https + data.www + data.dotgov) / 3;
+        const score = (data.https + (CHECK_WWW && data.www) + data.dotgov) / (3 - !CHECK_WWW);
         if (data.status == 200) {
             document.getElementById('percent').innerText = Math.round(100 * score);
-            document.getElementById('amount').innerText = 3 * score + ' of 3 elements';
+            document.getElementById('amount').innerText = (3 - !CHECK_WWW) * score + ' of ' + (3 - !CHECK_WWW) + ' elements';
             gradeCard.classList.add('text-bg-' + (score >= 0.9 ? 'success' : score >= 0.7 ? 'warning' : 'danger'));
             document.getElementById('grade').innerText = getGrade(score * 100);
         }
@@ -350,8 +350,8 @@ const load = async page => {
             showMetadata();
 
         const showUrl = () => {
-            document.getElementById('url-grade').innerText = getGrade(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3);
-            document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / 3)));
+            document.getElementById('url-grade').innerText = getGrade(100 * (urlJson.https + (CHECK_WWW && urlJson.www) + urlJson.dotgov) / (3 - !CHECK_WWW));
+            document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / (3 - !CHECK_WWW))));
         };
         if (!urlLoaded)
             fetch('/data/url.json').then(res => res.json()).then(data => {

@@ -2,6 +2,8 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { scrape, options, domains } from './scrape.js';
 import { exit } from 'process';
 
+const CHECK_WWW = true;
+
 const outcomes = [];
 const historyData = existsSync('data/url.json') ? JSON.parse(readFileSync('data/url.json', 'utf8')) : [];
 const queue = [];
@@ -29,12 +31,13 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
         fetch('http://' + args.url, {
             ...options,
             signal: controller.signal
-        }).catch(err => console.error(args.url, err.name, err.message)),
-        fetch('http://www.' + args.url, {
+        }).catch(err => console.error(args.url, err.name, err.message))
+    ];
+    if (CHECK_WWW)
+        promises.push(fetch('http://www.' + args.url, {
             ...options,
             signal: controller.signal
-        })
-    ];
+        }).catch(err => console.error(args.url, err.name, err.message)));
     let responses = await Promise.all(promises).catch(err => console.error(args.url, err.name, err.message));
     if (!responses)
         responses = [null, null];
@@ -81,8 +84,9 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
         redirect: url,
         https: url && url.startsWith('https://'),
         dotgov: url && (url.includes('.gov') || url.includes('.mil') || url.includes('.edu')),
-        www: !!(responses[0] && responses[1] && responses[0].status === responses[1].status && responses[0].url === responses[1].url)
     };
+    if (CHECK_WWW)
+        outcome.www = !!(responses[0] && responses[1] && responses[0].status === responses[1].status && responses[0].url === responses[1].url)
     outcomes.push(outcome);
     done++;
     const now = Date.now();
@@ -92,9 +96,9 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
 }), 5, 750);
 
 writeFileSync('data/url.json', JSON.stringify(outcomes));
-let csv = 'domain,agency,status,redirect,https,dot_gov,www\n';
+let csv = 'domain,agency,status,redirect,https,dot_gov' + (CHECK_WWW ? ',www' : '') + '\n';
 for (const outcome of outcomes)
-    csv += outcome.url + ',' + outcome.name + ',' + outcome.status + ',' + outcome.redirect + ',' + outcome.https + ',' + outcome.dotgov + ',' + outcome.www + '\n';
+    csv += outcome.url + ',' + outcome.name + ',' + outcome.status + ',' + outcome.redirect + ',' + outcome.https + ',' + outcome.dotgov + (CHECK_WWW ? ',' + outcome.www : '') + '\n';
 writeFileSync('data/url.csv', csv);
 console.log('Done writing');
 

@@ -108,7 +108,7 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
         if (past)
             for (let i = 0; i < variables.length; i++)
                 oldData[variables[i]] = past[variables[i]];
-        if (status != past.status)
+        if (past && status != past.status)
             history.push(oldData);
         outcome.history = history;
         for (let i = 0; i < properties.length; i++)

@@ -16,4 +16,6 @@ const getColor = score => {
     if (score >= 70)
         return 'warning';
     return 'danger';
-}
+};
+
+const CHECK_WWW = true;
