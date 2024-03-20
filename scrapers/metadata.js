@@ -1,6 +1,5 @@
 import { writeFileSync, readFileSync, existsSync } from 'fs';
 import fetch from 'node-fetch';
-import { exit } from 'process';
 import { options, scrape } from './scrape.js';
 
 // Tags to search for

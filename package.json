@@ -1,7 +1,6 @@
 {
   "type": "module",
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "p-throttle": "^6.1.0"
+    "node-fetch": "^3.3.2"
   }
 }

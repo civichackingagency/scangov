@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
+import fetch from 'node-fetch';
 import { scrape, options, domains } from './scrape.js';
 import { exit } from 'process';
 
