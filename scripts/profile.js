@@ -65,7 +65,7 @@ const load = async page => {
                     Privacy and integrity protection.    
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.https ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.https ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.https ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.https ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
             <tr>
@@ -76,7 +76,7 @@ const load = async page => {
                     Resolves with www and non-www input.  
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.www ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.www ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.www ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.www ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
             <tr>
@@ -87,7 +87,7 @@ const load = async page => {
                     Sponsored top-level domain (.gov / .edu / .mil).   
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.dotgov ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (' + data.status + ')' : data.dotgov ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.dotgov ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.dotgov ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
         `;
@@ -140,7 +140,7 @@ const load = async page => {
                     The HTTP status of /sitemap.xml is OK.
                 </td>
                 <td>
-                    <i class="fa-solid ${data.status < 300 ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status < 300 ? 'Active' : 'Missing'}</span>
+                    <i class="fa-solid ${data.status < 300 ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status < 300 ? 'Active' : 'Missing  (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)'}</span>
                 </td>
             </tr>
             <tr>
@@ -263,7 +263,7 @@ const load = async page => {
                         ${descriptions[danger[1]]}    
                     </td>
                     <td>
-                        <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (' + data.status + ')'}</span>
+                        <i class="fa-solid ${data.status === 200 && !redirect ? 'fa-circle-xmark text-danger' : redirect ? 'fa-circle-right text-info' : 'fa-circle-exclamation text-warning'}"></i> <span class="d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)'}</span>
                     </td>
                 </tr>
             `;
