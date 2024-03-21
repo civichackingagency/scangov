@@ -5,6 +5,8 @@ description: "Status types and descriptions."
 keywords: metadata, url, sitemap
 ---
 
+## Status types
+
 * Active: Source was found.
 * Missing: Source was not found.
 * Redirect: URL redirects to another domain.

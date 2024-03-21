@@ -10,6 +10,11 @@
     src: url("/assets/fonts/public-sans/ttf/PublicSans-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Public Sans Light";
+    src: url("/assets/fonts/public-sans/ttf/PublicSans-Light.ttf") format("truetype");
+}
+
 /* General */
 
 body {
@@ -63,6 +68,13 @@ a.card {
 
 a.card:hover {
     filter: brightness(1.25);
+}
+
+/* Badge */
+
+.badge {
+    font-family: "Public Sans Light", sans-serif !important;
+    border-radius: 0 !important;
 }
 
 /* Images */
