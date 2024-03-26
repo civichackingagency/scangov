@@ -4,5 +4,6 @@ description: How to get support.
 permalink: /help/
 ---
 
+* [Review documentation](https://gov-metadata.civichackingagency.org/docs)
 * [Submit an issue](https://github.com/civichackingagency/gov-metadata/issues/new/choose)
-* [Request data update](https://github.com/civichackingagency/gov-metadata/issues/new?assignees=&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D)
+* [Start a discussion](https://github.com/civichackingagency/gov-metadata/discussions)
