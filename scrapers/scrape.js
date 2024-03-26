@@ -33,7 +33,7 @@ domainsList = [
     'IOWA.GOV,,State of Iowa,,',
     'KANSAS.GOV,,State of Kansas,,',
     'KENTUCKY.GOV,,State of Kentucky,,',
-    'LOIUSIANA.GOV,,State of Louisiana,,',
+    'LOUISIANA.GOV,,State of Louisiana,,',
     'MAINE.GOV,,State of Maine,,',
     'MARYLAND.GOV,,State of Maryland,,',
     'MASS.GOV,,State of Massachusett,,',

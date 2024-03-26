@@ -83,8 +83,8 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
         name: args.name,
         status: (res && res.status) || 500,
         redirect: url,
-        https: url && url.startsWith('https://'),
-        dotgov: url && (url.includes('.gov') || url.includes('.mil') || url.includes('.edu')),
+        https: !!(url && url.startsWith('https://')),
+        dotgov: !!(url && (url.includes('.gov') || url.includes('.mil') || url.includes('.edu'))),
     };
     if (CHECK_WWW)
         outcome.www = !!(responses[0] && responses[1] && responses[0].status === responses[1].status && responses[0].url === responses[1].url)
