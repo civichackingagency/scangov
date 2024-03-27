@@ -1,6 +1,10 @@
 docs_list_title: press
 docs:
 
+- title: "State websites average ‘A’ grade for URL configuration, ‘F’ for sitemaps"
+  url: https://statescoop.com/state-website-accessibility-sitemaps-failing-grade/
+  source: StateScoop
+  
 - title: "State governments average ‘F’ grade on website-metadata tracker"
   url: https://statescoop.com/state-government-websites-metadata-accessibility/
   source: StateScoop
