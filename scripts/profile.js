@@ -1,5 +1,6 @@
 const agencyURL = new URLSearchParams(location.search).get('domain');
 document.title = agencyURL + ' - gov metadata';
+document.getElementById('report').href += location.search;
 document.getElementById('visit-link').href = 'http://' + agencyURL;
 const table = document.getElementById('table'),
     gradeCard = document.getElementById('grade-card'),
@@ -56,7 +57,8 @@ const load = async page => {
             document.getElementById('grade').innerText = '-';
         }
 
-        table.innerHTML += `
+        let tableHTML = '';
+        tableHTML += `
             <tr>
                 <td>
                     <pre><code>HTTPS</code></pre>
@@ -67,7 +69,9 @@ const load = async page => {
                 <td>
                     <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.https ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.https ? 'Active' : 'Missing'}</span>
                 </td>
-            </tr>
+            </tr>`
+        if (CHECK_WWW)
+            tableHTML += `
             <tr>
                 <td>
                     <pre><code>www</code></pre>
@@ -78,8 +82,8 @@ const load = async page => {
                 <td>
                     <i class="fa-solid ${data.status !== 200 ? 'fa-circle-exclamation text-warning' : data.www ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.www ? 'Active' : 'Missing'}</span>
                 </td>
-            </tr>
-            <tr>
+            </tr>`;
+        tableHTML += `<tr>
                 <td>
                     <pre><code>sTLD</code></pre>
                 </td> 
@@ -91,6 +95,7 @@ const load = async page => {
                 </td>
             </tr>
         `;
+        table.innerHTML = tableHTML;
 
         docs.innerHTML = `
             <li>
