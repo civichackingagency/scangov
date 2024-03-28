@@ -13,18 +13,18 @@ docs:
 
 -
 
-  - title: Changelog
-    url: /changelog/
-
   - title: Docs
     url: /docs/
 
   - title: Help
     url: /help/
 
+  - title: Discussions
+    url: https://github.com/civichackingagency/gov-metadata/discussions
+
 -
 
-  - title: Submit an issue
+  - title: Issues
     url: https://github.com/civichackingagency/gov-metadata/issues/new/choose
 
   - title: Project board
