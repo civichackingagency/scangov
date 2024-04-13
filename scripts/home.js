@@ -1,7 +1,7 @@
 let params = new URLSearchParams(location.search);
 
 let field = params.get('field');
-if (!(field === 'metadata' || field === 'url' || field === 'sitemap'))
+if (!(field === 'metadata' || field === 'url' || field === 'sitemap' || field === 'robots'))
     field = 'metadata';
 document.getElementById(field + '-radio').checked = true;
 
@@ -75,15 +75,15 @@ const show = field => {
                 <a class="small text-muted" href="?search=${domain.name}&agency=1&field=${field}" >${domain.name}</a>
             </td>
             <td>
-            ${field !== 'sitemap' && domain.status != 200 ? '<span title="Inaccessible (status ' + domain.status + ')"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>'
+            ${(field === 'metadata' || field === 'url') && domain.status != 200 ? '<span title="Inaccessible (status ' + domain.status + ')"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>'
                 : field === 'metadata' && domain.redirects ? '<span title="Redirects to ' + domain.redirect + '"><svg class="svg-inline--fa fa-circle-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path></svg></span>'
                     : domain.successes.map(success => `<span title="${success}">${check}</span>`).join('\n')}
             ${domain.successes.length > 0 ? '<br>' : ''}
-            ${field !== 'sitemap' && (domain.status !== 200 || domain.redirects) ? '' : domain.failures.map(failure => `<span title="${failure}">${x}</span>`).join('\n')}
+            ${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? '' : domain.failures.map(failure => `<span title="${failure}">${x}</span>`).join('\n')}
             </td>
             <td class="text-center">
-                <span class="badge text-bg-${field !== 'sitemap' && (domain.status !== 200 || domain.redirects) ? 'none' : getColor(domain.score)}" title="${field === 'metadata' && (domain.status !== 200 || domain.redirects) ? '' : domain.score + '%'}">
-                    ${field !== 'sitemap' && (domain.status !== 200 || domain.redirects) ? '-' : domain.grade}
+                <span class="badge text-bg-${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? 'none' : getColor(domain.score)}" title="${field === 'metadata' && (domain.status !== 200 || domain.redirects) ? '' : domain.score + '%'}">
+                    ${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? '-' : domain.grade}
                 </span>
             </td>
         `;
@@ -225,6 +225,37 @@ else if (field === 'sitemap')
 
         showScore(total / data.length / 2, 2, 'elements');
         show('sitemap');
+    });
+else if (field === 'robots')
+    fetch('/data/robots.json').then(res => res.json()).then(data => {
+        data = filterDomains(data);
+        showPagination(data.length);
+
+        let total = 0, count = 0;
+        for (let i = 0; i < data.length; i++) {
+            const domain = data[i];
+
+            domain.successes = [];
+            domain.failures = [];
+            (domain.valid ? domain.successes : domain.failures).push('Valid');
+            (domain.allowed ? domain.successes : domain.failures).push('Allowed');
+            (domain.sitemap ? domain.successes : domain.failures).push('Sitemap');
+            domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+            domain.grade = getGrade(domain.score);
+
+            total += domain.successes.length;
+            count++;
+        }
+
+        data = data.sort((a, b) => {
+            if (a.score === b.score)
+                return a.url.localeCompare(b.url);
+            return b.score - a.score;
+        });
+        json = data;
+
+        showScore(total / data.length / 3, 3, 'elements');
+        show('robots');
     });
 else
     fetch('/data/metadata.json').then(res => res.json()).then(data => {

@@ -10,8 +10,8 @@ const table = document.getElementById('table'),
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
-let metadataJson, urlJson, sitemapJson;
-let metadataLoaded = false, urlLoaded = false, sitemapLoaded = false;
+let metadataJson, urlJson, sitemapJson, robotsJson;
+let metadataLoaded = false, urlLoaded = false, sitemapLoaded = false, robotsLoaded = false;
 const successes = [], dangers = [];
 
 const load = async page => {
@@ -170,6 +170,81 @@ const load = async page => {
             </li>
             <li>
                 <a href="/docs/sitemap">Sitemap</a>
+            </li>
+        `;
+    }
+    else if (page === '#robots') {
+        pageTitle.innerText = 'Robots';
+        changelog.style.display = 'none';
+
+        if (!robotsLoaded) {
+            const data = await (await fetch('/data/robots.json')).json();
+            for (const domain of data)
+                if (domain.url == agencyURL) {
+                    robotsJson = domain;
+                    break;
+                }
+            robotsLoaded = true;
+        }
+
+        const data = robotsJson;
+
+        document.getElementById('site').innerText = data.url;
+        document.getElementById('parent').innerText = data.name;
+        document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
+
+        const score = Math.round(100 * (data.valid + data.allowed + !!data.sitemap) / 3);
+        document.getElementById('percent').innerText = score;
+        document.getElementById('amount').innerText = 3 * score / 100 + ' of 3 elements';
+        gradeCard.classList.add('text-bg-' + getColor(score));
+        document.getElementById('grade').innerText = getGrade(score);
+
+        table.innerHTML += `
+            <tr>
+                <td>
+                    <pre><code>Valid</code></pre>
+                </td>
+                <td>
+                    The site has a valid robots policy.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.valid ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.valid ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>Allowed</code></pre>
+                </td>
+                <td>
+                    The robots policy allows access to browsers and scrapers.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.allowed ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.allowed ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>Sitemap</code></pre>
+                </td>
+                <td>
+                    The robots.txt file points to a sitemap file.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.sitemap ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.sitemap ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            
+        `;
+
+        docs.innerHTML = `
+            <li>
+                <a href="/docs/data">Data</a>
+            </li>
+            <li>
+                <a href="/docs/status">Status</a>
+            </li>
+            <li>
+                <a href="/docs/robots">Robots</a>
             </li>
         `;
     }
@@ -396,6 +471,30 @@ const load = async page => {
             });
         else
             showSitemap();
+
+        const showRobots = () => {
+            document.getElementById('site').innerText = robotsJson.url;
+            document.getElementById('parent').innerText = robotsJson.name;
+            document.getElementById('parent').href = '/?search=' + robotsJson.name + '&agency=1';
+
+            const percent = Math.round(100 * (robotsJson.valid + robotsJson.allowed + !!robotsJson.sitemap) / 3);
+            document.getElementById('robots-grade').innerText = getGrade(percent);
+            document.getElementById('robots-card').classList.add('text-bg-' + getColor(percent));
+        };
+        if (!robotsLoaded)
+            fetch('/data/robots.json').then(res => res.json()).then(data => {
+                let currentDomain;
+                for (const domain of data)
+                    if (domain.url == agencyURL) {
+                        currentDomain = domain;
+                        break;
+                    }
+                robotsJson = currentDomain;
+                robotsLoaded = true;
+                showRobots();
+            });
+        else
+            showRobots();
     }
 };
 

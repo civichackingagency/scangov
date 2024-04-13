@@ -7,307 +7,133 @@ permalink: /report/
 
 {% include header.html %}
 <style>
-    @media print {
-        body {
-            font-family: "Public Sans Regular", sans-serif;
-        }
-
-        svg {
-            color: var(--bs-body-color) !important;
-        }
-
-        div.card {
-            border: 1px solid black;
-        }
-
-        div.card-header {
-            border-bottom: 1px solid var(--bs-border-color);
-        }
-
-        div.card-footer {
-            border-top: 1px solid var(--bs-border-color);
-        }
-
-        * {
-            color: black !important;
-        }
-
-        main#page {
-            display: none;
-        }
+  @media print {
+    body {
+      font-family: "Public Sans Regular"
+      , sans-serif;
     }
 
-    @media screen {
-        main#print {
-            visibility: hidden;
-            height: 0;
-            margin: 0;
-            padding: 0;
-            width: 0;
-            overflow: hidden;
-        }
+    svg {
+      color: var(--bs-body-color) !important;
     }
+
+    div.card {
+      border: 1px solid black;
+    }
+
+    div.card-header {
+      border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    div.card-footer {
+      border-top: 1px solid var(--bs-border-color);
+    }
+
+    * {
+      color: black !important;
+    }
+
+    main#page {
+      display: none;
+    }
+  }
+
+  @media screen {
+    main#print,
+    main#print * {
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
 </style>
 <main id="page">
-    <a id="return">Return to dashboard</a>
+  <a id="return">Return to dashboard</a>
 </main>
 <main id="print">
-    <div class="container-fluid" style="page-break-after: always;">
-        <div class="row">
-            <h1 class="display-1 mb-5 mt-5">Domain scan report</h1>
-            <h2 id="domain" class="display-3"></h2>
-            <p class="lead">Managed by: <span id="parent"></span></p>
-            <p style="position: absolute; bottom: 0;">Created by: Civic Hacking Agency</p>
-        </div>
+  <div class="container-fluid" style="page-break-after: always; break-after: always;">
+    <div class="row">
+      <h1 class="display-1 mb-5 mt-5">Domain scan report</h1>
+      <h2 id="domain" class="display-3"></h2>
+      <p class="lead">Managed by:
+        <span id="parent"></span>
+      </p>
     </div>
-    <div class="container-fluid">
-        {% for item in site.data.report.docs %}
-            <h2 {% unless forloop.first %} style="page-break-before: always;" {% endunless %}>{{ item }}</h2>
-            {% assign id = item | downcase %}
-            <div class="row">
-                <div class="col-6 align-items-stretch">
-                    <div class="card mb-3" id="{{ id }}-grade-card">
-                        <div class="card-header">
-                            Grade
-                        </div>
-                        <div class="card-body text-center pt-5">
-                            <p class="display-1" id="{{ id }}-grade"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 align-items-stretch">
-                    <div class="card mb-3 text-bg-dark" id="score">
-                        <div class="card-header">
-                            Score
-                        </div>
-                        <div class="card-body text-center">
-                            <p class="display-1">
-                                <span id="{{ id }}-percent"></span>%
-                            </p>
-                        </div>
-                        <div class="card-footer text-center" id="{{ id }}-amount"></div>
-                    </div>
-                </div>
+    <div class="row" style="position: absolute; bottom: 0;">
+      {% for item in site.pages %}
+        {% if item.title == "About" %}
+          {{ item.content }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% for item in site.data.report.docs %}
+      <h2
+        {% unless forloop.first %}
+        style="page-break-before: always; break-after: always;"
+        {% endunless %}>{{ item }}</h2>
+      {% assign id = item | downcase %}
+      <div class="row">
+        <div class="col-6 align-items-stretch">
+          <div class="card mb-3" id="{{ id }}-grade-card">
+            <div class="card-header">
+              Grade
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive table-hover">
-                        <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th scope="col">Tag</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody id="{{ id }}-table"></tbody>
-                        </table>
-                    </div>
-                </div>
-            {{ site.docs.data.title }}
-            {% for doc in site.docs %}
-                {% if doc.title == item %}
-                    {{ doc.content | markdownify }}
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    </div>
+            <div class="card-body text-center pt-5">
+              <p class="display-1" id="{{ id }}-grade"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 align-items-stretch">
+          <div class="card mb-3 text-bg-dark" id="score">
+            <div class="card-header">
+              Score
+            </div>
+            <div class="card-body text-center">
+              <p class="display-1">
+                <span id="{{ id }}-percent"></span>%
+              </p>
+            </div>
+            <div class="card-footer text-center" id="{{ id }}-amount"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive table-hover">
+            <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Tag</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="{{ id }}-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          {% for doc in site.docs %}
+            {% if doc.title == item %}
+              {{ doc.content | markdownify }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </main>
 <script src="/scripts/variables.js"></script>
 <script src="/scripts/util.js"></script>
 <script>
     const length = {{ site.data.report.docs | size }};
 </script>
-<script>
-    const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
-        x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>',
-        right = '<svg class="svg-inline--fa fa-circle-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-right" role="img"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"/></svg>',
-        exclamation = '<svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>';
-
-    const domain = new URLSearchParams(location.search).get('domain');
-    document.title = domain + ' report';
-    document.getElementById('domain').innerText = domain;
-    document.getElementById('return').href= '/profile?domain='+domain;
-
-    let done = 0;
-    const finish = () => {
-        done++;
-        if (done !== length)
-            return;
-
-        print();
-    }
-
-    fetch('/data/metadata.json').then(res => res.json()).then(data => {
-        for (let i = 0; i < data.length; i++)
-            if (data[i].url === domain) {
-                data = data[i];
-                break;
-            }
-        if (done === 0)
-            document.getElementById('parent').innerText = data.name;
-
-        const table = document.getElementById('metadata-table');
-        let count = 0;
-
-        const successes = [], dangers = [];
-
-        const redirect = data.redirect && !data.redirect.includes(data.url);
-        for (let i = 0; i < variables.length; i++)
-            if (data[variables[i]] && data.status === 200 && !redirect)
-                if (properties[i].includes('"'))
-                    successes.push([(!properties[i].includes('canonical') ? '&lt;meta ' : '&lt;link ') + properties[i] + '&gt;', i]);
-                else
-                    successes.push([properties[i].replace('<', '&lt;') + '&gt;', i]);
-            else
-                if (properties[i].includes('"'))
-                    dangers.push([(!properties[i].includes('canonical') ? '&lt;meta ' : '&lt;link ') + properties[i] + '&gt;', i]);
-                else
-                    dangers.push([properties[i].replace('<', '&lt;') + '&gt;', i]);
-
-        const percent = Math.round(successes.length / variables.length * 100);
-        const gradeCard = document.getElementById('metadata-grade-card');
-        if (data.status == 200 && !redirect) {
-            document.getElementById('metadata-percent').innerText = percent;
-            document.getElementById('metadata-amount').innerText = successes.length + ' of ' + variables.length + ' tags';
-            gradeCard.classList.add('text-bg-' + getColor(percent));
-            document.getElementById('metadata-grade').innerText = getGrade(percent);
-        }
-        else {
-            document.getElementById('metadata-percent').innerText = '-';
-            if (data.status != 200)
-                document.getElementById('metadata-amount').innerText = domain + ' didn\'t respond';
-            else
-                document.getElementById('metadata-amount').innerText = domain + ' redirected';
-            document.getElementById('metadata-grade').innerText = '-';
-        }
-
-        for (const success of successes)
-            table.innerHTML += `
-                <tr style="page-break-inside: avoid">
-                    <td>
-                        <pre><code class="text-wrap">${success[0]}</code></pre>
-                    </td> 
-                    <td>
-                        ${descriptions[success[1]]}
-                    </td>
-                    <td>
-                        ${check} <span class="d-xl-inline">Active</span>
-                    </td>
-                </tr>
-            `;
-        for (const danger of dangers)
-            table.innerHTML += `
-                <tr style="page-break-inside: avoid">
-                    <td>
-                        <pre><code>${danger[0]}</code></pre>
-                    </td> 
-                    <td>
-                        ${descriptions[danger[1]]}    
-                    </td>
-                    <td>
-                        ${redirect ? right : data.status !== 200 ? exclamation : x} <span class="d-xl-inline">${data.status === 200 && !redirect ? 'Missing' : redirect ? 'Redirect' : 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)'}</span>
-                    </td>
-                </tr>
-            `;
-    }).finally(finish);
-
-    fetch('/data/url.json').then(res => res.json()).then(data => {
-        for (let i = 0; i < data.length; i++)
-            if (data[i].url === domain) {
-                data = data[i];
-                break;
-            }
-        if (done === 0)
-            document.getElementById('parent').innerText = data.name;
-
-        const score = Math.round(100 * (data.https + (data.www && CHECK_WWW) + data.dotgov) / (3 - !CHECK_WWW));
-        document.getElementById('url-grade').innerText = getGrade(score);
-        document.getElementById('url-grade-card').classList.add('text-bg-' + getColor(score));
-        document.getElementById('url-percent').innerText = score;
-        document.getElementById('url-amount').innerText = data.https + (data.www && CHECK_WWW) + data.dotgov + ' of ' + (3 - !CHECK_WWW) + ' elements';
-
-        const table = document.getElementById('url-table');
-        let tableHTML = '';
-        tableHTML += `
-            <tr>
-                <td>
-                    <pre><code>HTTPS</code></pre>
-                </td> 
-                <td>
-                    Privacy and integrity protection.    
-                </td>
-                <td>
-                    ${data.status !== 200 ? exclamation : data.https ? check : x} <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.https ? 'Active' : 'Missing'}</span>
-                </td>
-            </tr>`
-        if (CHECK_WWW)
-            tableHTML += `
-            <tr>
-                <td>
-                    <pre><code>www</code></pre>
-                </td> 
-                <td>
-                    Resolves with www and non-www input.  
-                </td>
-                <td>
-                    ${data.status !== 200 ? exclamation : data.www ? check : x} <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.www ? 'Active' : 'Missing'}</span>
-                </td>
-            </tr>`;
-        tableHTML += `<tr>
-                <td>
-                    <pre><code>sTLD</code></pre>
-                </td> 
-                <td>
-                    Sponsored top-level domain (.gov / .edu / .mil).   
-                </td>
-                <td>
-                    ${data.status !== 200 ? exclamation : data.dotgov ? check : x} <span class="d-xl-inline">${data.status !== 200 ? 'Can\'t access (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)' : data.dotgov ? 'Active' : 'Missing'}</span>
-                </td>
-            </tr>
-        `;
-        table.innerHTML = tableHTML;
-    }).finally(finish);
-
-    fetch('/data/sitemap.json').then(res => res.json()).then(data => {
-        for (let i = 0; i < data.length; i++)
-            if (data[i].url === domain) {
-                data = data[i];
-                break;
-            }
-        if (done === 0)
-            document.getElementById('parent').innerText = data.name;
-
-        const score = Math.round(100 * ((data.status === 200) + data.xml) / 2);
-        document.getElementById('sitemap-grade').innerText = getGrade(score);
-        document.getElementById('sitemap-grade-card').classList.add('text-bg-' + getColor(score));
-        document.getElementById('sitemap-percent').innerText = score;
-        document.getElementById('sitemap-amount').innerText = ((data.status === 200) + data.xml) + ' of 2 elements';
-
-        const table = document.getElementById('sitemap-table');
-        table.innerHTML += `
-            <tr>
-                <td>
-                    <pre><code>Status</code></pre>
-                </td>
-                <td>
-                    The HTTP status of /sitemap.xml is OK.
-                </td>
-                <td>
-                    ${data.status < 300 ? check : x} <span class="d-xl-inline">${data.status < 300 ? 'Active' : 'Missing  (<a href="/docs/status#' + data.status + '">' + data.status + '</a>)'}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <pre><code>XML</code></pre>
-                </td>
-                <td>
-                    The sitemap file type is XML.
-                </td>
-                <td>
-                    ${data.xml ? check : x} <span class="d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
-                </td>
-            </tr>
-        `;
-    }).finally(finish);
-</script>
+<script src="/scripts/report.js"></script>
