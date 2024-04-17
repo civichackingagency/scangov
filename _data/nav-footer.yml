@@ -20,12 +20,12 @@ docs:
     url: /help/
 
   - title: Discussions
-    url: https://github.com/civichackingagency/gov-metadata/discussions
+    url: https://github.com/civichackingagency/scangov/discussions
 
 -
 
   - title: Issues
-    url: https://github.com/civichackingagency/gov-metadata/issues/new/choose
+    url: https://github.com/civichackingagency/scangov/issues/new/choose
 
   - title: Project board
     url: https://github.com/orgs/civichackingagency/projects/2

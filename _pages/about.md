@@ -6,7 +6,7 @@ redirect_from:
   - /about.html
 ---
 
-This is a [Civic Hacking Agency](https://civichackingagency.org) project to spread awareness about the importance of metadata in government websites.
+ScanGov is a [Civic Hacking Agency](https://civichackingagency.org) project to spread awareness about the importance of government digital service best practices.
 
 ## Contact
 

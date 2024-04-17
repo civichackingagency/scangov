@@ -1,5 +1,5 @@
 const agencyURL = new URLSearchParams(location.search).get('domain');
-document.title = agencyURL + ' - gov metadata';
+document.title = agencyURL + ' - scangov';
 document.getElementById('report').href += location.search;
 document.getElementById('visit-link').href = 'http://' + agencyURL;
 const table = document.getElementById('table'),

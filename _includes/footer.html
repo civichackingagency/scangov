@@ -4,12 +4,13 @@
       <p class="text-muted">
         <small>Updated:
           <span id="updated"></span>
-          (<a href="/docs/data">Data</a> &middot; <a
-            href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+          (<a href="/docs/data">Data</a>
+          &middot;
+          <a href="https://github.com/civichackingagency/scangov/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
             Request update</a>)
         </small>
         <script>
-          fetch('https://api.github.com/repos/civichackingagency/gov-metadata/commits?path=/data&per_page=1').then(res => res.json()).then(data => {
+          fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1').then(res => res.json()).then(data => {
             document.getElementById('updated').innerHTML = new Date(data[0].commit.author.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
           });
         </script>
@@ -21,15 +22,15 @@
   <footer class="pt-5 border-top">
     <div class="row">
       {% for col in site.data.nav-footer.docs %}
-      <div class="col-4 mb-3">
-        <ul class="nav flex-column">
-          {% for item in col %}
-          <li>
-            <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link p-0 text-body-secondary">{{ item.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+        <div class="col-4 mb-3">
+          <ul class="nav flex-column">
+            {% for item in col %}
+              <li>
+                <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link p-0 text-body-secondary">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endfor %}
     </div>
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
@@ -39,29 +40,26 @@
       </p>
       <ul class="list-unstyled d-flex">
         {% if site.repo %}
-        <li class="ms-3">
-          <a href="{{ site.repo }}">
-            <span class="sr-only">GitHub</span>
-            <i class="fa-brands fa-github fa-xl" aria-hidden="true"></i>
-          </a>
-        </li>
+          <li class="ms-3">
+            <a href="{{ site.repo }}">
+              <span class="sr-only">GitHub</span>
+              <i class="fa-brands fa-github fa-xl" aria-hidden="true"></i>
+            </a>
+          </li>
         {% endif %}
         {% if site.rss %}
-        <li class="ms-3">
-          <a href="{{ site.rss }}">
-            <span class="sr-only">RSS</span>
-            <i class="fa-solid fa-rss fa-xl" aria-hidden="true"></i>
-          </a>
-        </li>
+          <li class="ms-3">
+            <a href="{{ site.rss }}">
+              <span class="sr-only">RSS</span>
+              <i class="fa-solid fa-rss fa-xl" aria-hidden="true"></i>
+            </a>
+          </li>
         {% endif %}
       </ul>
     </div>
   </footer>
 </div>
 {% if jekyll.environment == 'production' %}
-<!-- TODO: add analytics -->
+  <!-- TODO: add analytics -->
 {% endif %}
-{% include js.html %}
-</body>
-
-</html>
+{% include js.html %}</body></html>

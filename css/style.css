@@ -39,6 +39,7 @@ h6,
 .display-3,
 .display-4 {
     font-family: "Public Sans Bold", sans-serif;
+    letter-spacing: -.02em;
 }
 
 body.docs h2,

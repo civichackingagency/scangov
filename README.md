@@ -1,7 +1,7 @@
-# gov metadata
+# ScanGov
 
-[gov metadata](https://gov-metadata.civichackingagency.org) is a [Civic Hacking Agency](https://gov-metadata.civichacking.org) project to spread awareness about the importance of metadata in government websites.
+[ScanGov](https://scangov.org) is a [Civic Hacking Agency](https://civichackingagency.org) project to spread awareness about the importance of government digital service best practices.
 
-* [Documentation](https://gov-metadata.civichackingagency.org/docs)
-* [Help](https://gov-metadata.civichackingagency.org/help)
-* [Discussions](https://github.com/civichackingagency/gov-metadata/discussions)
+* [Documentation](https://scangov.org/docs)
+* [Help](https://scangov.org/help)
+* [Discussions](https://github.com/civichackingagency/scangov/discussions)

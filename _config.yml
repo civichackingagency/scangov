@@ -1,10 +1,10 @@
-title: gov metadata
-description: Scanning government domains
-url: https://gov-metadata.civichackingagency.org
+title: ScanGov
+description: Government digital service monitor
+url: https://scangov.org
 org: Civic Hacking Agency
 org-url: https://civichackingagency.org
-repo: https://github.com/civichackingagency/gov-metadata
-rss: https://gov-metadata.civichackingagency.org/blog/feed.xml
+repo: https://github.com/civichackingagency/scangov
+rss: https://scangov.org/blog/feed.xml
 
 # Build settings
 plugins:

@@ -80,7 +80,7 @@ To add/remove parameters to the site:
 
 ### Removing www validation
 
-If you don't want to check for [www canonicalization](https://gov-metadata.civichackingagency.org/docs/canonicalization):
+If you don't want to check for [www canonicalization](https://scangov.org/docs/canonicalization):
 - Open `scrapers/url.js`
 - Change `CHECK_WWW` to `false`
 - Open `scripts/util.js`

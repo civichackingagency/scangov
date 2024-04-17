@@ -10,6 +10,6 @@ keywords: url, stld
 * [Federal non-.gov domains](https://github.com/GSA/govt-urls/blob/main/2_govt_urls_federal_only.csv) (General Services Administration)
 
 ## Our data
-* Metadata \([.json](https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.json), [.csv](https://github.com/civichackingagency/gov-metadata/blob/main/data/metadata.csv)\)
-* URL \([.json](https://github.com/civichackingagency/gov-metadata/blob/main/data/url.json), [.csv](https://github.com/civichackingagency/gov-metadata/blob/main/data/url.csv)\)
-* Sitemap \([.json](https://github.com/civichackingagency/gov-metadata/blob/main/data/sitemap.json), [.csv](https://github.com/civichackingagency/gov-metadata/blob/main/data/sitemap.csv)\)
+* Metadata \([.json](https://github.com/civichackingagency/scangov/blob/main/data/metadata.json), [.csv](https://github.com/civichackingagency/scangov/blob/main/data/metadata.csv)\)
+* URL \([.json](https://github.com/civichackingagency/scangov/blob/main/data/url.json), [.csv](https://github.com/civichackingagency/scangov/blob/main/data/url.csv)\)
+* Sitemap \([.json](https://github.com/civichackingagency/scangov/blob/main/data/sitemap.json), [.csv](https://github.com/civichackingagency/scangov/blob/main/data/sitemap.csv)\)

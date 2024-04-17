@@ -1,11 +1,12 @@
 <small>Updated:
-    <span id="updated"></span>
-    (<a href="/docs/data">Data</a> &middot; <a
-        href="https://github.com/civichackingagency/gov-metadata/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
-        Request update</a>)
+  <span id="updated"></span>
+  (<a href="/docs/data">Data</a>
+  &middot;
+  <a href="https://github.com/civichackingagency/scangov/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
+    Request update</a>)
 </small>
 <script>
-    fetch('https://api.github.com/repos/civichackingagency/gov-metadata/commits?path=/data&per_page=1').then(res => res.json()).then(data => {
+    fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1').then(res => res.json()).then(data => {
         document.getElementById('updated').innerHTML = new Date(data[0].commit.author.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
     });
 </script>
