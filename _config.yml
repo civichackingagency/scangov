@@ -4,7 +4,7 @@ url: https://scangov.org
 org: Civic Hacking Agency
 org-url: https://civichackingagency.org
 repo: https://github.com/civichackingagency/scangov
-rss: https://scangov.org/blog/feed.xml
+rss: https://scangov.org/feed.xml
 
 # Build settings
 plugins:
