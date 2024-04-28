@@ -1,8 +1,10 @@
 ---
-title: About
-description: About this project and our work.
-permalink: /about/
+title: "About"
+date: 2024-04-28
+description: "About this project and our work."
+keywords: 
 redirect_from:
+  - /about/
   - /about.html
 ---
 

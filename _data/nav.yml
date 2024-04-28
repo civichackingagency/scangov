@@ -9,14 +9,14 @@ docs:
 #  icon: fa-solid fa-filter
 #  url: /filter/
 
-- title: Changelog
-  icon: fa-solid fa-code
-  url: /changelog/
-
 - title: Docs
   icon: fa-solid fa-book
   url: /docs/
 
+- title: Community
+  icon: fa-solid fa-users
+  url: /docs/community/
+
 - title: About
   icon: fa-solid fa-circle-info
-  url: /about/
+  url: /docs/about/

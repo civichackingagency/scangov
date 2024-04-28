@@ -10,7 +10,8 @@ rss: https://scangov.org/feed.xml
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-
+  - jekyll-redirect-from
+  
 # Social
 
 github-url: https://github.com/civichackingagency

@@ -3,7 +3,7 @@ docs:
 
 - 
   - title: About
-    url: /about/
+    url: /docs/about/
 
   - title: Blog
     url: /blog/
@@ -19,8 +19,8 @@ docs:
   - title: Help
     url: /help/
 
-  - title: Discussions
-    url: https://github.com/civichackingagency/scangov/discussions
+  - title: Community
+    url: /docs/community
 
 -
 
