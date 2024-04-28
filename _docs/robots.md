@@ -7,11 +7,12 @@ keywords: robots, grades, scores
 
 ## Guidance
 
-All government websites should have a robots.txt file or other method of setting a policy and must allow indexing and following
+All government websites must allow robots indexing and following.
 
 ## About
 
-Web robots, also known as web wanderers, crawlers or spiders, are automated programs that traverse the Web. Search engines like Google use them to index web content, while spammers use them to scan for email addresses, among other purposes.
+Web robots, also known as web wanderers, crawlers or spiders, are automated programs that traverse the Web. Search engines use them to index web content, while spammers use them to scan for email addresses, among other purposes.
+
 A robots.txt file is a text file placed on a website's server to instruct web robots (typically search engine crawlers) how to crawl and index pages on their site. It specifies which parts of the site should not be accessed by crawlers or are "off-limits" to them. It's a way for website owners to communicate with web robots and guide their behavior.
 
 A robots policy can be used to limit the rate of requests or to block robots from indexing paths, which can save stress on the server. The file consists of one or more records separated by one or more blank lines. The record starts with one or more `User-agent` lines, followed by one or more `Disallow` lines. Unrecognised headers are ignored.

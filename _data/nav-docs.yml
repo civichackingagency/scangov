@@ -33,3 +33,6 @@ docs:
 
 - title: Sitemap
   url: sitemap
+
+- title: Robots
+  url: robots
