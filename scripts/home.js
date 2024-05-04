@@ -2,25 +2,29 @@ let params = new URLSearchParams(location.search);
 
 let field = params.get('field');
 if (!(field === 'metadata' || field === 'url' || field === 'sitemap' || field === 'robots'))
-    field = 'metadata';
+    field = 'overview';
 document.getElementById(field + '-radio').checked = true;
 
 const search = params.get('search') || '';
 
-let level = params.get('level');
-if (!level || !(level === '1' || level === '2' || level === '3'))
-    level = 1;
-else
-    level = parseInt(level);
+const MULTI_LEVEL = true;
+let level;
+if (MULTI_LEVEL) {
+    level = params.get('level');
+    if (!level || !(level === '1' || level === '2' || level === '3'))
+        level = 1;
+    else
+        level = parseInt(level);
+}
+
 const filters = document.getElementById('filters');
 if (search.length > 0)
     filters.innerHTML += `
     <span class="badge text-bg-primary">"${search}"</span>
 `;
-filters.innerHTML += `
-    <span class="badge text-bg-primary">${level === 1 ? 'all domains' : level === 2 ? 'federal domains' : 'state domains'}</span>
-    <span class="badge text-bg-primary">${field}</span>
-`;
+filters.innerHTML +=
+    (MULTI_LEVEL ? `<span class="badge text-bg-primary">${level === 1 ? 'all domains' : level === 2 ? 'federal domains' : 'state domains'}</span>` : '') +
+    ` <span class="badge text-bg-primary">${field}</span>`;
 
 const agencyPage = params.get('agency') === '1';
 if (!agencyPage && search.length > 0)
@@ -38,9 +42,13 @@ const pagination = document.getElementById('pagination'),
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
-const searchInput = document.getElementById('search'), levelInput = document.getElementById('filter');
+const searchInput = document.getElementById('search');
 searchInput.value = search;
-levelInput.value = level;
+let levelInput;
+if (MULTI_LEVEL) {
+    levelInput = document.getElementById('filter');
+    levelInput.value = level;
+}
 const radios = document.querySelectorAll('input[type="radio"][name="field"]');
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -50,7 +58,7 @@ form.onsubmit = (e) => {
             field = radio.id.substring(0, radio.id.length - 6);
             break;
         }
-    let href = '?field=' + field + '&level=' + levelInput.value;
+    let href = '?field=' + field + (MULTI_LEVEL ? '&level=' + levelInput.value : '');
     if (searchInput.value.length > 0)
         href += '&search=' + searchInput.value;
     if (agencyPage && searchInput.value === search)
@@ -58,9 +66,33 @@ form.onsubmit = (e) => {
     location.href = href;
 }
 
+let done = 0;
 let json;
+let metadataJson, urlJson, sitemapJson, robotsJson;
 const show = field => {
-    if (!json) return;
+    if (!json || (field === 'overview' && done !== 4)) return;
+
+    if (paginationElements.length === 0)
+        showPagination(json.length);
+
+    if (field === 'overview')
+        json = json.sort((a, b) => {
+            if (a.redirects && !b.redirects && b.status === 200)
+                return 1;
+            if (!a.redirects && a.status === 200 && b.redirects)
+                return -1;
+
+            if (a.status !== b.status)
+                if (a.status === 200)
+                    return -1;
+                else if (b.status === 200)
+                    return 1;
+                else
+                    return a.status - b.status;
+            if (a.successes.length === b.successes.length)
+                return a.url.localeCompare(b.url);
+            return b.successes.length - a.successes.length;
+        });
 
     const start = (pageNumber - 1) * 100, length = Math.min(pageNumber * 100, json.length)
     showingCount.innerText = length - start;
@@ -75,18 +107,20 @@ const show = field => {
                 <a class="small text-muted" href="?search=${domain.name}&agency=1&field=${field}" >${domain.name}</a>
             </td>
             <td>
-            ${(field === 'metadata' || field === 'url') && domain.status != 200 ? '<span title="Inaccessible (status ' + domain.status + ')"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>'
-                : field === 'metadata' && domain.redirects ? '<span title="Redirects to ' + domain.redirect + '"><svg class="svg-inline--fa fa-circle-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path></svg></span>'
+            ${(field === 'metadata' || field === 'url' || field === 'overview') && domain.status != 200 ?
+                '<span title="Inaccessible (status ' + domain.status + ')"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>'
+                : field === 'metadata' && domain.redirects ?
+                    '<span title="Redirects to ' + domain.redirect + '"><svg class="svg-inline--fa fa-circle-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1l99.9 107.1c3.5 3.8 5.5 8.7 5.5 13.8s-2 10.1-5.5 13.8L294.6 376.9c-4.2 4.5-10.1 7.1-16.3 7.1C266 384 256 374 256 361.7l0-57.7-96 0c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32l96 0 0-57.7c0-12.3 10-22.3 22.3-22.3c6.2 0 12.1 2.6 16.3 7.1z"></path></svg></span>'
                     : domain.successes.map(success => `<span title="${success}">${check}</span>`).join('\n')}
             ${domain.successes.length > 0 ? '<br>' : ''}
-            ${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? '' : domain.failures.map(failure => `<span title="${failure}">${x}</span>`).join('\n')}
+            ${(field === 'metadata' || field === 'url' || field === 'overview') && (domain.status !== 200 || domain.redirects) ? '' : domain.failures.map(failure => `<span title="${failure}">${x}</span>`).join('\n')}
             </td>
             <td class="text-center">
-                <span class="badge text-bg-${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? 'none' : getColor(domain.score)}" title="${field === 'metadata' && (domain.status !== 200 || domain.redirects) ? '' : domain.score + '%'}">
-                    ${(field === 'metadata' || field === 'url') && (domain.status !== 200 || domain.redirects) ? '-' : domain.grade}
+                <span class="badge text-bg-${(field === 'metadata' || field === 'url' || field === 'overview') && (domain.status !== 200 || domain.redirects) ? 'none' : getColor(domain.score)}" title="${field === 'metadata' && (domain.status !== 200 || domain.redirects) ? '' : domain.score + '%'}">
+                    ${(field === 'metadata' || field === 'url' || field === 'overview') && (domain.status !== 200 || domain.redirects) ? '-' : domain.grade}
                 </span>
             </td>
-        `;
+`;
         table.appendChild(row);
     }
 };
@@ -120,10 +154,11 @@ onhashchange = start => {
 
     while (table.firstChild)
         table.firstChild.remove();
-    show(field);
 
-    if (start !== true)
+    if (start !== true) {
+        show(field);
         tableHeader.scrollIntoView();
+    }
 };
 
 const paginationElements = [];
@@ -153,12 +188,36 @@ const showScore = (score, elements, elementsName) => {
     amountLabel.innerText = Math.round(score / 100 * elements) + ' of ' + elements + ' ' + elementsName;
 };
 
-const filterDomains = data => data.filter(domain => (domain.name.toLowerCase().includes(search.toLowerCase()) || domain.url.includes(search)) && (level === 1 || (level === 2 && !domain.name.startsWith('State of')) || level === 3 && domain.name.startsWith('State of')));
+const filterDomains = data => data.filter(domain => (domain.name.toLowerCase().includes(search.toLowerCase()) || domain.url.includes(search)) && (!MULTI_LEVEL || (level === 1 || (level === 2 && !domain.name.startsWith('State of')) || level === 3 && domain.name.startsWith('State of'))));
 
-if (field === 'url')
+const updateJson = (data, field) => {
+    if (!json)
+        json = data.map(d => {
+            d.successes = d.successes.map(s => s + ' (' + field + ')');
+            d.failures = d.failures.map(f => f + ' (' + field + ')');
+            return d;
+        });
+    else
+        for (let i = 0; i < data.length; i++)
+            for (let j = 0; j < json.length; j++)
+                if (data[i].url === json[j].url) {
+                    const domain = json[j];
+                    domain.successes = domain.successes.concat(data[i].successes.map(s => s + ' (' + field + ')'));
+                    domain.failures = domain.failures.concat(data[i].failures.map(f => f + ' (' + field + ')'));
+                }
+
+    for (let i = 0; i < json.length; i++) {
+        const domain = json[i];
+        domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+        domain.grade = getGrade(domain.score);
+        if (field === 'URL' && domain.status < 300 && domain.redirect && !domain.redirect.includes(domain.url))
+            domain.redirects = true;
+    }
+};
+
+if (field === 'overview' || field === 'url')
     fetch('/data/url.json').then(res => res.json()).then(data => {
         data = filterDomains(data);
-        showPagination(data.length);
 
         let total = 0, count = 0;
         for (let i = 0; i < data.length; i++) {
@@ -186,20 +245,34 @@ if (field === 'url')
             domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
             domain.grade = getGrade(domain.score);
         }
-        data = data.sort((a, b) => {
-            if (a.score === b.score)
-                return a.url.localeCompare(b.url);
-            return b.score - a.score;
-        });
-        json = data;
+        if (field === 'url') {
+            data = data.sort((a, b) => {
+                if (a.score === b.score)
+                    return a.url.localeCompare(b.url);
+                return b.score - a.score;
+            });
+            json = data;
+        }
+        else
+            updateJson(data, 'URL');
 
-        showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
-        show('url');
+        done++;
+        if (field === 'url') {
+            showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
+            show('url');
+        }
+        else if (done === 4) {
+            total = 0;
+            const elements = json[0].successes.length + json[0].failures.length;
+            for (let i = 0; i < json.length; i++)
+                total += json[i].successes.length;
+            showScore(total / json.length / elements, elements, 'elements');
+            show('overview');
+        }
     });
-else if (field === 'sitemap')
+if (field === 'overview' || field === 'sitemap')
     fetch('/data/sitemap.json').then(res => res.json()).then(data => {
         data = filterDomains(data);
-        showPagination(data.length);
 
         let total = 0, count = 0;
         for (let i = 0; i < data.length; i++) {
@@ -216,20 +289,34 @@ else if (field === 'sitemap')
             count++;
         }
 
-        data = data.sort((a, b) => {
-            if (a.score === b.score)
-                return a.url.localeCompare(b.url);
-            return b.score - a.score;
-        });
-        json = data;
+        if (field === 'sitemap') {
+            data = data.sort((a, b) => {
+                if (a.score === b.score)
+                    return a.url.localeCompare(b.url);
+                return b.score - a.score;
+            });
+            json = data;
+        }
+        else
+            updateJson(data, 'sitemap');
 
-        showScore(total / data.length / 2, 2, 'elements');
-        show('sitemap');
+        done++;
+        if (field === 'sitemap') {
+            showScore(total / data.length / 2, 2, 'elements');
+            show('sitemap');
+        }
+        else if (done === 4) {
+            total = 0;
+            const elements = json[0].successes.length + json[0].failures.length;
+            for (let i = 0; i < json.length; i++)
+                total += json[i].successes.length;
+            showScore(total / json.length / elements, elements, 'elements');
+            show('overview');
+        }
     });
-else if (field === 'robots')
+if (field === 'overview' || field === 'robots')
     fetch('/data/robots.json').then(res => res.json()).then(data => {
         data = filterDomains(data);
-        showPagination(data.length);
 
         let total = 0, count = 0;
         for (let i = 0; i < data.length; i++) {
@@ -247,20 +334,34 @@ else if (field === 'robots')
             count++;
         }
 
-        data = data.sort((a, b) => {
-            if (a.score === b.score)
-                return a.url.localeCompare(b.url);
-            return b.score - a.score;
-        });
-        json = data;
+        if (field === 'robots') {
+            data = data.sort((a, b) => {
+                if (a.score === b.score)
+                    return a.url.localeCompare(b.url);
+                return b.score - a.score;
+            });
+            json = data;
+        }
+        else
+            updateJson(data, 'robots');
 
-        showScore(total / data.length / 3, 3, 'elements');
-        show('robots');
+        done++;
+        if (field === 'robots') {
+            showScore(total / data.length / 3, 3, 'elements');
+            show('robots');
+        }
+        else if (done === 4) {
+            total = 0;
+            const elements = json[0].successes.length + json[0].failures.length;
+            for (let i = 0; i < json.length; i++)
+                total += json[i].successes.length;
+            showScore(total / json.length / elements, elements, 'elements');
+            show('overview');
+        }
     });
-else
+if (field === 'overview' || field === 'metadata')
     fetch('/data/metadata.json').then(res => res.json()).then(data => {
         data = filterDomains(data);
-        showPagination(data.length);
 
         let total = 0, count = 0;
         for (let i = 0; i < data.length; i++) {
@@ -287,25 +388,40 @@ else
 
             domain.redirects = domain.status === 200 && !domain.redirect.includes(domain.url);
         }
-        data = data.sort((a, b) => {
-            if (a.redirects && !b.redirects && b.status === 200)
-                return 1;
-            if (!a.redirects && a.status === 200 && b.redirects)
-                return -1;
-
-            if (a.status !== b.status)
-                if (a.status === 200)
-                    return -1;
-                else if (b.status === 200)
+        if (field === 'metadata') {
+            data = data.sort((a, b) => {
+                if (a.redirects && !b.redirects && b.status === 200)
                     return 1;
-                else
-                    return a.status - b.status;
-            if (a.successes.length === b.successes.length)
-                return a.url.localeCompare(b.url);
-            return b.successes.length - a.successes.length;
-        });
-        json = data;
+                if (!a.redirects && a.status === 200 && b.redirects)
+                    return -1;
 
-        showScore(total / count / variables.length, variables.length, 'tags');
-        show('metadata');
+                if (a.status !== b.status)
+                    if (a.status === 200)
+                        return -1;
+                    else if (b.status === 200)
+                        return 1;
+                    else
+                        return a.status - b.status;
+                if (a.successes.length === b.successes.length)
+                    return a.url.localeCompare(b.url);
+                return b.successes.length - a.successes.length;
+            });
+            json = data;
+        }
+        else
+            updateJson(data, 'metadata');
+
+        done++;
+        if (field !== 'overview') {
+            showScore(total / count / variables.length, variables.length, 'tags');
+            show('metadata');
+        }
+        else if (done === 4) {
+            total = 0;
+            const elements = json[0].successes.length + json[0].failures.length;
+            for (let i = 0; i < json.length; i++)
+                total += json[i].successes.length;
+            showScore(total / json.length / elements, elements, 'elements');
+            show('overview');
+        }
     });

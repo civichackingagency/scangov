@@ -16,26 +16,31 @@
             Search:
           </label>
           <input name="search" type="text" class="form-control mb-3" placeholder="enter domain" id="search">
+          <!-- single-level delete start -->
           <label class="pb-2" for="filter">Filter:</label>
           <select class="form-select form-control-lg" aria-label="Default select example" id="filter">
             <option value="1">all domains</option>
             <option value="2">federal domains</option>
             <option value="3">state domains</option>
           </select>
+          <!-- single-level delete end -->
         </div>
         <div class="col-sm-12 col-lg-6 mt-3">
-          <label for="metadata-radio" class="d-block">
-            <input type="radio" name="field" id="metadata-radio"> Metadata</label>
+          <label for="overview-radio" class="d-block">
+            <input type="radio" name="field" id="overview-radio"> Overview</label>
           <label for="url-radio" class="d-block">
-            <input type="radio" name="field" id="url-radio"> URL
-          </label>
-          <label for="sitemap-radio" class="d-block">
-            <input type="radio" name="field" id="sitemap-radio"> Sitemap
-          </label>
-          <label for="robots-radio" class="d-block">
-            <input type="radio" name="field" id="robots-radio"> Robots
-          </label>
-          <input type="submit" value="Go" class="mt-2 btn btn-primary">
+            <label for="metadata-radio" class="d-block">
+              <input type="radio" name="field" id="metadata-radio"> Metadata</label>
+            <label for="url-radio" class="d-block">
+              <input type="radio" name="field" id="url-radio"> URL
+            </label>
+            <label for="sitemap-radio" class="d-block">
+              <input type="radio" name="field" id="sitemap-radio"> Sitemap
+            </label>
+            <label for="robots-radio" class="d-block">
+              <input type="radio" name="field" id="robots-radio"> Robots
+            </label>
+            <input type="submit" value="Go" class="mt-2 btn btn-primary">
         </div>
       </form>
     </div>

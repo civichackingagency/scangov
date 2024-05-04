@@ -4,6 +4,7 @@ Contents:
 
 - [Quickstart](#quickstart)
 - [Running with the website](#running-with-the-website)
+    - [Single-level-government](#single-level-government)
 - [Running without the website](#running-without-the-website)
 - [Customization](#customization)
 
@@ -16,7 +17,7 @@ To use the tool for your own set of domains:
 - Delete all files in `/data` and `CNAME`
 - Update the `User-Agent` [header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) in the `options` object in `scrapers/scrape.js`
 - (Optional) [Use custom domains](#custom-domains) or [disable www validation](#removing-www-validation)
-- Run `node scrapers/url`, then `node scrapers/metadata`, then `node scrapers/robots`, then `node scrapers/sitemap` 
+- Run `node scrapers/url`, then `node scrapers/robots`, then `node scrapers/metadata`, then `node scrapers/sitemap` 
     - It's important to run the scrapers in that order
     - To only run one domain from the list, append the domain name to the end of the command (example: `node scrapers/url domain.gov`)
         - Make sure to run the scraper with all domains first
@@ -24,9 +25,17 @@ To use the tool for your own set of domains:
 
 ## Running with the website 
 - Install [Jekyll](https://jekyllrb.com/docs/)
-- Run `bundle exec jekyll serve` to start the website or [only use the data](#running-without-the-website)
+- Run `bundle exec jekyll serve` to start the website
 - The URL of the local site will be printed
 - (Optional) [Publish to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+
+### Single-level government
+
+If your organization doesn't have sub-organizations:
+- Open `/_includes/jumbotron.html` and search for `single-level`
+- Delete or comment out everything between the two comments
+- Open `/scripts/home.js`
+- Set `MULTI_LEVEL` to false
 
 ## Running without the website
 
