@@ -7,4 +7,6 @@ assignees: ''
 
 ---
 
-
+- [ ] Write documentation ([doc])
+- [ ] Add page
+- [ ] Add to nav (nav-docs.yml)
