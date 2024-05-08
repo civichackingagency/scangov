@@ -1,22 +1,14 @@
 docs_list_title: nav
 docs:
 
-#- title: Domains
-#  icon: fa-solid fa-laptop
-#  url: /domains/
-
-#- title: Filter
-#  icon: fa-solid fa-filter
-#  url: /filter/
-
 - title: Docs
   icon: fa-solid fa-book
-  url: /docs/
+  url: https://docs.scangov.org
 
 - title: Community
   icon: fa-solid fa-users
-  url: /docs/community/
+  url: https://docs.scangov.org/community
 
 - title: About
   icon: fa-solid fa-circle-info
-  url: /docs/about/
+  url: https://docs.scangov.org/about

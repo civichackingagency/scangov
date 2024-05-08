@@ -3,24 +3,24 @@ docs:
 
 - 
   - title: About
-    url: /docs/about/
+    url: https://docs.scangov.org/about/
 
   - title: Blog
-    url: /blog/
+    url: https://docs.scangov.org/blog/
 
   - title: Press
-    url: /press/
+    url: https://docs.scangov.org/press/
 
 -
 
   - title: Docs
-    url: /docs/
+    url: https://docs.scangov.org
 
   - title: Help
-    url: /help/
+    url: https://docs.scangov.org/help
 
   - title: Community
-    url: /docs/community
+    url: https://docs.scangov.org/community
 
 -
 

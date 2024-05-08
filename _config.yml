@@ -1,16 +1,15 @@
 title: ScanGov
-description: Government digital service monitor
+description: Government digital experience monitor
 url: https://scangov.org
 org: Civic Hacking Agency
 org-url: https://civichackingagency.org
 repo: https://github.com/civichackingagency/scangov
-rss: https://scangov.org/feed.xml
+rss: https://docs.scangov.org/feed.xml
 
 # Build settings
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-redirect-from
   
 # Social
 
@@ -27,25 +26,12 @@ timezone: America/Los_Angeles
 
 # Collections
 collections:
-  docs:
-    output: true
-    permalink: /docs/:title
   pages:
     output: true
     permalink: :title
-  posts:
-    output: true
-    permalink: /blog/:title
 
 # Defaults
 defaults:
-  - scope:
-      path: "_docs"
-      type: "docs"
-    values:
-      layout: "docs"
-      parent: "docs"
-      short: "true"
   - scope:
       path: "_pages"
       type: "pages"
@@ -53,19 +39,6 @@ defaults:
       layout: "page"
       parent: ""
       short: "true"
-  - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      folder: "Posts"
-      img-path: "posts"
-      parent: "posts"
-      layout: "post"
-      short: "true"
-
-# Pagination
-paginate: 12
-paginate_path: "/blog/page:num/"
 
 # Exclude
 exclude:
