@@ -215,6 +215,18 @@ const updateJson = (data, field) => {
     }
 };
 
+const overviewScore = () => {
+    let total = 0, count = 0;
+    const elements = json[0].successes.length + json[0].failures.length;
+    for (let i = 0; i < json.length; i++)
+        if (json[i].status === 200) {
+            total += json[i].successes.length;
+            count++;
+        }
+    showScore(total / count / elements, elements, 'elements');
+    show('overview');
+};
+
 if (field === 'overview' || field === 'url')
     fetch('/data/url.json').then(res => res.json()).then(data => {
         data = filterDomains(data);
@@ -261,14 +273,8 @@ if (field === 'overview' || field === 'url')
             showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
             show('url');
         }
-        else if (done === 4) {
-            total = 0;
-            const elements = json[0].successes.length + json[0].failures.length;
-            for (let i = 0; i < json.length; i++)
-                total += json[i].successes.length;
-            showScore(total / json.length / elements, elements, 'elements');
-            show('overview');
-        }
+        else if (done === 4)
+            overviewScore();
     });
 if (field === 'overview' || field === 'sitemap')
     fetch('/data/sitemap.json').then(res => res.json()).then(data => {
@@ -305,14 +311,8 @@ if (field === 'overview' || field === 'sitemap')
             showScore(total / data.length / 2, 2, 'elements');
             show('sitemap');
         }
-        else if (done === 4) {
-            total = 0;
-            const elements = json[0].successes.length + json[0].failures.length;
-            for (let i = 0; i < json.length; i++)
-                total += json[i].successes.length;
-            showScore(total / json.length / elements, elements, 'elements');
-            show('overview');
-        }
+        else if (done === 4)
+            overviewScore();
     });
 if (field === 'overview' || field === 'robots')
     fetch('/data/robots.json').then(res => res.json()).then(data => {
@@ -350,14 +350,8 @@ if (field === 'overview' || field === 'robots')
             showScore(total / data.length / 3, 3, 'elements');
             show('robots');
         }
-        else if (done === 4) {
-            total = 0;
-            const elements = json[0].successes.length + json[0].failures.length;
-            for (let i = 0; i < json.length; i++)
-                total += json[i].successes.length;
-            showScore(total / json.length / elements, elements, 'elements');
-            show('overview');
-        }
+        else if (done === 4)
+            overviewScore();
     });
 if (field === 'overview' || field === 'metadata')
     fetch('/data/metadata.json').then(res => res.json()).then(data => {
@@ -416,12 +410,6 @@ if (field === 'overview' || field === 'metadata')
             showScore(total / count / variables.length, variables.length, 'tags');
             show('metadata');
         }
-        else if (done === 4) {
-            total = 0;
-            const elements = json[0].successes.length + json[0].failures.length;
-            for (let i = 0; i < json.length; i++)
-                total += json[i].successes.length;
-            showScore(total / json.length / elements, elements, 'elements');
-            show('overview');
-        }
+        else if (done === 4)
+            overviewScore();
     });
