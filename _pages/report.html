@@ -10,11 +10,11 @@ permalink: /report/
   @media print {
     body {
       font-family: "Public Sans Regular"
-      , sans-serif;
+        , sans-serif;
     }
 
     svg {
-      color: var(--bs-body-color) !important;
+      fill: black !important;
     }
 
     div.card {
@@ -39,6 +39,7 @@ permalink: /report/
   }
 
   @media screen {
+
     main#print,
     main#print * {
       visibility: hidden;
@@ -64,76 +65,74 @@ permalink: /report/
     </div>
     <div class="row" style="position: absolute; bottom: 0;">
       {% for item in site.pages %}
-        {% if item.title == "About" %}
-          {{ item.content }}
-        {% endif %}
+      {% if item.title == "About" %}
+      {{ item.content }}
+      {% endif %}
       {% endfor %}
     </div>
   </div>
   <div class="container-fluid">
     {% for item in site.data.report.docs %}
-      <h2
-        {% unless forloop.first %}
-        style="page-break-before: always; break-after: always;"
-        {% endunless %}>{{ item }}</h2>
-      {% assign id = item | downcase %}
-      <div class="row">
-        <div class="col-6 align-items-stretch">
-          <div class="card mb-3" id="{{ id }}-grade-card">
-            <div class="card-header">
-              Grade
-            </div>
-            <div class="card-body text-center pt-5">
-              <p class="display-1" id="{{ id }}-grade"></p>
-            </div>
+    <h2 {% unless forloop.first %} style="page-break-before: always; break-after: always;" {% endunless %}>{{ item }}
+    </h2>
+    {% assign id = item | downcase %}
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="{{ id }}-grade-card">
+          <div class="card-header">
+            Grade
           </div>
-        </div>
-        <div class="col-6 align-items-stretch">
-          <div class="card mb-3 text-bg-dark" id="score">
-            <div class="card-header">
-              Score
-            </div>
-            <div class="card-body text-center">
-              <p class="display-1">
-                <span id="{{ id }}-percent"></span>%
-              </p>
-            </div>
-            <div class="card-footer text-center" id="{{ id }}-amount"></div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="{{ id }}-grade"></p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="table-responsive table-hover">
-            <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
-              <thead class="table-dark">
-                <tr>
-                  <th scope="col">Tag</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Status</th>
-                </tr>
-              </thead>
-              <tbody id="{{ id }}-table"></tbody>
-            </table>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="score">
+          <div class="card-header">
+            Score
           </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="{{ id }}-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="{{ id }}-amount"></div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="{{ id }}-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-      <div class="row">
-        <div class="col-12">
-          {% for doc in site.docs %}
-            {% if doc.title == item %}
-              {{ doc.content | markdownify }}
-            {% endif %}
-          {% endfor %}
-        </div>
+    <div class="row">
+      <div class="col-12">
+        {% for doc in site.docs %}
+        {% if doc.title == item %}
+        {{ doc.content | markdownify }}
+        {% endif %}
+        {% endfor %}
       </div>
+    </div>
     {% endfor %}
   </div>
 </main>
 <script src="/scripts/variables.js"></script>
 <script src="/scripts/util.js"></script>
 <script>
-    const length = {{ site.data.report.docs | size }};
+  const length = {{ site.data.report.docs | size }};
 </script>
 <script src="/scripts/report.js"></script>

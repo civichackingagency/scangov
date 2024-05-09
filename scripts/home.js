@@ -229,189 +229,191 @@ const overviewScore = () => {
     show('overview');
 };
 
-if (field === 'overview' || field === 'url')
-    fetch('/data/url.json').then(res => res.json()).then(data => {
-        data = filterDomains(data);
+caches.open('data').then(cache => {
+    if (field === 'overview' || field === 'url')
+        getData('url').then(data => {
+            data = filterDomains(data);
 
-        let total = 0, count = 0;
-        for (let i = 0; i < data.length; i++) {
-            const domain = data[i];
-            domain.successes = [];
-            domain.failures = [];
+            let total = 0, count = 0;
+            for (let i = 0; i < data.length; i++) {
+                const domain = data[i];
+                domain.successes = [];
+                domain.failures = [];
 
-            if (domain.status !== 200) {
-                domain.failures.push('HTTPS');
+                if (domain.status !== 200) {
+                    domain.failures.push('HTTPS');
+                    if (CHECK_WWW)
+                        domain.failures.push('WWW');
+                    domain.failures.push('sTLD');
+                    domain.score = 0;
+                    domain.grade = 'F';
+                    continue;
+                }
+
+                domain[(domain.https ? 'successes' : 'failures')].push('HTTPS');
                 if (CHECK_WWW)
-                    domain.failures.push('WWW');
-                domain.failures.push('sTLD');
-                domain.score = 0;
-                domain.grade = 'F';
-                continue;
+                    domain[(domain.www ? 'successes' : 'failures')].push('WWW');
+                domain[(domain.dotgov ? 'successes' : 'failures')].push('sTLD');
+                total += domain.successes.length;
+                count++;
+
+                domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+                domain.grade = getGrade(domain.score);
+            }
+            if (field === 'url') {
+                data = data.sort((a, b) => {
+                    if (a.score === b.score)
+                        return a.url.localeCompare(b.url);
+                    return b.score - a.score;
+                });
+                json = data;
+            }
+            else
+                updateJson(data, 'URL');
+
+            done++;
+            if (field === 'url') {
+                showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
+                show('url');
+            }
+            else if (done === 4)
+                overviewScore();
+        });
+    if (field === 'overview' || field === 'sitemap')
+        getData('sitemap').then(data => {
+            data = filterDomains(data);
+
+            let total = 0, count = 0;
+            for (let i = 0; i < data.length; i++) {
+                const domain = data[i];
+
+                domain.successes = [];
+                domain.failures = [];
+                (domain.status === 200 ? domain.successes : domain.failures).push('Status');
+                (domain.xml ? domain.successes : domain.failures).push('XML');
+                domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+                domain.grade = getGrade(domain.score);
+
+                total += domain.successes.length;
+                count++;
             }
 
-            domain[(domain.https ? 'successes' : 'failures')].push('HTTPS');
-            if (CHECK_WWW)
-                domain[(domain.www ? 'successes' : 'failures')].push('WWW');
-            domain[(domain.dotgov ? 'successes' : 'failures')].push('sTLD');
-            total += domain.successes.length;
-            count++;
+            if (field === 'sitemap') {
+                data = data.sort((a, b) => {
+                    if (a.score === b.score)
+                        return a.url.localeCompare(b.url);
+                    return b.score - a.score;
+                });
+                json = data;
+            }
+            else
+                updateJson(data, 'sitemap');
 
-            domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
-            domain.grade = getGrade(domain.score);
-        }
-        if (field === 'url') {
-            data = data.sort((a, b) => {
-                if (a.score === b.score)
-                    return a.url.localeCompare(b.url);
-                return b.score - a.score;
-            });
-            json = data;
-        }
-        else
-            updateJson(data, 'URL');
+            done++;
+            if (field === 'sitemap') {
+                showScore(total / data.length / 2, 2, 'elements');
+                show('sitemap');
+            }
+            else if (done === 4)
+                overviewScore();
+        });
+    if (field === 'overview' || field === 'robots')
+        getData('robots').then(data => {
+            data = filterDomains(data);
 
-        done++;
-        if (field === 'url') {
-            showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
-            show('url');
-        }
-        else if (done === 4)
-            overviewScore();
-    });
-if (field === 'overview' || field === 'sitemap')
-    fetch('/data/sitemap.json').then(res => res.json()).then(data => {
-        data = filterDomains(data);
+            let total = 0, count = 0;
+            for (let i = 0; i < data.length; i++) {
+                const domain = data[i];
 
-        let total = 0, count = 0;
-        for (let i = 0; i < data.length; i++) {
-            const domain = data[i];
+                domain.successes = [];
+                domain.failures = [];
+                (domain.valid ? domain.successes : domain.failures).push('Valid');
+                (domain.allowed ? domain.successes : domain.failures).push('Allowed');
+                (domain.sitemap ? domain.successes : domain.failures).push('Sitemap');
+                domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+                domain.grade = getGrade(domain.score);
 
-            domain.successes = [];
-            domain.failures = [];
-            (domain.status === 200 ? domain.successes : domain.failures).push('Status');
-            (domain.xml ? domain.successes : domain.failures).push('XML');
-            domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
-            domain.grade = getGrade(domain.score);
+                total += domain.successes.length;
+                count++;
+            }
 
-            total += domain.successes.length;
-            count++;
-        }
+            if (field === 'robots') {
+                data = data.sort((a, b) => {
+                    if (a.score === b.score)
+                        return a.url.localeCompare(b.url);
+                    return b.score - a.score;
+                });
+                json = data;
+            }
+            else
+                updateJson(data, 'robots');
 
-        if (field === 'sitemap') {
-            data = data.sort((a, b) => {
-                if (a.score === b.score)
-                    return a.url.localeCompare(b.url);
-                return b.score - a.score;
-            });
-            json = data;
-        }
-        else
-            updateJson(data, 'sitemap');
+            done++;
+            if (field === 'robots') {
+                showScore(total / data.length / 3, 3, 'elements');
+                show('robots');
+            }
+            else if (done === 4)
+                overviewScore();
+        });
+    if (field === 'overview' || field === 'metadata')
+        getData('metadata').then(data => {
+            data = filterDomains(data);
 
-        done++;
-        if (field === 'sitemap') {
-            showScore(total / data.length / 2, 2, 'elements');
-            show('sitemap');
-        }
-        else if (done === 4)
-            overviewScore();
-    });
-if (field === 'overview' || field === 'robots')
-    fetch('/data/robots.json').then(res => res.json()).then(data => {
-        data = filterDomains(data);
+            let total = 0, count = 0;
+            for (let i = 0; i < data.length; i++) {
+                const domain = data[i];
 
-        let total = 0, count = 0;
-        for (let i = 0; i < data.length; i++) {
-            const domain = data[i];
+                if (domain.status !== 200)
+                    continue;
 
-            domain.successes = [];
-            domain.failures = [];
-            (domain.valid ? domain.successes : domain.failures).push('Valid');
-            (domain.allowed ? domain.successes : domain.failures).push('Allowed');
-            (domain.sitemap ? domain.successes : domain.failures).push('Sitemap');
-            domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
-            domain.grade = getGrade(domain.score);
+                for (let j = 0; j < variables.length; j++)
+                    total += domain[variables[j]];
+                count++;
+            }
 
-            total += domain.successes.length;
-            count++;
-        }
+            for (let i = 0; i < data.length; i++) {
+                const domain = data[i];
 
-        if (field === 'robots') {
-            data = data.sort((a, b) => {
-                if (a.score === b.score)
-                    return a.url.localeCompare(b.url);
-                return b.score - a.score;
-            });
-            json = data;
-        }
-        else
-            updateJson(data, 'robots');
+                let successes = [], failures = [];
+                for (let j = 0; j < variables.length; j++)
+                    (domain[variables[j]] ? successes : failures).push(names[j]);
+                domain.successes = successes;
+                domain.failures = failures;
+                domain.score = Math.round(100 * successes.length / (successes.length + failures.length));
+                domain.grade = getGrade(domain.score);
 
-        done++;
-        if (field === 'robots') {
-            showScore(total / data.length / 3, 3, 'elements');
-            show('robots');
-        }
-        else if (done === 4)
-            overviewScore();
-    });
-if (field === 'overview' || field === 'metadata')
-    fetch('/data/metadata.json').then(res => res.json()).then(data => {
-        data = filterDomains(data);
-
-        let total = 0, count = 0;
-        for (let i = 0; i < data.length; i++) {
-            const domain = data[i];
-
-            if (domain.status !== 200)
-                continue;
-
-            for (let j = 0; j < variables.length; j++)
-                total += domain[variables[j]];
-            count++;
-        }
-
-        for (let i = 0; i < data.length; i++) {
-            const domain = data[i];
-
-            let successes = [], failures = [];
-            for (let j = 0; j < variables.length; j++)
-                (domain[variables[j]] ? successes : failures).push(names[j]);
-            domain.successes = successes;
-            domain.failures = failures;
-            domain.score = Math.round(100 * successes.length / (successes.length + failures.length));
-            domain.grade = getGrade(domain.score);
-
-            domain.redirects = domain.status === 200 && !domain.redirect.includes(domain.url);
-        }
-        if (field === 'metadata') {
-            data = data.sort((a, b) => {
-                if (a.redirects && !b.redirects && b.status === 200)
-                    return 1;
-                if (!a.redirects && a.status === 200 && b.redirects)
-                    return -1;
-
-                if (a.status !== b.status)
-                    if (a.status === 200)
-                        return -1;
-                    else if (b.status === 200)
+                domain.redirects = domain.status === 200 && !domain.redirect.includes(domain.url);
+            }
+            if (field === 'metadata') {
+                data = data.sort((a, b) => {
+                    if (a.redirects && !b.redirects && b.status === 200)
                         return 1;
-                    else
-                        return a.status - b.status;
-                if (a.successes.length === b.successes.length)
-                    return a.url.localeCompare(b.url);
-                return b.successes.length - a.successes.length;
-            });
-            json = data;
-        }
-        else
-            updateJson(data, 'metadata');
+                    if (!a.redirects && a.status === 200 && b.redirects)
+                        return -1;
 
-        done++;
-        if (field !== 'overview') {
-            showScore(total / count / variables.length, variables.length, 'tags');
-            show('metadata');
-        }
-        else if (done === 4)
-            overviewScore();
-    });
+                    if (a.status !== b.status)
+                        if (a.status === 200)
+                            return -1;
+                        else if (b.status === 200)
+                            return 1;
+                        else
+                            return a.status - b.status;
+                    if (a.successes.length === b.successes.length)
+                        return a.url.localeCompare(b.url);
+                    return b.successes.length - a.successes.length;
+                });
+                json = data;
+            }
+            else
+                updateJson(data, 'metadata');
+
+            done++;
+            if (field !== 'overview') {
+                showScore(total / count / variables.length, variables.length, 'tags');
+                show('metadata');
+            }
+            else if (done === 4)
+                overviewScore();
+        });
+});

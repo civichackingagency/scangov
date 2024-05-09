@@ -19,3 +19,19 @@ const getColor = score => {
 };
 
 const CHECK_WWW = true;
+
+let cache;
+const getData = async (file) => {
+    if (!cache)
+        cache = await caches.open('data');
+
+    file = '/data/' + file + '.json';
+
+    let data = await cache.match(file);
+    if (!data) {
+        await cache.add(file);
+        data = await cache.match(file);
+    }
+
+    return data.json();
+}

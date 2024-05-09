@@ -17,7 +17,7 @@ const finish = () => {
     print();
 }
 
-fetch('/data/metadata.json').then(res => res.json()).then(data => {
+getData('metadata').then(data => {
     for (let i = 0; i < data.length; i++)
         if (data[i].url === domain) {
             data = data[i];
@@ -91,7 +91,7 @@ fetch('/data/metadata.json').then(res => res.json()).then(data => {
     `;
 }).finally(finish);
 
-fetch('/data/url.json').then(res => res.json()).then(data => {
+getData('url').then(data => {
     for (let i = 0; i < data.length; i++)
         if (data[i].url === domain) {
             data = data[i];
@@ -148,7 +148,7 @@ fetch('/data/url.json').then(res => res.json()).then(data => {
     table.innerHTML = tableHTML;
 }).finally(finish);
 
-fetch('/data/sitemap.json').then(res => res.json()).then(data => {
+getData('sitemap').then(data => {
     for (let i = 0; i < data.length; i++)
         if (data[i].url === domain) {
             data = data[i];
@@ -190,7 +190,7 @@ fetch('/data/sitemap.json').then(res => res.json()).then(data => {
 `;
 }).finally(finish);
 
-fetch('/data/robots.json').then(res => res.json()).then(data => {
+getData('robots').then(data => {
     for (let i = 0; i < data.length; i++)
         if (data[i].url === domain) {
             data = data[i];

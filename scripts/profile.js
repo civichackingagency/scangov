@@ -29,7 +29,7 @@ const load = async page => {
         changelog.style.display = 'none';
 
         if (!urlLoaded) {
-            const data = await (await fetch('/data/url.json')).json();
+            const data = await getData('url');
             for (const domain of data)
                 if (domain.url == agencyURL) {
                     urlJson = domain;
@@ -114,7 +114,7 @@ const load = async page => {
         changelog.style.display = 'none';
 
         if (!sitemapLoaded) {
-            const data = await (await fetch('/data/sitemap.json')).json();
+            const data = await getData('sitemap');
             for (const domain of data)
                 if (domain.url == agencyURL) {
                     sitemapJson = domain;
@@ -178,7 +178,7 @@ const load = async page => {
         changelog.style.display = 'none';
 
         if (!robotsLoaded) {
-            const data = await (await fetch('/data/robots.json')).json();
+            const data = await getData('robots');
             for (const domain of data)
                 if (domain.url == agencyURL) {
                     robotsJson = domain;
@@ -253,7 +253,7 @@ const load = async page => {
         changelog.style.display = 'revert';
 
         if (!metadataJson) {
-            const data = await (await fetch('/data/metadata.json')).json();
+            const data = await getData('metadata');
             let currentAgency;
             for (const agency of data)
                 if (agency.url == agencyURL) {
@@ -416,7 +416,7 @@ const load = async page => {
             metadataCard.classList.add('text-bg-' + getColor(Math.round(total / variables.length * 100)));
         };
         if (!metadataJson)
-            fetch('/data/metadata.json').then(res => res.json()).then(data => {
+            getData('metadata').then(data => {
                 let currentDomain;
                 for (const domain of data)
                     if (domain.url == agencyURL) {
@@ -434,7 +434,7 @@ const load = async page => {
             document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / (3 - !CHECK_WWW))));
         };
         if (!urlLoaded)
-            fetch('/data/url.json').then(res => res.json()).then(data => {
+            getData('url').then(data => {
                 let currentDomain;
                 for (const domain of data)
                     if (domain.url == agencyURL) {
@@ -458,7 +458,7 @@ const load = async page => {
             document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(percent));
         };
         if (!sitemapLoaded)
-            fetch('/data/sitemap.json').then(res => res.json()).then(data => {
+            getData('sitemap').then(data => {
                 let currentDomain;
                 for (const domain of data)
                     if (domain.url == agencyURL) {
@@ -482,7 +482,7 @@ const load = async page => {
             document.getElementById('robots-card').classList.add('text-bg-' + getColor(percent));
         };
         if (!robotsLoaded)
-            fetch('/data/robots.json').then(res => res.json()).then(data => {
+            getData('robots').then(data => {
                 let currentDomain;
                 for (const domain of data)
                     if (domain.url == agencyURL) {
