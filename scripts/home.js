@@ -204,6 +204,8 @@ const updateJson = (data, field) => {
                     const domain = json[j];
                     domain.successes = domain.successes.concat(data[i].successes.map(s => s + ' (' + field + ')'));
                     domain.failures = domain.failures.concat(data[i].failures.map(f => f + ' (' + field + ')'));
+                    if (field === 'URL')
+                        domain.status = data[i].status;
                 }
 
     for (let i = 0; i < json.length; i++) {
