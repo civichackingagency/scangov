@@ -1,18 +1,25 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import fetch from 'node-fetch';
-import { scrape, options, domains } from './scrape.js';
+import { scrape, options, /*domains */ } from './scrape.js';
 import { exit } from 'process';
 
 const outcomes = [];
 const historyData = existsSync('data/sitemap.json') ? JSON.parse(readFileSync('data/sitemap.json', 'utf8')) : [];
 const queue = [];
 const specificDomain = process.argv[2];
-for (const domain of domains) {
+/*for (const domain of domains) {
     const domainData = domain.split(',');
     if (!specificDomain || specificDomain === domainData[0].toLowerCase())
-        queue.push({ url: domainData[0].toLowerCase(), name: domainData[2] });
+        queue.push({ url: domainData[0].toLowerCase(), name: domainData[1] });
     else
         outcomes.push(historyData.find(d => d.url === domainData[0].toLowerCase()));
+}*/
+const domains = JSON.parse(readFileSync('data/robots.json', 'utf8'));
+for (const domain of domains) {
+    if (!specificDomain || specificDomain === domain.url.toLowerCase())
+        queue.push({ url: domain.url.toLowerCase(), name: domain.name, sitemap: domain.sitemap });
+    else
+        outcomes.push(historyData.find(d => d.url === domain.url.toLowerCase()));
 }
 
 let done = 0;
@@ -26,7 +33,7 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
         clearTimeout(timeout);
     }, 30000);
     timeout.unref();
-    res = await fetch('http://' + args.url + '/sitemap.xml', {
+    res = await fetch(args.sitemap || ('http://' + args.url + '/sitemap.xml'), {
         ...options,
         signal: controller.signal
     }).catch(err => console.error(args.url, err.name, err.message));
