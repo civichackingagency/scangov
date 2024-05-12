@@ -21,7 +21,7 @@ for (let i = 0; i < domains.length; i++) {
         }
         else
             home = '/'
-        queue.push({ url, name: domainData[2], home });
+        queue.push({ url, name: domainData[1], home });
     }
     else
         outcomes.push(historyData.find(d => d.url === domainData[0].toLowerCase()));

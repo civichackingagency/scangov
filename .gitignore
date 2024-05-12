@@ -3,3 +3,4 @@ _site/
 node_modules/
 test/
 Gemfile.lock
+package-lock.json
