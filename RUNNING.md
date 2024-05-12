@@ -7,6 +7,9 @@ Contents:
     - [Single-level-government](#single-level-government)
 - [Running without the website](#running-without-the-website)
 - [Customization](#customization)
+    - [Custom domains](#custom-domains)
+    - [Adding/removing metadata parameters](#addingremoving-metadata-parameters)
+    - [Removing WWW validation](#removing-www-validation)
 
 ## Quickstart
 
@@ -14,7 +17,7 @@ To use the tool for your own set of domains:
 - Clone the repository
 - Install [NodeJS](https://nodejs.org/en/download/current)
 - Run `npm install`
-- Delete all files in `/data` and `CNAME`
+- Delete `CNAME`
 - Update the `User-Agent` [header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) in the `options` object in `scrapers/scrape.js`
 - (Optional) [Use custom domains](#custom-domains) or [disable www validation](#removing-www-validation)
 - Run `node scrapers/url`, then `node scrapers/robots`, then `node scrapers/metadata`, then `node scrapers/sitemap` 
@@ -58,19 +61,17 @@ If you don't want to have a graphical version and only want to use the data (loc
 ### Custom domains
 
 To use your own list of domains:
-- Open `scrapers/scrape.js`
-- Delete the lines for all the domains (comments give instructions)
-- Create an array called `domainsList` and enter domains in the format `domain,,agency name` ([example](#example-domains-list))
+- Open `data/domains.csv`
+- Delete all lines except for the first
+- Add in your domains in the format `domain,agency` ([example](#example-domains-list))
     - Domains can be any case
     - Domains shouldn't start with `http` or `www`
 
 <a id="example-domains-list">Example list:</a>
-```javascript
-const domainsList = [
-    'domain1.gov,,Department of X'
-    'domain2.gov,,Department of Y'
-    'domain3.gov,,Department of Z'
-];
+```
+domain1.gov,Department of X
+domain2.gov,Department of Y
+domain3.gov,Department of Z
 ```
 
 ### Adding/removing metadata parameters
@@ -87,7 +88,7 @@ To add/remove parameters to the site:
     - Make sure the name in `variables` matches the one in the data
     - Make sure each index lines up
 
-### Removing www validation
+### Removing WWW validation
 
 If you don't want to check for [www canonicalization](https://scangov.org/docs/canonicalization):
 - Open `scrapers/url.js`

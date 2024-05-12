@@ -11,8 +11,6 @@ export const options = {
     }
 };
 
-// To run your own, domains, delete everything until the export statement
-// To run your own domains, create domainsList here
 export const domains = readFileSync('data/domains.csv', 'utf8').split('\n').slice(1);
 
 /**
