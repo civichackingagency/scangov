@@ -11,8 +11,9 @@ const urls = JSON.parse(readFileSync('data/url.json', 'utf8'));
 const queue = [];
 const specificDomain = process.argv[2];
 for (let i = 0; i < domains.length; i++) {
-    const domainData = domains[i].split(',');
-    const url = domainData[0].toLowerCase();
+    const domainData = domains[i];
+    const comma = domainData.indexOf(',');
+    const url = domainData.substring(0, comma).toLowerCase();
     if (!specificDomain || (specificDomain && specificDomain === url)) {
         let home = urls.find(u => u.url === url).redirect;
         if (home) {
@@ -21,10 +22,10 @@ for (let i = 0; i < domains.length; i++) {
         }
         else
             home = '/'
-        queue.push({ url, name: domainData[1], home });
+        queue.push({ url, name: domainData.substring(comma + 1).replaceAll('"', ''), home });
     }
     else
-        outcomes.push(historyData.find(d => d.url === domainData[0].toLowerCase()));
+        outcomes.push(historyData.find(d => d.url === url.toLowerCase()));
 }
 
 let done = 0;

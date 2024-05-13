@@ -69,7 +69,7 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
 writeFileSync('data/sitemap.json', JSON.stringify(outcomes));
 let csv = 'domain,agency,status,redirect,xml,items,pdfs\n';
 for (const outcome of outcomes)
-    csv += outcome.url + ',' + outcome.name + ',' + outcome.status + ',' + outcome.redirect + ',' + outcome.xml + ',' + outcome.items + ',' + outcome.pdfs + '\n';
+    csv += outcome.url + ',"' + outcome.name + '",' + outcome.status + ',"' + outcome.redirect + '",' + outcome.xml + ',' + outcome.items + ',' + outcome.pdfs + '\n';
 writeFileSync('data/sitemap.csv', csv);
 console.log('Done writing');
 
