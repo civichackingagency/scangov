@@ -10,11 +10,12 @@ const historyData = existsSync('data/url.json') ? JSON.parse(readFileSync('data/
 const queue = [];
 const specificDomain = process.argv[2];
 for (let i = 0; i < domains.length; i++) {
-    const domainData = domains[i].split(',');
+    const domainData = domains[i];
+    const comma = domainData.indexOf(',');
     if (!specificDomain || specificDomain === domainData[0].toLowerCase())
-        queue.push({ url: domainData[0].toLowerCase(), name: domainData[1] });
+        queue.push({ url: domainData.substring(0, comma).toLowerCase(), name: domainData.substring(comma + 1).replaceAll('"', '') });
     else
-        outcomes.push(historyData.find(d => d.url === domainData[0].toLowerCase()));
+        outcomes.push(historyData.find(d => d.url === domainData.substring(0, comma).toLowerCase()));
 }
 
 let done = 0;
@@ -99,7 +100,7 @@ await scrape(queue, args => new Promise(async (resolve, reject) => {
 writeFileSync('data/url.json', JSON.stringify(outcomes));
 let csv = 'domain,agency,status,redirect,https,dot_gov' + (CHECK_WWW ? ',www' : '') + '\n';
 for (const outcome of outcomes)
-    csv += outcome.url + ',' + outcome.name + ',' + outcome.status + ',' + outcome.redirect + ',' + outcome.https + ',' + outcome.dotgov + (CHECK_WWW ? ',' + outcome.www : '') + '\n';
+    csv += outcome.url + ',"' + outcome.name + '",' + outcome.status + ',"' + outcome.redirect + '",' + outcome.https + ',' + outcome.dotgov + (CHECK_WWW ? ',' + outcome.www : '') + '\n';
 writeFileSync('data/url.csv', csv);
 console.log('Done writing');
 
