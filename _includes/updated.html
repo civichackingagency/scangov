@@ -8,7 +8,7 @@
         Request update</a>)
 </li>
 <script>
-    fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1').then(res => res.json()).then(async data => {
+    fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1&sha=main').then(res => res.json()).then(async data => {
         const updateTime = new Date(data[0].commit.author.date);
         document.getElementById('updated').innerText = updateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
 
