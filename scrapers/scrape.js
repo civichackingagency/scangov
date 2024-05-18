@@ -11,7 +11,8 @@ export const options = {
     }
 };
 
-export const domains = readFileSync('data/domains.csv', 'utf8').split('\n').slice(1);
+export const domains = readFileSync('data/domains.csv', 'utf8').replaceAll('\r', '').split('\n').slice(1)
+    .filter(d => d.includes(','));
 
 /**
  * 

@@ -12,19 +12,20 @@ keywords: government domains, government websites
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <h2>Results</h2>
-        {% include updated.html %}
-        <p class="text-muted">
-          <small id="filters">
-            Filters:
-          </small>
-          <br>
-          <small>
+        <ul class="small list-unstyled">
+          {% include updated.html %}
+          <li class="text-body-secondary">
+            <span id="filters">
+              Filters:
+            </span>
+          </li>
+          <li class="text-body-secondary">
             Showing:
             <span id="showing-count"></span>
             of
             <span id="showing-total"></span>
-          </small>
-        </p>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="row" id="score-card">

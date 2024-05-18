@@ -20,7 +20,7 @@ const load = async page => {
     if (gradeCard.classList.length === 3)
         gradeCard.classList.remove('text-bg-success', 'text-bg-warning', 'text-bg-danger');
     document.getElementById('specific').classList = '';
-    document.getElementById('overview').classList = 'd-none';
+    document.getElementById('overview-section').classList = 'd-none';
     changelog.style.display = 'none';
     docs.innerHTML = '';
 
@@ -400,7 +400,7 @@ const load = async page => {
     }
     else {
         document.getElementById('specific').classList = 'd-none';
-        document.getElementById('overview').classList = '';
+        document.getElementById('overview-section').classList = '';
         pageTitle.innerText = 'Dashboard';
 
         const metadataCard = document.getElementById('metadata-card');
