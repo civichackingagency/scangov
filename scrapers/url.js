@@ -12,7 +12,7 @@ const specificDomain = process.argv[2];
 for (let i = 0; i < domains.length; i++) {
     const domainData = domains[i];
     const comma = domainData.indexOf(',');
-    if (!specificDomain || specificDomain === domainData[0].toLowerCase())
+    if (!specificDomain || specificDomain === domainData.substring(0, comma).toLowerCase())
         queue.push({ url: domainData.substring(0, comma).toLowerCase(), name: domainData.substring(comma + 1).replaceAll('"', '') });
     else
         outcomes.push(historyData.find(d => d.url === domainData.substring(0, comma).toLowerCase()));
