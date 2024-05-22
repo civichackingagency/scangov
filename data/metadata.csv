@@ -9,7 +9,6 @@ ct.gov,"https://portal.ct.gov/","State of Connecticut",200,true,false,false,fals
 de.gov,"https://de.gov/","State of Delaware",200,true,true,false,false,true,false,true,true,false,true,true,true,true,false,false,false,false,true,true,true,true
 myflorida.com,"https://www.myflorida.com/","State of Florida",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 georgia.gov,"https://georgia.gov/","State of Georgia",200,true,false,false,false,true,true,false,true,false,true,false,true,true,true,true,false,false,true,true,false,true
-hawaii.gov,"https://portal.ehawaii.gov/","State of Hawaii",200,true,true,false,false,true,false,false,true,false,true,true,true,false,false,false,false,false,false,false,false,false
 idaho.gov,"https://idaho.gov/","State of Idaho",200,true,true,false,true,true,true,true,true,true,true,true,true,true,false,false,false,true,true,false,false,false
 illinois.gov,"https://www.illinois.gov/","State of Illinois",200,true,true,false,false,true,true,true,false,true,true,true,true,false,false,false,false,false,true,true,true,false
 in.gov,"https://www.in.gov/","State of Indiana",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1955,3 +1954,4 @@ vaitcampus.com,"https://vaitcampus.com/","Department of Veterans Affairs",200,tr
 vavmc.com,"undefined","Department of Veterans Affairs",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 usarmyband.com,"https://usarmyband.com/","Department of Defense",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
 mass.gov,"https://www.mass.gov/","State of Massachusetts",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
+hawaii.gov,"https://portal.ehawaii.gov/","State of Hawaii",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
