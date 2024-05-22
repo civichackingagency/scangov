@@ -7,13 +7,3 @@
         href="https://github.com/civichackingagency/scangov/issues/new?assignees=Narlotl&labels=data+update&projects=&template=data-update-request.md&title=Update+data%3A+%5BDOMAIN%5D">
         Request update</a>)
 </li>
-<script>
-    fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1&sha=main').then(res => res.json()).then(async data => {
-        const updateTime = new Date(data[0].commit.author.date);
-        document.getElementById('updated').innerText = updateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-
-        const cacheTime = await getCacheTime();
-        if (cacheTime < updateTime.getTime())
-            clearCache();
-    });
-</script>
