@@ -18,7 +18,7 @@ const getColor = score => {
     return 'danger';
 };
 
-const CHECK_WWW = true;
+let CHECK_WWW = true;
 
 let cache;
 const getData = async (file) => {
@@ -31,7 +31,6 @@ const getData = async (file) => {
     document.getElementById('updated').innerText = updateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
 
     if (cacheTime < updateTime.getTime()) {
-        console.log('New data, clear cached data');
         // New data, clear cached data
         if (!cache)
             cache = await caches.open('data');
