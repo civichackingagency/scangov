@@ -188,7 +188,7 @@ const showScore = (score, elements, elementsName) => {
     amountLabel.innerText = Math.round(score / 100 * elements) + ' of ' + elements + ' ' + elementsName;
 };
 
-const filterDomains = data => data.filter(domain => (domain.name.toLowerCase().includes(search.toLowerCase()) || domain.url.includes(search)) && (!MULTI_LEVEL || (level === 1 || (level === 2 && !domain.name.startsWith('State of')) || level === 3 && domain.name.startsWith('State of'))));
+const filterDomains = data => data.filter(domain => (domain.name.toLowerCase().includes(search.toLowerCase()) || domain.url.includes(search.toLowerCase())) && (!MULTI_LEVEL || (level === 1 || (level === 2 && !domain.name.startsWith('State of')) || level === 3 && domain.name.startsWith('State of'))));
 
 const updateJson = (data, field) => {
     if (!json)
@@ -236,12 +236,13 @@ if (field === 'overview' || field === 'url')
         let total = 0, count = 0;
         for (let i = 0; i < data.length; i++) {
             const domain = data[i];
+            const subdomain = domain.url.split('.').length > 2;
             domain.successes = [];
             domain.failures = [];
 
             if (domain.status !== 200) {
                 domain.failures.push('HTTPS');
-                if (CHECK_WWW)
+                if (CHECK_WWW && !subdomain)
                     domain.failures.push('WWW');
                 domain.failures.push('sTLD');
                 domain.score = 0;
@@ -250,7 +251,7 @@ if (field === 'overview' || field === 'url')
             }
 
             domain[(domain.https ? 'successes' : 'failures')].push('HTTPS');
-            if (CHECK_WWW)
+            if (CHECK_WWW && !subdomain)
                 domain[(domain.www ? 'successes' : 'failures')].push('WWW');
             domain[(domain.dotgov ? 'successes' : 'failures')].push('sTLD');
             total += domain.successes.length;

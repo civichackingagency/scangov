@@ -39,6 +39,8 @@ const load = async page => {
         }
 
         const data = urlJson;
+        CHECK_WWW = CHECK_WWW && data.url.split('.').length <= 2;
+        console.log(CHECK_WWW)
 
         document.getElementById('site').innerText = data.url;
         document.getElementById('parent').innerText = data.name;
@@ -430,6 +432,7 @@ const load = async page => {
             showMetadata();
 
         const showUrl = () => {
+            CHECK_WWW = CHECK_WWW && urlJson.url.split('.').length <= 2;
             document.getElementById('url-grade').innerText = getGrade(100 * (urlJson.https + (CHECK_WWW && urlJson.www) + urlJson.dotgov) / (3 - !CHECK_WWW));
             document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / (3 - !CHECK_WWW))));
         };
