@@ -9,6 +9,7 @@ ct.gov,"https://portal.ct.gov/","State of Connecticut",200,true,false,false,fals
 de.gov,"https://de.gov/","State of Delaware",200,true,true,false,false,true,false,true,true,false,true,true,true,true,false,false,false,false,true,true,true,true
 myflorida.com,"https://www.myflorida.com/","State of Florida",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 georgia.gov,"https://georgia.gov/","State of Georgia",200,true,false,false,false,true,true,false,true,false,true,false,true,true,true,true,false,false,true,true,false,true
+hawaii.gov,"https://portal.ehawaii.gov/","State of Hawaii",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 idaho.gov,"https://idaho.gov/","State of Idaho",200,true,true,false,true,true,true,true,true,true,true,true,true,true,false,false,false,true,true,false,false,false
 illinois.gov,"https://www.illinois.gov/","State of Illinois",200,true,true,false,false,true,true,true,false,true,true,true,true,false,false,false,false,false,true,true,true,false
 in.gov,"https://www.in.gov/","State of Indiana",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -39,7 +40,7 @@ ri.gov,"https://www.ri.gov/","State of Rhode Island",200,true,true,true,true,tru
 sc.gov,"https://sc.gov/","State of South Carolina",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sd.gov,"https://www.sd.gov/cs","State of South Dakota",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 tn.gov,"https://www.tn.gov/","State of Tennessee",200,true,true,false,false,true,true,false,false,false,true,true,true,false,false,false,false,false,true,true,true,false
-texas.gov,"https://www.texas.gov/","State of Texas",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+texas.gov,"https://www.texas.gov/","State of Texas",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 utah.gov,"https://www.utah.gov/index.html","State of Utah",200,true,true,true,false,true,false,false,false,false,true,true,false,true,false,false,false,false,false,false,false,false
 vermont.gov,"https://www.vermont.gov/","State of Vermont",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 virginia.gov,"https://www.virginia.gov/","State of Virginia",200,true,true,false,true,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
@@ -327,7 +328,6 @@ coronavirus.gov,"https://www.cdc.gov/coronavirus/2019-ncov/index.html","Departme
 covid.gov,"https://www.covid.gov/","Department of Health and Human Services",200,true,false,false,true,true,true,false,true,true,true,false,true,false,false,false,false,true,true,true,false,false
 covidtest.gov,"https://www.covid.gov/tools-and-resources/resources/tests","Department of Health and Human Services",200,true,true,false,true,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
 covidtests.gov,"https://www.covid.gov/tools-and-resources/resources/tests","Department of Health and Human Services",200,true,true,false,true,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
-cuidadodesalud.gov,"https://www.cuidadodesalud.gov/es/","Department of Health and Human Services",200,true,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,true,true,true,true,false
 dhhs.gov,"https://www.hhs.gov/","Department of Health and Human Services",200,true,false,false,false,true,true,false,true,false,true,false,true,false,false,false,false,true,true,true,false,false
 diabetescommittee.gov,"https://www.niddk.nih.gov/about-niddk/advisory-coordinating-committees/diabetes-mellitus-interagency-coordinating-committee-dmicc?dkrd=lgdmn0022","Department of Health and Human Services",200,true,true,true,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 docline.gov,"https://www.docline.gov/docline/needs_authentication/?next=/docline/","Department of Health and Human Services",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -356,7 +356,7 @@ guideline.gov,"https://guideline.gov/","Department of Health and Human Services"
 guidelines.gov,"https://guidelines.gov/","Department of Health and Human Services",502,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 hc.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false
 health.gov,"https://health.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-healthcare.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false
+healthcare.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
 healthdata.gov,"https://healthdata.gov/","Department of Health and Human Services",200,true,false,false,false,true,false,false,true,true,true,false,true,true,false,false,false,false,false,false,false,false
 healthfinder.gov,"https://health.gov/myhealthfinder","Department of Health and Human Services",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 healthindicators.gov,"undefined","Department of Health and Human Services",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1954,4 +1954,4 @@ vaitcampus.com,"https://vaitcampus.com/","Department of Veterans Affairs",200,tr
 vavmc.com,"undefined","Department of Veterans Affairs",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 usarmyband.com,"https://usarmyband.com/","Department of Defense",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
 mass.gov,"https://www.mass.gov/","State of Massachusetts",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
-hawaii.gov,"https://portal.ehawaii.gov/","State of Hawaii",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
+cuidadodesalud.gov,"https://www.cuidadodesalud.gov/es/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
