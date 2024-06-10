@@ -353,13 +353,30 @@ const load = async page => {
         if (metadataCard.classList.length > 2)
             return;
 
+        let metadataScore, urlScore, sitemapScore, robotsScore;
+        // Update the card for the domain's overall grade
+        const showOverall = () => {
+            // Check if all data is loaded to calculate total score
+            if (!(metadataJson && urlJson && sitemapJson && robotsJson))
+                return;
+
+            const average = (metadataScore + urlScore + sitemapScore + robotsScore) / 4;
+            document.getElementById('overall-grade').innerText = getGrade(average);
+            document.getElementById('overall-card').classList.add('text-bg-' + getColor(average));
+            document.getElementById('overall-card').title = Math.round(average) + '%';
+        }
+
         const showMetadata = () => {
             let total = 0;
             for (const variable of variables)
                 if (metadataJson[variable])
                     total++;
-            document.getElementById('metadata-grade').innerText = getGrade(total / variables.length * 100);
-            metadataCard.classList.add('text-bg-' + getColor(Math.round(total / variables.length * 100)));
+            metadataScore = total / variables.length * 100;
+            document.getElementById('metadata-grade').innerText = getGrade(metadataScore);
+            metadataCard.classList.add('text-bg-' + getColor(metadataScore));
+            metadataCard.title = Math.round(metadataScore) + '%';
+
+            showOverall();
         };
         if (!metadataJson)
             getData('metadata').then(data => {
@@ -377,8 +394,12 @@ const load = async page => {
 
         const showUrl = () => {
             CHECK_WWW = CHECK_WWW && urlJson.url.split('.').length <= 2;
-            document.getElementById('url-grade').innerText = getGrade(100 * (urlJson.https + (CHECK_WWW && urlJson.www) + urlJson.dotgov) / (3 - !CHECK_WWW));
-            document.getElementById('url-card').classList.add('text-bg-' + getColor(Math.round(100 * (urlJson.https + urlJson.www + urlJson.dotgov) / (3 - !CHECK_WWW))));
+            urlScore = 100 * (urlJson.https + (CHECK_WWW && urlJson.www) + urlJson.dotgov) / (3 - !CHECK_WWW);
+            document.getElementById('url-grade').innerText = getGrade(urlScore);
+            document.getElementById('url-card').classList.add('text-bg-' + getColor(urlScore));
+            document.getElementById('url-card').title = Math.round(urlScore) + '%';
+
+            showOverall();
         };
         if (!urlLoaded)
             getData('url').then(data => {
@@ -400,9 +421,12 @@ const load = async page => {
             document.getElementById('parent').innerText = sitemapJson.name;
             document.getElementById('parent').href = '/?search=' + sitemapJson.name + '&agency=1';
 
-            const percent = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
-            document.getElementById('sitemap-grade').innerText = getGrade(percent);
-            document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(percent));
+            sitemapScore = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
+            document.getElementById('sitemap-grade').innerText = getGrade(sitemapScore);
+            document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(sitemapScore));
+            document.getElementById('sitemap-card').title = Math.round(sitemapScore) + '%';
+
+            showOverall();
         };
         if (!sitemapLoaded)
             getData('sitemap').then(data => {
@@ -424,9 +448,12 @@ const load = async page => {
             document.getElementById('parent').innerText = robotsJson.name;
             document.getElementById('parent').href = '/?search=' + robotsJson.name + '&agency=1';
 
-            const percent = Math.round(100 * (robotsJson.valid + robotsJson.allowed + !!robotsJson.sitemap) / 3);
-            document.getElementById('robots-grade').innerText = getGrade(percent);
-            document.getElementById('robots-card').classList.add('text-bg-' + getColor(percent));
+            robotsScore = Math.round(100 * (robotsJson.valid + robotsJson.allowed + !!robotsJson.sitemap) / 3);
+            document.getElementById('robots-grade').innerText = getGrade(robotsScore);
+            document.getElementById('robots-card').classList.add('text-bg-' + getColor(robotsScore));
+            document.getElementById('robots-card').title = Math.round(robotsScore) + '%';
+
+            showOverall();
         };
         if (!robotsLoaded)
             getData('robots').then(data => {

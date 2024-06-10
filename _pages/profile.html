@@ -41,15 +41,18 @@ permalink: /profile/
     <h2 class="h2" id="page">Dashboard</h2>
     <div id="overview-section" class="d-none">
         <div class="row">
-            {% for card in site.data.report.docs %}
+            {% assign cards = site.data.report.docs | unshift: "Overall" %}
+            {% for card in cards %}
                 {% assign lower = card | downcase %}
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
                     <div class="card mb-3" id="{{ lower }}-card">
                         <div class="card-header">
                             <a href="#{{ lower }}" class="text-decoration-none" style="color: inherit">{{ card }}</a>
-                            <a href="https://docs.scangov.org/{{ lower }}">
-                                <i class="fa-solid fa-circle-question"></i>
-                            </a>
+                            {% unless card == "Overall" %}
+                                <a href="https://docs.scangov.org/{{ lower }}">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                </a>
+                            {% endunless %}
                         </div>
                         <a href="#{{ lower }}" class="card-body text-center pt-5 text-decoration-none">
                             <p class="display-1" id="{{ lower }}-grade"></p>
