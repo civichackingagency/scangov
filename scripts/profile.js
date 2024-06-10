@@ -4,7 +4,6 @@ document.getElementById('report').href += location.search;
 document.getElementById('visit-link').href = 'http://' + agencyURL;
 const table = document.getElementById('table'),
     gradeCard = document.getElementById('grade-card'),
-    docs = document.getElementById('docs'),
     pageTitle = document.getElementById('page'),
     changelog = document.getElementById('changelog');
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
@@ -22,7 +21,6 @@ const load = async page => {
     document.getElementById('specific').classList = '';
     document.getElementById('overview-section').classList = 'd-none';
     changelog.style.display = 'none';
-    docs.innerHTML = '';
 
     if (page === '#url') {
         pageTitle.innerText = 'URL';
@@ -98,18 +96,6 @@ const load = async page => {
             </tr>
         `;
         table.innerHTML = tableHTML;
-
-        docs.innerHTML = `
-            <li>
-                <a href="https://docs.scangov.org/data">Data</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/status">Status</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/url">URL</a>
-            </li>
-        `;
     }
     else if (page === '#sitemap') {
         pageTitle.innerText = 'Sitemap';
@@ -161,18 +147,6 @@ const load = async page => {
                     <i class="fa-solid ${data.xml ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
-        `;
-
-        docs.innerHTML = `
-            <li>
-                <a href="https://docs.scangov.org/data">Data</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/status">Status</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/sitemap">Sitemap</a>
-            </li>
         `;
     }
     else if (page === '#robots') {
@@ -236,18 +210,6 @@ const load = async page => {
                 </td>
             </tr>
             
-        `;
-
-        docs.innerHTML = `
-            <li>
-                <a href="https://docs.scangov.org/data">Data</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/status">Status</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/robots">Robots</a>
-            </li>
         `;
     }
     else if (page === '#metadata') {
@@ -381,24 +343,6 @@ const load = async page => {
                 </li>
             `;
         }
-
-        docs.innerHTML = `
-            <li>
-                <a href="https://docs.scangov.org/data">Data</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/grades">Grades</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/metadata">Metadata</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/scores">Scores</a>
-            </li>
-            <li>
-                <a href="https://docs.scangov.org/status">Status</a>
-            </li>
-        `;
     }
     else {
         document.getElementById('specific').classList = 'd-none';
