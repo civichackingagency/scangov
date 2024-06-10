@@ -6,141 +6,120 @@ permalink: /profile/
 ---
 
 <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-  <div class="list-group mb-5">
-    <a href="#/" class="list-group-item list-group-item-action">
-      <i class="fa-solid fa-gauge"></i>
-      <small>Dashboard</small>
-    </a>
-    <a href="#metadata" class="list-group-item list-group-item-action">
-      <i class="fa-solid fa-database"></i>
-      <small>Metadata</small>
-    </a>
-    <a href="#url" class="list-group-item list-group-item-action">
-      <i class="fa-solid fa-link"></i>
-      <small>URL</small>
-    </a>
-    <a href="#sitemap" class="list-group-item list-group-item-action">
-      <i class="fa-solid fa-sitemap"></i>
-      <small>Sitemap</small>
-    </a>
-    <a href="#robots" class="list-group-item list-group-item-action">
-      <i class="fa-solid fa-robot"></i>
-      <small>Robots</small>
-    </a>
-    <a class="list-group-item list-group-item-action d-none" id="view-redirect" href="">
-      <i class="fa-solid fa-circle-right"></i>
-      <small>View redirect</small>
-    </a>
-    <a class="list-group-item list-group-item-action" id="visit-link" target="_blank" href="">
-      <i class="fa-solid fa-up-right-from-square"></i>
-      <small>Visit site</small>
-    </a>
-  </div>
+    <div class="list-group mb-5">
+        <a href="#/" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-gauge"></i>
+            <small>Dashboard</small>
+        </a>
+        <a href="#metadata" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-database"></i>
+            <small>Metadata</small>
+        </a>
+        <a href="#url" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-link"></i>
+            <small>URL</small>
+        </a>
+        <a href="#sitemap" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-sitemap"></i>
+            <small>Sitemap</small>
+        </a>
+        <a href="#robots" class="list-group-item list-group-item-action">
+            <i class="fa-solid fa-robot"></i>
+            <small>Robots</small>
+        </a>
+        <a class="list-group-item list-group-item-action d-none" id="view-redirect" href="">
+            <i class="fa-solid fa-circle-right"></i>
+            <small>View redirect</small>
+        </a>
+        <a class="list-group-item list-group-item-action" id="visit-link" target="_blank" href="">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <small>Visit site</small>
+        </a>
+    </div>
 </div>
 <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-  <h2 class="h2" id="page">Dashboard</h2>
-  <div id="overview-section" class="d-none">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <a class="card mb-3" id="metadata-card" href="#metadata">
-          <div class="card-header">
-            Metadata
-          </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="metadata-grade"></p>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <a class="card mb-3" id="url-card" href="#url">
-          <div class="card-header">
-            URL
-          </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="url-grade"></p>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <a class="card mb-3" id="sitemap-card" href="#sitemap">
-          <div class="card-header">
-            Sitemap
-          </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="sitemap-grade"></p>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
-        <a class="card mb-3" id="robots-card" href="#robots">
-          <div class="card-header">
-            Robots
-          </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="robots-grade"></p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div id="specific">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
-        <div class="card mb-3" id="grade-card">
-          <div class="card-header">
-            Grade
-          </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="grade"></p>
-          </div>
+    <h2 class="h2" id="page">Dashboard</h2>
+    <div id="overview-section" class="d-none">
+        <div class="row">
+            {% assign cards = site.data.report.docs | unshift: "Overall" %}
+            {% for card in cards %}
+                {% assign lower = card | downcase %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card mb-3" id="{{ lower }}-card">
+                        <div class="card-header">
+                            <a href="#{{ lower }}" class="text-decoration-none" style="color: inherit">{{ card }}</a>
+                            {% unless card == "Overall" %}
+                                <a href="https://docs.scangov.org/{{ lower }}">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                </a>
+                            {% endunless %}
+                        </div>
+                        <a href="#{{ lower }}" class="card-body text-center pt-5 text-decoration-none">
+                            <p class="display-1" id="{{ lower }}-grade"></p>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-      </div>
-      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
-        <div class="card mb-3 text-bg-dark" id="score">
-          <div class="card-header">
-            Score
-          </div>
-          <div class="card-body text-center">
-            <p class="display-1">
-              <span id="percent"></span>%
-            </p>
-          </div>
-          <div class="card-footer text-center" id="amount"></div>
+    </div>
+    <div id="specific">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
+                <div class="card mb-3" id="grade-card">
+                    <div class="card-header">
+                        Grade
+                        <a href="https://docs.scangov.org/grades">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </a>
+                    </div>
+                    <div class="card-body text-center pt-5">
+                        <p class="display-1" id="grade"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
+                <div class="card mb-3 text-bg-dark" id="score">
+                    <div class="card-header">
+                        Score
+                        <a href="https://docs.scangov.org/scores">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="display-1">
+                        <span id="percent"></span>%
+                        </p>
+                    </div>
+                    <div class="card-footer text-center" id="amount"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 class="mt-3">Status</h3>
-        <div class="table-responsive table-hover">
-          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Tag</th>
-                <th scope="col">Description</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody id="table"></tbody>
-          </table>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mt-3">Status</h3>
+                <div class="table-responsive table-hover">
+                    <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Tag</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table"></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row" id="changelog">
+            <div class="col-12">
+                <h2>Changelog</h2>
+                <section class="pt-2">
+                    <ul class="timeline" id="timeline"></ul>
+                </section>
+            </div>
+        </div>
     </div>
-    <div class="row" id="changelog">
-      <div class="col-12">
-        <h2>Changelog</h2>
-        <section class="pt-2">
-          <ul class="timeline" id="timeline"></ul>
-        </section>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-12">
-        <h3>Documentation</h3>
-        <ul id="docs"></ul>
-      </div>
-    </div>
-  </div>
 </div>
 <script src="/scripts/util.js"></script>
 <script src="/scripts/variables.js"></script>
