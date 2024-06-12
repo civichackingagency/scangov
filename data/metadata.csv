@@ -14,18 +14,18 @@ idaho.gov,"https://idaho.gov/","State of Idaho",200,true,true,false,true,true,tr
 illinois.gov,"https://www.illinois.gov/","State of Illinois",200,true,true,false,false,true,true,true,false,true,true,true,true,false,false,false,false,false,true,true,true,false
 in.gov,"https://www.in.gov/","State of Indiana",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 iowa.gov,"https://www.iowa.gov/","State of Iowa",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,true,true,true,true,true
-kansas.gov,"https://portal.kansas.gov/","State of Kansas",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 kentucky.gov,"https://www.kentucky.gov/Pages/home.aspx","State of Kentucky",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 louisiana.gov,"https://www.louisiana.gov/","State of Louisiana",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 maine.gov,"https://www.maine.gov/portal/index.html","State of Maine",200,true,true,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 maryland.gov,"https://www.maryland.gov/Pages/default.aspx","State of Maryland",200,true,false,false,false,true,true,false,false,true,true,false,true,true,false,false,false,false,false,false,false,false
+mass.gov,"https://www.mass.gov/","State of Massachusetts",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
 michigan.gov,"https://www.michigan.gov/som","State of Michigan",200,true,true,false,false,true,true,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false
 mn.gov,"undefined","State of Minnesota",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-mississippi.gov,"https://www.mississippi.gov/","State of Mississippi",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+mississippi.gov,"https://www.mississippi.gov/","State of Mississippi",403,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 mo.gov,"https://www.mo.gov/","State of Missouri",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 mt.gov,"https://mt.gov/","State of Montana",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 nebraska.gov,"https://www.nebraska.gov/","State of Nebraska",200,true,true,true,false,true,true,true,true,true,true,true,false,true,false,false,false,true,true,true,true,true
-nv.gov,"https://nv.gov/","State of Nevada",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+nv.gov,"https://nv.gov/","State of Nevada",200,true,true,true,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 nh.gov,"https://www.nh.gov/","State of New Hampshire",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 nj.gov,"https://nj.gov/","State of New Jersey",200,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 nm.gov,"https://www.nm.gov/","State of New Mexico",200,true,false,false,true,true,true,true,true,true,true,false,true,false,false,false,false,false,true,false,false,false
@@ -35,7 +35,7 @@ nd.gov,"https://www.nd.gov/","State of North Dakota",200,true,true,true,false,tr
 ohio.gov,"https://ohio.gov/","State of Ohio",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 oklahoma.gov,"https://oklahoma.gov/","State of Oklahoma",200,true,true,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,false
 oregon.gov,"https://www.oregon.gov/Pages/index.aspx","State of Oregon",200,true,true,true,false,true,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false
-pa.gov,"https://www.pa.gov/","State of Pennsylvania",200,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,true,true,true,false
+pa.gov,"https://www.pa.gov/","State of Pennsylvania",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ri.gov,"https://www.ri.gov/","State of Rhode Island",200,true,true,true,true,true,false,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
 sc.gov,"https://sc.gov/","State of South Carolina",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sd.gov,"https://www.sd.gov/cs","State of South Dakota",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -55,8 +55,8 @@ preserveamerica.gov,"http://preserveamerica.gov/","Advisory Council on Historic 
 abmc.gov,"https://www.abmc.gov/","American Battle Monuments Commission",200,true,true,false,false,true,true,false,true,false,false,false,true,false,false,false,false,true,false,true,false,false
 arc.gov,"https://arc.gov/","Appalachian Regional Commission",200,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,true,false,false,true
 asc.gov,"https://asc.gov/","Appraisal Subcommittee",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-afrh.gov,"https://www.afrh.gov/","Armed Forces Retirement Home",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-goldwaterscholarship.gov,"https://goldwaterscholarship.gov/","Barry Goldwater Scholarship and Excellence in Education Foundation",200,true,true,false,true,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,false
+afrh.gov,"https://www.afrh.gov/","Armed Forces Retirement Home",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+goldwaterscholarship.gov,"https://goldwaterscholarship.gov/","Barry Goldwater Scholarship and Excellence in Education Foundation",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cia.gov,"https://www.cia.gov/","Central Intelligence Agency",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ic.gov,"undefined","Central Intelligence Agency",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 istac.gov,"undefined","Central Intelligence Agency",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -168,7 +168,7 @@ sdr.gov,"https://www.sdr.gov/","Department of Commerce",200,true,false,false,fal
 selectusa.gov,"https://www.trade.gov/selectusa-home","Department of Commerce",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 semiconductors.gov,"https://www.nist.gov/chips","Department of Commerce",200,true,false,false,false,true,true,false,true,true,true,false,true,false,false,false,false,true,true,true,false,false
 spaceweather.gov,"https://www.spaceweather.gov/","Department of Commerce",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-spd15revision.gov,"https://spd15revision.gov/","Department of Commerce",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+spd15revision.gov,"https://spd15revision.gov/","Department of Commerce",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 spectrum.gov,"https://www.ntia.gov/other-publication/2017/federal-government-spectrum-compendium","Department of Commerce",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 standards.gov,"https://www.nist.gov/standardsgov","Department of Commerce",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
 stopfakes.gov,"https://www.stopfakes.gov/welcome","Department of Commerce",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -178,8 +178,8 @@ techhubs.gov,"https://www.eda.gov/funding/programs/regional-technology-and-innov
 time.gov,"undefined","Department of Commerce",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 trade.gov,"https://www.trade.gov/","Department of Commerce",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 tsunami.gov,"https://tsunami.gov/","Department of Commerce",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-usicecenter.gov,"https://usicecenter.gov/","Department of Commerce",200,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-uspto.gov,"https://www.uspto.gov/","Department of Commerce",200,true,true,false,false,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false
+usicecenter.gov,"https://usicecenter.gov/","Department of Commerce",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+uspto.gov,"https://www.uspto.gov/","Department of Commerce",200,true,true,false,true,true,true,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false
 weather.gov,"https://www.weather.gov/","Department of Commerce",200,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 wwtg.gov,"https://www.wwtg.gov/","Department of Commerce",200,true,false,false,true,true,true,false,false,true,true,false,true,false,false,false,false,true,true,true,false,false
 xd.gov,"https://www.xd.gov/","Department of Commerce",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,false,true
@@ -230,9 +230,9 @@ nationsreportcard.gov,"https://www.nationsreportcard.gov/","Department of Educat
 studentaid.gov,"https://studentaid.gov/","Department of Education",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 studentloans.gov,"undefined","Department of Education",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ameslab.gov,"https://www.ameslab.gov/","Department of Energy",200,true,true,false,false,true,true,false,false,false,true,false,false,true,false,false,false,true,true,true,false,true
-anl.gov,"https://www.anl.gov/","Department of Energy",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+anl.gov,"https://www.anl.gov/","Department of Energy",403,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 arm.gov,"https://arm.gov/","Department of Energy",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-biomassboard.gov,"https://biomassboard.gov/","Department of Energy",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+biomassboard.gov,"https://biomassboard.gov/","Department of Energy",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bnl.gov,"https://www.bnl.gov/world/","Department of Energy",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bpa.gov,"https://www.bpa.gov/","Department of Energy",200,true,false,true,true,true,false,false,false,true,true,false,true,false,false,false,false,false,false,false,false,false
 buildingamerica.gov,"undefined","Department of Energy",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -299,7 +299,7 @@ acf.gov,"undefined","Department of Health and Human Services",500,false,false,fa
 acl.gov,"https://acl.gov/","Department of Health and Human Services",200,true,false,false,false,true,true,false,false,false,false,false,false,true,true,true,false,false,false,false,false,false
 afterschool.gov,"undefined","Department of Health and Human Services",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 aging.gov,"https://www.hhs.gov/aging/index.html","Department of Health and Human Services",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
-agingstats.gov,"https://agingstats.gov/","Department of Health and Human Services",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+agingstats.gov,"https://agingstats.gov/","Department of Health and Human Services",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ahcpr.gov,"https://www.ahrq.gov/","Department of Health and Human Services",200,true,true,true,false,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false
 ahrq.gov,"https://www.ahrq.gov/","Department of Health and Human Services",200,true,true,true,false,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false
 aids.gov,"https://www.hiv.gov/","Department of Health and Human Services",200,true,true,false,true,true,true,false,true,true,true,true,true,true,true,true,false,true,true,true,true,true
@@ -328,9 +328,10 @@ coronavirus.gov,"https://www.cdc.gov/coronavirus/2019-ncov/index.html","Departme
 covid.gov,"https://www.covid.gov/","Department of Health and Human Services",200,true,false,false,true,true,true,false,true,true,true,false,true,false,false,false,false,true,true,true,false,false
 covidtest.gov,"https://www.covid.gov/tools-and-resources/resources/tests","Department of Health and Human Services",200,true,true,false,true,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
 covidtests.gov,"https://www.covid.gov/tools-and-resources/resources/tests","Department of Health and Human Services",200,true,true,false,true,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
+cuidadodesalud.gov,"https://www.cuidadodesalud.gov/es/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
 dhhs.gov,"https://www.hhs.gov/","Department of Health and Human Services",200,true,false,false,false,true,true,false,true,false,true,false,true,false,false,false,false,true,true,true,false,false
 diabetescommittee.gov,"https://www.niddk.nih.gov/about-niddk/advisory-coordinating-committees/diabetes-mellitus-interagency-coordinating-committee-dmicc?dkrd=lgdmn0022","Department of Health and Human Services",200,true,true,true,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
-docline.gov,"https://www.docline.gov/docline/needs_authentication/?next=/docline/","Department of Health and Human Services",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+docline.gov,"https://www.docline.gov/docline/needs_authentication/?next=/docline/","Department of Health and Human Services",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 donaciondeorganos.gov,"https://donaciondeorganos.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 drugabuse.gov,"https://nida.nih.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,true,false,true,true,true,true,false,false,true,true,true,true,true,true
 eldercare.gov,"https://eldercare.gov/","Department of Health and Human Services",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -354,7 +355,7 @@ grants.gov,"https://grants.gov/","Department of Health and Human Services",200,t
 grantsolutions.gov,"https://www.grantsolutions.gov/","Department of Health and Human Services",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 guideline.gov,"https://guideline.gov/","Department of Health and Human Services",502,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 guidelines.gov,"https://guidelines.gov/","Department of Health and Human Services",502,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-hc.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false
+hc.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
 health.gov,"https://health.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 healthcare.gov,"https://www.healthcare.gov/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
 healthdata.gov,"https://healthdata.gov/","Department of Health and Human Services",200,true,false,false,false,true,false,false,true,true,true,false,true,true,false,false,false,false,false,false,false,false
@@ -452,7 +453,7 @@ power2prevent.gov,"undefined","Department of Homeland Security",500,false,false,
 preventionresourcefinder.gov,"https://www.dhs.gov/prevention","Department of Homeland Security",200,true,false,false,false,true,true,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false
 ready.gov,"https://www.ready.gov/","Department of Homeland Security",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 readybusiness.gov,"https://www.ready.gov/business","Department of Homeland Security",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-safetyact.gov,"https://safetyact.gov/","Department of Homeland Security",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+safetyact.gov,"https://safetyact.gov/","Department of Homeland Security",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 schoolsafety.gov,"https://www.schoolsafety.gov/","Department of Homeland Security",200,true,true,false,false,true,true,false,true,false,true,true,true,true,false,false,false,false,true,true,true,true
 secretservice.gov,"https://www.secretservice.gov/","Department of Homeland Security",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 stopransomware.gov,"https://www.cisa.gov/stopransomware","Department of Homeland Security",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,false,false,false,false,false
@@ -531,7 +532,7 @@ nvtc.gov,"https://www.fbi.gov/about/leadership-and-structure/intelligence/nation
 ojjdp.gov,"https://ojjdp.ojp.gov/","Department of Justice",200,true,false,true,false,true,true,false,true,false,true,false,true,true,false,false,true,false,true,true,false,true
 ojp.gov,"https://ojp.gov/","Department of Justice",200,true,true,false,false,true,true,false,true,false,true,true,true,true,false,false,false,false,true,true,true,true
 ovc.gov,"https://ovc.ojp.gov/","Department of Justice",200,true,true,false,false,true,true,false,true,false,true,true,true,true,false,false,false,true,true,true,true,true
-ovcttac.gov,"https://www.ovcttac.gov/","Department of Justice",200,true,true,false,false,true,false,false,false,false,true,true,false,true,true,true,false,true,true,true,true,true
+ovcttac.gov,"https://www.ovcttac.gov/","Department of Justice",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 projectsafechildhood.gov,"https://www.justice.gov/psc","Department of Justice",200,true,false,false,false,true,true,false,true,true,true,false,true,false,false,false,false,false,false,false,false,false
 projectsafeneighborhoods.gov,"https://www.justice.gov/psn","Department of Justice",200,true,false,false,false,true,true,false,true,true,true,false,true,false,false,false,false,false,false,false,false,false
 psob.gov,"https://psob.bja.ojp.gov/","Department of Justice",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -641,7 +642,7 @@ doi.gov,"https://www.doi.gov/","Department of the Interior",200,true,true,false,
 doioig.gov,"https://www.doioig.gov/","Department of the Interior",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 earthquake.gov,"https://www.usgs.gov/programs/earthquake-hazards","Department of the Interior",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 evergladesrestoration.gov,"https://www.evergladesrestoration.gov/","Department of the Interior",200,true,false,false,false,true,true,false,true,true,true,true,true,true,true,true,false,false,true,true,true,true
-everykidoutdoors.gov,"https://everykidoutdoors.gov/index.htm","Department of the Interior",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+everykidoutdoors.gov,"https://everykidoutdoors.gov/index.htm","Department of the Interior",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fcg.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fgdc.gov,"https://fgdc.gov/","Department of the Interior",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ficor.gov,"http://ficor.gov/","Department of the Interior",403,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -652,13 +653,13 @@ firescience.gov,"undefined","Department of the Interior",500,false,false,false,f
 fws.gov,"https://www.fws.gov/","Department of the Interior",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,false,false,false,false,false
 gcmrc.gov,"https://www.usgs.gov/centers/sbsc/about/gcmrc","Department of the Interior",200,true,true,true,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 geoplatform.gov,"https://geoplatform.gov/","Department of the Interior",200,true,true,true,false,true,false,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
-iat.gov,"https://www.iat.gov/","Department of the Interior",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+iat.gov,"https://www.iat.gov/","Department of the Interior",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 indianaffairs.gov,"https://www.bia.gov/","Department of the Interior",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 interior.gov,"https://www.doi.gov/","Department of the Interior",200,true,true,false,true,true,true,true,false,false,true,true,true,true,false,false,false,true,true,false,false,false
 invasivespecies.gov,"https://www.doi.gov/invasivespecies/","Department of the Interior",200,true,true,false,true,true,true,false,false,false,true,false,false,false,false,false,false,true,true,false,false,false
 jem.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 lacoast.gov,"https://www.lacoast.gov/new/Default.aspx","Department of the Interior",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-landfire.gov,"https://landfire.gov/","Department of the Interior",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+landfire.gov,"https://landfire.gov/","Department of the Interior",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 landimaging.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 lca.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 lcrmscp.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -679,7 +680,7 @@ osm.gov,"undefined","Department of the Interior",500,false,false,false,false,fal
 osmre.gov,"https://www.osmre.gov/","Department of the Interior",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 piedrasblancas.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 reportband.gov,"https://reportband.gov/","Department of the Interior",301,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-rivers.gov,"https://www.rivers.gov/","Department of the Interior",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
+rivers.gov,"https://www.rivers.gov/","Department of the Interior",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 safecom.gov,"https://safecom.gov/","Department of the Interior",200,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 salmonrecovery.gov,"https://www.salmonrecovery.gov/","Department of the Interior",200,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sciencebase.gov,"https://www.sciencebase.gov/","Department of the Interior",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -699,7 +700,7 @@ bankanswers.gov,"https://bankanswers.gov/","Department of the Treasury",200,true
 bankcustomer.gov,"https://bankcustomer.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 bankcustomerassistance.gov,"https://bankcustomerassistance.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 bankhelp.gov,"https://bankhelp.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
-banknet.gov,"https://www.banknet.gov/","Department of the Treasury",200,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+banknet.gov,"https://www.banknet.gov/","Department of the Treasury",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bep.gov,"https://www.bep.gov/","Department of the Treasury",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,true,true,false,true
 bfem.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bondpro.gov,"https://www.treasurydirect.gov/savings-bonds/cashing-a-bond/savings-bond-pro/","Department of the Treasury",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -722,7 +723,7 @@ financialstability.gov,"https://home.treasury.gov/data/troubled-asset-relief-pro
 fincen.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fsoc.gov,"https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/fsoc","Department of the Treasury",200,true,false,false,false,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,false,true
 godirect.gov,"https://godirect.gov/gpw/","Department of the Treasury",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-helpwithmybank.gov,"https://helpwithmybank.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
+helpwithmybank.gov,"https://helpwithmybank.gov/","Department of the Treasury",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 helpwithmycheckingaccount.gov,"https://helpwithmycheckingaccount.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 helpwithmycreditcard.gov,"https://helpwithmycreditcard.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 helpwithmycreditcardbank.gov,"https://helpwithmycreditcardbank.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
@@ -734,7 +735,7 @@ irs.gov,"https://www.irs.gov/","Department of the Treasury",200,true,true,false,
 irsauctions.gov,"https://www.irsauctions.gov/","Department of the Treasury",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 irsnet.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 irssales.gov,"https://www.irsauctions.gov/","Department of the Treasury",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-irsvideos.gov,"http://irsvideos.gov/","Department of the Treasury",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+irsvideos.gov,"http://irsvideos.gov/","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 its.gov,"https://its.gov/","Department of the Treasury",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 makinghomeaffordable.gov,"https://home.treasury.gov/data/troubled-assets-relief-program/housing","Department of the Treasury",200,true,false,false,false,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,false,true
 mha.gov,"https://home.treasury.gov/data/troubled-assets-relief-program/housing","Department of the Treasury",200,true,false,false,false,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,false,true
@@ -749,10 +750,10 @@ nationalbank.gov,"https://nationalbank.gov/","Department of the Treasury",404,fa
 nationalbankhelp.gov,"https://nationalbankhelp.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 nationalbanknet.gov,"https://nationalbanknet.gov/","Department of the Treasury",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 navycash.gov,"https://fiscal.treasury.gov/navy-cash/","Department of the Treasury",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-occ.gov,"https://occ.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
+occ.gov,"https://occ.gov/","Department of the Treasury",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 occhelps.gov,"https://occhelps.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
 occnet.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-ots.gov,"https://www.occ.gov/","Department of the Treasury",200,true,true,false,false,true,false,true,true,true,false,false,true,true,false,false,true,true,true,true,true,false
+ots.gov,"https://www.occ.gov/","Department of the Treasury",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 patriotbonds.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 pay.gov,"https://www.pay.gov/","Department of the Treasury",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 qatesttwai.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -763,7 +764,7 @@ sigpr.gov,"https://www.sigpr.gov/","Department of the Treasury",200,true,false,f
 sigtarp.gov,"https://www.sigtarp.gov/","Department of the Treasury",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 slgs.gov,"https://www.treasurydirect.gov/government/slgs/","Department of the Treasury",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 taaps.gov,"https://taaps.gov/","Department of the Treasury",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-tax.gov,"http://tax.gov/","Department of the Treasury",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+tax.gov,"http://tax.gov/","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 tcis.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 tigta.gov,"https://www.tigta.gov/","Department of the Treasury",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 tigtanet.gov,"undefined","Department of the Treasury",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -880,9 +881,9 @@ fec.gov,"https://www.fec.gov/","Federal Election Commission",200,true,true,false
 ferc.gov,"https://ferc.gov/","Federal Energy Regulatory Commission",200,true,false,false,false,true,true,false,true,false,true,false,true,true,false,false,true,true,true,true,false,true
 fhfa.gov,"https://www.fhfa.gov/","Federal Housing Finance Agency",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fhfaoig.gov,"http://fhfaoig.gov/","Federal Housing Finance Agency",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-mortgagetranslations.gov,"https://www.fhfa.gov/mortgagetranslations","Federal Housing Finance Agency",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+mortgagetranslations.gov,"https://www.fhfa.gov/mortgagetranslations","Federal Housing Finance Agency",404,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 flra.gov,"https://www.flra.gov/","Federal Labor Relations Authority",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-fmc.gov,"https://www.fmc.gov/","Federal Maritime Commission",200,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+fmc.gov,"https://www.fmc.gov/","Federal Maritime Commission",200,true,false,false,true,true,true,true,true,true,true,true,true,true,false,false,false,false,true,false,false,false
 adr.gov,"https://adr.gov/","Federal Mediation and Conciliation Service",200,true,false,false,true,true,true,false,true,true,true,true,true,true,false,false,false,false,false,false,false,false
 fmcs.gov,"https://www.fmcs.gov/","Federal Mediation and Conciliation Service",200,true,true,false,true,true,true,true,true,true,true,true,true,true,false,false,false,false,true,false,false,false
 fmshrc.gov,"undefined","Federal Mine Safety and Health Review Commission",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -921,8 +922,8 @@ protecciondelconsumidor.gov,"undefined","Federal Trade Commission",500,false,fal
 robodeidentidad.gov,"https://www.robodeidentidad.gov/","Federal Trade Commission",200,true,true,true,false,true,false,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 sentinel.gov,"https://www.ftc.gov/enforcement/consumer-sentinel-network","Federal Trade Commission",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 18f.gov,"https://18f.gsa.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,false,true,true,false,true,false,false,false,true,true,true,false,true
-400yaahc.gov,"https://www.400yaahc.gov/","General Services Administration",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-accessibility.gov,"https://www.section508.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false
+400yaahc.gov,"https://www.400yaahc.gov/","General Services Administration",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+accessibility.gov,"https://www.section508.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,true
 acquisition.gov,"https://login.acquisition.gov/","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 acquisitiongateway.gov,"http://acquisitiongateway.gov/","General Services Administration",400,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 afadvantage.gov,"https://www.afadvantage.gov/","General Services Administration",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -930,7 +931,7 @@ businessusa.gov,"https://www.usa.gov/small-business?source=busa","General Servic
 buyaccessible.gov,"https://www.section508.gov/art/","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 buyamerican.gov,"https://www.madeinamerica.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,false
 cao.gov,"https://www.acquisition.gov/cao-home","General Services Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-cbca.gov,"https://cbca.gov/","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+cbca.gov,"https://cbca.gov/","General Services Administration",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cdo.gov,"https://www.cdo.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false
 cfo.gov,"https://www.cfo.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
 challenge.gov,"https://www.challenge.gov/","General Services Administration",200,true,true,true,false,true,true,false,false,true,true,true,true,true,false,false,false,true,true,false,false,true
@@ -951,7 +952,7 @@ ecpic.gov,"https://digital.gov/services/electronic-capital-planning-and-investme
 esrs.gov,"https://www.esrs.gov/","General Services Administration",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 evaluation.gov,"https://www.evaluation.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,true
 fac.gov,"https://www.fac.gov/","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-faca.gov,"https://www.gsa.gov/policy-regulations/policy/federal-advisory-committee-management","General Services Administration",200,true,false,false,false,true,true,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false
+faca.gov,"https://www.gsa.gov/policy-regulations/policy/federal-advisory-committee-management","General Services Administration",200,true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 facadatabase.gov,"https://www.facadatabase.gov/FACA/s/","General Services Administration",200,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fai.gov,"https://www.fai.gov/","General Services Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fapiis.gov,"http://fapiis.gov/","General Services Administration",400,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -959,10 +960,10 @@ fbf.gov,"http://fbf.gov/","General Services Administration",400,false,false,fals
 fbo.gov,"https://sam.gov/content/opportunities","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fcsm.gov,"https://www.fcsm.gov/","General Services Administration",200,true,false,false,true,true,true,false,false,true,true,false,true,false,false,false,false,false,true,true,false,false
 fdms.gov,"https://www.fdms.gov/fdms","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-fedidcard.gov,"https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/federal-credentialing-services?gsaredirect=fedidcard","General Services Administration",200,true,false,false,false,true,true,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false
+fedidcard.gov,"https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/federal-credentialing-services?gsaredirect=fedidcard","General Services Administration",200,true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 fedinfo.gov,"undefined","General Services Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fedramp.gov,"https://www.fedramp.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,false,true,true,true,true
-fedrooms.gov,"https://www.gsa.gov/travel/plan-a-trip/lodging/fedrooms","General Services Administration",200,true,false,false,false,true,true,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false
+fedrooms.gov,"https://www.gsa.gov/travel/plan-a-trip/lodging/fedrooms","General Services Administration",200,true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 firstgov.gov,"https://www.usa.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
 fleet.gov,"undefined","General Services Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fmi.gov,"https://sftool.gov/train","General Services Administration",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -975,7 +976,7 @@ frpg.gov,"undefined","General Services Administration",500,false,false,false,fal
 fsd.gov,"https://www.fsd.gov/gsafsd_sp","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fsrs.gov,"https://www.fsrs.gov/","General Services Administration",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 gobiernousa.gov,"https://www.usa.gov/es/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
-gsa.gov,"https://www.gsa.gov/","General Services Administration",200,true,false,false,false,true,true,false,false,false,true,false,true,true,false,false,false,false,false,false,false,false
+gsa.gov,"https://www.gsa.gov/","General Services Administration",200,true,true,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 gsaadvantage.gov,"https://gsaadvantage.gov/","General Services Administration",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 gsaauctions.gov,"https://gsaauctions.gov/","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 gsafleet.gov,"https://gsafleet.gov/","General Services Administration",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -991,7 +992,7 @@ kids.gov,"https://www.usa.gov/education?source=kids","General Services Administr
 login.gov,"https://login.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,false,true,true,false,true,false,false,false,false,true,true,false,true
 madeinamerica.gov,"https://www.madeinamerica.gov/","General Services Administration",200,true,true,false,false,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,false
 ncmms.gov,"undefined","General Services Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-notify.gov,"https://beta.notify.gov/","General Services Administration",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+notify.gov,"https://beta.notify.gov/","General Services Administration",200,true,true,false,false,true,false,false,false,false,true,true,false,true,false,false,false,false,false,false,false,false
 paymentaccuracy.gov,"https://www.paymentaccuracy.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,false,false,false,false,false
 pcscotus.gov,"undefined","General Services Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 performance.gov,"https://www.performance.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,true
@@ -1014,7 +1015,7 @@ saferfederalworkforce.gov,"https://www.saferfederalworkforce.gov/","General Serv
 sam.gov,"https://sam.gov/content/home","General Services Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sbst.gov,"https://sbst.gov/","General Services Administration",200,true,false,false,false,true,true,false,false,false,true,false,true,false,false,false,false,false,false,true,false,false
 search.gov,"https://search.gov/","General Services Administration",200,true,true,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,true,false,false,false
-section508.gov,"https://www.section508.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false
+section508.gov,"https://www.section508.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,true,true
 sftool.gov,"https://sftool.gov/","General Services Administration",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 statspolicy.gov,"https://www.statspolicy.gov/","General Services Administration",200,true,true,false,true,true,true,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false
 thenamingcommission.gov,"http://www.thenamingcommission.gov/","General Services Administration",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1043,8 +1044,8 @@ udall.gov,"https://udall.gov/","Morris K. Udall and Stewart L. Udall Foundation"
 earth.gov,"https://earth.gov/","National Aeronautics and Space Administration",200,true,true,false,false,true,false,false,true,true,true,true,true,true,false,false,false,false,true,true,true,true
 globe.gov,"https://www.globe.gov/","National Aeronautics and Space Administration",200,true,true,true,false,true,true,false,false,false,false,false,true,true,true,true,false,false,false,false,false,false
 nasa.gov,"https://www.nasa.gov/","National Aeronautics and Space Administration",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true,true,true
-scijinks.gov,"https://scijinks.gov/","National Aeronautics and Space Administration",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false
-usgeo.gov,"https://usgeo.gov/","National Aeronautics and Space Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+scijinks.gov,"https://scijinks.gov/","National Aeronautics and Space Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+usgeo.gov,"https://usgeo.gov/","National Aeronautics and Space Administration",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 9-11commission.gov,"https://9-11commission.gov/","National Archives and Records Administration",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 911commission.gov,"https://911commission.gov/","National Archives and Records Administration",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 archives.gov,"https://www.archives.gov/","National Archives and Records Administration",200,true,false,false,false,true,false,false,true,true,true,true,true,true,false,false,false,false,true,true,false,true
@@ -1053,7 +1054,7 @@ clintonlibrary.gov,"https://www.clintonlibrary.gov/","National Archives and Reco
 dd214.gov,"https://www.archives.gov/veterans","National Archives and Records Administration",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,true,true
 eisenhowerlibrary.gov,"https://www.eisenhowerlibrary.gov/","National Archives and Records Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 emergency-federal-register.gov,"https://www.archives.gov/federal-register","National Archives and Records Administration",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,true,true
-fcic.gov,"https://cybercemetery.unt.edu/archive/fcic/20110310172443/http://fcic.gov/","National Archives and Records Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+fcic.gov,"https://cybercemetery.unt.edu/archive/fcic/20110310172443/http://fcic.gov/","National Archives and Records Administration",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fordlibrarymuseum.gov,"https://www.fordlibrarymuseum.gov/","National Archives and Records Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 frc.gov,"https://www.archives.gov/frc","National Archives and Records Administration",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,true,true
 georgewbushlibrary.gov,"https://www.georgewbushlibrary.gov/","National Archives and Records Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false
@@ -1071,8 +1072,8 @@ recordsmanagement.gov,"https://www.archives.gov/records-mgmt","National Archives
 trumanlibrary.gov,"https://www.trumanlibrary.gov/","National Archives and Records Administration",200,true,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 trumplibrary.gov,"https://www.trumplibrary.gov/","National Archives and Records Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 trumpwhitehouse.gov,"https://trumpwhitehouse.archives.gov/","National Archives and Records Administration",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-wartimecontracting.gov,"https://cybercemetery.unt.edu/archive/cwc/20110929213815/http://www.wartimecontracting.gov/","National Archives and Records Administration",200,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-webharvest.gov,"https://webharvest.gov/","National Archives and Records Administration",200,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false
+wartimecontracting.gov,"https://cybercemetery.unt.edu/archive/cwc/20110929213815/http://www.wartimecontracting.gov/","National Archives and Records Administration",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+webharvest.gov,"https://webharvest.gov/","National Archives and Records Administration",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ncpc.gov,"https://www.ncpc.gov//","National Capital Planning Commission",200,true,true,true,false,true,false,false,false,true,true,true,true,true,true,true,false,true,true,true,true,true
 ncd.gov,"https://www.ncd.gov/","National Council on Disability",200,true,true,false,true,true,true,false,false,true,true,true,true,true,false,false,false,true,true,true,false,true
 mycreditunion.gov,"https://mycreditunion.gov/","National Credit Union Administration",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1088,7 +1089,7 @@ nmb.gov,"https://nmb.gov/","National Mediation Board",200,false,false,false,fals
 arctic.gov,"undefined","National Science Foundation",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 new.nsf.gov,"https://new.nsf.gov/","National Science Foundation",200,true,true,true,false,true,true,false,true,false,true,false,true,true,false,false,false,true,true,true,false,true
 nsf.gov/staff,"https://www.nsf.gov/staff/","National Science Foundation",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-research.gov,"https://www.research.gov/research-web/","National Science Foundation",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+research.gov,"https://www.research.gov/research-web/","National Science Foundation",200,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sac.gov,"https://www.sac.gov/index.htm","National Science Foundation",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 usap.gov,"https://www.usap.gov/","National Science Foundation",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 nscai.gov,"https://cybercemetery.unt.edu/nscai/20211005220330/https://www.nscai.gov/","National Security Commission on Artificial Intelligence",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1101,7 +1102,7 @@ nrc-gateway.gov,"undefined","Nuclear Regulatory Commission",500,false,false,fals
 nrc.gov,"https://www.nrc.gov/","Nuclear Regulatory Commission",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false
 oshrc.gov,"http://oshrc.gov/","Occupational Safety & Health Review Commission",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 integrity.gov,"https://integrity.gov/","Office of Government Ethics",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-oge.gov,"https://oge.gov/","Office of Government Ethics",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+oge.gov,"https://oge.gov/","Office of Government Ethics",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 applicationmanager.gov,"undefined","Office of Personnel Management",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 chcoc.gov,"undefined","Office of Personnel Management",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cybercareers.gov,"https://www.opm.gov/cyber-careers/","Office of Personnel Management",200,true,true,true,false,true,false,false,true,true,false,false,true,true,false,false,false,false,false,false,false,false
@@ -1130,7 +1131,7 @@ presidiocommercial.gov,"undefined","Presidio Trust",500,false,false,false,false,
 presidiotrust.gov,"https://presidio.gov/about/presidio-trust","Presidio Trust",200,true,true,false,true,true,true,false,true,true,true,true,true,true,true,true,false,false,false,false,false,false
 presidiotunneltops.gov,"https://presidio.gov/explore/attractions/presidio-tunnel-tops","Presidio Trust",200,true,true,false,true,true,true,false,true,true,true,true,true,true,true,true,false,false,false,false,false,false
 pclob.gov,"https://www.pclob.gov/","Privacy and Civil Liberties Oversight Board",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-pbrb.gov,"https://www.pbrb.gov/","Public Buildings Reform Board",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+pbrb.gov,"https://www.pbrb.gov/","Public Buildings Reform Board",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 rrb.gov,"undefined","Railroad Retirement Board",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 investor.gov,"https://www.investor.gov/","Securities and Exchange Commission",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sec.gov,"https://www.sec.gov/","Securities and Exchange Commission",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1323,7 +1324,7 @@ ccb.gov,"http://ccb.gov/","Library of Congress",200,true,true,true,false,true,fa
 congress.gov,"https://www.congress.gov/","Library of Congress",403,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 copyright.gov,"https://copyright.gov/","Library of Congress",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 copyrightclaimsboard.gov,"undefined","Library of Congress",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-crb.gov,"https://www.crb.gov/","Library of Congress",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+crb.gov,"https://www.crb.gov/","Library of Congress",525,true,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 crs.gov,"undefined","Library of Congress",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 currencyreader.gov,"https://currencyreader.gov/","Library of Congress",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 currencyreaderapplication.gov,"https://currencyreader.gov/","Library of Congress",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1429,7 +1430,7 @@ aww.aww-sp.com,"http://ww38.aww.aww-sp.com/","U.S. Coast Guard",200,true,true,fa
 badgerlandcfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 benefeds.com,"https://www.benefeds.com/","Office of Personnel Management (OPM)",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bie.edu,"https://www.bie.edu/","Department of the Interior",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-bobber.info,"http://bobber.info/","U.S. Army Corps of Engineers",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+bobber.info,"http://bobber.info/","U.S. Army Corps of Engineers",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 bushlibrary.tamu.edu,"https://www.bush41.org/","National Archives and Records Administration (NARA)",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 buyaccessible.net,"http://buyaccessible.net/","General Services Administration (GSA)",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 capmembers.com,"https://www.gocivilairpatrol.com/","U.S. Air Force Auxiliary",200,true,true,false,true,true,true,true,false,true,true,true,true,true,true,true,false,false,false,false,false,false
@@ -1448,7 +1449,7 @@ cfcaaga.org,"undefined","Combined Federal Campaign",500,false,false,false,false,
 cfcaz.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfccoastalga.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcforthood.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-cfcgive.org,"http://cfcgive.org/","Combined Federal Campaign",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+cfcgive.org,"http://cfcgive.org/","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcgno.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcgreaterarkansas.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcgreaternc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1464,7 +1465,7 @@ cfcnps.org,"undefined","Combined Federal Campaign",500,false,false,false,false,f
 cfcofcva.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcofgreatersocal.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcofthecsra.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-cfcredrivervalley.org,"http://cfcredrivervalley.org/","Combined Federal Campaign",200,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+cfcredrivervalley.org,"http://cfcredrivervalley.org/","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcsanantonio.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcsemi.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cfcshr.org,"https://cfcshr.org/","Combined Federal Campaign",403,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1536,7 +1537,7 @@ fcc.us,"undefined","Federal Communications Commission (FCC)",500,false,false,fal
 fd.org,"https://fd.org/","U.S. Courts",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fdrlibrary.marist.edu,"https://www.fdrlibrary.org/","National Archives and Records Administration (NARA)",200,true,false,false,false,true,true,false,false,true,true,false,true,false,false,false,false,false,false,false,false,false
 federallabs.org,"https://federallabs.org/","Interagency Collaboration",200,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-federalrelay.us,"https://www.federalrelay.us/","General Services Administration",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+federalrelay.us,"https://www.federalrelay.us/","General Services Administration",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 federalreserveeducation.org,"https://www.federalreserveeducation.org/","Federal Reserve Board",200,true,false,false,false,true,false,false,false,true,true,false,true,false,false,false,false,true,true,true,false,false
 fhlb-of.com,"https://fhlb-of.com/ofweb_userWeb/pageBuilder/home","Interagency Collaboration",200,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 fhlb-pgh.com,"https://www.fhlb-pgh.com/","Interagency Collaboration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1568,9 +1569,9 @@ georgewbushlibrary.smu.edu,"https://www.georgewbushlibrary.gov/","National Archi
 getsmartaboutdrugs.com,"https://www.getsmartaboutdrugs.gov/","Drug Enforcement Agency (DEA)",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 glnpo.net,"undefined","Environmental Protection Agency (EPA)",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 goang.com,"https://www.airforce.com/ways-to-serve/air-national-guard","Department of the Air Force",200,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-goarmy.com,"https://www.goarmy.com/","Department of the Army",200,true,true,true,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
+goarmy.com,"https://www.goarmy.com/","Department of the Army",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,true
 gocivilairpatrol.com,"https://www.gocivilairpatrol.com/","U.S. Air Force Auxiliary",200,true,true,false,true,true,true,true,false,true,true,true,true,true,true,true,false,false,false,false,false,false
-gocoastguard.com,"https://www.gocoastguard.com/","U.S. Coast Guard",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+gocoastguard.com,"https://www.gocoastguard.com/","U.S. Coast Guard",408,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 godirect.org,"https://godirect.gov/gpw/","Federal Reserve Board",200,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 gopcfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 greaterhartfordcfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1661,7 +1662,7 @@ nyccfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,f
 okaloosa-waltoncfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 onecpd.info,"https://www.hudexchange.info/","Department of Housing and Urban Development",404,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 onetonline.org,"https://www.onetonline.org/","Employment and Training Administration",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true
-onslowcountycfc.org,"https://www.lawyer4lawsuit.com/lawsuits/camp-lejeune-water-contamination-lawsuit/","Combined Federal Campaign",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false
+onslowcountycfc.org,"https://www.lawyer4lawsuit.com/lawsuits/camp-lejeune-water-contamination-lawsuit/","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 opengovplatform.org,"https://www.opengovplatform.org/","General Services Administration (GSA)",200,true,true,false,true,true,true,true,true,true,true,true,true,false,false,false,false,false,true,true,true,false
 orvcfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 oup.org,"https://dan.com/buy-domain/oup.org?redirected=true","Department of Housing and Urban Development",200,true,true,false,false,true,true,false,true,true,true,true,true,true,false,false,false,true,true,true,true,false
@@ -1686,7 +1687,7 @@ realwarriors.net,"https://www.health.mil/Military-Health-Topics/Centers-of-Excel
 reirs.com,"https://reirs.com/","Nuclear Regulatory Commission",200,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 rewardsforjustice.net,"https://rewardsforjustice.net/","Department of State (DOS)",200,true,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 rfa.org,"https://www.rfa.org/english/","U.S. Agency for Global Media",200,true,false,false,false,true,true,false,true,true,true,false,true,true,false,false,false,false,true,true,false,false
-rferl.org,"https://www.rferl.org/","U.S. Agency for Global Media",200,true,true,true,false,true,true,false,true,true,true,true,true,true,true,true,true,true,true,false,false,false
+rferl.org,"https://www.rferl.org/","U.S. Agency for Global Media",200,true,true,true,true,true,true,false,true,true,true,true,true,true,true,true,true,true,true,false,false,false
 riandsemacfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 richmondfed.org,"https://www.richmondfed.org/","Federal Reserve Board",200,true,false,false,false,true,false,true,false,true,true,false,true,true,false,false,true,true,true,true,false,true
 rockymountaincfc.org,"undefined","Combined Federal Campaign",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1953,5 +1954,4 @@ treatmentworksforvets.org,"http://treatmentworksforvets.org/","Department of Vet
 vaitcampus.com,"https://vaitcampus.com/","Department of Veterans Affairs",200,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 vavmc.com,"undefined","Department of Veterans Affairs",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 usarmyband.com,"https://usarmyband.com/","Department of Defense",200,true,true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
-mass.gov,"https://www.mass.gov/","State of Massachusetts",200,true,true,false,false,true,true,false,true,true,true,true,true,false,false,false,false,true,true,true,true,false
-cuidadodesalud.gov,"https://www.cuidadodesalud.gov/es/","Department of Health and Human Services",200,true,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false
+kansas.gov,"https://portal.kansas.gov/","State of Kansas",200,true,false,false,true,true,true,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false
