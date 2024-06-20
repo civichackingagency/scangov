@@ -19,13 +19,13 @@ kentucky.gov,"State of Kentucky",404,"https://www.kentucky.gov/sitemap.xml",fals
 louisiana.gov,"State of Louisiana",404,"https://www.louisiana.gov/sitemap.xml",false,0,0
 maine.gov,"State of Maine",404,"https://www.maine.gov/sitemap.xml",false,0,0
 maryland.gov,"State of Maryland",404,"https://www.maryland.gov/sitemap.xml",false,0,0
+mass.gov,"State of Massachusetts",200,"https://www.mass.gov/sitemap.xml",true,0,0
 michigan.gov,"State of Michigan",200,"https://www.michigan.gov/sitemap.xml",true,156,0
 mn.gov,"State of Minnesota",500,"null",false,0,0
 mississippi.gov,"State of Mississippi",403,"https://www.mississippi.gov/",false,0,0
 mo.gov,"State of Missouri",200,"https://www.mo.gov/wp-sitemap.xml",true,0,0
 mt.gov,"State of Montana",200,"https://mt.gov/404.aspx",false,0,0
 nebraska.gov,"State of Nebraska",200,"https://www.nebraska.gov/sitemap.xml",true,56,0
-nv.gov,"State of Nevada",404,"https://nv.gov/sitemap.xml",false,0,0
 nh.gov,"State of New Hampshire",404,"https://www.nh.gov/sitemap.xml",false,0,0
 nj.gov,"State of New Jersey",404,"https://nj.gov/sitemap.xml",false,0,0
 nm.gov,"State of New Mexico",200,"https://www.nm.gov/sitemap_index.xml",true,0,0
@@ -1954,4 +1954,4 @@ treatmentworksforvets.org,"Department of Veterans Affairs",200,"http://treatment
 vaitcampus.com,"Department of Veterans Affairs",200,"https://vaitcampus.com/sitemap.xml",false,0,0
 vavmc.com,"Department of Veterans Affairs",500,"null",false,0,0
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/sitemaps-1-sitemap.xml",true,0,0
-mass.gov,"State of Massachusetts",200,"https://www.mass.gov/sitemap.xml",true,0,0
+nv.gov,"State of Nevada",200,"https://nv.gov/Sitemap.xml",false,12,0

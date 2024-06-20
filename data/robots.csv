@@ -19,13 +19,13 @@ kentucky.gov,"State of Kentucky",404,"https://www.kentucky.gov/robots.txt",false
 louisiana.gov,"State of Louisiana",404,"https://www.louisiana.gov/robots.txt",false,"null",false
 maine.gov,"State of Maine",200,"https://www.maine.gov/robots.txt",true,"null",true
 maryland.gov,"State of Maryland",200,"https://www.maryland.gov/robots.txt",true,"null",true
+mass.gov,"State of Massachusetts",200,"https://www.mass.gov/robots.txt",true,"null",true
 michigan.gov,"State of Michigan",200,"https://www.michigan.gov/robots.txt",true,"https://www.michigan.gov/sitemap.xml",true
 mn.gov,"State of Minnesota",500,"null",false,"null",false
 mississippi.gov,"State of Mississippi",200,"https://www.mississippi.gov/robots.txt",true,"null",true
 mo.gov,"State of Missouri",200,"https://www.mo.gov/robots.txt",true,"null",true
 mt.gov,"State of Montana",200,"https://mt.gov/404.aspx",false,"null",false
 nebraska.gov,"State of Nebraska",200,"https://www.nebraska.gov/robots.txt",true,"null",true
-nv.gov,"State of Nevada",404,"https://nv.gov/robots.txt",false,"null",false
 nh.gov,"State of New Hampshire",200,"https://www.nh.gov/robots.txt",true,"null",true
 nj.gov,"State of New Jersey",200,"https://nj.gov/robots.txt",true,"null",true
 nm.gov,"State of New Mexico",200,"https://www.nm.gov/robots.txt",true,"https://nm.gov/sitemap_index.xml",true
@@ -1954,4 +1954,4 @@ treatmentworksforvets.org,"Department of Veterans Affairs",200,"http://treatment
 vaitcampus.com,"Department of Veterans Affairs",200,"https://vaitcampus.com/robots.txt",false,"null",false
 vavmc.com,"Department of Veterans Affairs",500,"null",false,"null",false
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/robots.txt",true,"null",true
-mass.gov,"State of Massachusetts",200,"https://www.mass.gov/robots.txt",true,"null",true
+nv.gov,"State of Nevada",200,"https://nv.gov/robots.txt",true,"https://nv.gov/Sitemap.xml",true
