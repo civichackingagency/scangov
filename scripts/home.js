@@ -29,8 +29,14 @@ filters.innerHTML +=
 const agencyPage = params.get('agency') === '1';
 if (!agencyPage && search.length > 0)
     document.getElementById('score-card').style.display = 'none';
-
 const form = document.getElementById('search-form');
+if (agencyPage) {
+    document.getElementById('jumbotron-title').innerText = search;
+    form.style.display = 'none';
+    filters.style.display = 'none';
+    document.getElementById('share').classList.remove('d-none');
+}
+
 const showingCount = document.getElementById('showing-count'), showingTotal = document.getElementById('showing-total');
 const gradeCard = document.getElementById('grade-card'),
     gradeLabel = document.getElementById('grade'), percentLabel = document.getElementById('percent'),
@@ -104,7 +110,7 @@ const show = field => {
             <td>
                 <a href="/profile/?domain=${domain.url}#${field}">${domain.url}</a>
                 <br>
-                <a class="small text-muted" href="?search=${domain.name}&agency=1&field=${field}" >${domain.name}</a>
+                <a class="small text-muted" href="?search=${domain.name}&agency=1&field=${field}">${domain.name}</a>
             </td>
             <td>
             ${(field === 'metadata' || field === 'url' || field === 'overview') && domain.status != 200 ?
