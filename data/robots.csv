@@ -13,7 +13,6 @@ hawaii.gov,"State of Hawaii",200,"http://hawaii.gov/robots.txt",true,"https://po
 idaho.gov,"State of Idaho",200,"https://idaho.gov/robots.txt",true,"https://idaho.gov/sitemap.xml",true
 illinois.gov,"State of Illinois",200,"https://www.illinois.gov/",false,"null",false
 in.gov,"State of Indiana",200,"https://www.in.gov/robots.txt",true,"null",true
-iowa.gov,"State of Iowa",200,"https://www.iowa.gov/robots.txt",true,"null",true
 kansas.gov,"State of Kansas",200,"https://portal.kansas.gov/",false,"null",false
 kentucky.gov,"State of Kentucky",404,"https://www.kentucky.gov/robots.txt",false,"null",false
 louisiana.gov,"State of Louisiana",404,"https://www.louisiana.gov/robots.txt",false,"null",false
@@ -31,6 +30,7 @@ nh.gov,"State of New Hampshire",200,"https://www.nh.gov/robots.txt",true,"null",
 nj.gov,"State of New Jersey",200,"https://nj.gov/robots.txt",true,"null",true
 nm.gov,"State of New Mexico",200,"https://www.nm.gov/robots.txt",true,"https://nm.gov/sitemap_index.xml",true
 ny.gov,"State of New York",200,"https://www.ny.gov/robots.txt",true,"null",true
+nc.gov,"State of North Carolina",200,"https://www.nc.gov/robots.txt",true,"https://www.nc.gov/sitemap.xml",true
 nd.gov,"State of North Dakota",200,"https://www.nd.gov/robots.txt",true,"null",true
 ohio.gov,"State of Ohio",404,"https://ohio.gov/robots.txt",false,"null",false
 oklahoma.gov,"State of Oklahoma",200,"https://oklahoma.gov/robots.txt",true,"https://oklahoma.gov/sitemap.xml",true
@@ -1955,4 +1955,4 @@ vaitcampus.com,"Department of Veterans Affairs",200,"https://vaitcampus.com/robo
 vavmc.com,"Department of Veterans Affairs",500,"null",false,"null",false
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/robots.txt",true,"null",true
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/robots.txt",true,"null",true
-nc.gov,"State of North Carolina",200,"https://www.nc.gov/robots.txt",true,"https://www.nc.gov/sitemap.xml",true
+iowa.gov,"State of Iowa",200,"https://www.iowa.gov/robots.txt",true,"https://www.iowa.gov/sitemap.xml",true
