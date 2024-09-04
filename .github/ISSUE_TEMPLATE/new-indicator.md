@@ -9,10 +9,14 @@ assignees: ''
 
 ## Description
 
+Reference:
+
+- 
+
 ## Specs
 
 - Label: 
-- Icon: 
+- Icon: ``
 
 ## Validators
 
@@ -25,3 +29,4 @@ assignees: ''
 
 - [ ] Add to search filter
 - [ ] Factor into 'all' scores (all domain + individual)
+- [ ] Add [documentation](https://docs.scangov.org)
