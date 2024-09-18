@@ -48,11 +48,9 @@ permalink: /profile/
                     <div class="card mb-3" id="{{ lower }}-card">
                         <div class="card-header">
                             <a href="#{{ lower }}" class="text-decoration-none" style="color: inherit">{{ card }}</a>
-                            {% unless card == "Overall" %}
-                                <a href="https://docs.scangov.org/{{ lower }}">
-                                    <i class="fa-solid fa-circle-question"></i>
-                                </a>
-                            {% endunless %}
+                            <a href="https://docs.scangov.org/{{ lower }}">
+                                <i class="fa-solid fa-circle-question"></i>
+                            </a>
                         </div>
                         <a href="#{{ lower }}" class="card-body text-center pt-5 text-decoration-none">
                             <p class="display-1" id="{{ lower }}-grade"></p>
