@@ -18,11 +18,10 @@ To use the tool for your own set of domains:
 - Install [NodeJS](https://nodejs.org/en/download/current)
 - Run `npm install`
 - Delete `CNAME`
-- Update the `User-Agent` [header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) in the `options` object in `scrapers/scrape.js`
+- Update the `User-Agent` [header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) in the `headers` object in `scraper.js`
 - (Optional) [Use custom domains](#custom-domains) or [disable www validation](#removing-www-validation)
-- Run `node scrapers/url`, then `node scrapers/robots`, then `node scrapers/metadata`, then `node scrapers/sitemap` 
-    - It's important to run the scrapers in that order
-    - To only run one domain from the list, append the domain name to the end of the command (example: `node scrapers/url domain.gov`)
+- Run `node scraper`
+    - To only run one domain from the list, append the domain name to the end of the command (example: `node scraper domain.gov`)
         - Make sure to run the scraper with all domains first
 - Run [with](#running-with-the-website) or [without](#running-without-the-website) the website
 
@@ -73,6 +72,10 @@ domain1.gov,Department of X
 domain2.gov,Department of Y
 domain3.gov,Department of Z
 ```
+
+To add a single domain:
+- Run the scraper as `node scraper new-domain.gov`
+- Fill in the organization name
 
 ### Adding/removing metadata parameters
 
