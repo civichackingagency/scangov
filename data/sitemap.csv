@@ -1,6 +1,5 @@
 domain,agency,status,redirect,xml,items,pdfs
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/sitemap.xml",true,342,0
-altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/sitemap.xml",true,200,0
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/sitemap.xml",true,0,0
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/sitemaps-1-sitemap.xml",true,0,0
 vavmc.com,"Department of Veterans Affairs",500,"undefined",false,0,0
@@ -1941,6 +1940,7 @@ maryland.gov,"State of Maryland",404,"https://www.maryland.gov/sitemap.xml",fals
 maine.gov,"State of Maine",404,"https://www.maine.gov/sitemap.xml",false,0,0
 louisiana.gov,"State of Louisiana",404,"https://www.louisiana.gov/sitemap.xml",false,0,0
 kentucky.gov,"State of Kentucky",404,"https://www.kentucky.gov/sitemap.xml",false,0,0
+kansas.gov,"State of Kansas",200,"https://portal.kansas.gov/sitemap_index.xml",true,0,0
 iowa.gov,"State of Iowa",200,"https://www.iowa.gov/sitemap.xml",true,149,0
 in.gov,"State of Indiana",404,"https://www.in.gov/sitemap.xml",false,0,0
 illinois.gov,"State of Illinois",404,"https://www.illinois.gov/sitemap.xml",false,0,0
@@ -1956,4 +1956,4 @@ arkansas.gov,"State of Arkansas",200,"https://portal.arkansas.gov/sitemap_index.
 az.gov,"State of Arizona",200,"https://az.gov/sitemap.xml",true,7,0
 alaska.gov,"State of Alaska",404,"https://alaska.gov/sitemap.xml",false,0,0
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/sitemap.xml",false,0,0
-kansas.gov,"State of Kansas",200,"https://portal.kansas.gov/sitemap_index.xml",true,0,0
+altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/sitemap.xml",true,200,0

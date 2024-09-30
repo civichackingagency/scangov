@@ -1,6 +1,5 @@
 domain,agency,status,redirect,valid,sitemap,allowed,source
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/robots.txt",true,"null",true,robots.txt
-altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/robots.txt",true,"null",true,robots.txt
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/robots.txt",true,"null",true,robots.txt
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/robots.txt",true,"null",true,robots.txt
 vavmc.com,"Department of Veterans Affairs",500,"http://www.vavmc.com",false,"null",false,undefined
@@ -1941,6 +1940,7 @@ maryland.gov,"State of Maryland",200,"https://www.maryland.gov/robots.txt",true,
 maine.gov,"State of Maine",200,"https://www.maine.gov/robots.txt",true,"null",true,robots.txt
 louisiana.gov,"State of Louisiana",404,"https://www.louisiana.gov/robots.txt",false,"null",false,false
 kentucky.gov,"State of Kentucky",404,"https://www.kentucky.gov/robots.txt",false,"null",false,false
+kansas.gov,"State of Kansas",200,"https://portal.kansas.gov/robots.txt",true,"https://portal.kansas.gov/sitemap_index.xml",true,robots.txt
 iowa.gov,"State of Iowa",200,"https://www.iowa.gov/robots.txt",true,"https://www.iowa.gov/sitemap.xml",true,robots.txt
 in.gov,"State of Indiana",200,"https://www.in.gov/robots.txt",true,"null",true,robots.txt
 illinois.gov,"State of Illinois",200,"https://www.illinois.gov/robots.txt",true,"null",true,robots.txt
@@ -1956,4 +1956,4 @@ arkansas.gov,"State of Arkansas",200,"http://www.arkansas.gov/robots.txt",true,"
 az.gov,"State of Arizona",200,"https://www.az.gov/robots.txt",true,"null",true,robots.txt
 alaska.gov,"State of Alaska",200,"https://alaska.gov/robots.txt",true,"null",true,robots.txt
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/robots.txt",true,"null",true,robots.txt
-kansas.gov,"State of Kansas",200,"https://portal.kansas.gov/robots.txt",true,"https://portal.kansas.gov/sitemap_index.xml",true,robots.txt
+altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/robots.txt",true,"null",true,robots.txt
