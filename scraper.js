@@ -3,6 +3,7 @@ import https from 'https';
 import zlib from 'zlib';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import readlineSync from 'readline-sync';
+import { exit } from 'process';
 
 const timeout = 10000;
 const headers = {
@@ -16,7 +17,7 @@ const zlibOptions = { finishFlush: zlib.constants.Z_SYNC_FLUSH };
 
 // Variables for metadata
 // Tags to search for
-const metaTags = ['<title', 'name="description"', 'name="keywords"', 'name="robots"', 'name="viewport"', 'rel="canonical"',
+const metaTags = ['<title', 'name="description"', 'name="keywords"', 'name="robots"', 'http-equiv="content-security-policy"', 'name="viewport"', 'rel="canonical"',
     'property="og:locale"', 'property="og:site_name"', 'property="og:type"', 'property="og:title"', 'property="og:description"', 'property="og:url"',
     'property="og:image"', 'property="og:image:width"', 'property="og:image:height"', 'property="og:image:alt"', 'name="twitter:site"', 'name="twitter:card"',
     'name="twitter:title"', 'name="twitter:description"', 'name="twitter:image"']
@@ -28,6 +29,7 @@ const metaVariables = [
     'description',
     'keywords',
     'robots',
+    'contentSecurityPolicy',
     'viewport',
     'canonical',
     'ogLocale',
@@ -51,6 +53,7 @@ const metaCsvVariables = [
     'description',
     'keywords',
     'robots',
+    'content_security_policy',
     'viewport',
     'canonical',
     'og_locale',
@@ -71,9 +74,9 @@ const metaCsvVariables = [
 ];
 
 // Send the completed request data
-const finishRequest = (resolve, res, data, url) => {
+const finishRequest = (resolve, res, data, url, error=null) => {
     res.headers['content-type'] = res.headers['content-type'] || 'undefined';
-    resolve({ req: res.req, statusCode: res.statusCode, headers: res.headers, data, url });
+    resolve({ req: res.req, statusCode: res.statusCode, headers: res.headers, data, url: url.href, error });
 }
 
 // Check if a URL is valid
@@ -87,118 +90,139 @@ const isValidUrl = (url, base) => {
     }
 };
 
-const fetch = (url, httpAgent, httpsAgent, visited) => 
-    new Promise((resolve, reject) => {
-        // Use the correct protocol
-        const secure = url.startsWith('https');
-        try {
-            const req = (secure ? https : http)
-                .get(url, { agent: secure ? httpsAgent : httpAgent, headers, timeout }, res => {
-                    // Remove timeout handler
-                    req.socket.off('timeout', req.abort);
+const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) => 
+    new Promise(async (resolve, reject) => {
+        if (typeof url === 'string')
+            url = new URL(url);
+        let res, req;
 
-                    visited.push(url);
-                    let redirects = 0;
-
-                    // Handle non-OK responses
-                    if (res.statusCode >= 300) {
-                        // Consume response to free the socket
-                        res.resume();
-                        // Redirection
-                        const valid = isValidUrl(res.headers.location, req.protocol + '//' + req.host);
-                        if (res.statusCode < 400 && valid && !visited.includes(valid))
-                            fetch(valid, httpAgent, httpsAgent, visited).then(resolve);
-                        // The response is an error
-                        else
-                            finishRequest(resolve, res, null, url);
-                        return;
-                    }
-
-                    // Receive and decompress data
-                    let data = '';
-                    const encoding = res.headers['content-encoding'] || 'utf8';
-                    let stream;
-                    // Choose right decompression algorithm
-                    switch (encoding) {
-                        case 'gzip':
-                            stream = zlib.createGunzip(zlibOptions);
-                            res.pipe(stream);
-                            break;
-                        case 'deflate':
-                            stream = zlib.createInflate(zlibOptions);
-                            res.pipe(stream);
-                            break;
-                        case 'br':
-                            stream = zlib.createBrotliDecompress(zlibOptions);
-                            res.pipe(stream);
-                            break;
-                        default:
-                            res.setEncoding('utf8');
-                            stream = res;
-                            break;
-                    }
-                    stream.on('data', chunk => data += chunk.toString());
-
-                    // Check for meta redirect and finish request
-                    stream.on('end', () => { 
-                        let html;
-                        // Get the http-equiv redirect
-                        // https://www.w3.org/TR/WCAG20-TECHS/H76.html#H76-description
-                        if (res['content-type'] === 'text/html' && (html = data.toLowerCase()).includes('http-equiv="refresh"')) {
-                            let index = html.indexOf('http-equiv="refresh"');
-                            index = html.indexOf('url=', index) + 4;
-                            let redirectUrl = html.substring(index);
-                            // Get URL between single or double quotes
-                            if (redirectUrl.startsWith('"') || redirectUrl.startsWith('\''))
-                                redirectUrl = redirectUrl.substring(1);
-                            const doubleIndex = redirectUrl.indexOf('"'), singleIndex = redirectUrl.indexOf('\'');
-                            if (doubleIndex !== -1) {
-                                if (singleIndex !== -1)
-                                    redirectUrl = redirectUrl.substring(0, Math.min(singleIndex, doubleIndex));
-                                else
-                                    redirectUrl = redirectUrl.substring(0, doubleIndex);
-                            }
-                            else
-                                redirectUrl = redirectUrl.substring(0, singleIndex);
-
-                            // Make it a complete URL
-                            /* if (!redirectUrl.startsWith('http')) {
-                                if (redirectUrl.startsWith('/'))
-                                    redirectUrl = req.host + redirectUrl;
-                                if (redirectUrl.startsWith('://'))
-                                    redirectUrl = req.protocol.substring(0, req.protocol.length - 1) + redirectUrl;
-                                else
-                                    redirectUrl = req.protocol + '//' + redirectUrl;
-                            } */
-
-                            // Continue requests 
-                            const valid = isValidUrl(redirectUrl, req.protocol + '//' + req.host);
-                            if (visited.includes(redirectUrl) || (redirects++) >= 5 || !valid)
-                                finishRequest(resolve, res, data, url);
-                            else 
-                                fetch(valid, httpAgent, httpAgent, visited).then(resolve);
-                        }
-                        else
-                            finishRequest(resolve, res, data, url);
-                    });
-                })
-                .on('socket', s => {
-                    s.setTimeout(timeout);
-                    s.on('timeout', req.abort);
-                })
-                .on('error', e => { console.error(e.code, e.syscall, url); resolve({ req, statusCode: 500, data: null, url }); });
+        if (visited.has(url.href)) {
+            req = url;
+            res = visited.get(url.href);
         }
-        catch (e) {
-            console.error(e, url);
-            resolve({ req, statusCode: 500, data: null, url });
+        else {
+            // Use the correct protocol
+            await new Promise((resolveRequest, rejectRequest) => {
+                try {
+                     req = (url.protocol === 'https:' ? https : http)
+                        .request(url, { agent: url.protocol === 'https:' ? httpsAgent : httpAgent, headers, timeout }, response => {
+                            // Remove timeout handler
+                            req.socket.off('timeout', req.abort);
+
+                            res = response;
+                            visited.set(url.href, res);
+
+                            resolveRequest();
+                    })
+                    .on('socket', s => {
+                        s.setTimeout(timeout);
+                        s.on('timeout', req.abort);
+                    })
+                    .on('error', e => { 
+                        console.error(e.code, e.syscall, url.href);
+                        resolve({ req, statusCode: 500, data: null, url: url.href }); 
+                    })
+                    .end();
+                }
+                catch (e) {
+                    console.error(e, url.href);
+                    resolve({ req, statusCode: 500, data: null, url: url.href });
+                }
+            });
         }
+
+        // Handle non-OK responses
+        if (res.statusCode >= 300) {
+            // Consume response to free the socket
+            res.resume();
+            // Redirection
+            const valid = isValidUrl(res.headers.location, req.protocol + '//' + req.host);
+            if (followRedirects && res.statusCode < 400 && valid && valid !== url.href)
+                fetch(valid, httpAgent, httpsAgent, visited).then(resolve);
+            // The response is an error
+            else
+                finishRequest(resolve, res, null, url);
+            return;
+        }
+
+        // Receive and decompress data
+        let data = '';
+        const encoding = res.headers['content-encoding'] || 'utf8';
+        let stream;
+        // Choose right decompression algorithm
+        switch (encoding) {
+            case 'gzip':
+                stream = zlib.createGunzip(zlibOptions);
+                res.pipe(stream);
+                break;
+            case 'deflate':
+                stream = zlib.createInflate(zlibOptions);
+                res.pipe(stream);
+                break;
+            case 'br':
+                stream = zlib.createBrotliDecompress(zlibOptions);
+                res.pipe(stream);
+                break;
+            default:
+                res.setEncoding('utf8');
+                stream = res;
+                break;
+        }
+        stream.on('data', chunk => data += chunk.toString());
+        stream.on('error', e => { console.error(encoding + ' decompression error at ' + url); resolve({ req, statusCode: 500, data: null, url: url.href }); });
+
+        // Check for meta redirect and finish request
+        const metaRedirect = () => { 
+            let html;
+            // Get the http-equiv redirect
+            // https://www.w3.org/TR/WCAG20-TECHS/H76.html#H76-description
+            if (followRedirects && res.headers['content-type'] && res.headers['content-type'].startsWith('text/html') && (html = data.toLowerCase()).includes('http-equiv="refresh"')) {
+                let index = html.indexOf('http-equiv="refresh"');
+                index = html.indexOf('url=', index) + 4;
+                let redirectUrl = html.substring(index);
+                // Get URL between single or double quotes
+                if (redirectUrl.startsWith('"') || redirectUrl.startsWith('\''))
+                    redirectUrl = redirectUrl.substring(1);
+                const doubleIndex = redirectUrl.indexOf('"'), singleIndex = redirectUrl.indexOf('\'');
+                if (doubleIndex !== -1) {
+                    if (singleIndex !== -1)
+                        redirectUrl = redirectUrl.substring(0, Math.min(singleIndex, doubleIndex));
+                    else
+                        redirectUrl = redirectUrl.substring(0, doubleIndex);
+                }
+                else
+                    redirectUrl = redirectUrl.substring(0, singleIndex);
+
+                // Continue requests 
+                const valid = isValidUrl(redirectUrl, req.protocol + '//' + req.host);
+                if (valid)
+                    fetch(valid, httpAgent, httpAgent, visited).then(resolve);
+                else 
+                    finishRequest(resolve, res, data, url);
+            }
+            else
+                finishRequest(resolve, res, data, url);
+        }
+
+        if (stream.readableEnded) {
+            data = res.data;
+            metaRedirect();
+        }
+        else
+            stream.on('end', () => {
+                res.data = data;
+                visited.set(url.href, res);
+                metaRedirect();
+            });
     });
 
-const urlResults = [], metadataResults = [], robotsResults = [], sitemapResults = [];
+
+const urlResults = [], metadataResults = [], robotsResults = [], sitemapResults = [], securityResults = [];
 const urlHistory = existsSync('data/url.json') ? JSON.parse(readFileSync('data/url.json')) : [],
     sitemapHistory = existsSync('data/sitemap.json') ? JSON.parse(readFileSync('data/sitemap.json')) : [],
     robotsHistory = existsSync('data/robots.json') ? JSON.parse(readFileSync('data/robots.json')) : [],
-    metadataHistory = existsSync('data/metadata.json') ? JSON.parse(readFileSync('data/metadata.json')) : [];
+    metadataHistory = existsSync('data/metadata.json') ? JSON.parse(readFileSync('data/metadata.json')) : [],
+    securityHistory = existsSync('data/security.json') ? JSON.parse(readFileSync('data/security.json')) : [];
 
 const domainsCsv = readFileSync('data/domains.csv', 'utf8');
 let domains = domainsCsv.split('\n').slice(1).filter(d => d.includes(','));
@@ -232,7 +256,7 @@ if (process.argv[2]) {
 }
 
 let done = 0, startTime = Date.now();
-const scrapeDomain = async (httpAgent, httpsAgent) => {
+const scrapeDomain = async (httpAgent, httpsAgent, id) => {
     if (domains.length === 0)
         return;
 
@@ -240,30 +264,72 @@ const scrapeDomain = async (httpAgent, httpsAgent) => {
     const name = domain.substring(domain.indexOf(',') + 1).replaceAll('"', '');
     domain = domain.substring(0, domain.indexOf(','));
 
+    const visited = new Map();
+
+    let expireTime = 0, protocol = 'http://';
+    for (let i = 0; i < securityHistory.length; i++)
+        if (securityHistory[i].url === domain) {
+            expireTime = securityHistory[i].expireTime;
+            break;
+        }
+
+    let hstsReq, hsts;
+    if (startTime > expireTime) {
+        hstsReq = fetch('https://' + domain , httpAgent, httpsAgent, visited, false);
+        hsts = await hstsReq;
+        if (hsts.statusCode < 300 || hsts.statusCode < 400 && hsts.headers.location && hsts.headers.location.startsWith('https://'))
+            protocol = 'https://';
+    }
+    else if (expireTime > 0)
+        protocol = 'https://';
+
+    const sts = hsts.headers && hsts.headers['strict-transport-security'];
+    let maxAge;
+    if (sts) {
+        maxAge = sts.substring(sts.indexOf('=') + 1);
+        const semiColonIndex = maxAge.indexOf(';');
+        if (semiColonIndex !== -1)
+            maxAge = maxAge.substring(0, semiColonIndex);
+    }
+    const security = {
+        url: domain,
+        name,
+        status: hsts.statusCode,
+        hsts: !!maxAge,
+        maxAge,
+        expireTime: startTime + maxAge
+    };
+
     // URL
-    let base = fetch('http://' + domain , httpAgent, httpsAgent, []);
-    let www = fetch('http://www.' + domain , httpAgent, httpsAgent, []);
+    const baseLocation = (hsts.statusCode < 400 && hsts.headers.location) ? isValidUrl(hsts.headers.location, protocol + domain) : protocol + domain;
+    let base = (hsts.statusCode < 300 || hsts.statusCode > 400) ? hstsReq : 
+        fetch(baseLocation, httpAgent, httpsAgent, visited);
+    let www = fetch(protocol + 'www.' + domain, httpAgent, httpsAgent, visited);
     const responses = await Promise.all([base, www]);
     base = responses[0], www = responses[1];
     // The response used to score HTTPS and TLD
     const res = base.statusCode < 300 ? base : www;
-
+    
     const validWww = !!(base.req && www.req) && base.statusCode < 300 && www.statusCode < 300 && base.req.protocol === www.req.protocol && base.req.host === www.req.host && base.req.pathname === www.req.pathname;
     const useWww = www.statusCode < 300 && (validWww || base.statusCode >= 300);
+
+    security.csp = res.headers && res.headers['content-security-policy'] && res.headers['content-security-policy'].length > 0;
+    security.xContentTypeOptions = res.headers && res.headers['content-type'].startsWith('text/html') && res.headers['x-content-type-options'] === 'nosniff';
 
     urlResults.push({ url: domain, name, status: res.statusCode, redirect: res.url, https: !!res.req && res.req.protocol === 'https:', 
         www: validWww,
         dotgov: !!res.req && !!res.req.host && (res.req.host.endsWith('.gov') || res.req.host.endsWith('.edu') || res.req.host.endsWith('.mil')) });
 
-    let robotsOutcome = {}, robotsUrl = 'http://';
+    let robotsOutcome = {}, robotsUrl = protocol;
     if (useWww)
         robotsUrl += 'www.';
     robotsUrl += domain + '/robots.txt';
 
+
     if (res.statusCode < 300)
         await Promise.all([
             // Robots
-            fetch(robotsUrl, httpAgent, httpsAgent, []).then(async robots => {
+            fetch(robotsUrl, httpAgent, httpsAgent, visited).then(async robots => {
                 // Check robots file for sitemap
                 let sitemapUrl = null, allowed = true;
                 if (robots.data) {
@@ -317,14 +383,14 @@ const scrapeDomain = async (httpAgent, httpsAgent) => {
                 if (sitemapUrl)
                     sitemapUrl = isValidUrl(sitemapUrl);
                 if (!sitemapUrl) {
-                    sitemapUrl = 'http://';
+                    sitemapUrl = protocol;
                     if (useWww)
                         sitemapUrl += 'www.';
                     sitemapUrl += domain + '/sitemap.xml';
                 }
                         
                 // Sitemap
-                await fetch(sitemapUrl, httpAgent, httpsAgent, []).then(sitemap => {
+                await fetch(sitemapUrl, httpAgent, httpsAgent, visited).then(sitemap => {
                     let items = 0, pdfs = 0;
                     if (sitemap.data !== null) {
                         // Count items in sitemap
@@ -360,7 +426,10 @@ const scrapeDomain = async (httpAgent, httpsAgent) => {
 
                     // Check for <title>
                     let index = html.match(metaTags[0].regex);
-                    outcome.title = !!index && html.charAt(html.indexOf('>', index.index) + 1) !== '<';
+                    outcome.title = !!index && 
+                        // Make sure title isn't blank
+                        html.charAt(html.indexOf('>', index.index) + 1) !== '<';
+
                     // Other tags
                     for (let i = 1; i < metaTags.length; i++) {
                         index = html.match(metaTags[i].regex);
@@ -422,10 +491,15 @@ const scrapeDomain = async (httpAgent, httpsAgent) => {
 
                             robotsOutcome.allowed = robotsOutcome.allowed || (variableOutcome && !(content.includes('nofollow') && content.includes('noindex')));
                         }
+                        // Check for CSP meta tag
+                        // https://guides.18f.gov/engineering/security/content-security-policy/#client-side-implementation
+                        else if (!security.csp && metaVariables[i] === 'contentSecurityPolicy')
+                            security.csp = variableOutcome;
                     }
                 }
 
                 metadataResults.push(outcome);
+                securityResults.push(security);
 
                 resolve();
             })
@@ -455,12 +529,12 @@ const scrapeDomain = async (httpAgent, httpsAgent) => {
 
     done++;
     const timeRemaining = Math.round((Date.now() - startTime) / done * domains.length / 1000);
-    console.log('Done with ' + domain, domains.length + ', ' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
+    console.log(id, 'Done with ' + domain, domains.length + ', ' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
 
     httpAgent.destroy();
     httpsAgent.destroy();
     
-    await scrapeDomain(httpAgent, httpsAgent);
+    await scrapeDomain(httpAgent, httpsAgent, id);
 
     return;
 };
@@ -472,16 +546,22 @@ for (let i = 0; i < 3 && i < domains.length; i++)
     scrapers.push(
         scrapeDomain(
             new http.Agent({ keepAlive: true, maxSockets: 1}), 
-            new https.Agent({ keepAlive: true, maxSockets: 1})
+            new https.Agent({ keepAlive: true, maxSockets: 1}),
+            i
         )
     );
 await Promise.all(scrapers);
 
-console.log('History');
-
+const time = Date.now();
+for (let i = 2; i < process.argv.length; i++)
+    if (process.argv[i] === '--no-writes') {
+        const endTime = Math.round((Date.now() - startTime) / 1000);
+        console.log('Done in ' + Math.round(endTime / 60).toString().padStart(2, '0') + ':' + (endTime % 60).toString().padStart(2, '0'))
+        exit(0);
+    }
 // Add to the history/changelog
 // The time the history was updated
-const time = Date.now();
+console.log('History');
 // URL history
 let csv = 'domain,agency,status,redirect,https,dot_gov,www';
 for (let j = 0; j < urlResults.length; j++) {
@@ -595,8 +675,8 @@ for (let j = 0; j < sitemapResults.length; j++) {
     let found = false;
 
     for (let i = 0; i < sitemapHistory.length; i++)
-        if (sitemapHistory[i].sitemap === result.sitemap) {
-            found = false;
+        if (sitemapHistory[i].url === result.url) {
+            found = true;
             const currentVersion = sitemapHistory[i];
 
             result.history = currentVersion.history || [];
@@ -619,10 +699,44 @@ for (let j = 0; j < sitemapResults.length; j++) {
 writeFileSync('data/sitemap.csv', csv);
 console.log('Done with sitemap history');
 
+// Security history
+csv = 'domain,agency,status,hsts,max_age,expire_time,csp,x_content_type_option';
+for (let i = 0; i < securityResults.length; i++) {
+    const result = securityResults[i];
+    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',' + result.hsts + ',' + result.maxAge + ',' + result.expireTime + ',' + result.csp + ',' + result.xContentTypeOptions;
+
+    let found = false;
+
+    for (let j = 0; j < securityHistory.length; j++)
+        if (securityHistory[j].url === result.url) {
+            found = true;
+            const currentVersion = securityHistory[j];
+
+            result.history = currentVersion.history || [];
+            if (currentVersion.status !== result.status || currentVersion.hsts !== result.hsts || currentVersion.maxAge !== result.maxAge || currentVersion.csp !== result.csp || currentVersion.xContentTypeOptions !== result.xContentTypeOptions)
+                result.history.push({ time,
+                    status: currentVersion.status,
+                    hsts: currentVersion.hsts,
+                    maxAge: currentVersion.maxAge,
+                    csp: currentVersion.csp,
+                    xContentTypeOptions: xContentTypeOptions
+                });
+
+            securityHistory.slice(i, 1);
+            break;
+        }
+
+    if (!found)
+        result.history = [];
+}
+writeFileSync('data/security.csv', csv);
+console.log('Done with security history');
+
 writeFileSync('data/url.json', JSON.stringify(urlResults));
 writeFileSync('data/metadata.json', JSON.stringify(metadataResults));
 writeFileSync('data/robots.json', JSON.stringify(robotsResults));
 writeFileSync('data/sitemap.json', JSON.stringify(sitemapResults));
 writeFileSync('data/updated_time', Date.now().toString());
+
 const endTime = Math.round((Date.now() - startTime) / 1000);
 console.log('Done in ' + Math.round(endTime / 60).toString().padStart(2, '0') + ':' + (endTime % 60).toString().padStart(2, '0'))
