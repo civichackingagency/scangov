@@ -26,9 +26,9 @@ const getData = async (file) => {
         cache = await caches.open('data');
 
     const cacheTime = await getCacheTime();
-    const commits = await (await fetch('https://api.github.com/repos/civichackingagency/scangov/commits?path=/data&per_page=1&sha=main')).json();
-    const updateTime = new Date(commits[0].commit.author.date);
-    document.getElementById('updated').innerText = updateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+    const updateTime = new Date(parseInt(await (await fetch('/data/updated_time')).text()));
+    if (document.getElementById('updated'))
+        document.getElementById('updated').innerText = updateTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
 
     if (cacheTime < updateTime.getTime()) {
         // New data, clear cached data
