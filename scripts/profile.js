@@ -9,8 +9,8 @@ const table = document.getElementById('table'),
 const check = '<svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>',
     x = '<svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>';
 
-let metadataJson, urlJson, sitemapJson, robotsJson;
-let metadataLoaded = false, urlLoaded = false, sitemapLoaded = false, robotsLoaded = false;
+let metadataJson, urlJson, sitemapJson, robotsJson, securityJson;
+let metadataLoaded = false, urlLoaded = false, sitemapLoaded = false, robotsLoaded = false, securityLoaded = false;
 const successes = [], dangers = [];
 
 const load = async page => {
@@ -344,6 +344,80 @@ const load = async page => {
             `;
         }
     }
+    else if (page === '#security') {
+        pageTitle.innerText = 'Security';
+        changelog.style.display = 'none';
+
+        if (!robotsLoaded) {
+            const data = await getData('security');
+            for (const domain of data)
+                if (domain.url == agencyURL) {
+                    securityJson = domain;
+                    break;
+                }
+            securityLoaded = true;
+        }
+
+        const data = securityJson;
+
+        document.getElementById('site').innerText = data.url;
+        document.getElementById('parent').innerText = data.name;
+        document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
+
+        const points = data.hsts + data.csp + data.xContentTypeOptions + data.securityTxt;
+        const score = Math.round(100 * points / 4);
+        document.getElementById('percent').innerText = score;
+        document.getElementById('amount').innerText = points + ' of 4 elements';
+        gradeCard.classList.add('text-bg-' + getColor(score));
+        document.getElementById('grade').innerText = getGrade(score);
+
+        table.innerHTML += `
+            <tr>
+                <td>
+                    <pre><code>HSTS</code></pre>
+                </td>
+                <td>
+                    The site automatically upgrades from HTTP to HTTPS.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.hsts ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.hsts ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>CSP</code></pre>
+                </td>
+                <td>
+                    The site restricts what can be loaded.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.csp ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.csp ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>X-Content-Type-Options</code></pre>
+                </td>
+                <td>
+                    The site prevents mime type sniffing.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.xContentTypeOptions ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xContentTypeOptions ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>security.txt</code></pre>
+                </td>
+                <td>
+                    The site has a security.txt file.
+                </td>
+                <td>
+                    <i class="fa-solid ${data.securityTxt ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.securityTxt ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+        `;
+    }
     else {
         document.getElementById('specific').classList = 'd-none';
         document.getElementById('overview-section').classList = '';
@@ -353,14 +427,14 @@ const load = async page => {
         if (metadataCard.classList.length > 2)
             return;
 
-        let metadataScore, urlScore, sitemapScore, robotsScore;
+        let metadataScore, urlScore, sitemapScore, robotsScore, securityScore;
         // Update the card for the domain's overall grade
         const showOverall = () => {
             // Check if all data is loaded to calculate total score
-            if (!(metadataJson && urlJson && sitemapJson && robotsJson))
+            if (!(metadataJson && urlJson && sitemapJson && robotsJson && securityJson))
                 return;
 
-            const average = (metadataScore + urlScore + sitemapScore + robotsScore) / 4;
+            const average = (metadataScore + urlScore + sitemapScore + robotsScore + securityScore) / 5;
             document.getElementById('overall-grade').innerText = getGrade(average);
             document.getElementById('overall-card').classList.add('text-bg-' + getColor(average));
             document.getElementById('overall-card').title = Math.round(average) + '%';
@@ -469,6 +543,33 @@ const load = async page => {
             });
         else
             showRobots();
+
+        const showSecurity = () => {
+            document.getElementById('site').innerText = securityJson.url;
+            document.getElementById('parent').innerText = securityJson.name;
+            document.getElementById('parent').href = '/?search=' + securityJson.name + '&agency=1';
+
+            securityScore = Math.round(100 * (securityJson.hsts + securityJson.csp + securityJson.xContentTypeOptions) / 3);
+            document.getElementById('security-grade').innerText = getGrade(securityScore);
+            document.getElementById('security-card').classList.add('text-bg-' + getColor(securityScore));
+            document.getElementById('security-card').title = Math.round(securityScore) + '%';
+
+            showOverall();
+        };
+        if (!robotsLoaded)
+            getData('security').then(data => {
+                let currentDomain;
+                for (const domain of data)
+                    if (domain.url == agencyURL) {
+                        currentDomain = domain;
+                        break;
+                    }
+                securityJson = currentDomain;
+                securityLoaded = true;
+                showSecurity();
+            });
+        else
+            showSecurity();
     }
 };
 
