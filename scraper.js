@@ -5,6 +5,13 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import readlineSync from 'readline-sync';
 import { exit } from 'process';
 
+let debug = false;
+for (let i = 2; i < process.argv.length; i++)
+    if (process.argv[i] === '--debug') {
+        debug = true;
+        break;
+    }
+
 const timeout = 10000;
 const headers = {
     'User-Agent': 'CivicHackingAgency/2.0 ScanGov',
@@ -90,13 +97,17 @@ const isValidUrl = (url, base) => {
     }
 };
 
-const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) => 
+const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method='GET') => 
     new Promise(async (resolve, reject) => {
         if (typeof url === 'string')
             url = new URL(url);
         let res, req;
+        if (debug)
+            console.log('fetch to', url.href);
 
         if (visited.has(url.href)) {
+            if (debug)
+                console.log('Using cached version of', url.href);
             req = url;
             res = visited.get(url.href);
         }
@@ -104,8 +115,10 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) =>
             // Use the correct protocol
             await new Promise((resolveRequest, rejectRequest) => {
                 try {
-                     req = (url.protocol === 'https:' ? https : http)
-                        .request(url, { agent: url.protocol === 'https:' ? httpsAgent : httpAgent, headers, timeout }, response => {
+                    if (debug)
+                        console.log('Request to', url.href);
+                    req = 
+                        (url.protocol === 'https:' ? https : http).request(url, { method, agent: url.protocol === 'https:' ? httpsAgent : httpAgent, headers, timeout }, response => {
                             // Remove timeout handler
                             req.socket.off('timeout', req.abort);
 
@@ -125,6 +138,7 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) =>
                     .end();
                 }
                 catch (e) {
+                    console.log(url)
                     console.error(e, url.href);
                     resolve({ req, statusCode: 500, data: null, url: url.href });
                 }
@@ -137,40 +151,18 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) =>
             res.resume();
             // Redirection
             const valid = isValidUrl(res.headers.location, req.protocol + '//' + req.host);
-            if (followRedirects && res.statusCode < 400 && valid && valid !== url.href)
-                fetch(valid, httpAgent, httpsAgent, visited).then(resolve);
+            if (followRedirects && res.statusCode < 400 && valid && !visited.has(valid)) {
+                if (debug)
+                    console.log('Header redirect from', url.href, 'to', valid);
+                fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method).then(resolve);
+            }
             // The response is an error
             else
                 finishRequest(resolve, res, null, url);
             return;
         }
 
-        // Receive and decompress data
-        let data = '';
-        const encoding = res.headers['content-encoding'] || 'utf8';
-        let stream;
-        // Choose right decompression algorithm
-        switch (encoding) {
-            case 'gzip':
-                stream = zlib.createGunzip(zlibOptions);
-                res.pipe(stream);
-                break;
-            case 'deflate':
-                stream = zlib.createInflate(zlibOptions);
-                res.pipe(stream);
-                break;
-            case 'br':
-                stream = zlib.createBrotliDecompress(zlibOptions);
-                res.pipe(stream);
-                break;
-            default:
-                res.setEncoding('utf8');
-                stream = res;
-                break;
-        }
-        stream.on('data', chunk => data += chunk.toString());
-        stream.on('error', e => { console.error(encoding + ' decompression error at ' + url); resolve({ req, statusCode: 500, data: null, url: url.href }); });
-
+        let data;
         // Check for meta redirect and finish request
         const metaRedirect = () => { 
             let html;
@@ -195,8 +187,11 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) =>
 
                 // Continue requests 
                 const valid = isValidUrl(redirectUrl, req.protocol + '//' + req.host);
-                if (valid)
-                    fetch(valid, httpAgent, httpAgent, visited).then(resolve);
+                if (valid && !visited.has(valid)) {
+                    if (debug)
+                        console.log('Meta redirect from', url.href, 'to', valid);
+                    fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method).then(resolve);
+                }
                 else 
                     finishRequest(resolve, res, data, url);
             }
@@ -204,16 +199,45 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true) =>
                 finishRequest(resolve, res, data, url);
         }
 
-        if (stream.readableEnded) {
+        if (res.data) {
+            // Use stored version of request
             data = res.data;
             metaRedirect();
         }
-        else
+        else {
+            // Receive and decompress data
+            const contentLength = parseInt(res.headers['content-length']);
+            data = Buffer.alloc(contentLength || 0);
+            let index = 0;
+            const encoding = res.headers['content-encoding'] || 'utf8';
+            let stream;
+            // Choose right decompression algorithm
+            switch (encoding) {
+                case 'gzip':
+                    stream = zlib.createGunzip(zlibOptions);
+                    res.pipe(stream);
+                    break;
+                case 'deflate':
+                    stream = zlib.createInflate(zlibOptions);
+                    res.pipe(stream);
+                    break;
+                case 'br':
+                    stream = zlib.createBrotliDecompress(zlibOptions);
+                    res.pipe(stream);
+                    break;
+                default:
+                    stream = res;
+                    break;
+            }
+            stream.on('data', chunk => data = Buffer.concat([ data, chunk ]));
+            stream.on('error', e => { console.error(encoding + ' decompression error at ' + url, e); resolve({ req, statusCode: 500, data: null, url: url.href }); });
             stream.on('end', () => {
+                data = data.toString();
                 res.data = data;
                 visited.set(url.href, res);
                 metaRedirect();
             });
+        }
     });
 
 
@@ -243,7 +267,7 @@ if (process.argv[2]) {
             robotsResults.push(robotsHistory.find(d => domain.startsWith(d.url)));
         }
     
-    if (!found) {
+    if (!found && !process.argv[2].startsWith('--')) {
         console.log('Domain ' + process.argv[2] + ' not found, adding it to list');    
         console.log('To cancel, press Ctrl+C');
         let org = readlineSync.question('Enter organization name: ').trim();
@@ -256,292 +280,333 @@ if (process.argv[2]) {
 }
 
 let done = 0, startTime = Date.now();
-const scrapeDomain = async (httpAgent, httpsAgent, id) => {
-    if (domains.length === 0)
-        return;
+//const scrapeDomain = async (httpAgent, httpsAgent, id) => {
+const scrapers = [];
+for (let i = 0; i < 3 && i < domains.length; i++)
+    scrapers.push(new Promise(async (resolve, reject) => {
+        const httpAgent = new http.Agent({ keepAlive: true, maxSockets: 1}), 
+            httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 1});
 
-    let domain = domains.shift();
-    const name = domain.substring(domain.indexOf(',') + 1).replaceAll('"', '');
-    domain = domain.substring(0, domain.indexOf(','));
+        while (domains.length > 0) {
+        //    if (domains.length === 0)
+        //        return;
 
-    const visited = new Map();
+            let domain = domains.shift();
+            const name = domain.substring(domain.indexOf(',') + 1).replaceAll('"', '');
+            domain = domain.substring(0, domain.indexOf(','));
 
-    let expireTime = 0, protocol = 'http://';
-    for (let i = 0; i < securityHistory.length; i++)
-        if (securityHistory[i].url === domain) {
-            expireTime = securityHistory[i].expireTime;
-            break;
-        }
+            if (debug)
+                console.log(i, 'Starting', domain);
 
-    let hstsReq, hsts;
-    if (startTime > expireTime) {
-        hstsReq = fetch('https://' + domain , httpAgent, httpsAgent, visited, false);
-        hsts = await hstsReq;
-        if (hsts.statusCode < 300 || hsts.statusCode < 400 && hsts.headers.location && hsts.headers.location.startsWith('https://'))
-            protocol = 'https://';
-    }
-    else if (expireTime > 0)
-        protocol = 'https://';
+            const visited = new Map();
 
-    const sts = hsts.headers && hsts.headers['strict-transport-security'];
-    let maxAge;
-    if (sts) {
-        maxAge = sts.substring(sts.indexOf('=') + 1);
-        const semiColonIndex = maxAge.indexOf(';');
-        if (semiColonIndex !== -1)
-            maxAge = maxAge.substring(0, semiColonIndex);
-    }
-    const security = {
-        url: domain,
-        name,
-        status: hsts.statusCode,
-        hsts: !!maxAge,
-        maxAge,
-        expireTime: startTime + maxAge
-    };
-
-    // URL
-    const baseLocation = (hsts.statusCode < 400 && hsts.headers.location) ? isValidUrl(hsts.headers.location, protocol + domain) : protocol + domain;
-    let base = (hsts.statusCode < 300 || hsts.statusCode > 400) ? hstsReq : 
-        fetch(baseLocation, httpAgent, httpsAgent, visited);
-    let www = fetch(protocol + 'www.' + domain, httpAgent, httpsAgent, visited);
-    const responses = await Promise.all([base, www]);
-    base = responses[0], www = responses[1];
-    // The response used to score HTTPS and TLD
-    const res = base.statusCode < 300 ? base : www;
-    
-    const validWww = !!(base.req && www.req) && base.statusCode < 300 && www.statusCode < 300 && base.req.protocol === www.req.protocol && base.req.host === www.req.host && base.req.pathname === www.req.pathname;
-    const useWww = www.statusCode < 300 && (validWww || base.statusCode >= 300);
-
-    security.csp = res.headers && res.headers['content-security-policy'] && res.headers['content-security-policy'].length > 0;
-    security.xContentTypeOptions = res.headers && res.headers['content-type'].startsWith('text/html') && res.headers['x-content-type-options'] === 'nosniff';
-
-    urlResults.push({ url: domain, name, status: res.statusCode, redirect: res.url, https: !!res.req && res.req.protocol === 'https:', 
-        www: validWww,
-        dotgov: !!res.req && !!res.req.host && (res.req.host.endsWith('.gov') || res.req.host.endsWith('.edu') || res.req.host.endsWith('.mil')) });
-
-    let robotsOutcome = {}, robotsUrl = protocol;
-    if (useWww)
-        robotsUrl += 'www.';
-    robotsUrl += domain + '/robots.txt';
-
-
-    if (res.statusCode < 300)
-        await Promise.all([
-            // Robots
-            fetch(robotsUrl, httpAgent, httpsAgent, visited).then(async robots => {
-                // Check robots file for sitemap
-                let sitemapUrl = null, allowed = true;
-                if (robots.data) {
-                    let readingAllows = false;
-
-                    robots.data = robots.data.split('\n');
-                    for (let i = 0; i < robots.data.length; i++) {
-                        const line = robots.data[i];
-
-                        // Check for sitemap URL
-                        if (!sitemapUrl && line.startsWith('Sitemap')) {
-                            sitemapUrl = line.substring(8).trim();
-                            if (sitemapUrl.startsWith('/'))
-                                sitemapUrl = robots.req.protocol + '//' + domain + sitemapUrl;
-                            break;
-                        }
-
-                        // Check if the home page is allowed
-                        if (line.startsWith('User-agent:')) {
-                            const agent = line.substring(11).trim();
-                            if (agent === '*' || agent === headers['User-Agent'] || agent === 'Googlebot' || agent === 'Bingbot')
-                                readingAllows = true;
-                        }
-                        else if (readingAllows) {
-                            if (line.includes('llow:')) {
-                                const allowLine = line.charAt(0) === 'A';
-                                const path = line.substring(9).trim().replaceAll('*', '.*');
-                                if (path.length === 0 && !allowLine)
-                                    allowed = true;
-                                else if (new RegExp(path, 'g').test(res.req.path))
-                                    allowed = allowLine;
-                            }
-                            else
-                                readingAllows = false;
-                        }
-                    }
+            let expireTime = 0, protocol = 'http://';
+            let maxAge, hstsStatus;
+            for (let i = 0; i < securityHistory.length; i++)
+                if (securityHistory[i].url === domain) {
+                    expireTime = securityHistory[i].expireTime;
+                    maxAge = securityHistory[i].maxAge;
+                    hstsStatus = securityHistory[i].status;
+                    break;
                 }
 
-                // Merge data into robots outcome in case the metadata scraper already put data in
-                Object.assign(robotsOutcome, { 
-                    status: robots.statusCode, url: domain, name, redirect: robots.url
-                });
-                robotsOutcome.sitemap = sitemapUrl;
-                const xRobots = res.headers && res.headers['x-robots-tag'];
-                const validFile = (robots.statusCode < 300 && robots.url.toLowerCase().endsWith('/robots.txt'));
-                const valid = validFile || !!xRobots || (!!robots.headers && robots.headers['content-type'].startsWith('text/plain'));
-                robotsOutcome.valid = robotsOutcome.valid || valid;
-                robotsOutcome.allowed = robotsOutcome.allowed || (valid && allowed) || (!!xRobots && !xRobots.includes('nofollow') && !xRobots.includes('noindex'));
-                robotsOutcome.source = (validFile && 'robots.txt') || robotsOutcome.source || (!!xRobots && 'x-robots-tag');
+            let hstsReq, hsts;
+            if (startTime > expireTime) {
+                hstsReq = fetch('https://' + domain , httpAgent, httpsAgent, visited, false);
+                hsts = await hstsReq;
+                if (hsts.statusCode < 300 || hsts.statusCode < 400 && hsts.headers.location && hsts.headers.location.startsWith('https://'))
+                    protocol = 'https://';
 
-                if (sitemapUrl)
-                    sitemapUrl = isValidUrl(sitemapUrl);
-                if (!sitemapUrl) {
-                    sitemapUrl = protocol;
-                    if (useWww)
-                        sitemapUrl += 'www.';
-                    sitemapUrl += domain + '/sitemap.xml';
+                const sts = hsts.headers && hsts.headers['strict-transport-security'];
+                if (sts) {
+                    maxAge = sts.substring(sts.indexOf('=') + 1);
+                    const semiColonIndex = maxAge.indexOf(';');
+                    if (semiColonIndex !== -1)
+                        maxAge = maxAge.substring(0, semiColonIndex);
+                    maxAge = parseInt(maxAge);
                 }
-                        
-                // Sitemap
-                await fetch(sitemapUrl, httpAgent, httpsAgent, visited).then(sitemap => {
-                    let items = 0, pdfs = 0;
-                    if (sitemap.data !== null) {
-                        // Count items in sitemap
-                        let index = sitemap.data.indexOf('<url>');
-                        while (index > -1) {
-                            index = sitemap.data.indexOf('<url>', index + 1);
-                            items++;
-                        }
-                        // Count PDFs in sitemap
-                        index = sitemap.data.indexOf('.pdf');
-                        while (index > -1) {
-                            index = sitemap.data.indexOf('.pdf', index + 1);
-                            pdfs++;
-                        }
-                    }
+            }
+            else if (expireTime > 0)
+                protocol = 'https://';
 
-                    sitemapResults.push({ url: domain, name, status: sitemap.statusCode, redirect: sitemap.url,
-                        xml: sitemap.url.endsWith('.xml') && sitemap.statusCode < 300 && !!sitemap.headers && (sitemap.headers['content-type'].startsWith('text/xml') || sitemap.headers['content-type'].startsWith('application/xml')),
-                        items,
-                        pdfs
-                    });
-                });
-            }),
+            const security = {
+                url: domain,
+                name,
+                status: hstsStatus || (hsts && hsts.statusCode),
+                hsts: !!maxAge,
+                maxAge: maxAge || -1,
+                expireTime: (startTime + maxAge) || -1
+            };
 
-            // Metadata
-            new Promise((resolve, reject) => {
-                const outcome = { status: res.statusCode, url: domain, name, redirect: res.url };
-                if (res.statusCode >= 300)
-                    for (let i = 0; i < metaVariables.length; i++) 
-                        outcome[metaVariables[i]] = false;
-                else {
-                    const html = res.data.replaceAll('\'', '"').toLowerCase();
+            // URL
+            const baseLocation = (hsts && hsts.statusCode < 400 && hsts.headers.location) ? isValidUrl(hsts.headers.location, protocol + domain) : protocol + domain;
+            let base = (hsts && (hsts.statusCode < 300 || hsts.statusCode > 400)) ? hstsReq : 
+                fetch(baseLocation, httpAgent, httpsAgent, visited);
+            let www = fetch(protocol + 'www.' + domain, httpAgent, httpsAgent, visited);
+            await www;
+            const responses = await Promise.all([base, www]);
+            base = responses[0], www = responses[1];
+            // The response used to score HTTPS and TLD
+            const res = base.statusCode < 300 ? base : www;
+            
+            const validWww = !!(base.req && www.req) && base.statusCode < 300 && www.statusCode < 300 && base.req.protocol === www.req.protocol && base.req.host === www.req.host && base.req.pathname === www.req.pathname;
+            const useWww = www.statusCode < 300 && (validWww || base.statusCode >= 300);
 
-                    // Check for <title>
-                    let index = html.match(metaTags[0].regex);
-                    outcome.title = !!index && 
-                        // Make sure title isn't blank
-                        html.charAt(html.indexOf('>', index.index) + 1) !== '<';
+            security.csp = !!res.headers && res.headers['content-security-policy'] && res.headers['content-security-policy'].length > 0;
+            security.xContentTypeOptions = !!res.headers && res.headers['content-type'].startsWith('text/html') && res.headers['x-content-type-options'] === 'nosniff';
 
-                    // Other tags
-                    for (let i = 1; i < metaTags.length; i++) {
-                        index = html.match(metaTags[i].regex);
-                        if (!index) {
-                            // The tag wasn't found
-                            outcome[metaVariables[i]] = false;
-                            continue;
-                        }
+            const urlOutcome = { url: domain, name, status: res.statusCode, redirect: res.url, https: !!res.req && res.req.protocol === 'https:', 
+                www: validWww,
+                dotgov: !!res.req && !!res.req.host && (res.req.host.endsWith('.gov') || res.req.host.endsWith('.edu') || res.req.host.endsWith('.mil')) };
+            urlResults.push(urlOutcome);
 
-                        index = index.index;
-                        let openIndex;
-                        for (let j = index; j >= 0; j--)
-                            if (html.charAt(j) === '<') {
-                                openIndex = j;
-                                break;
-                            }
-                        // Make sure tag isn't empty
-                        const tag = html.substring(openIndex, html.indexOf('>', openIndex));
-                        let attributeIndex; 
-                        if (metaTags[i].rel)
-                            attributeIndex = tag.indexOf('href=') + 5;
-                        else
-                            attributeIndex = tag.indexOf('content=') + 8;
-                        // Make sure the attribute actually exists
-                        if (attributeIndex === 4 || attributeIndex === 7) {
-                            outcome[metaVariables[i]] = false;
-                            continue;
-                        }
+            let robotsOutcome = {}, robotsUrl = protocol, securityUrl = protocol, securityUrlWellKnown = protocol;
+            if (useWww) {
+                robotsUrl += 'www.';
+                securityUrl += 'www.';
+                securityUrlWellKnown += 'www.';
+            }
+            robotsUrl += domain + '/robots.txt';
+            securityUrl += domain + '/security.txt';
+            securityUrlWellKnown += domain + '/.well-known/security.txt';
 
-                        const charAfter = tag.charAt(attributeIndex);
-                        const variableOutcome = 
-                            // Make sure it's not just quotes with nothing
-                            (charAfter === '"' && tag.charAt(attributeIndex + 1) !== '"')
-                            || (charAfter !== '"' && charAfter !== ' ' && charAfter !== '/' && charAfter !== '>');
-                        outcome[metaVariables[i]] = variableOutcome;
+            let metadataOutcome, sitemapOutcome;
+            if (res.statusCode < 300)
+                await Promise.all([
+                    // Robots
+                    fetch(robotsUrl, httpAgent, httpsAgent, visited).then(async robots => {
+                        // Check robots file for sitemap
+                        let sitemapUrl = null, allowed = true;
+                        if (robots.data) {
+                            let readingAllows = false;
 
-                        if (metaVariables[i] === 'robots') {
-                            robotsOutcome.valid = robotsOutcome.valid || variableOutcome;
-                            robotsOutcome.source = robotsOutcome.source || (variableOutcome && 'meta');
+                            robots.data = robots.data.split('\n');
+                            for (let i = 0; i < robots.data.length; i++) {
+                                const line = robots.data[i];
 
-                            let content;
-                            switch (variableOutcome && charAfter) {
-                                case false:
+                                // Check for sitemap URL
+                                if (!sitemapUrl && line.startsWith('Sitemap')) {
+                                    sitemapUrl = line.substring(8).trim();
+                                    if (sitemapUrl.startsWith('/'))
+                                        sitemapUrl = robots.req.protocol + '//' + domain + sitemapUrl;
                                     break;
-                                case '"':
-                                    // Get text between quotes
-                                    content = tag.substring(attributeIndex + 1, tag.indexOf('"'));
-                                    break;
-                                default:
-                                    // If there's no quotes, get the text up to the next space or close of the tag
-                                    const spaceIndex = tag.indexOf(' ', attributeIndex);
-                                    if (spaceIndex === -1) 
-                                        content = tag.substring(attributeIndex + 1);
+                                }
+
+                                // Check if the home page is allowed
+                                if (line.startsWith('User-agent:')) {
+                                    const agent = line.substring(11).trim();
+                                    if (agent === '*' || agent === headers['User-Agent'] || agent === 'Googlebot' || agent === 'Bingbot')
+                                        readingAllows = true;
+                                }
+                                else if (readingAllows) {
+                                    if (line.includes('llow:')) {
+                                        const allowLine = line.charAt(0) === 'A';
+                                        const path = line.substring(9).trim().replaceAll('*', '.*');
+                                        if (path.length === 0 && !allowLine)
+                                            allowed = true;
+                                        else if (new RegExp(path, 'g').test(res.req.path))
+                                            allowed = allowLine;
+                                    }
                                     else
-                                        content = tag.substring(attributeIndex + 1, spaceIndex);
+                                        readingAllows = false;
+                                }
+                            }
+                        }
 
-                                    break;
+                        // Merge data into robots outcome in case the metadata scraper already put data in
+                        Object.assign(robotsOutcome, { 
+                            status: robots.statusCode, url: domain, name, redirect: robots.url
+                        });
+                        robotsOutcome.sitemap = sitemapUrl;
+                        const xRobots = res.headers && res.headers['x-robots-tag'];
+                        const validFile = (robots.statusCode < 300 && robots.url.toLowerCase().endsWith('/robots.txt'));
+                        const valid = validFile || !!xRobots || (!!robots.headers && robots.headers['content-type'].startsWith('text/plain'));
+                        robotsOutcome.valid = robotsOutcome.valid || valid;
+                        robotsOutcome.allowed = robotsOutcome.allowed || (valid && allowed) || (!!xRobots && !xRobots.includes('nofollow') && !xRobots.includes('noindex'));
+                        robotsOutcome.source = (validFile && 'robots.txt') || robotsOutcome.source || (!!xRobots && 'x-robots-tag');
+
+                        if (sitemapUrl)
+                            sitemapUrl = isValidUrl(sitemapUrl);
+                        if (!sitemapUrl) {
+                            sitemapUrl = protocol;
+                            if (useWww)
+                                sitemapUrl += 'www.';
+                            sitemapUrl += domain + '/sitemap.xml';
+                        }
+                                
+                        // Sitemap
+                        await fetch(sitemapUrl, httpAgent, httpsAgent, visited).then(sitemap => {
+                            let items = 0, pdfs = 0;
+                            if (sitemap.data !== null) {
+                                // Count items in sitemap
+                                let index = sitemap.data.indexOf('<url>');
+                                while (index > -1) {
+                                    index = sitemap.data.indexOf('<url>', index + 1);
+                                    items++;
+                                }
+                                // Count PDFs in sitemap
+                                index = sitemap.data.indexOf('.pdf');
+                                while (index > -1) {
+                                    index = sitemap.data.indexOf('.pdf', index + 1);
+                                    pdfs++;
+                                }
                             }
 
-                            robotsOutcome.allowed = robotsOutcome.allowed || (variableOutcome && !(content.includes('nofollow') && content.includes('noindex')));
+                            sitemapOutcome = { url: domain, name, status: sitemap.statusCode, redirect: sitemap.url,
+                                xml: sitemap.url.endsWith('.xml') && sitemap.statusCode < 300 && !!sitemap.headers && (sitemap.headers['content-type'].startsWith('text/xml') || sitemap.headers['content-type'].startsWith('application/xml')),
+                                items,
+                                pdfs
+                            };
+                            sitemapResults.push(sitemapOutcome);
+                        });
+                    }),
+
+                    // Metadata
+                    new Promise((resolve, reject) => {
+                        metadataOutcome = { status: res.statusCode, url: domain, name, redirect: res.url };
+                        const html = res.data.replaceAll('\'', '"').toLowerCase();
+
+                        // Check for <title>
+                        let index = html.match(metaTags[0].regex);
+                        metadataOutcome.title = !!index && 
+                            // Make sure title isn't blank
+                            html.charAt(html.indexOf('>', index.index) + 1) !== '<';
+
+                        // Other tags
+                        for (let i = 1; i < metaTags.length; i++) {
+                            index = html.match(metaTags[i].regex);
+                            if (!index) {
+                                // The tag wasn't found
+                                metadataOutcome[metaVariables[i]] = false;
+                                continue;
+                            }
+
+                            index = index.index;
+                            let openIndex;
+                            for (let j = index; j >= 0; j--)
+                                if (html.charAt(j) === '<') {
+                                    openIndex = j;
+                                    break;
+                                }
+                            // Make sure tag isn't empty
+                            const tag = html.substring(openIndex, html.indexOf('>', openIndex));
+                            let attributeIndex; 
+                            if (metaTags[i].rel)
+                                attributeIndex = tag.indexOf('href=') + 5;
+                            else
+                                attributeIndex = tag.indexOf('content=') + 8;
+                            // Make sure the attribute actually exists
+                            if (attributeIndex === 4 || attributeIndex === 7) {
+                                metadataOutcome[metaVariables[i]] = false;
+                                continue;
+                            }
+
+                            const charAfter = tag.charAt(attributeIndex);
+                            const variableOutcome = 
+                                // Make sure it's not just quotes with nothing
+                                (charAfter === '"' && tag.charAt(attributeIndex + 1) !== '"')
+                                || (charAfter !== '"' && charAfter !== ' ' && charAfter !== '/' && charAfter !== '>');
+                            metadataOutcome[metaVariables[i]] = variableOutcome;
+
+                            if (metaVariables[i] === 'robots') {
+                                robotsOutcome.valid = robotsOutcome.valid || variableOutcome;
+                                robotsOutcome.source = robotsOutcome.source || (variableOutcome && 'meta');
+
+                                let content;
+                                switch (variableOutcome && charAfter) {
+                                    case false:
+                                        break;
+                                    case '"':
+                                        // Get text between quotes
+                                        content = tag.substring(attributeIndex + 1, tag.indexOf('"'));
+                                        break;
+                                    default:
+                                        // If there's no quotes, get the text up to the next space or close of the tag
+                                        const spaceIndex = tag.indexOf(' ', attributeIndex);
+                                        if (spaceIndex === -1) 
+                                            content = tag.substring(attributeIndex + 1);
+                                            content = tag.substring(attributeIndex + 1, spaceIndex);
+
+                                        break;
+                                }
+
+                                robotsOutcome.allowed = robotsOutcome.allowed || (variableOutcome && !(content.includes('nofollow') && content.includes('noindex')));
+                            }
+                            // Check for CSP meta tag
+                            // https://guides.18f.gov/engineering/security/content-security-policy/#client-side-implementation
+                            else if (!security.csp && metaVariables[i] === 'contentSecurityPolicy')
+                                security.csp = variableOutcome;
                         }
-                        // Check for CSP meta tag
-                        // https://guides.18f.gov/engineering/security/content-security-policy/#client-side-implementation
-                        else if (!security.csp && metaVariables[i] === 'contentSecurityPolicy')
-                            security.csp = variableOutcome;
-                    }
+
+                        metadataResults.push(metadataOutcome);
+                        if (!security.maxAge) {
+                            security.maxAge = -1;
+                            security.expireTime = -1;
+                        }
+                        security.csp = !!security.csp;
+
+                        resolve();
+                    }),
+                    
+                    // security.txt
+                    fetch(securityUrl, httpAgent, httpsAgent, visited, true, 'HEAD').then(async res => {
+                        if (res.statusCode < 300 && res.headers['content-type'].startsWith('text/plain') && res.url.endsWith('security.txt'))
+                            security.securityTxt = true;
+                        else {
+                            res = await fetch(securityUrlWellKnown, httpAgent, httpsAgent, visited, true, 'HEAD');
+                            security.securityTxt = res.statusCode < 300 && res.headers['content-type'].startsWith('text/plain') && res.url.endsWith('security.txt');
+                        }
+                    })
+                ]);
+            else {
+                // No response
+
+                robotsOutcome = {
+                    status: res.statusCode,
+                    url: domain,
+                    name,
+                    redirect: res.url,
+                    sitemap: null,
+                    valid: false,
+                    allowed: false
                 }
+                
+                metadataOutcome = { status: res.statusCode, url: domain, name, redirect: undefined };
+                for (let i = 0; i < metaVariables.length; i++)
+                    metadataOutcome[metaVariables[i]] = false;
+                metadataResults.push(metadataOutcome);
 
-                metadataResults.push(outcome);
-                securityResults.push(security);
+                sitemapOutcome = { url: domain, name, status: res.statusCode, redirect: undefined, xml: false, items:0, pdfs: 0 };
+                sitemapResults.push(sitemapOutcome);
 
-                resolve();
-            })
-        ]);
-    else {
-        // No response
+                security.securityTxt = false;
+            }
 
-        robotsOutcome = {
-            status: res.statusCode,
-            url: domain,
-            name,
-            redirect: res.url,
-            sitemap: null,
-            valid: false,
-            allowed: false
-        }
-        
-        const metadataOutcome = { status: res.statusCode, url: domain, name, redirect: undefined };
-        for (let i = 0; i < metaVariables.length; i++)
-            metadataOutcome[metaVariables[i]] = false;
-        metadataResults.push(metadataOutcome);
+            robotsResults.push(robotsOutcome);
+            securityResults.push(security);
 
-        sitemapResults.push({ url: domain, name, status: res.statusCode, redirect: undefined, xml: false, items:0, pdfs: 0 });
-    }
+            if (debug) {
+                console.log(domain, 'URL', urlOutcome);
+                console.log(domain, 'metadata', metadataOutcome);
+                console.log(domain, 'robots', robotsOutcome);
+                console.log(domain, 'sitemap', sitemapOutcome);
+                console.log(domain, 'security', security);
+            }
 
-    robotsResults.push(robotsOutcome);
+            done++;
+            const timeRemaining = Math.round((Date.now() - startTime) / done * domains.length / 1000);
+            console.log(i, 'Done with ' + domain, domains.length + ', ' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
 
-    done++;
-    const timeRemaining = Math.round((Date.now() - startTime) / done * domains.length / 1000);
-    console.log(id, 'Done with ' + domain, domains.length + ', ' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
+            httpAgent.destroy();
+            httpsAgent.destroy();
+        };
 
-    httpAgent.destroy();
-    httpsAgent.destroy();
-    
-    await scrapeDomain(httpAgent, httpsAgent, id);
-
-    return;
-};
+        resolve();
+    }));
 
 // Agents allow for keeping the connection alive
 // This means the request doesn't have to do a DNS lookup and TLS handshake every time and only has to do it once
-const scrapers = [];
+/*const scrapers = [];
 for (let i = 0; i < 3 && i < domains.length; i++)
     scrapers.push(
         scrapeDomain(
@@ -550,6 +615,7 @@ for (let i = 0; i < 3 && i < domains.length; i++)
             i
         )
     );
+*/
 await Promise.all(scrapers);
 
 const time = Date.now();
@@ -700,10 +766,10 @@ writeFileSync('data/sitemap.csv', csv);
 console.log('Done with sitemap history');
 
 // Security history
-csv = 'domain,agency,status,hsts,max_age,expire_time,csp,x_content_type_option';
+csv = 'domain,agency,status,hsts,max_age,expire_time,csp,x_content_type_options,security_txt';
 for (let i = 0; i < securityResults.length; i++) {
     const result = securityResults[i];
-    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',' + result.hsts + ',' + result.maxAge + ',' + result.expireTime + ',' + result.csp + ',' + result.xContentTypeOptions;
+    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',' + result.hsts + ',' + result.maxAge + ',' + result.expireTime + ',' + result.csp + ',' + result.xContentTypeOptions + ',' + result.securityTxt;
 
     let found = false;
 
@@ -713,7 +779,7 @@ for (let i = 0; i < securityResults.length; i++) {
             const currentVersion = securityHistory[j];
 
             result.history = currentVersion.history || [];
-            if (currentVersion.status !== result.status || currentVersion.hsts !== result.hsts || currentVersion.maxAge !== result.maxAge || currentVersion.csp !== result.csp || currentVersion.xContentTypeOptions !== result.xContentTypeOptions)
+            if (currentVersion.status !== result.status || currentVersion.hsts !== result.hsts || currentVersion.maxAge !== result.maxAge || currentVersion.csp !== result.csp || currentVersion.xContentTypeOptions !== result.xContentTypeOptions || currentVersion.securityTxt !== result.securityTxt)
                 result.history.push({ time,
                     status: currentVersion.status,
                     hsts: currentVersion.hsts,
@@ -736,6 +802,7 @@ writeFileSync('data/url.json', JSON.stringify(urlResults));
 writeFileSync('data/metadata.json', JSON.stringify(metadataResults));
 writeFileSync('data/robots.json', JSON.stringify(robotsResults));
 writeFileSync('data/sitemap.json', JSON.stringify(sitemapResults));
+writeFileSync('data/security.json', JSON.stringify(securityResults));
 writeFileSync('data/updated_time', Date.now().toString());
 
 const endTime = Math.round((Date.now() - startTime) / 1000);
