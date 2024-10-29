@@ -549,7 +549,7 @@ const load = async page => {
             document.getElementById('parent').innerText = securityJson.name;
             document.getElementById('parent').href = '/?search=' + securityJson.name + '&agency=1';
 
-            securityScore = Math.round(100 * (securityJson.hsts + securityJson.csp + securityJson.xContentTypeOptions) / 3);
+            securityScore = Math.round(100 * (securityJson.hsts + securityJson.csp + securityJson.xContentTypeOptions + securityJson.securityTxt) / 4);
             document.getElementById('security-grade').innerText = getGrade(securityScore);
             document.getElementById('security-card').classList.add('text-bg-' + getColor(securityScore));
             document.getElementById('security-card').title = Math.round(securityScore) + '%';

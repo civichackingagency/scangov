@@ -73,7 +73,7 @@ permalink: /report/
   </div>
   <div class="container-fluid">
     {% for item in site.data.report.docs %}
-    <h2 {% unless forloop.first %} style="page-break-before: always; break-after: always;" {% endunless %}>{{ item }}
+    <h2 {% unless forloop.first %} style="page-break-before: always; break-before: always;" {% endunless %}>{{ item }}
     </h2>
     {% assign id = item | downcase %}
     <div class="row">
