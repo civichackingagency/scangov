@@ -242,3 +242,68 @@ getData('robots').then(data => {
         </tr>
 `;
 }).finally(finish);
+
+getData('security').then(data => {
+    for (let i = 0; i < data.length; i++)
+        if (data[i].url === domain) {
+            data = data[i];
+            break;
+        }
+    if (done === 0)
+        document.getElementById('parent').innerText = data.name;
+
+    const total = data.hsts + data.csp + data.xContentTypeOptions + data.securityTxt;
+    const score = Math.round(100 * total / 4);
+    document.getElementById('security-grade').innerText = getGrade(score);
+    document.getElementById('security-grade-card').classList.add('text-bg-' + getColor(score));
+    document.getElementById('security-percent').innerText = score;
+    document.getElementById('security-amount').innerText = total + ' of 4 elements';
+
+    const table = document.getElementById('security-table');
+    table.innerHTML += `
+        <tr>
+            <td>
+                <pre><code>HSTS</code></pre>
+            </td>
+            <td>
+                The site automatically upgrades from HTTP to HTTPS.
+            </td>
+            <td>
+                <i class="fa-solid ${data.hsts ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.hsts ? 'Active' : 'Missing'}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code>CSP</code></pre>
+            </td>
+            <td>
+                The site restricts what can be loaded.
+            </td>
+            <td>
+                <i class="fa-solid ${data.csp ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.csp ? 'Active' : 'Missing'}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code>X-Content-Type-Options</code></pre>
+            </td>
+            <td>
+                The site prevents mime type sniffing.
+            </td>
+            <td>
+                <i class="fa-solid ${data.xContentTypeOptions ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xContentTypeOptions ? 'Active' : 'Missing'}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code>security.txt</code></pre>
+            </td>
+            <td>
+                The site has a security.txt file.
+            </td>
+            <td>
+                <i class="fa-solid ${data.securityTxt ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.securityTxt ? 'Active' : 'Missing'}</span>
+            </td>
+        </tr>
+    `;
+}).finally(finish);
