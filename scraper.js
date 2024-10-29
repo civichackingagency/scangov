@@ -97,7 +97,7 @@ const isValidUrl = (url, base) => {
     }
 };
 
-const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method='GET') => 
+const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method='GET', referrer='') => 
     new Promise(async (resolve, reject) => {
         if (typeof url === 'string')
             url = new URL(url);
@@ -151,10 +151,10 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method
             res.resume();
             // Redirection
             const valid = isValidUrl(res.headers.location, req.protocol + '//' + req.host);
-            if (followRedirects && res.statusCode < 400 && valid && !visited.has(valid)) {
+            if (followRedirects && res.statusCode < 400 && valid && valid !== url.href && valid !== referrer) {
                 if (debug)
                     console.log('Header redirect from', url.href, 'to', valid);
-                fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method).then(resolve);
+                fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method, url.href).then(resolve);
             }
             // The response is an error
             else
@@ -187,10 +187,10 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method
 
                 // Continue requests 
                 const valid = isValidUrl(redirectUrl, req.protocol + '//' + req.host);
-                if (valid && !visited.has(valid)) {
+                if (valid && valid !== url.href && valid !== referrer) {
                     if (debug)
                         console.log('Meta redirect from', url.href, 'to', valid);
-                    fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method).then(resolve);
+                    fetch(valid, httpAgent, httpsAgent, visited, followRedirects, method, url.href).then(resolve);
                 }
                 else 
                     finishRequest(resolve, res, data, url);
@@ -280,17 +280,15 @@ if (process.argv[2]) {
 }
 
 let done = 0, startTime = Date.now();
-//const scrapeDomain = async (httpAgent, httpsAgent, id) => {
 const scrapers = [];
 for (let i = 0; i < 3 && i < domains.length; i++)
     scrapers.push(new Promise(async (resolve, reject) => {
+        // Agents allow for keeping the connection alive
+        // This means the request doesn't have to do a DNS lookup and TLS handshake every time and only has to do it once
         const httpAgent = new http.Agent({ keepAlive: true, maxSockets: 1}), 
             httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 1});
 
         while (domains.length > 0) {
-        //    if (domains.length === 0)
-        //        return;
-
             let domain = domains.shift();
             const name = domain.substring(domain.indexOf(',') + 1).replaceAll('"', '');
             domain = domain.substring(0, domain.indexOf(','));
@@ -343,14 +341,13 @@ for (let i = 0; i < 3 && i < domains.length; i++)
             let base = (hsts && (hsts.statusCode < 300 || hsts.statusCode > 400)) ? hstsReq : 
                 fetch(baseLocation, httpAgent, httpsAgent, visited);
             let www = fetch(protocol + 'www.' + domain, httpAgent, httpsAgent, visited);
-            await www;
             const responses = await Promise.all([base, www]);
             base = responses[0], www = responses[1];
             // The response used to score HTTPS and TLD
             const res = base.statusCode < 300 ? base : www;
             
             const validWww = !!(base.req && www.req) && base.statusCode < 300 && www.statusCode < 300 && base.req.protocol === www.req.protocol && base.req.host === www.req.host && base.req.pathname === www.req.pathname;
-            const useWww = www.statusCode < 300 && (validWww || base.statusCode >= 300);
+            const useWww = www.statusCode < 300 && (validWww || base.statusCode >= 300) && res.req.host.startsWith('www');
 
             security.csp = !!res.headers && res.headers['content-security-policy'] && res.headers['content-security-policy'].length > 0;
             security.xContentTypeOptions = !!res.headers && res.headers['content-type'].startsWith('text/html') && res.headers['x-content-type-options'] === 'nosniff';
@@ -595,7 +592,7 @@ for (let i = 0; i < 3 && i < domains.length; i++)
 
             done++;
             const timeRemaining = Math.round((Date.now() - startTime) / done * domains.length / 1000);
-            console.log(i, 'Done with ' + domain, domains.length + ', ' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
+            console.log(i, 'Done with ' + domain + ', ' + domains.length + '/' + Math.round(timeRemaining / 60).toString().padStart(2, '0') + ':' + (timeRemaining % 60).toString().padStart(2, '0') + ' remaining');
 
             httpAgent.destroy();
             httpsAgent.destroy();
@@ -604,18 +601,6 @@ for (let i = 0; i < 3 && i < domains.length; i++)
         resolve();
     }));
 
-// Agents allow for keeping the connection alive
-// This means the request doesn't have to do a DNS lookup and TLS handshake every time and only has to do it once
-/*const scrapers = [];
-for (let i = 0; i < 3 && i < domains.length; i++)
-    scrapers.push(
-        scrapeDomain(
-            new http.Agent({ keepAlive: true, maxSockets: 1}), 
-            new https.Agent({ keepAlive: true, maxSockets: 1}),
-            i
-        )
-    );
-*/
 await Promise.all(scrapers);
 
 const time = Date.now();
@@ -642,6 +627,7 @@ for (let j = 0; j < urlResults.length; j++) {
             const currentVersion = urlHistory[i];
 
             result.history = currentVersion.history || [];
+
             if (currentVersion.status !== result.status || currentVersion.redirect !== result.redirect || currentVersion.https !== result.https || currentVersion.www !== result.www || currentVersion.dotgov !== result.dotgov)
                 result.history.push({ time, 
                     status: currentVersion.status,
@@ -785,7 +771,7 @@ for (let i = 0; i < securityResults.length; i++) {
                     hsts: currentVersion.hsts,
                     maxAge: currentVersion.maxAge,
                     csp: currentVersion.csp,
-                    xContentTypeOptions: xContentTypeOptions
+                    xContentTypeOptions: currentVersion.xContentTypeOptions
                 });
 
             securityHistory.slice(i, 1);
