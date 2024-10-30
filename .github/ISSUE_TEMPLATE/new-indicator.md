@@ -28,5 +28,6 @@ Reference:
 ## To-do
 
 - [ ] Add to search filter
+- [ ] Add to profile and home
 - [ ] Factor into 'all' scores (all domain + individual)
 - [ ] Add [documentation](https://docs.scangov.org)
