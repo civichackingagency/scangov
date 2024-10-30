@@ -6,7 +6,7 @@ labels: ''
 assignees: Narlotl
 
 ---
-[] Add page to docs
-[] Update keyword in docs where appropriate (grades/scores)
-[] Populate data
-[] Add subnav to domain page
+- [ ] Add page to docs
+- [ ] Update keyword in docs where appropriate (grades/scores)
+- [ ] Populate data
+- [ ] Add subnav to domain page
