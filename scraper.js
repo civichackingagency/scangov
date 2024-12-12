@@ -265,6 +265,7 @@ if (process.argv[2]) {
             urlResults.push(urlHistory.find(d => domain.startsWith(d.url)));
             sitemapResults.push(sitemapHistory.find(d => domain.startsWith(d.url)));
             robotsResults.push(robotsHistory.find(d => domain.startsWith(d.url)));
+            securityResults.push(securityHistory.find(d => domain.startsWith(d.url)));
         }
     
     if (!found && !process.argv[2].startsWith('--')) {
