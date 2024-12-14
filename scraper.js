@@ -310,7 +310,10 @@ for (let i = 0; i < 3 && i < domains.length; i++)
                 }
 
             let hstsReq, hsts;
-            if (startTime > expireTime) {
+            if (startTime > expireTime || !(maxAge > 0)) {
+                if (debug)
+                    console.log('Checking HSTS');
+
                 hstsReq = fetch('https://' + domain , httpAgent, httpsAgent, visited, false);
                 hsts = await hstsReq;
                 if (hsts.statusCode < 300 || hsts.statusCode < 400 && hsts.headers.location && hsts.headers.location.startsWith('https://'))
@@ -328,13 +331,14 @@ for (let i = 0; i < 3 && i < domains.length; i++)
             else if (expireTime > 0)
                 protocol = 'https://';
 
+            const hstsValid = maxAge > 0;
             const security = {
                 url: domain,
                 name,
                 status: hstsStatus || (hsts && hsts.statusCode),
-                hsts: !!maxAge,
-                maxAge: maxAge || -1,
-                expireTime: (startTime + maxAge) || -1
+                hsts: hstsValid,
+                maxAge: hstsValid ? maxAge : -1,
+                expireTime: hstsValid ? (startTime + maxAge) : -1
             };
 
             // URL
