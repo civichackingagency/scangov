@@ -1,4 +1,5 @@
 domain,agency,status,redirect,https,dot_gov,www
+bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/",true,true,false
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/",true,true,true
 altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/",true,true,true
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/",true,false,true
@@ -1268,7 +1269,6 @@ watermonitor.gov,"Department of the Interior",500,"http://www.watermonitor.gov/"
 volunteer.gov,"Department of the Interior",500,"https://www.volunteer.gov/",true,true,false
 volcano.gov,"Department of the Interior",200,"https://www.usgs.gov/natural-hazards/volcano-hazards/",true,true,false
 utahfireinfo.gov,"Department of the Interior",200,"https://utah-fire-info-utahdnr.hub.arcgis.com/",true,false,true
-usgs.gov,"Department of the Interior",200,"https://www.usgs.gov/",true,true,false
 usbr.gov,"Department of the Interior",500,"http://www.usbr.gov/",false,true,false
 sierrawild.gov,"Department of the Interior",200,"https://www.sierrawild.gov/",true,true,true
 sciencebase.gov,"Department of the Interior",200,"https://www.sciencebase.gov/catalog/",true,true,true
@@ -1957,4 +1957,4 @@ arkansas.gov,"State of Arkansas",200,"https://portal.arkansas.gov/",true,true,tr
 az.gov,"State of Arizona",200,"https://az.gov/",true,true,true
 alaska.gov,"State of Alaska",200,"https://alaska.gov/",true,true,false
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/",true,true,true
-bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/",true,true,false
+usgs.gov,"Department of the Interior",500,"https://www.usgs.gov/",true,true,false

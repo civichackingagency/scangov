@@ -1,4 +1,5 @@
 domain,agency,status,redirect,xml,items,pdfs
+bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/sitemap.xml",true,428,0
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/sitemap.xml",true,352,0
 altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/sitemap.xml",true,190,0
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/sitemap.xml",true,0,0
@@ -1268,7 +1269,6 @@ watermonitor.gov,"Department of the Interior",500,"undefined",false,0,0
 volunteer.gov,"Department of the Interior",500,"undefined",false,0,0
 volcano.gov,"Department of the Interior",200,"https://www.usgs.gov/natural-hazards/volcano-hazards/",false,0,0
 utahfireinfo.gov,"Department of the Interior",200,"https://utah-fire-info-utahdnr.hub.arcgis.com/",false,0,0
-usgs.gov,"Department of the Interior",200,"https://www.usgs.gov/sitemap.xml",true,0,0
 usbr.gov,"Department of the Interior",500,"undefined",false,0,0
 sierrawild.gov,"Department of the Interior",200,"https://www.sierrawild.gov/sitemap.xml",true,51,0
 sciencebase.gov,"Department of the Interior",403,"https://www.sciencebase.gov/sitemaps/sitemap_index.xml",false,0,0
@@ -1957,4 +1957,4 @@ arkansas.gov,"State of Arkansas",200,"https://portal.arkansas.gov/sitemap_index.
 az.gov,"State of Arizona",200,"https://az.gov/sitemap.xml",true,7,0
 alaska.gov,"State of Alaska",404,"https://alaska.gov/sitemap.xml",false,0,0
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/sitemap.xml",false,0,0
-bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/sitemap.xml",true,428,0
+usgs.gov,"Department of the Interior",500,"undefined",false,0,0

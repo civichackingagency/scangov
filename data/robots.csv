@@ -1,4 +1,5 @@
 domain,agency,status,redirect,valid,sitemap,allowed,source
+bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/robots.txt",true,"null",true,robots.txt
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/robots.txt",true,"null",true,robots.txt
 altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/robots.txt",true,"null",true,robots.txt
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/robots.txt",true,"null",true,robots.txt
@@ -1268,7 +1269,6 @@ watermonitor.gov,"Department of the Interior",500,"http://www.watermonitor.gov/"
 volunteer.gov,"Department of the Interior",500,"https://www.volunteer.gov/",false,"null",false,undefined
 volcano.gov,"Department of the Interior",200,"https://www.usgs.gov/natural-hazards/volcano-hazards/",false,"null",false,false
 utahfireinfo.gov,"Department of the Interior",200,"https://utah-fire-info-utahdnr.hub.arcgis.com/",false,"null",false,false
-usgs.gov,"Department of the Interior",200,"https://www.usgs.gov/robots.txt",true,"null",true,robots.txt
 usbr.gov,"Department of the Interior",500,"http://www.usbr.gov/",false,"null",false,undefined
 sierrawild.gov,"Department of the Interior",404,"https://www.sierrawild.gov/robots.txt",false,"null",false,false
 sciencebase.gov,"Department of the Interior",200,"https://www.sciencebase.gov/robots.txt",true,"https://www.sciencebase.gov/sitemaps/sitemap_index.xml",true,robots.txt
@@ -1957,4 +1957,4 @@ arkansas.gov,"State of Arkansas",200,"https://arkansas.gov/robots.txt",true,"nul
 az.gov,"State of Arizona",200,"https://az.gov/robots.txt",true,"null",true,robots.txt
 alaska.gov,"State of Alaska",200,"https://alaska.gov/robots.txt",true,"null",true,robots.txt
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/robots.txt",true,"null",true,robots.txt
-bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/robots.txt",true,"null",true,robots.txt
+usgs.gov,"Department of the Interior",500,"https://www.usgs.gov/",false,"null",false,undefined

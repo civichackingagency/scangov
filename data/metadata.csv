@@ -1,4 +1,5 @@
 domain,redirect,agency,status,title,description,keywords,robots,content_security_policy,viewport,canonical,og_locale,og_site_name,og_type,og_title,og_description,og_url,og_image,og_image_width,og_image_height,og_image_alt,twitter_site,twitter_card,twitter_title,twitter_description,twitter_image
+bha.colorado.gov,"https://bha.colorado.gov/","Colorado Behavioral Health Administration",200,true,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 cityofmonongahela-pa.gov,"https://www.cityofmonongahela-pa.gov/","City of Monongahela, Pennsylvania",200,true,true,false,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 altoonawater.gov,"https://www.altoonawater.gov/","Altoona Water Authority",200,true,true,false,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false
 jocogov.org,"https://www.jocogov.org/","Johnson County, Kansas",200,true,true,false,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,false,true
@@ -1268,7 +1269,6 @@ watermonitor.gov,"undefined","Department of the Interior",500,false,false,false,
 volunteer.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 volcano.gov,"https://www.usgs.gov/natural-hazards/volcano-hazards/","Department of the Interior",200,true,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 utahfireinfo.gov,"https://utah-fire-info-utahdnr.hub.arcgis.com/","Department of the Interior",200,true,true,false,false,false,true,false,false,false,true,true,true,true,true,false,false,false,false,true,true,true,true
-usgs.gov,"https://www.usgs.gov/","Department of the Interior",200,true,true,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 usbr.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sierrawild.gov,"https://www.sierrawild.gov/","Department of the Interior",200,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 sciencebase.gov,"https://www.sciencebase.gov/catalog/","Department of the Interior",200,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
@@ -1957,4 +1957,4 @@ arkansas.gov,"https://portal.arkansas.gov/","State of Arkansas",200,true,true,fa
 az.gov,"https://az.gov/","State of Arizona",200,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 alaska.gov,"https://alaska.gov/","State of Alaska",200,true,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 alabama.gov,"https://www.alabama.gov/","State of Alabama",200,true,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
-bha.colorado.gov,"https://bha.colorado.gov/","Colorado Behavioral Health Administration",200,true,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+usgs.gov,"undefined","Department of the Interior",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
