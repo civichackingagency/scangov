@@ -80,8 +80,8 @@ To add a single domain:
 ### Adding/removing metadata parameters
 
 To add/remove parameters from the data:
-- Open `scrapers/metadata.js`
-- Edit the `properties`, `variables`, and `csvVariables` arrays
+- Open `scrapers.js`
+- Edit the `metaTags` (line 5), `metaVariables` (line 54), and `metaCsvVariables` (line 78) arrays
     - Make sure each index lines up (first element in `properties` matches first element in `variables`)
 
 To add/remove parameters to the site:
