@@ -1,11 +1,22 @@
 domain,agency,status,redirect,valid,sitemap,allowed,source
+apps.nationalmap.gov,"United States Geological Survey",200,"https://apps.nationalmap.gov/robots.txt",true,"null",true,robots.txt
+ipdaac.usgs.gov,"United States Geological Survey",500,"http://www.ipdaac.usgs.gov/",false,"null",false,undefined
+water.usgs.gov,"United States Geological Survey",200,"https://water.usgs.gov/robots.txt",true,"null",true,robots.txt
+volcanoes.usgs.gov,"United States Geological Survey",404,"https://volcanoes.usgs.gov/robots.txt",false,"null",false,false
+ers.cr.usgs.gov,"United States Geological Survey",404,"https://ers.cr.usgs.gov/robots.txt",true,"null",true,meta
+ngmdb.usgs.gov,"United States Geological Survey",200,"https://ngmdb.usgs.gov/robots.txt",true,"null",true,robots.txt
+earthexplorer.usgs.gov,"United States Geological Survey",404,"https://earthexplorer.usgs.gov/robots.txt",true,"null",true,meta
+store.usgs.gov,"United States Geological Survey",200,"https://store.usgs.gov/robots.txt",true,"null",true,robots.txt
+dashboard.waterdata.usgs.gov,"United States Geological Survey",404,"https://dashboard.waterdata.usgs.gov/robots.txt",false,"null",false,false
+waterdata.usgs.gov,"United States Geological Survey",200,"https://waterdata.usgs.gov/robots.txt",true,"http://waterdata.usgs.gov/sitemapWaterdata.xml",true,robots.txt
+earthquake.usgs.gov,"United States Geological Survey",200,"https://www.usgs.gov/programs/earthquake-hazards",false,"null",false,false
 bha.colorado.gov,"Colorado Behavioral Health Administration",200,"https://bha.colorado.gov/robots.txt",true,"null",true,robots.txt
 cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",200,"https://www.cityofmonongahela-pa.gov/robots.txt",true,"null",true,robots.txt
 altoonawater.gov,"Altoona Water Authority",200,"https://www.altoonawater.gov/robots.txt",true,"null",true,robots.txt
 jocogov.org,"Johnson County, Kansas",200,"https://www.jocogov.org/robots.txt",true,"null",true,robots.txt
 usarmyband.com,"Department of Defense",200,"https://usarmyband.com/robots.txt",true,"null",true,robots.txt
-vavmc.com,"Department of Veterans Affairs",500,"http://www.vavmc.com/",false,"null",false,undefined
-vaitcampus.com,"Department of Veterans Affairs",500,"http://www.vaitcampus.com/",false,"null",false,undefined
+vavmc.com,"Department of Veterans Affairs",200,"https://vavmc.com/robots.txt",true,"null",true,robots.txt
+vaitcampus.com,"Department of Veterans Affairs",200,"http://www.vaitcampus.com/robots.txt",true,"null",true,robots.txt
 treatmentworksforvets.org,"Department of Veterans Affairs",200,"https://treatmentworksforvets.org/robots.txt",true,"null",true,robots.txt
 shopvcs.com,"Department of Veterans Affairs",200,"https://shopvcs.va.gov/robots.txt",true,"null",true,robots.txt
 otianywhere.net,"United States Agency for International Development ",200,"https://otianywhere.net/robots.txt",true,"null",true,robots.txt
@@ -33,14 +44,14 @@ pbgc.net,"Pension Benefit Guaranty Corporation",200,"https://www.pbgc.gov/robots
 pbgc.com,"Pension Benefit Guaranty Corporation",200,"https://www.pbgc.gov/robots.txt",true,"https://www.pbgc.gov/sitemap.xml",true,robots.txt
 pbgc.biz,"Pension Benefit Guaranty Corporation",200,"https://www.pbgc.gov/robots.txt",true,"https://www.pbgc.gov/sitemap.xml",true,robots.txt
 xsp.org,"Office of Personnel Management",404,"http://www.xsp.org/robots.txt",false,"null",false,false
-usajobsrecruit.us,"Office of Personnel Management",200,"http://www.usajobsrecruit.us/robots.txt",true,"null",true,robots.txt
-usajobsrecruit.com,"Office of Personnel Management",200,"http://www.usajobsrecruit.com/robots.txt",true,"null",true,robots.txt
-usajobsassess.us,"Office of Personnel Management",429,"http://www.usajobsassess.us/robots.txt",true,"null",true,meta
-usajobsassess.com,"Office of Personnel Management",200,"http://www.usajobsassess.com/robots.txt",true,"null",true,robots.txt
+usajobsrecruit.us,"Office of Personnel Management",500,"http://www.usajobsrecruit.us/",false,"null",false,undefined
+usajobsrecruit.com,"Office of Personnel Management",500,"http://www.usajobsrecruit.com/",false,"null",false,undefined
+usajobsassess.us,"Office of Personnel Management",429,"http://www.usajobsassess.us/robots.txt",false,"null",false,false
+usajobsassess.com,"Office of Personnel Management",500,"http://www.usajobsassess.com/",false,"null",false,undefined
 usajobs.com,"Office of Personnel Management",200,"https://www.usajobs.gov/robots.txt",true,"https://www.usajobs.gov/sitemap.xml",true,robots.txt
-federalcampaign.org,"Office of Personnel Management",200,"http://www.federalcampaign.org/robots.txt",true,"null",true,robots.txt
-combinedfederal.org,"Office of Personnel Management",200,"http://www.combinedfederal.org/robots.txt",true,"null",true,robots.txt
-cfcgiving.org,"Office of Personnel Management",200,"http://www.cfcgiving.org/robots.txt",true,"null",true,robots.txt
+federalcampaign.org,"Office of Personnel Management",500,"http://www.federalcampaign.org/",false,"null",false,undefined
+combinedfederal.org,"Office of Personnel Management",500,"http://www.combinedfederal.org/",false,"null",false,undefined
+cfcgiving.org,"Office of Personnel Management",500,"http://www.cfcgiving.org/",false,"null",false,undefined
 fedroom.com,"General Services Administration",200,"https://fedroom.com/robots.txt",true,"null",false,robots.txt
 doi.net,"Department of the Interior",500,"http://www.doi.net/",false,"null",false,undefined
 rfj.tips,"Department of State",404,"https://rfj.tips/404",false,"null",false,false
@@ -55,7 +66,7 @@ neapmap.com,"Department of Labor",200,"https://neapmap.com/robots.txt",true,"htt
 mynextmove.org,"Department of Labor",200,"https://www.mynextmove.org/robots.txt",true,"null",true,robots.txt
 joinjobcorps.com,"Department of Labor",500,"http://www.joinjobcorps.com/",false,"null",false,undefined
 jobcorps.org,"Department of Labor",500,"https://jobcorps.gov//",false,"null",false,undefined
-jctalentworks.com,"Department of Labor",302,"http://www.jctalentworks.com/",false,"null",false,undefined
+jctalentworks.com,"Department of Labor",404,"https://info.joinjobcorps.com/searchcareersrobots.txt",false,"null",false,false
 jcsuccess.org,"Department of Labor",404,"http://www.jcsuccess.org/robots.txt",false,"null",false,false
 jcmarketplace.com,"Department of Labor",200,"https://jcmarketplace.com/robots.txt",true,"https://jcmarketplace.com/sitemap_index.xml",true,robots.txt
 inclusiveapprenticeship.org,"Department of Labor",200,"https://inclusiveapprenticeship.org/robots.txt",true,"null",true,robots.txt
@@ -82,7 +93,7 @@ sitenv.org,"Department of Health and Human Services",500,"http://www.sitenv.org/
 sisterstudy.org,"Department of Health and Human Services",200,"https://sisterstudy.niehs.nih.gov/English/index1.htm",false,"null",false,false
 scienceforum.sc,"Department of Health and Human Services",500,"http://www.scienceforum.sc/",false,"null",false,undefined
 racwarehouse.org,"Department of Health and Human Services",404,"https://www.racwarehouse.org/robots.txt",false,"null",false,false
-quehacerahora.org,"Department of Health and Human Services",200,"https://www.cdc.gov/howrightnow/espanol/",false,"null",false,false
+quehacerahora.org,"Department of Health and Human Services",401,"https://www.quehacerahora.org/",false,"null",false,undefined
 qualitynet.org,"Department of Health and Human Services",200,"https://qualitynet.cms.gov/robots.txt",true,"null",true,robots.txt
 pubmedcentral.us,"Department of Health and Human Services",500,"http://www.pubmedcentral.us/",false,"null",false,undefined
 pubmedcentral.info,"Department of Health and Human Services",500,"http://www.pubmedcentral.info/",false,"null",false,undefined
@@ -99,7 +110,7 @@ presidentschallenge.org,"Department of Health and Human Services",404,"http://pr
 phs-nurse.org,"Department of Health and Human Services",404,"https://www.phs-nurse.org/robots.txt",true,"null",true,false
 phiresearchlab.org,"Department of Health and Human Services",500,"http://www.phiresearchlab.org/",false,"null",false,undefined
 pcorcds-ln.org,"Department of Health and Human Services",500,"http://www.pcorcds-ln.org/",false,"null",false,undefined
-pccqualitymonitoring.com,"Department of Health and Human Services",200,"https://pccqualitymonitoring.com/robots.txt",true,"null",true,robots.txt
+pccqualitymonitoring.com,"Department of Health and Human Services",500,"http://www.pccqualitymonitoring.com/",false,"null",false,undefined
 pccds-ln.org,"Department of Health and Human Services",200,"https://pccds-ln.org/robots.txt",true,"null",true,robots.txt
 oahpmdata.net,"Department of Health and Human Services",200,"https://oahpmdata.net/ErrorPage",false,"null",false,false
 nlmgiftshop.net,"Department of Health and Human Services",500,"http://www.nlmgiftshop.net/",false,"null",false,undefined
@@ -117,8 +128,8 @@ nhlbiwgs.org,"Department of Health and Human Services",200,"https://nhlbiwgs.org
 ncihub.org,"Department of Health and Human Services",500,"http://www.ncihub.org/",false,"null",false,undefined
 nci-fyi.org,"Department of Health and Human Services",401,"https://nci-fyi.org/robots.txt",true,"null",true,meta
 ncats.io,"Department of Health and Human Services",200,"https://ncats.nih.gov/",false,"null",false,false
-ncands.net,"Department of Health and Human Services",500,"https://ncands.acf.hhs.gov/Account/Login?ReturnUrl=%2F",false,"null",false,undefined
-namrs.net,"Department of Health and Human Services",404,"https://namrs.net/robots.txt",false,"null",false,false
+ncands.net,"Department of Health and Human Services",200,"https://ncands.acf.hhs.gov/Account/Login?ReturnUrl=%2F",false,"null",false,false
+namrs.net,"Department of Health and Human Services",500,"https://www.namrs.net/Account/Login?ReturnUrl=%2F",false,"null",false,undefined
 mesh.org,"Department of Health and Human Services",500,"http://www.mesh.org/",false,"null",false,undefined
 mepstech.com,"Department of Health and Human Services",200,"https://nojs-rotate.domaincntrol.com/?d=nojs&t=3",false,"null",false,false
 mepsdocs.org,"Department of Health and Human Services",404,"https://mepsdocs.org/robots.txt",false,"null",false,false
@@ -132,7 +143,7 @@ medlars.org,"Department of Health and Human Services",500,"http://www.medlars.or
 medlars.net,"Department of Health and Human Services",500,"http://www.medlars.net/",false,"null",false,undefined
 medlars.info,"Department of Health and Human Services",500,"http://www.medlars.info/",false,"null",false,undefined
 medlars.com,"Department of Health and Human Services",500,"http://www.medlars.com/",false,"null",false,undefined
-medicalbillrights.org,"Department of Health and Human Services",200,"https://medicalbillrights.org/robots.txt",true,"null",true,robots.txt
+medicalbillrights.org,"Department of Health and Human Services",200,"http://www.medicalbillrights.org/robots.txt",true,"null",true,robots.txt
 medicalbillrights.net,"Department of Health and Human Services",200,"https://medicalbillrights.net/robots.txt",true,"null",true,robots.txt
 medicalbillrights.com,"Department of Health and Human Services",200,"https://medicalbillrights.com/robots.txt",true,"null",true,robots.txt
 loansomedoc.org,"Department of Health and Human Services",500,"http://www.loansomedoc.org/",false,"null",false,undefined
@@ -170,12 +181,12 @@ ctsu.org,"Department of Health and Human Services",404,"https://www.ctsu.org/rob
 csscoperations.com,"Department of Health and Human Services",200,"https://csscoperations.com/robots.txt",true,"null",true,robots.txt
 coronaviruspreventionnetwork.org,"Department of Health and Human Services",200,"https://reneewilkin.net/",true,"null",true,meta
 citdbase.org,"Department of Health and Human Services",403,"http://www.citdbase.org/",false,"null",false,undefined
-charmmtutorial.org,"Department of Health and Human Services",404,"https://charmmtutorial.org/robots.txt",false,"null",false,false
+charmmtutorial.org,"Department of Health and Human Services",404,"https://idwlimited.com/robots.txt",true,"null",true,meta
 charmm.org,"Department of Health and Human Services",200,"https://academiccharmm.org/",false,"null",false,false
-chainonline.org,"Department of Health and Human Services",404,"http://www.chainonline.org/robots.txt",false,"null",false,false
+chainonline.org,"Department of Health and Human Services",500,"http://www.chainonline.org/",false,"null",false,undefined
 cfsrportal.org,"Department of Health and Human Services",500,"https://www.cfsrportal.org/",false,"null",false,undefined
 cdcpartners.org,"Department of Health and Human Services",500,"http://www.cdcpartners.org/",false,"null",false,undefined
-ccwdata.org,"Department of Health and Human Services",200,"https://ccwdata.org/robots.txt",true,"null",true,robots.txt
+ccwdata.org,"Department of Health and Human Services",200,"https://www2.ccwdata.org/my.logout.php3?errorcode=19",false,"null",false,false
 cahpsusernetwork.net,"Department of Health and Human Services",403,"https://www.cahpsusernetwork.net/",false,"null",false,undefined
 brainattackcoalition.org,"Department of Health and Human Services",403,"http://www.brainattackcoalition.org/",false,"null",false,undefined
 ahrqstg.org,"Department of Health and Human Services",500,"http://www.ahrqstg.org/",false,"null",false,undefined
@@ -236,7 +247,7 @@ us-mission.ch,"Department of State (DOS)",200,"https://geneva.usmission.gov/robo
 tvars.com,"Tennessee Valley Authority",200,"https://tvars.com/robots.txt",true,"https://tvars.com/wp-sitemap.xml",true,robots.txt
 tvaed.com,"Tennessee Valley Authority",403,"https://www.tva.com/Economic-Development",false,"null",false,undefined
 tva.com,"Tennessee Valley Authority",403,"https://www.tva.com/",false,"null",false,undefined
-trumanlibrary.org,"National Archives and Records Administration (NARA)",429,"https://trumanlibrary.org/robots.txt",false,"null",false,false
+trumanlibrary.org,"National Archives and Records Administration (NARA)",200,"http://www.trumanlibrary.org/robots.txt",true,"null",true,robots.txt
 trainex.org,"Environmental Protection Agency (EPA)",200,"https://trainex.org/robots.txt",true,"null",true,robots.txt
 todaysmilitary.com,"Department of Defense",200,"https://www.todaysmilitary.com/robots.txt",true,"null",true,robots.txt
 todaysdocument.tumblr.com,"National Archives and Records Administration (NARA)",500,"https://www.todaysdocument.tumblr.com/",false,"null",false,undefined
@@ -272,7 +283,7 @@ riandsemacfc.org,"Combined Federal Campaign",500,"http://www.riandsemacfc.org/",
 rferl.org,"U.S. Agency for Global Media",200,"https://www.rferl.org/robots.txt",true,"null",true,robots.txt
 rfa.org,"U.S. Agency for Global Media",200,"https://www.rfa.org/arc/outboundfeeds/english/robots.txt",true,"https://rfa.org/arc/outboundfeeds/english/sitemap-news/",true,robots.txt
 rewardsforjustice.net,"Department of State (DOS)",200,"https://rewardsforjustice.net/robots.txt",true,"null",true,robots.txt
-reirs.com,"Nuclear Regulatory Commission",500,"http://www.reirs.com/",false,"null",false,undefined
+reirs.com,"Nuclear Regulatory Commission",404,"https://reirs.com/robots.txt",false,"null",false,false
 realwarriors.net,"Department of Defense",500,"https://www.health.mil/realwarriors",false,"null",false,undefined
 radiosawa.com,"U.S. Agency for Global Media",200,"https://www.alhurra.com/",true,"null",true,meta
 r3coastal.com,"Federal Emergency Management Agency (FEMA)",500,"http://www.r3coastal.com/",false,"null",false,undefined
@@ -283,7 +294,7 @@ psctool.us,"Department of Defense",200,"https://psctool.us/robots.txt",true,"nul
 project-open-data.github.io,"General Services Administration (GSA)",200,"https://resources.data.gov/",true,"null",true,x-robots-tag
 potomaccfc.org,"Combined Federal Campaign",500,"http://www.potomaccfc.org/",false,"null",false,undefined
 phpartners.org,"Employment and Training Administration",500,"http://www.phpartners.org/",false,"null",false,undefined
-philadelphiafed.org,"Federal Reserve Board",200,"https://www.philadelphiafed.org/robots.txt",true,"https://www.philadelphiafed.org/sitemap.xml",true,robots.txt
+philadelphiafed.org,"Federal Reserve Board",200,"https://www.philadelphiafed.org/robots.txt",true,"null",true,robots.txt
 pepfar.net,"Department of State (DOS)",500,"http://www.pepfar.net/",false,"null",false,undefined
 peakcfc.com,"Combined Federal Campaign",500,"http://www.peakcfc.com/",false,"null",false,undefined
 pbgc.org,"Pension Benefit Guarantee Corporation (PBGC)",200,"https://www.pbgc.gov/robots.txt",true,"https://www.pbgc.gov/sitemap.xml",true,robots.txt
@@ -319,7 +330,7 @@ neabigread.org,"National Endowment for the Arts (NEA)",404,"https://neabigread.o
 ndu.edu,"National Defense University (NDU)",200,"https://www.ndu.edu/robots.txt",true,"null",true,robots.txt
 ncwvcfc.org,"Combined Federal Campaign",500,"http://www.ncwvcfc.org/",false,"null",false,undefined
 navyreserve.com,"Department of the Navy",403,"https://www.navy.com/joining/ways-to-join/reserve",false,"null",false,undefined
-navy.com,"Department of the Navy",403,"https://www.navy.com/",false,"null",false,undefined
+navy.com,"Department of the Navy",200,"https://www.navy.com/robots.txt",true,"https://www.navy.com/sitemap.xml",true,robots.txt
 nationalguard.com,"U.S. National Guard",200,"https://nationalguard.com/robots.txt",true,"null",true,robots.txt
 nationalatlas.org,"Department of Interior (DOI)",500,"http://www.nationalatlas.org/",false,"null",false,undefined
 nationalatlas.com,"Department of Interior (DOI)",500,"http://www.nationalatlas.com/",false,"null",false,undefined
@@ -399,8 +410,8 @@ fsafeds.com,"Office of Personnel Management (OPM)",403,"https://www.fsafeds.gov/
 freefilefillableforms.com,"Internal Revenue Service",200,"https://freefilefillableforms.com/robots.txt",true,"null",true,robots.txt
 freddiemac.com,"Federal Home Loan Mortgage Corporation",200,"https://www.freddiemac.com/robots.txt",true,"null",true,robots.txt
 frbsf.org,"Federal Reserve Board",200,"https://www.frbsf.org/robots.txt",true,"https://www.frbsf.org/sitemap_index.xml",true,robots.txt
-frbatlanta.org,"Federal Reserve Board",500,"https://www.atlantafed.org/",false,"null",false,undefined
-forestryimages.org,"U.S. Forest Service (USFS)",200,"https://www.forestryimages.org/robots.txt",true,"null",true,robots.txt
+frbatlanta.org,"Federal Reserve Board",200,"https://www.atlantafed.org/robots.txt",true,"https://www.atlantafed.org/sitemap",true,robots.txt
+forestryimages.org,"U.S. Forest Service (USFS)",404,"https://www.forestryimages.org/robots.txt",false,"null",false,false
 fmjfee.com,"U.S. Citizenship and Immigration Service (USCIS)",404,"https://www.fmjfee.com/robots.txt",false,"null",false,false
 firelab.org,"U.S. Forest Service (USFS)",200,"https://firelab.org/robots.txt",true,"null",true,robots.txt
 findtbresources.org,"Centers for Disease Control and Prevention (CDC)",500,"http://www.findtbresources.org/",false,"null",false,undefined
@@ -428,7 +439,7 @@ fbiacademy.edu,"Federal Bureau of Investigation (FBI)",500,"http://www.fbiacadem
 farmermac.com,"Federal Agricultural Mortgage Corporation",200,"https://www.farmermac.com/robots.txt",true,"http://www.farmermac.com/sitemap_index.xml",true,robots.txt
 farmcreditbank.com,"Farm Credit Administration",200,"https://www.farmcreditbank.com/robots.txt",true,"null",true,robots.txt
 fanniemae.com,"Federal National Mortgage Association",200,"https://www.fanniemae.com/robots.txt",true,"https://singlefamily.fanniemae.com/sitemap.xml",true,robots.txt
-fairhousingfirst.org,"Department of Housing and Urban Development (HUD)",302,"http://www.fairhousingfirst.org/",false,"null",false,undefined
+fairhousingfirst.org,"Department of Housing and Urban Development (HUD)",404,"https://www.hud.gov/program_offices/fair_housing_equal_opp/accessibility_first_homerobots.txt",false,"null",false,false
 escarosacfc.org,"Combined Federal Campaign",500,"http://www.escarosacfc.org/",false,"null",false,undefined
 ertvideo.org,"Environmental Protection Agency (EPA)",500,"http://www.ertvideo.org/",false,"null",false,undefined
 ertsupport.org,"Environmental Protection Agency (EPA)",500,"http://www.ertsupport.org/",false,"null",false,undefined
@@ -437,7 +448,7 @@ epaosc.org,"Environmental Protection Agency (EPA)",200,"https://response.epa.gov
 epancic.org,"Environmental Protection Agency (EPA)",500,"http://www.epancic.org/",false,"null",false,undefined
 epa.maps.arcgis.com,"Environmental Protection Agency (EPA)",200,"https://epa.maps.arcgis.com/robots.txt",true,"http://static.arcgis.com/sitemap.xml",true,robots.txt
 enviroflash.info,"Environmental Protection Agency (EPA)",404,"https://www.enviroflash.info/robots.txt",false,"null",false,false
-elcivicsonline.org,"Department of Education (ED)",404,"https://elcivicsonline.org/robots.txt",false,"null",false,false
+elcivicsonline.org,"Department of Education (ED)",200,"https://elcivicsonline.org/robots.txt",true,"null",true,robots.txt
 efts.scportal.us,"Department of Defense",200,"http://efts.scportal.us/robots.txt",true,"null",true,robots.txt
 easternmasscfc.org,"Combined Federal Campaign",500,"http://www.easternmasscfc.org/",false,"null",false,undefined
 earthsystemmodeling.org,"National Aeronautics and Space Administration (NASA)",200,"https://earthsystemmodeling.org/robots.txt",true,"null",true,robots.txt
@@ -448,7 +459,7 @@ dvbic.org,"Department of Defense (DOD)",200,"https://dvbic.org/robots.txt",true,
 dodstarbase.org,"Department of Defense (DOD)",200,"https://dodstarbase.org/robots.txt",true,"https://dodstarbase.org/sitemap.xml",true,robots.txt
 dodsbir.net,"Department of Defense (DOD)",200,"http://dodsbir.net/robots.txt",true,"null",true,robots.txt
 dodea.edu,"Department of Defense (DOD)",200,"https://www.dodea.edu/robots.txt",true,"null",true,robots.txt
-dodccrp.org,"Department of Defense (DOD)",200,"http://dodccrp.org/robots.txt",true,"http://www.dodccrp.org/html4/sitemap.html",true,robots.txt
+dodccrp.org,"Department of Defense (DOD)",200,"http://www.dodccrp.org/robots.txt",true,"http://www.dodccrp.org/html4/sitemap.html",true,robots.txt
 docsteach.org,"National Archives and Records Administration (NARA)",403,"https://www.docsteach.org/",false,"null",false,undefined
 digitalvaults.org,"National Archives and Records Administration (NARA)",200,"https://digitalvaults.org/robots.txt",true,"https://digitalvaults.org/sitemap.xml",true,robots.txt
 dhs-summit.us,"Department of Homeland Security (DHS)",500,"http://www.dhs-summit.us/",false,"null",false,undefined
@@ -485,7 +496,7 @@ cfe-dmha.org,"Department of Defense (DOD)",500,"http://www.cfe-dmha.org/",false,
 cfcwnc.com,"Combined Federal Campaign",500,"http://www.cfcwnc.com/",false,"null",false,undefined
 cfcwesternmontana.org,"Combined Federal Campaign",500,"http://www.cfcwesternmontana.org/",false,"null",false,undefined
 cfcwesternmichigan.org,"Combined Federal Campaign",500,"http://www.cfcwesternmichigan.org/",false,"null",false,undefined
-cfcvp.org,"Combined Federal Campaign",200,"https://cfcvp.org/robots.txt",true,"null",true,robots.txt
+cfcvp.org,"Combined Federal Campaign",500,"http://www.cfcvp.org/",false,"null",false,undefined
 cfctexasgulfcoast.org,"Combined Federal Campaign",500,"http://www.cfctexasgulfcoast.org/",false,"null",false,undefined
 cfcsnj.org,"Combined Federal Campaign",500,"http://www.cfcsnj.org/",false,"null",false,undefined
 cfcshr.org,"Combined Federal Campaign",403,"https://www.cfcshr.org/",false,"null",false,undefined
@@ -535,7 +546,7 @@ auxpa.org,"U.S. Coast Guard Auxiliary",200,"http://auxpa.org/robots.txt",true,"n
 atlanticcoastcfc.org,"Combined Federal Campaign",500,"http://www.atlanticcoastcfc.org/",false,"null",false,undefined
 askjan.org,"Department of Labor",200,"https://askjan.org/robots.txt",true,"https://askjan.org/sitemap.xml",true,robots.txt
 armyfuturescommand.com,"Department of the Army",404,"http://www.armyfuturescommand.com/robots.txt",false,"null",false,false
-armedforcessports.com,"Department of Defense (DOD)",302,"http://www.armedforcessports.com/",false,"null",false,undefined
+armedforcessports.com,"Department of Defense (DOD)",200,"https://armedforcessports.defense.gov/robots.txt",true,"null",true,robots.txt
 amver.com,"U.S. Coast Guard",200,"https://amver.com/Error/Index",false,"null",false,false
 amtrak.com,"National Railroad Passenger Corporation",200,"https://www.amtrak.com/robots.txt",true,"null",true,robots.txt
 americorpsconnect.org,"Corporation for National and Community Service",404,"http://www.americorpsconnect.org/",false,"null",false,undefined
@@ -645,7 +656,7 @@ usgovernmentmanual.gov,"Government Publishing Office",404,"https://usgovernmentm
 uscode.gov,"Government Publishing Office",200,"https://www.govinfo.gov/app/collection/uscode",false,"null",false,false
 senatecalendar.gov,"Government Publishing Office",200,"https://www.govinfo.gov/app/collection/ccal",false,"null",false,false
 presidentialdocuments.gov,"Government Publishing Office",200,"https://www.govinfo.gov/app/collection/cpd",false,"null",false,false
-ofr.gov,"Government Publishing Office",500,"http://www.ofr.gov/",false,"null",false,undefined
+ofr.gov,"Government Publishing Office",404,"https://www.archives.gov/files/federal-register/robots.txt",false,"null",false,false
 housecalendar.gov,"Government Publishing Office",200,"https://www.govinfo.gov/app/collection/ccal",false,"null",false,false
 gpodev.gov,"Government Publishing Office",500,"http://www.gpodev.gov/",false,"null",false,undefined
 gpo.gov,"Government Publishing Office",200,"https://www.gpo.gov/robots.txt",true,"https://www.gpo.gov/sitemap/sitemap-index.xml",true,robots.txt
@@ -668,10 +679,10 @@ solarium.gov,"Cyberspace Solarium Commission",404,"https://www.solarium.gov/robo
 cbonews.gov,"Congressional Budget Office",404,"http://www.cbonews.gov/robots.txt",false,"null",false,false
 cbo.gov,"Congressional Budget Office",200,"https://www.cbo.gov/robots.txt",true,"null",true,robots.txt
 visitthecapitol.gov,"Architect of the Capitol",200,"https://www.visitthecapitol.gov/robots.txt",true,"null",true,robots.txt
-visitthecapital.gov,"Architect of the Capitol",404,"http://www.visitthecapital.gov/",false,"null",false,undefined
+visitthecapital.gov,"Architect of the Capitol",404,"http://www.visitthecapital.gov/robots.txt",false,"null",false,false
 uscapitolgiftstore.gov,"Architect of the Capitol",500,"http://www.uscapitolgiftstore.gov/",false,"null",false,undefined
 uscapitolgiftshop.gov,"Architect of the Capitol",500,"http://www.uscapitolgiftshop.gov/",false,"null",false,undefined
-uscapitol.gov,"Architect of the Capitol",404,"http://www.uscapitol.gov/",false,"null",false,undefined
+uscapitol.gov,"Architect of the Capitol",404,"http://www.uscapitol.gov/robots.txt",false,"null",false,false
 uscapitalgiftshop.gov,"Architect of the Capitol",500,"http://www.uscapitalgiftshop.gov/",false,"null",false,undefined
 uscapital.gov,"Architect of the Capitol",500,"http://www.uscapital.gov/",false,"null",false,undefined
 usbg.gov,"Architect of the Capitol",200,"https://www.usbg.gov/robots.txt",true,"null",true,robots.txt
@@ -721,7 +732,7 @@ ustda.gov,"United States Trade and Development Agency",200,"https://www.ustda.go
 uspsoig.gov,"United States Postal Service",200,"https://www.uspsoig.gov/robots.txt",true,"null",true,robots.txt
 uspsinnovates.gov,"United States Postal Service",500,"http://www.uspsinnovates.gov/",false,"null",false,undefined
 uspsinformeddelivery.gov,"United States Postal Service",500,"http://www.uspsinformeddelivery.gov/",false,"null",false,undefined
-usps.gov,"United States Postal Service",200,"https://www.usps.com/",false,"null",false,false
+usps.gov,"United States Postal Service",500,"https://www.usps.com/",false,"null",false,undefined
 uspis.gov,"United States Postal Service",200,"https://www.uspis.gov/robots.txt",true,"https://www.uspis.gov/sitemap_index.xml",true,robots.txt
 purchasing.gov,"United States Postal Service",500,"http://www.purchasing.gov/",false,"null",false,undefined
 postoffice.gov,"United States Postal Service",500,"http://www.postoffice.gov/",false,"null",false,undefined
@@ -786,7 +797,7 @@ arsusda.gov,"U.S. Department of Agriculture",500,"http://www.arsusda.gov/",false
 ars-grin.gov,"U.S. Department of Agriculture",200,"https://ars-grin.gov/robots.txt",true,"null",true,robots.txt
 ag.gov,"U.S. Department of Agriculture",500,"http://www.ag.gov/",false,"null",false,undefined
 aff.gov,"U.S. Department of Agriculture",200,"https://www.aff.gov/robots.txt",true,"https://www.aff.gov/aff-site-index.xml",true,robots.txt
-22007apply.gov,"U.S. Department of Agriculture",404,"https://22007apply.gov/robots.txt",false,"null",false,false
+22007apply.gov,"U.S. Department of Agriculture",200,"https://www.usda.gov/about-usda/general-information/initiatives-and-highlighted-programs/22007",false,"null",false,false
 uscirf.gov,"U.S. Commission on International Religious Freedom",200,"https://www.uscirf.gov/robots.txt",true,"null",true,robots.txt
 usccr.gov,"U.S. Commission on Civil Rights",200,"https://www.usccr.gov/robots.txt",true,"https://www.usccr.gov/sitemap.xml",true,robots.txt
 cssbmb.gov,"U.S. Commission on Civil Rights",200,"https://cssbmb.gov/robots.txt",true,"https://cssbmb.gov/sitemap.xml",true,robots.txt
@@ -800,7 +811,7 @@ pmi.gov,"U.S. Agency for International Development",200,"https://www.pmi.gov/",f
 neglecteddiseases.gov,"U.S. Agency for International Development",200,"https://www.neglecteddiseases.gov/",false,"null",false,false
 foreignassistance.gov,"U.S. Agency for International Development",200,"https://foreignassistance.gov/robots.txt",true,"null",true,robots.txt
 feedthefuture.gov,"U.S. Agency for International Development",200,"https://www.feedthefuture.gov/robots.txt",true,"https://www.feedthefuture.gov/sitemap_index.xml",true,robots.txt
-dfafacts.gov,"U.S. Agency for International Development",404,"https://dfafacts.gov/robots.txt",false,"null",false,false
+dfafacts.gov,"U.S. Agency for International Development",200,"https://dfafacts.gov/robots.txt",true,"null",true,robots.txt
 childreninadversity.gov,"U.S. Agency for International Development",200,"https://www.childreninadversity.gov/",false,"null",false,false
 worldwar1centennial.gov,"The United States World War One Centennial Commission",200,"https://worldwar1centennial.org/robots.txt",true,"null",true,robots.txt
 ptf.gov,"The Intelligence Community",400,"http://www.ptf.gov/",false,"null",false,undefined
@@ -808,7 +819,7 @@ tvaoig.gov,"Tennessee Valley Authority",200,"https://www.tvaoig.gov/robots.txt",
 tva.gov,"Tennessee Valley Authority",403,"https://www.tva.com/",false,"null",false,undefined
 stb.gov,"Surface Transportation Board",200,"https://www.stb.gov/robots.txt",true,"https://www.stb.gov/sitemap_index.xml",true,robots.txt
 sji.gov,"State Justice Institute",200,"https://www.sji.gov/robots.txt",true,"https://www.sji.gov/wp-sitemap.xml",true,robots.txt
-sbrc.gov,"Southwest Border Regional Commission",404,"https://sbrc.gov/robots.txt",false,"null",false,false
+sbrc.gov,"Southwest Border Regional Commission",404,"https://sbrc.gov/robots.txt",true,"null",true,meta
 scrc.gov,"Southeast Crescent Regional Commission",200,"https://scrc.gov/robots.txt",true,"null",true,robots.txt
 ssab.gov,"Social Security Advisory Board",200,"https://www.ssab.gov/robots.txt",true,"https://www.ssab.gov/sitemap.xml",true,robots.txt
 ssa.gov,"Social Security Administration",200,"https://www.ssa.gov/robots.txt",true,"https://www.ssa.gov/sitemap.xml",true,robots.txt
@@ -832,7 +843,7 @@ presidiocommercial.gov,"Presidio Trust",500,"http://www.presidiocommercial.gov/"
 presidio.gov,"Presidio Trust",200,"https://presidio.gov/robots.txt",true,"https://wp.presidio.gov/sitemap.xml",true,robots.txt
 prc.gov,"Postal Regulatory Commission",200,"https://prc.gov/robots.txt",true,"null",true,robots.txt
 pbgc.gov,"Pension Benefit Guaranty Corporation",200,"https://www.pbgc.gov/robots.txt",true,"https://www.pbgc.gov/sitemap.xml",true,robots.txt
-usastaffing.gov,"Office of Personnel Management",200,"https://signin.usastaffing.gov/Account/SignIn?ReturnUrl=%2Fissue%2Fwsfed%3Fwa%3Dwsignin1.0%26wtrealm%3Dhttps%253a%252f%252fusastaffing.gov%252f%26wctx%3Drm%253d0%2526id%253dpassive%2526ru%253d%25252frobots.txt%26wct%3D2024-12-14T03%253a23%253a50Z",false,"null",false,false
+usastaffing.gov,"Office of Personnel Management",200,"https://signin.usastaffing.gov/Account/SignIn?ReturnUrl=%2Fissue%2Fwsfed%3Fwa%3Dwsignin1.0%26wtrealm%3Dhttps%253a%252f%252fusastaffing.gov%252f%26wctx%3Drm%253d0%2526id%253dpassive%2526ru%253d%25252frobots.txt%26wct%3D2025-01-21T03%253a02%253a37Z",false,"null",false,false
 usalearning.gov,"Office of Personnel Management",200,"https://usalearning.gov/robots.txt",true,"null",true,robots.txt
 usajobs.gov,"Office of Personnel Management",200,"https://www.usajobs.gov/robots.txt",true,"https://www.usajobs.gov/sitemap.xml",true,robots.txt
 unlocktalent.gov,"Office of Personnel Management",200,"https://www.opm.gov/data/",false,"null",false,false
@@ -866,9 +877,9 @@ ntsb.gov,"National Transportation Safety Board",200,"https://www.ntsb.gov/robots
 nscai.gov,"National Security Commission on Artificial Intelligence",200,"https://cybercemetery.unt.edu/nscai/20211005220330/https://www.nscai.gov/",true,"null",true,x-robots-tag
 usap.gov,"National Science Foundation",200,"https://www.usap.gov/robots.txt",true,"null",true,robots.txt
 sac.gov,"National Science Foundation",200,"https://www.sac.gov/robots.txt",true,"null",true,robots.txt
-research.gov,"National Science Foundation",503,"https://www.research.gov/",false,"null",false,undefined
-nsf.gov/staff,"National Science Foundation",404,"https://www.nsf.gov/staff/robots.txt",false,"null",false,false
-new.nsf.gov,"National Science Foundation",200,"https://new.nsf.gov/robots.txt",true,"https://new.nsf.gov/sitemap.xml",true,robots.txt
+research.gov,"National Science Foundation",500,"https://www.research.gov/robots.txt",true,"null",true,meta
+nsf.gov/staff,"National Science Foundation",403,"https://new.nsf.gov/staff",false,"null",false,undefined
+new.nsf.gov,"National Science Foundation",500,"http://www.new.nsf.gov/",false,"null",false,undefined
 arctic.gov,"National Science Foundation",200,"https://www.arctic.gov/robots.txt",true,"https://www.arctic.gov/wp-sitemap.xml",true,robots.txt
 nmb.gov,"National Mediation Board",404,"https://nmb.gov/robots.txt",false,"null",false,false
 nlrb.gov,"National Labor Relations Board",200,"https://www.nlrb.gov/robots.txt",true,"null",true,robots.txt
@@ -879,7 +890,7 @@ humanities.gov,"National Endowment for the Humanities",200,"https://www.humaniti
 nea.gov,"National Endowment for the Arts",200,"https://www.arts.gov/robots.txt",true,"null",true,robots.txt
 arts.gov,"National Endowment for the Arts",200,"https://www.arts.gov/robots.txt",true,"null",true,robots.txt
 ncua.gov,"National Credit Union Administration",200,"https://ncua.gov/robots.txt",true,"https://ncua.gov/sitemap.xml",true,robots.txt
-mycreditunion.gov,"National Credit Union Administration",200,"https://mycreditunion.gov/robots.txt",true,"https://mycreditunion.gov/sitemap.xml",true,robots.txt
+mycreditunion.gov,"National Credit Union Administration",200,"https://mycreditunion.gov/robots.txt",true,"https://www.mycreditunion.gov/sitemap.xml",true,robots.txt
 ncd.gov,"National Council on Disability",200,"https://www.ncd.gov/robots.txt",true,"null",true,robots.txt
 ncpc.gov,"National Capital Planning Commission",200,"https://www.ncpc.gov/robots.txt",true,"null",true,robots.txt
 webharvest.gov,"National Archives and Records Administration",404,"https://webharvest.gov/robots.txt",true,"null",true,meta
@@ -920,7 +931,7 @@ ecr.gov,"Morris K. Udall and Stewart L. Udall Foundation",200,"https://www.udall
 mcctest.gov,"Millennium Challenge Corporation",500,"http://www.mcctest.gov/",false,"null",false,undefined
 mcc.gov,"Millennium Challenge Corporation",404,"https://www.mcc.gov/robots.txt",true,"null",true,meta
 mspb.gov,"Merit Systems Protection Board",200,"https://www.mspb.gov/updatelinks.htm",false,"null",false,false
-mmc.gov,"Marine Mammal Commission",200,"https://www.mmc.gov/robots.txt",true,"https://www.mmc.gov/sitemap.xml",true,robots.txt
+mmc.gov,"Marine Mammal Commission",200,"https://www.mmc.gov/robots.txt",true,"https://www.mmc.gov/sitemap_index.xml",true,robots.txt
 lsc.gov,"Legal Services Corporation",200,"https://lsc.gov/robots.txt",true,"null",true,robots.txt
 kennedy-center.gov,"John F. Kennedy Center for Performing Arts",500,"http://www.kennedy-center.gov/",false,"null",false,undefined
 jusfc.gov,"Japan-US Friendship Commission",200,"https://jusfc.gov/robots.txt",true,"null",true,robots.txt
@@ -1009,7 +1020,7 @@ evaluation.gov,"General Services Administration",200,"https://www.evaluation.gov
 esrs.gov,"General Services Administration",404,"https://www.esrs.gov/robots.txt",false,"null",false,false
 ecpic.gov,"General Services Administration",404,"https://ecpic.gov/robots.txt",true,"null",true,meta
 digitalgov.gov,"General Services Administration",200,"https://digital.gov/robots.txt",true,"https://www.digital.gov/sitemap.xml",true,robots.txt
-digitaldashboard.gov,"General Services Administration",200,"https://digitaldashboard.gov/robots.txt",true,"null",true,robots.txt
+digitaldashboard.gov,"General Services Administration",200,"https://itdashboard.gov/federal-website-metrics",false,"null",false,false
 digital.gov,"General Services Administration",200,"https://digital.gov/robots.txt",true,"https://www.digital.gov/sitemap.xml",true,robots.txt
 data.gov,"General Services Administration",200,"https://data.gov/robots.txt",true,"https://data.gov/sitemap.xml",true,robots.txt
 csusop.gov,"General Services Administration",500,"http://www.csusop.gov/",false,"null",false,undefined
@@ -1067,7 +1078,7 @@ federalreserveconsumerhelp.gov,"Federal Reserve Board of Governors",200,"https:/
 federalreserve.gov,"Federal Reserve Board of Governors",404,"https://www.federalreserve.gov/robots.txt",false,"null",false,false
 fbiic.gov,"Federal Reserve Board of Governors",403,"https://www.fbiic.gov/",false,"null",false,undefined
 billetes.gov,"Federal Reserve Board of Governors",200,"https://www.uscurrency.gov/es",false,"null",false,false
-permitting.gov,"Federal Permitting Improvement Steering Council",404,"https://www.permits.performance.gov/error404",false,"null",false,false
+permitting.gov,"Federal Permitting Improvement Steering Council",500,"https://www.permitting.gov/",false,"null",false,undefined
 fpisc.gov,"Federal Permitting Improvement Steering Council",404,"https://www.permits.performance.gov/error404",false,"null",false,false
 fmshrc.gov,"Federal Mine Safety and Health Review Commission",200,"https://fmshrc.gov/robots.txt",true,"null",true,robots.txt
 fmcs.gov,"Federal Mediation and Conciliation Service",500,"https://www.fmcs.gov/",false,"null",false,undefined
@@ -1096,43 +1107,43 @@ accedeainternet.gov,"Federal Communications Commission",200,"https://www.getinte
 fcsic.gov,"Farm Credit Administration",404,"https://www.fcsic.gov/robots.txt",false,"null",false,false
 fca.gov,"Farm Credit Administration",200,"https://www.fca.gov/robots.txt",true,"https://www.fca.gov/sitemap.xml",true,robots.txt
 exim.gov,"Export/Import Bank of the U.S.",200,"https://exim.gov/robots.txt",true,"null",true,robots.txt
-whitehousedrugpolicy.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/ondcp/",true,"null",true,meta
+whitehousedrugpolicy.gov,"Executive Office of the President",500,"http://www.whitehousedrugpolicy.gov/",false,"null",false,undefined
 whitehouse.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/robots.txt",true,"https://www.whitehouse.gov/sitemap_index.xml",true,robots.txt
 wh.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/robots.txt",true,"https://www.whitehouse.gov/sitemap_index.xml",true,robots.txt
 ustr.gov,"Executive Office of the President",200,"https://ustr.gov/robots.txt",true,"null",true,robots.txt
 usds.gov,"Executive Office of the President",200,"https://www.usds.gov/robots.txt",true,"null",true,robots.txt
 usdigitalservice.gov,"Executive Office of the President",200,"https://www.usds.gov/robots.txt",true,"null",true,robots.txt
-unitedwestand.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
-reprorights.gov,"Executive Office of the President",200,"https://reproductiverights.gov/",false,"null",false,false
-reproductiverights.gov,"Executive Office of the President",200,"https://reproductiverights.gov/robots.txt",true,"null",true,robots.txt
-reproductiveaccess.gov,"Executive Office of the President",200,"https://reproductiverights.gov/",false,"null",false,false
-reproaccess.gov,"Executive Office of the President",200,"https://reproductiverights.gov/",false,"null",false,false
+unitedwestand.gov,"Executive Office of the President",500,"http://www.unitedwestand.gov/",false,"null",false,undefined
+reprorights.gov,"Executive Office of the President",500,"http://www.reprorights.gov/",false,"null",false,undefined
+reproductiverights.gov,"Executive Office of the President",500,"http://www.reproductiverights.gov/",false,"null",false,undefined
+reproductiveaccess.gov,"Executive Office of the President",500,"http://www.reproductiveaccess.gov/",false,"null",false,undefined
+reproaccess.gov,"Executive Office of the President",500,"http://www.reproaccess.gov/",false,"null",false,undefined
 quantum.gov,"Executive Office of the President",200,"https://www.quantum.gov/robots.txt",true,"https://www.quantum.gov/sitemap_index.xml",true,robots.txt
-publicserviceloanforgiveness.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/publicserviceloanforgiveness/?utm_source=www.publicserviceloanforgiveness.gov",true,"null",true,meta
-pslf.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/publicserviceloanforgiveness/?utm_source=www.pslf.gov",true,"null",true,meta
+publicserviceloanforgiveness.gov,"Executive Office of the President",500,"http://www.publicserviceloanforgiveness.gov/",false,"null",false,undefined
+pslf.gov,"Executive Office of the President",500,"http://www.pslf.gov/",false,"null",false,undefined
 pitctestdomain.gov,"Executive Office of the President",500,"http://www.pitctestdomain.gov/",false,"null",false,undefined
 pitc.gov,"Executive Office of the President",500,"http://www.pitc.gov/",false,"null",false,undefined
 pci.gov,"Executive Office of the President",500,"http://www.pci.gov/",false,"null",false,undefined
-ostp.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/ostp/",true,"null",true,meta
-ondcp.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/ondcp/?utm_source=www.ondcp.gov",true,"null",true,meta
-omb.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/omb/?utm_source=www.omb.gov",true,"null",true,meta
+ostp.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
+ondcp.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
+omb.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/?utm_source=www.omb.gov",true,"null",true,meta
 nepa.gov,"Executive Office of the President",500,"http://nepa.gov/robots.txt",false,"null",false,false
 nano.gov,"Executive Office of the President",200,"https://www.nano.gov/robots.txt",true,"null",true,robots.txt
 max.gov,"Executive Office of the President",404,"https://max.omb.gov/robots.txt",false,"null",false,false
-investinginamerica.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/invest/?utm_source=www.investinginamerica.gov",true,"null",true,meta
-investinamerica.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/invest/?utm_source=www.investinamerica.gov",true,"null",true,meta
-invest.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/invest/?utm_source=www.invest.gov",true,"null",true,meta
-invertir.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/es/invertir/?utm_source=www.invertir.gov",true,"null",true,meta
+investinginamerica.gov,"Executive Office of the President",500,"http://www.investinginamerica.gov/",false,"null",false,undefined
+investinamerica.gov,"Executive Office of the President",500,"http://www.investinamerica.gov/",false,"null",false,undefined
+invest.gov,"Executive Office of the President",500,"http://www.invest.gov/",false,"null",false,undefined
+invertir.gov,"Executive Office of the President",500,"http://www.invertir.gov/",false,"null",false,undefined
 eop.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
 environmentaljustice.gov,"Executive Office of the President",200,"https://environmentaljustice.gov/robots.txt",true,"http://environmentaljustice.gov/sitemap.xml",true,robots.txt
 ej.gov,"Executive Office of the President",200,"https://www.environmentaljustice.gov/",false,"null",false,false
-earmarks.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/omb/",true,"null",true,meta
-crisisnextdoor.gov,"Executive Office of the President",200,"https://www.cdc.gov/overdose-prevention/index.html",true,"null",true,meta
-cleanenergy.gov,"Executive Office of the President",404,"https://www.whitehouse.gov/cleanenergy/robots.txt?utm_source=www.cleanenergy.gov",true,"null",true,meta
-childtaxcredit.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/child-tax-credit/",true,"null",true,meta
-buildbackbetter.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
-build.gov,"Executive Office of the President",404,"https://www.whitehouse.gov/build/robots.txt?utm_source=www.build.gov",true,"null",true,meta
-budget.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/omb/budget/?utm_source=redirect&utm_medium=social",true,"null",true,meta
+earmarks.gov,"Executive Office of the President",200,"https://www.whitehouse.gov/",true,"null",true,meta
+crisisnextdoor.gov,"Executive Office of the President",500,"http://www.crisisnextdoor.gov/",false,"null",false,undefined
+cleanenergy.gov,"Executive Office of the President",500,"http://www.cleanenergy.gov/",false,"null",false,undefined
+childtaxcredit.gov,"Executive Office of the President",500,"http://www.childtaxcredit.gov/",false,"null",false,undefined
+buildbackbetter.gov,"Executive Office of the President",500,"http://www.buildbackbetter.gov/",false,"null",false,undefined
+build.gov,"Executive Office of the President",500,"http://www.build.gov/",false,"null",false,undefined
+budget.gov,"Executive Office of the President",500,"http://www.budget.gov/",false,"null",false,undefined
 ai.gov,"Executive Office of the President",200,"https://ai.gov/robots.txt",true,"https://ai.gov/sitemap.xml",true,robots.txt
 eeoc.gov,"Equal Employment Opportunity Commission",200,"https://www.eeoc.gov/robots.txt",true,"null",true,robots.txt
 urbanwaters.gov,"Environmental Protection Agency",200,"https://www.epa.gov/urbanwaterspartners",false,"null",false,false
@@ -1140,18 +1151,18 @@ sustainability.gov,"Environmental Protection Agency",200,"https://www.sustainabi
 relocatefeds.gov,"Environmental Protection Agency",200,"https://www.epa.gov/relocatefeds",false,"null",false,false
 greengov.gov,"Environmental Protection Agency",500,"https://www.greengov.gov/",false,"null",false,undefined
 glnpo.gov,"Environmental Protection Agency",500,"http://www.glnpo.gov/",false,"null",false,undefined
-frtr.gov,"Environmental Protection Agency",200,"https://www.frtr.gov/robots.txt",true,"null",true,robots.txt
+frtr.gov,"Environmental Protection Agency",200,"https://frtr.gov/robots.txt",true,"null",true,robots.txt
 foiaonline.gov,"Environmental Protection Agency",500,"http://www.foiaonline.gov/",false,"null",false,undefined
 fedcenter.gov,"Environmental Protection Agency",404,"http://www.fedcenter.gov/robots.txt",false,"null",false,false
 epaoig.gov,"Environmental Protection Agency",200,"https://www.epaoig.gov/robots.txt",true,"null",true,robots.txt
 epa.gov,"Environmental Protection Agency",200,"https://www.epa.gov/robots.txt",true,"null",true,robots.txt
 energystar.gov,"Environmental Protection Agency",200,"https://www.energystar.gov/robots.txt",true,"null",true,robots.txt
 cbi-epa.gov,"Environmental Protection Agency",500,"http://www.cbi-epa.gov/",false,"null",false,undefined
-airnow.gov,"Environmental Protection Agency",404,"https://airnow.gov/robots.txt",true,"null",true,meta
+airnow.gov,"Environmental Protection Agency",200,"https://www.airnow.gov/robots.txt",true,"null",true,robots.txt
 airknowledge.gov,"Environmental Protection Agency",500,"http://www.airknowledge.gov/",false,"null",false,undefined
-votebymail.gov,"Election Assistance Commission",200,"https://www.votebymail.gov/robots.txt",true,"null",true,robots.txt
-helpamericavote.gov,"Election Assistance Commission",200,"https://www.helpamericavote.gov/robots.txt",true,"null",true,robots.txt
-eac.gov,"Election Assistance Commission",200,"https://eac.gov/robots.txt",true,"null",true,robots.txt
+votebymail.gov,"Election Assistance Commission",200,"http://www.votebymail.gov/robots.txt",true,"null",true,robots.txt
+helpamericavote.gov,"Election Assistance Commission",200,"http://www.helpamericavote.gov/robots.txt",true,"null",true,robots.txt
+eac.gov,"Election Assistance Commission",200,"https://www.eac.gov/robots.txt",true,"null",true,robots.txt
 ugov.gov,"Director of National Intelligence",500,"http://www.ugov.gov/",false,"null",false,undefined
 osis.gov,"Director of National Intelligence",500,"http://www.osis.gov/",false,"null",false,undefined
 odni.gov,"Director of National Intelligence",200,"https://www.odni.gov/robots.txt",true,"null",true,robots.txt
@@ -1196,7 +1207,7 @@ taaps.gov,"Department of the Treasury",404,"https://taaps.gov/robots.txt",false,
 slgs.gov,"Department of the Treasury",404,"https://slgs.gov/robots.txt",false,"null",false,false
 sigtarp.gov,"Department of the Treasury",500,"http://www.sigtarp.gov/",false,"null",false,undefined
 sigpr.gov,"Department of the Treasury",200,"https://www.sigpr.gov/robots.txt",true,"null",true,robots.txt
-savingsbondwizard.gov,"Department of the Treasury",404,"https://savingsbondwizard.gov/robots.txt",false,"null",false,false
+savingsbondwizard.gov,"Department of the Treasury",404,"https://www.savingsbondwizard.gov/robots.txt",false,"null",false,false
 savingsbonds.gov,"Department of the Treasury",404,"https://savingsbonds.gov/robots.txt",false,"null",false,false
 savingsbond.gov,"Department of the Treasury",404,"https://savingsbond.gov/robots.txt",false,"null",false,false
 qatesttwai.gov,"Department of the Treasury",500,"http://www.qatesttwai.gov/",false,"null",false,undefined
@@ -1265,13 +1276,14 @@ asap.gov,"Department of the Treasury",404,"https://asap.gov/robots.txt",false,"n
 americathebeautifulquarters.gov,"Department of the Treasury",500,"https://www.americathebeautifulquarters.gov/",false,"null",false,undefined
 ama.gov,"Department of the Treasury",404,"https://www.ama.gov/amagov",false,"null",false,undefined
 wlci.gov,"Department of the Interior",404,"https://wlci.gov/robots.txt",false,"null",false,false
-watermonitor.gov,"Department of the Interior",500,"http://www.watermonitor.gov/",false,"null",false,undefined
+watermonitor.gov,"Department of the Interior",404,"https://watermonitor.gov/robots.txt",false,"null",false,false
 volunteer.gov,"Department of the Interior",500,"https://www.volunteer.gov/",false,"null",false,undefined
 volcano.gov,"Department of the Interior",200,"https://www.usgs.gov/natural-hazards/volcano-hazards/",false,"null",false,false
 utahfireinfo.gov,"Department of the Interior",200,"https://utah-fire-info-utahdnr.hub.arcgis.com/",false,"null",false,false
+usgs.gov,"Department of the Interior",200,"https://www.usgs.gov/robots.txt",true,"https://www.usgs.gov/sitemap.xml",true,robots.txt
 usbr.gov,"Department of the Interior",500,"http://www.usbr.gov/",false,"null",false,undefined
 sierrawild.gov,"Department of the Interior",404,"https://www.sierrawild.gov/robots.txt",false,"null",false,false
-sciencebase.gov,"Department of the Interior",200,"https://www.sciencebase.gov/robots.txt",true,"https://www.sciencebase.gov/sitemaps/sitemap_index.xml",true,robots.txt
+sciencebase.gov,"Department of the Interior",503,"https://www.sciencebase.gov/",false,"null",false,undefined
 salmonrecovery.gov,"Department of the Interior",200,"https://salmonrecovery.gov/robots.txt",true,"https://www.salmonrecovery.gov/sitemap.xml",true,robots.txt
 safecom.gov,"Department of the Interior",200,"https://safecom.gov/robots.txt",true,"null",true,robots.txt
 rivers.gov,"Department of the Interior",200,"https://rivers.gov/robots.txt",true,"null",true,robots.txt
@@ -1286,7 +1298,7 @@ nifc.gov,"Department of the Interior",200,"https://www.nifc.gov/robots.txt",true
 nfpors.gov,"Department of the Interior",200,"https://nfpors.gov/robots.txt",true,"null",true,robots.txt
 nemi.gov,"Department of the Interior",200,"https://www.nemi.gov/robots.txt",true,"null",true,robots.txt
 nbc.gov,"Department of the Interior",500,"http://www.nbc.gov/",false,"null",false,undefined
-nationalmap.gov,"Department of the Interior",500,"http://www.nationalmap.gov/",false,"null",false,undefined
+nationalmap.gov,"Department of the Interior",301,"https://www.nationalmap.gov/",false,"null",false,undefined
 mtbs.gov,"Department of the Interior",200,"https://mtbs.gov/robots.txt",true,"null",true,robots.txt
 mrlc.gov,"Department of the Interior",200,"https://www.mrlc.gov/robots.txt",true,"null",true,robots.txt
 mms.gov,"Department of the Interior",500,"http://www.mms.gov/",false,"null",false,undefined
@@ -1303,7 +1315,7 @@ interior.gov,"Department of the Interior",500,"https://www.interior.gov/robots.t
 indianaffairs.gov,"Department of the Interior",200,"https://www.bia.gov/robots.txt",true,"null",true,robots.txt
 iat.gov,"Department of the Interior",500,"http://www.iat.gov/",false,"null",false,undefined
 geoplatform.gov,"Department of the Interior",200,"https://geoplatform.gov/robots.txt",true,"null",true,robots.txt
-gcmrc.gov,"Department of the Interior",404,"https://www.usgs.gov/centers/sbsc/gcmrchttps:/www.usgs.gov/centers/sbsc/gcmrc",false,"null",false,false
+gcmrc.gov,"Department of the Interior",500,"https://www.gcmrc.gov/",false,"null",false,undefined
 fws.gov,"Department of the Interior",200,"https://www.fws.gov/robots.txt",true,"null",true,robots.txt
 firescience.gov,"Department of the Interior",404,"https://firescience.gov/robots.txt",false,"null",false,false
 firenet.gov,"Department of the Interior",500,"http://www.firenet.gov/",false,"null",false,undefined
@@ -1329,7 +1341,7 @@ boem.gov,"Department of the Interior",200,"https://www.boem.gov/robots.txt",true
 blm.gov,"Department of the Interior",200,"https://www.blm.gov/robots.txt",true,"null",true,robots.txt
 bia.gov,"Department of the Interior",200,"https://www.bia.gov/robots.txt",true,"null",true,robots.txt
 anstaskforce.gov,"Department of the Interior",404,"https://www.fws.gov/program/aquatic-nuisance-species-task-force/robots.txt",false,"null",false,false
-acwi.gov,"Department of the Interior",500,"http://www.acwi.gov/",false,"null",false,undefined
+acwi.gov,"Department of the Interior",200,"https://www.usgs.gov/mission-areas/water-resources/advisory-committee-water-information",false,"null",false,false
 vets.gov,"Department of Veterans Affairs",200,"https://www.va.gov/robots.txt",true,"https://www.va.gov/sitemap.xml",true,robots.txt
 vaoig.gov,"Department of Veterans Affairs",200,"https://www.vaoig.gov/robots.txt",true,"null",true,robots.txt
 va.gov,"Department of Veterans Affairs",200,"https://www.va.gov/robots.txt",true,"https://www.va.gov/sitemap.xml",true,robots.txt
@@ -1347,7 +1359,7 @@ nhtsa.gov,"Department of Transportation",200,"https://www.nhtsa.gov/robots.txt",
 jccbi.gov,"Department of Transportation",500,"http://www.jccbi.gov/",false,"null",false,undefined
 flyhealthy.gov,"Department of Transportation",500,"http://www.flyhealthy.gov/",false,"null",false,undefined
 flightrights.gov,"Department of Transportation",200,"https://www.transportation.gov/airconsumer/airline-customer-service-dashboard",false,"null",false,false
-faasafety.gov,"Department of Transportation",404,"https://www.faasafety.gov/robots.txt",false,"null",false,false
+faasafety.gov,"Department of Transportation",200,"https://www.faasafety.gov/robots.txt",true,"null",true,robots.txt
 faa.gov,"Department of Transportation",200,"https://www.faa.gov/robots.txt",true,"null",true,robots.txt
 esc.gov,"Department of Transportation",404,"https://www.esc.gov/robots.txt",false,"null",false,false
 ems.gov,"Department of Transportation",200,"https://www.ems.gov/robots.txt",true,"null",true,robots.txt
@@ -1369,8 +1381,8 @@ securitytestfan.gov,"Department of State",500,"http://www.securitytestfan.gov/",
 preprodfan.gov,"Department of State",500,"http://www.preprodfan.gov/",false,"null",false,undefined
 pepfar.gov,"Department of State",200,"https://www.pepfar.gov/robots.txt",true,"null",true,robots.txt
 osac.gov,"Department of State",200,"https://www.osac.gov/robots.txt",true,"null",true,robots.txt
-ibwc.gov,"Department of State",404,"https://www.ibwc.gov/robots.txt",true,"null",true,meta
-iawg.gov,"Department of State",200,"https://iawg.gov/robots.txt",true,"https://iawg.gov/wp-sitemap.xml",true,robots.txt
+ibwc.gov,"Department of State",500,"http://www.ibwc.gov/",false,"null",false,undefined
+iawg.gov,"Department of State",500,"http://www.iawg.gov/",false,"null",false,undefined
 fsgb.gov,"Department of State",200,"https://www.fsgb.gov/robots.txt",true,"null",true,robots.txt
 fan.gov,"Department of State",404,"https://fan.gov/robots.txt",false,"null",false,false
 devtestfan1.gov,"Department of State",500,"http://www.devtestfan1.gov/",false,"null",false,undefined
@@ -1381,12 +1393,12 @@ worker.gov,"Department of Labor",200,"https://www.worker.gov/robots.txt",true,"h
 workcenter.gov,"Department of Labor",200,"https://www.workcenter.gov/robots.txt",true,"https://www.workcenter.gov/sitemap_index.xml",true,robots.txt
 whistleblowers.gov,"Department of Labor",200,"https://www.whistleblowers.gov/robots.txt",true,"https://www.whistleblowers.gov/sitemap.xml",true,robots.txt
 veterans.gov,"Department of Labor",200,"https://www.dol.gov/agencies/vets?utm_source=veterans_gov&utm_medium=redirect&utm_campaign=veterans_gov_redirect",false,"null",false,false
-unionreports.gov,"Department of Labor",500,"https://olmsapps.dol.gov/olpdr/",false,"null",false,undefined
+unionreports.gov,"Department of Labor",200,"https://www.dol.gov/agencies/olms/public-disclosure-room#union",false,"null",false,false
 unemployment.gov,"Department of Labor",200,"https://www.dol.gov/robots.txt",true,"null",true,robots.txt
 ui.gov,"Department of Labor",200,"https://www.dol.gov/robots.txt",true,"null",true,robots.txt
 trainingproviderresults.gov,"Department of Labor",404,"https://www.trainingproviderresults.gov/robots.txt",false,"null",false,false
 trabajadormigrante.gov,"Department of Labor",200,"https://www.dol.gov/general/trabajadormigrante",false,"null",false,false
-persuader-reports.gov,"Department of Labor",500,"https://olmsapps.dol.gov/olpdr/?_ga=2.74983826.1266377990.1664734643-131188624.1645563445#Other%20Reports/Advanced%20Search/",false,"null",false,undefined
+persuader-reports.gov,"Department of Labor",500,"https://oprs.dol.gov/",false,"null",false,undefined
 osha.gov,"Department of Labor",200,"https://www.osha.gov/robots.txt",true,"https://www.osha.gov/sites/default/files/sitemap-index.xml",true,robots.txt
 mshastanddown.gov,"Department of Labor",200,"https://www.msha.gov/stand-down-save-lives",true,"null",true,meta
 msha.gov,"Department of Labor",200,"https://www.msha.gov/robots.txt",true,"null",true,robots.txt
@@ -1395,7 +1407,7 @@ labor.gov,"Department of Labor",500,"http://www.labor.gov/",false,"null",false,u
 jobcorps.gov,"Department of Labor",200,"https://www.jobcorps.gov/robots.txt",true,"null",true,robots.txt
 hirevets.gov,"Department of Labor",200,"https://www.hirevets.gov/robots.txt",true,"null",true,robots.txt
 govloans.gov,"Department of Labor",200,"https://www.usa.gov/government-loan?utm_source=usa_benefits-gov&utm_medium=redirect&utm_campaign=redirect_govloans-gov",false,"null",false,false
-goodjobs.gov,"Department of Labor",200,"https://www.dol.gov/general/good-jobs",false,"null",false,false
+goodjobs.gov,"Department of Labor",403,"https://www.dol.gov/general/good-jobs",false,"null",false,undefined
 employer.gov,"Department of Labor",200,"https://www.employer.gov/robots.txt",true,"https://www.employer.gov/sitemap_index.xml",true,robots.txt
 doleta.gov,"Department of Labor",200,"https://www.dol.gov/agencies/eta",false,"null",false,false
 dol.gov,"Department of Labor",200,"https://www.dol.gov/robots.txt",true,"null",true,robots.txt
@@ -1411,7 +1423,7 @@ userra.gov,"Department of Justice",404,"https://www.justice.gov/servicemembersro
 usdoj.gov,"Department of Justice",200,"https://www.justice.gov/robots.txt",true,"https://www.justice.gov/sitemap.xml",true,robots.txt
 unicor.gov,"Department of Justice",302,"https://www.unicor.gov/",false,"null",false,undefined
 ucrdatatool.gov,"Department of Justice",500,"http://www.ucrdatatool.gov/",false,"null",false,undefined
-tsc.gov,"Department of Justice",404,"https://www.fbi.gov/investigate/terrorism/tscrobots.txt",true,"null",true,meta
+tsc.gov,"Department of Justice",503,"http://www.tsc.gov/",false,"null",false,undefined
 tribaljusticeandsafety.gov,"Department of Justice",404,"https://www.justice.gov/tribal/robots.txt",false,"null",false,false
 smart.gov,"Department of Justice",404,"https://smart.ojp.gov/redirect-legacy/robots.txt",false,"null",false,false
 servicemembers.gov,"Department of Justice",404,"https://www.justice.gov/servicemembersrobots.txt",false,"null",false,false
@@ -1561,8 +1573,8 @@ simplereport.gov,"Department of Health and Human Services",200,"https://www.simp
 selectagents.gov,"Department of Health and Human Services",404,"https://selectagents.gov/robots.txt",true,"null",true,meta
 samhsa.gov,"Department of Health and Human Services",400,"http://www.samhsa.gov/",false,"null",false,undefined
 reproductivehealthservices.gov,"Department of Health and Human Services",200,"https://reproductivehealthservices.gov/robots.txt",true,"null",true,robots.txt
-recoverymonth.gov,"Department of Health and Human Services",200,"https://www.samhsa.gov/recovery-month",false,"null",false,false
-pubmed.gov,"Department of Health and Human Services",200,"https://misuse.ncbi.nlm.nih.gov/error/abuse.shtml",true,"null",true,meta
+recoverymonth.gov,"Department of Health and Human Services",200,"https://www.samhsa.gov/about/digital-toolkits/recovery-month",false,"null",false,false
+pubmed.gov,"Department of Health and Human Services",500,"https://pubmed.gov/robots.txt",true,"null",true,meta
 psc.gov,"Department of Health and Human Services",200,"https://www.hhs.gov/about/agencies/asa/psc/index.html",false,"null",false,false
 phe.gov,"Department of Health and Human Services",403,"https://aspr.hhs.gov/Pages/Home.aspx",false,"null",false,undefined
 pandemicflu.gov,"Department of Health and Human Services",200,"https://www.cdc.gov/pandemic-flu/index.html",true,"null",true,meta
@@ -1576,10 +1588,10 @@ nextlegends.gov,"Department of Health and Human Services",200,"https://therealco
 ncifcrf.gov,"Department of Health and Human Services",500,"http://www.ncifcrf.gov/",false,"null",false,undefined
 mymedicare.gov,"Department of Health and Human Services",200,"https://www.medicare.gov/my/home",false,"null",false,false
 mesh.gov,"Department of Health and Human Services",200,"https://meshb.nlm.nih.gov/",false,"null",false,false
-mentalhealth.gov,"Department of Health and Human Services",200,"https://www.samhsa.gov/core/install.php",true,"null",true,meta
+mentalhealth.gov,"Department of Health and Human Services",200,"https://www.samhsa.gov/mental-health",false,"null",false,false
 medlineplus.gov,"Department of Health and Human Services",200,"https://medlineplus.gov/robots.txt",true,"null",true,robots.txt
 medicare.gov,"Department of Health and Human Services",200,"https://www.medicare.gov/robots.txt",true,"null",true,robots.txt
-medicalcountermeasures.gov,"Department of Health and Human Services",200,"https://medicalcountermeasures.gov/robots.txt",true,"https://www.medicalcountermeasures.gov/sitemap.xml",true,robots.txt
+medicalcountermeasures.gov,"Department of Health and Human Services",200,"https://medicalcountermeasures.gov/robots.txt",true,"https://www.medicalcountermeasures.gov/xmlsitemap",true,robots.txt
 medicalbillrights.gov,"Department of Health and Human Services",500,"http://www.medicalbillrights.gov/",false,"null",false,undefined
 medicaid.gov,"Department of Health and Human Services",200,"https://www.medicaid.gov/robots.txt",true,"null",true,robots.txt
 longtermcare.gov,"Department of Health and Human Services",404,"https://acl.gov/ltc/robots.txt",false,"null",false,false
@@ -1611,9 +1623,9 @@ genome.gov,"Department of Health and Human Services",200,"https://www.genome.gov
 fruitsandveggiesmatter.gov,"Department of Health and Human Services",500,"http://www.fruitsandveggiesmatter.gov/",false,"null",false,undefined
 freshempire.gov,"Department of Health and Human Services",500,"https://www.freshempire.gov/",false,"null",false,undefined
 foodsafety.gov,"Department of Health and Human Services",500,"https://www.foodsafety.gov/",false,"null",false,undefined
-flu.gov,"Department of Health and Human Services",500,"https://www.flu.gov/",false,"null",false,undefined
+flu.gov,"Department of Health and Human Services",200,"https://www.cdc.gov/flu/",true,"null",true,meta
 fitness.gov,"Department of Health and Human Services",200,"https://odphp.health.gov/pcsfn",false,"null",false,false
-findtreatment.gov,"Department of Health and Human Services",200,"https://www.findtreatment.gov/robots.txt",true,"null",true,robots.txt
+findtreatment.gov,"Department of Health and Human Services",200,"https://findtreatment.gov/robots.txt",true,"null",true,robots.txt
 findsupport.gov,"Department of Health and Human Services",404,"https://www.samhsa.gov/find-support/robots.txt",false,"null",false,false
 fda.gov,"Department of Health and Human Services",200,"https://www.fda.gov/robots.txt",true,"https://www.fda.gov/sitemap.xml",true,robots.txt
 fatherhood.gov,"Department of Health and Human Services",403,"http://www.fatherhood.gov/",false,"null",false,undefined
@@ -1624,7 +1636,7 @@ eldercare.gov,"Department of Health and Human Services",404,"https://eldercare.a
 drugabuse.gov,"Department of Health and Human Services",200,"https://nida.nih.gov/robots.txt",true,"https://nida.nih.gov/sitemap.xml",true,robots.txt
 donaciondeorganos.gov,"Department of Health and Human Services",200,"https://donaciondeorganos.gov/robots.txt",true,"https://donaciondeorganos.gov/sitemap.xml",true,robots.txt
 docline.gov,"Department of Health and Human Services",404,"https://www.docline.gov/robots.txt",false,"null",false,false
-diabetescommittee.gov,"Department of Health and Human Services",404,"https://www.niddk.nih.gov/not-found?404url=www.diabetescommittee.gov/robots.txt",false,"null",false,false
+diabetescommittee.gov,"Department of Health and Human Services",500,"http://www.diabetescommittee.gov/",false,"null",false,undefined
 dhhs.gov,"Department of Health and Human Services",200,"https://www.hhs.gov/robots.txt",true,"null",true,robots.txt
 cuidadodesalud.gov,"Department of Health and Human Services",200,"https://www.cuidadodesalud.gov/es/robots.txt",true,"https://www.cuidadodesalud.gov/es/sitemap-index.xml",true,robots.txt
 covidtests.gov,"Department of Health and Human Services",403,"https://covidtests.gov/robots.txt",false,"null",false,false
@@ -1632,7 +1644,7 @@ covidtest.gov,"Department of Health and Human Services",403,"https://covidtest.g
 covid.gov,"Department of Health and Human Services",200,"https://www.covid.gov/robots.txt",true,"null",true,robots.txt
 coronavirus.gov,"Department of Health and Human Services",200,"https://www.cdc.gov/covid/index.html",true,"null",true,meta
 collegedrinkingprevention.gov,"Department of Health and Human Services",200,"https://collegedrinkingprevention.gov/robots.txt",true,"https://arcr.niaaa.nih.gov/sitemap.xml",true,robots.txt
-cms.gov,"Department of Health and Human Services",200,"https://www.cms.gov/robots.txt",true,"null",true,robots.txt
+cms.gov,"Department of Health and Human Services",200,"https://www.cms.gov/robots.txt",true,"https://www.cms.gov/sitemap.xml",true,robots.txt
 clinicaltrials.gov,"Department of Health and Human Services",200,"https://clinicaltrials.gov/robots.txt",true,"null",true,robots.txt
 clinicaltrial.gov,"Department of Health and Human Services",500,"http://www.clinicaltrial.gov/",false,"null",false,undefined
 childwelfare.gov,"Department of Health and Human Services",200,"https://www.childwelfare.gov/robots.txt",true,"https://www.childwelfare.gov/sitemap-index.xml",true,robots.txt
@@ -1651,7 +1663,7 @@ aspr.gov,"Department of Health and Human Services",500,"https://www.aspr.gov/",f
 arpah.gov,"Department of Health and Human Services",200,"https://arpa-h.gov/robots.txt",true,"null",true,robots.txt
 arpa-h.gov,"Department of Health and Human Services",200,"https://arpa-h.gov/robots.txt",true,"null",true,robots.txt
 aoa.gov,"Department of Health and Human Services",500,"http://www.aoa.gov/",false,"null",false,undefined
-alzheimers.gov,"Department of Health and Human Services",403,"https://www.alzheimers.gov/",false,"null",false,undefined
+alzheimers.gov,"Department of Health and Human Services",405,"https://www.alzheimers.gov/",false,"null",false,undefined
 aids.gov,"Department of Health and Human Services",200,"https://www.hiv.gov/robots.txt",true,"https://www.hiv.gov/sitemap-index.xml",true,robots.txt
 ahrq.gov,"Department of Health and Human Services",403,"https://www.ahrq.gov/",false,"null",false,undefined
 ahcpr.gov,"Department of Health and Human Services",403,"https://www.ahcpr.gov/",false,"null",false,undefined
@@ -1689,7 +1701,7 @@ orau.gov,"Department of Energy",200,"https://orau.gov/robots.txt",true,"http://o
 nuclear.gov,"Department of Energy",500,"https://www.nuclear.gov/",false,"null",false,undefined
 ntrc.gov,"Department of Energy",500,"http://www.ntrc.gov/",false,"null",false,undefined
 nrelhub.gov,"Department of Energy",500,"http://www.nrelhub.gov/",false,"null",false,undefined
-nrel.gov,"Department of Energy",404,"https://www.nrel.gov/robots.txt",false,"null",false,false
+nrel.gov,"Department of Energy",404,"https://www.nrel.gov/robots.txt",true,"null",true,meta
 nnss.gov,"Department of Energy",200,"https://nnss.gov/robots.txt",true,"https://nnss.gov/sitemap_index.xml",true,robots.txt
 neup.gov,"Department of Energy",500,"https://neup.gov/robots.txt",true,"null",true,meta
 nersc.gov,"Department of Energy",404,"https://www.nersc.gov/robots.txt",true,"null",true,meta
@@ -1704,9 +1716,9 @@ inl.gov,"Department of Energy",200,"https://inl.gov/robots.txt",true,"https://in
 inel.gov,"Department of Energy",500,"http://www.inel.gov/",false,"null",false,undefined
 hydrogen.gov,"Department of Energy",200,"https://www.hydrogen.energy.gov/interagency",false,"null",false,false
 homeenergyscore.gov,"Department of Energy",500,"https://betterbuildingssolutioncenter.energy.gov/home-energy-score",false,"null",false,undefined
-hanford.gov,"Department of Energy",500,"https://www.hanford.gov/",false,"null",false,undefined
+hanford.gov,"Department of Energy",500,"http://www.hanford.gov/",false,"null",false,undefined
 fueleconomy.gov,"Department of Energy",500,"https://fueleconomy.gov/robots.txt",false,"null",false,false
-fnal.gov,"Department of Energy",200,"https://fnal.gov/robots.txt",true,"null",true,robots.txt
+fnal.gov,"Department of Energy",200,"https://www.fnal.gov/robots.txt",true,"null",true,robots.txt
 energysavers.gov,"Department of Energy",500,"https://www.energysavers.gov/",false,"null",false,undefined
 energysaver.gov,"Department of Energy",500,"https://www.energysaver.gov/",false,"null",false,undefined
 energycommunities.gov,"Department of Energy",200,"https://energycommunities.gov/robots.txt",true,"https://energycommunities.gov/sitemap_index.xml",true,robots.txt
@@ -1738,7 +1750,7 @@ childstats.gov,"Department of Education",404,"https://www.childstats.gov/robots.
 budgetlob.gov,"Department of Education",500,"http://www.budgetlob.gov/",false,"null",false,undefined
 usandc.gov,"Department of Defense",500,"http://www.usandc.gov/",false,"null",false,undefined
 tswg.gov,"Department of Defense",404,"https://tswg.gov/robots.txt",false,"null",false,false
-tak.gov,"Department of Defense",421,"https://tak.gov/",false,"null",false,undefined
+tak.gov,"Department of Defense",400,"http://www.tak.gov/",false,"null",false,undefined
 oneaftac.gov,"Department of Defense",500,"http://www.oneaftac.gov/",false,"null",false,undefined
 oldcc.gov,"Department of Defense",500,"http://www.oldcc.gov/",false,"null",false,undefined
 oea.gov,"Department of Defense",500,"http://www.oea.gov/",false,"null",false,undefined
@@ -1774,11 +1786,11 @@ aftac.gov,"Department of Defense",500,"http://www.aftac.gov/",false,"null",false
 adlnet.gov,"Department of Defense",200,"https://adlnet.gov/robots.txt",true,"https://adlnet.gov/sitemap.xml",true,robots.txt
 xd.gov,"Department of Commerce",200,"https://www.xd.gov/robots.txt",true,"https://xd.gov/sitemap.xml",true,robots.txt
 wwtg.gov,"Department of Commerce",200,"https://www.wwtg.gov/robots.txt",true,"https://www.wwtg.gov/sitemap.xml",true,robots.txt
-weather.gov,"Department of Commerce",404,"https://www.weather.gov/robots.txt/",true,"null",true,meta
+weather.gov,"Department of Commerce",404,"https://www.weather.gov/robots.txt",true,"null",true,meta
 uspto.gov,"Department of Commerce",200,"https://www.uspto.gov/robots.txt",true,"https://www.uspto.gov/xfer-search/sitemap.xml",true,robots.txt
 usicecenter.gov,"Department of Commerce",200,"https://usicecenter.gov/robots.txt",true,"https://usicecenter.gov/sitemap.xml",true,robots.txt
 tsunami.gov,"Department of Commerce",200,"https://tsunami.gov/robots.txt",true,"null",true,robots.txt
-trade.gov,"Department of Commerce",200,"https://www.trade.gov/robots.txt",true,"null",true,robots.txt
+trade.gov,"Department of Commerce",200,"https://trade.gov/robots.txt",true,"null",true,robots.txt
 time.gov,"Department of Commerce",404,"https://time.gov/robots.txt",false,"null",false,false
 techhubs.gov,"Department of Commerce",200,"https://www.eda.gov/funding/programs/regional-technology-and-innovation-hubs",true,"null",true,x-robots-tag
 tasefiling.gov,"Department of Commerce",404,"https://tasefiling.powerappsportals.us/robots.txt",false,"null",false,false
@@ -1788,7 +1800,7 @@ standards.gov,"Department of Commerce",200,"https://www.nist.gov/standardsgov",f
 spectrum.gov,"Department of Commerce",200,"https://www.ntia.gov/other-publication/2017/federal-government-spectrum-compendium",false,"null",false,false
 spd15revision.gov,"Department of Commerce",500,"http://www.spd15revision.gov/",false,"null",false,undefined
 spaceweather.gov,"Department of Commerce",200,"https://www.spaceweather.gov/robots.txt",true,"null",true,robots.txt
-semiconductors.gov,"Department of Commerce",500,"http://www.semiconductors.gov/robots.txt",false,"null",false,false
+semiconductors.gov,"Department of Commerce",200,"https://www.nist.gov/chips",false,"null",false,false
 selectusa.gov,"Department of Commerce",200,"https://www.trade.gov/selectusa",false,"null",false,false
 sdr.gov,"Department of Commerce",404,"https://www.sdr.gov/robots.txt",false,"null",false,false
 pscr.gov,"Department of Commerce",200,"https://www.nist.gov/ctl/pscr",false,"null",false,false
@@ -1800,9 +1812,9 @@ ntis.gov,"Department of Commerce",404,"https://www.ntis.gov/robots.txt",false,"n
 ntia.gov,"Department of Commerce",200,"https://www.ntia.gov/robots.txt",true,"null",true,robots.txt
 noaa.gov,"Department of Commerce",200,"https://www.noaa.gov/robots.txt",true,"null",true,robots.txt
 nist.gov,"Department of Commerce",200,"https://www.nist.gov/robots.txt",true,"https://www.nist.gov/sitemap.xml",true,robots.txt
-nehrp.gov,"Department of Commerce",500,"https://www.nehrp.gov/",false,"null",false,undefined
+nehrp.gov,"Department of Commerce",200,"https://nehrp.gov/robots.txt",true,"null",true,robots.txt
 my2020census.gov,"Department of Commerce",400,"http://www.my2020census.gov/",false,"null",false,undefined
-mgi.gov,"Department of Commerce",500,"http://www.mgi.gov/",false,"null",false,undefined
+mgi.gov,"Department of Commerce",200,"https://www.mgi.gov/robots.txt",true,"https://www.nist.gov/sitemap.xml",true,robots.txt
 mbda.gov,"Department of Commerce",200,"https://www.mbda.gov/robots.txt",true,"null",true,robots.txt
 marinecadastre.gov,"Department of Commerce",200,"https://hub.marinecadastre.gov/",false,"null",false,false
 manufacturing.gov,"Department of Commerce",200,"https://www.manufacturing.gov/robots.txt",true,"null",true,robots.txt
@@ -1819,16 +1831,16 @@ goes-r.gov,"Department of Commerce",404,"https://www.goes-r.gov/robots.txt",fals
 fishwatch.gov,"Department of Commerce",200,"https://www.fisheries.noaa.gov/topic/sustainable-seafood",false,"null",false,false
 firstnet.gov,"Department of Commerce",200,"https://firstnet.gov/robots.txt",true,"null",true,robots.txt
 export.gov,"Department of Commerce",500,"http://www.export.gov/",false,"null",false,undefined
-edison.gov,"Department of Commerce",500,"https://www.edison.gov/",false,"null",false,undefined
+edison.gov,"Department of Commerce",404,"https://www.nist.gov/iedison/robots.txt",false,"null",false,false
 eda.gov,"Department of Commerce",200,"https://www.eda.gov/robots.txt",true,"null",true,robots.txt
 drought.gov,"Department of Commerce",200,"https://www.drought.gov/robots.txt",true,"null",true,robots.txt
 doc.gov,"Department of Commerce",200,"https://www.commerce.gov/robots.txt",true,"null",true,robots.txt
 dnsops.gov,"Department of Commerce",500,"http://www.dnsops.gov/",false,"null",false,undefined
-dataprivacyframework.gov,"Department of Commerce",200,"https://www.dataprivacyframework.gov/robots.txt",true,"null",true,robots.txt
+dataprivacyframework.gov,"Department of Commerce",500,"https://www.dataprivacyframework.gov/",false,"null",false,undefined
 cwc.gov,"Department of Commerce",404,"https://www.cwc.gov/robots.txt",false,"null",false,false
 commerce.gov,"Department of Commerce",200,"https://www.commerce.gov/robots.txt",true,"null",true,robots.txt
 climate.gov,"Department of Commerce",200,"https://www.climate.gov/robots.txt",true,"null",true,robots.txt
-chips.gov,"Department of Commerce",500,"http://www.chips.gov/",false,"null",false,undefined
+chips.gov,"Department of Commerce",404,"https://www.nist.gov/chips/robots.txt",false,"null",false,false
 census.gov,"Department of Commerce",200,"https://www.census.gov/robots.txt",true,"null",true,robots.txt
 buyusa.gov,"Department of Commerce",404,"http://www.buyusa.gov/robots.txt",false,"null",false,false
 bldrdoc.gov,"Department of Commerce",500,"http://www.bldrdoc.gov/",false,"null",false,undefined
@@ -1837,7 +1849,7 @@ bea.gov,"Department of Commerce",200,"https://www.bea.gov/robots.txt",true,"null
 aviationweather.gov,"Department of Commerce",404,"https://aviationweather.gov/robots.txt",false,"null",false,false
 ap.gov,"Department of Commerce",200,"https://www.bis.doc.gov/index.php/other-areas/additional-protocol-ap",false,"null",false,false
 2020census.gov,"Department of Commerce",500,"http://www.2020census.gov/",false,"null",false,undefined
-denali.gov,"Denali Commission",200,"https://www.denali.gov/robots.txt",true,"null",true,robots.txt
+denali.gov,"Denali Commission",200,"https://denali.gov/robots.txt",true,"null",true,robots.txt
 dra.gov,"Delta Regional Authority",200,"https://dra.gov/robots.txt",true,"https://dra.gov/sitemap_index.xml",true,robots.txt
 dnfsb.gov,"Defense Nuclear Facilities Safety Board",200,"http://www.dnfsb.gov/robots.txt",true,"null",true,robots.txt
 psa.gov,"Court Services and Offender Supervision",200,"https://psa.gov/robots.txt",true,"null",true,robots.txt
@@ -1850,7 +1862,7 @@ cigie.gov,"Council of Inspectors General on Integrity and Efficiency",500,"http:
 volunteeringinamerica.gov,"Corporation for National & Community Service",500,"https://volunteeringinamerica.gov/",false,"null",false,undefined
 vistacampus.gov,"Corporation for National & Community Service",500,"https://vistacampus.gov/",false,"null",false,undefined
 serve.gov,"Corporation for National & Community Service",500,"https://serve.gov/",false,"null",false,undefined
-presidentialserviceawards.gov,"Corporation for National & Community Service",200,"https://d302laedhb14lz.cloudfront.net/95603b9a-9182-44c1-9580-03ac9e72ce41/robots.txt",true,"null",true,robots.txt
+presidentialserviceawards.gov,"Corporation for National & Community Service",200,"https://d302laedhb14lz.cloudfront.net/df3fa7d6-4bdc-487f-9d4b-3d344a06372f/robots.txt",true,"null",true,robots.txt
 nationalservice.gov,"Corporation for National & Community Service",500,"https://nationalservice.gov/",false,"null",false,undefined
 mlkday.gov,"Corporation for National & Community Service",500,"https://mlkday.gov/",false,"null",false,undefined
 mentor.gov,"Corporation for National & Community Service",500,"https://mentor.gov/",false,"null",false,undefined
@@ -1873,7 +1885,7 @@ drywallresponse.gov,"Consumer Product Safety Commission",200,"https://www.cpsc.g
 cpsc.gov,"Consumer Product Safety Commission",200,"https://www.cpsc.gov/robots.txt",true,"null",true,robots.txt
 atvsafety.gov,"Consumer Product Safety Commission",200,"https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/ATV-Safety-Information-Center",false,"null",false,false
 anchorit.gov,"Consumer Product Safety Commission",404,"https://www.anchorit.gov/robots.txt",true,"null",true,meta
-mimm.gov,"Consumer Financial Protection Bureau",200,"https://www.mimm.gov/robots.txt",true,"null",true,robots.txt
+mimm.gov,"Consumer Financial Protection Bureau",200,"https://www.consumerfinance.gov/consumer-tools/military-financial-lifecycle/",false,"null",false,false
 consumerprotectionbureau.gov,"Consumer Financial Protection Bureau",200,"https://www.consumerfinance.gov/robots.txt",true,"https://www.consumerfinance.gov/sitemap.xml",true,robots.txt
 consumerprotection.gov,"Consumer Financial Protection Bureau",200,"https://www.consumerfinance.gov/robots.txt",true,"https://www.consumerfinance.gov/sitemap.xml",true,robots.txt
 consumerfinancialprotectionbureau.gov,"Consumer Financial Protection Bureau",200,"https://www.consumerfinance.gov/robots.txt",true,"https://www.consumerfinance.gov/sitemap.xml",true,robots.txt
@@ -1952,9 +1964,8 @@ myflorida.com,"State of Florida",200,"https://myflorida.com/robots.txt",true,"nu
 de.gov,"State of Delaware",200,"https://de.gov/robots.txt",true,"null",true,robots.txt
 ct.gov,"State of Connecticut",200,"https://ct.gov/robots.txt",true,"null",true,robots.txt
 colorado.gov,"State of Colorado",200,"https://www.colorado.gov/robots.txt",true,"null",true,robots.txt
-ca.gov,"State of California",200,"https://ca.gov/robots.txt",true,"null",true,robots.txt
 arkansas.gov,"State of Arkansas",200,"https://arkansas.gov/robots.txt",true,"null",true,robots.txt
 az.gov,"State of Arizona",200,"https://az.gov/robots.txt",true,"null",true,robots.txt
 alaska.gov,"State of Alaska",200,"https://alaska.gov/robots.txt",true,"null",true,robots.txt
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/robots.txt",true,"null",true,robots.txt
-usgs.gov,"Department of the Interior",500,"https://www.usgs.gov/",false,"null",false,undefined
+ca.gov,"State of California",200,"https://www.ca.gov/robots.txt",true,"https://www.ca.gov/sitemaps/sitemapindex.xml",true,robots.txt
