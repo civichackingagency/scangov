@@ -792,10 +792,10 @@ writeFileSync('data/robots.csv', csv);
 console.log('Done with robots history');
 
 // Sitemap history
-csv = 'domain,agency,status,redirect,xml,items,pdfs';
+csv = 'domain,agency,status,redirect,xml,items,pdfs,completion';
 for (let j = 0; j < sitemapResults.length; j++) {
     const result = sitemapResults[j];
-    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',"' + result.redirect + '",' + result.xml + ',' + result.items + ',' + result.pdfs;
+    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',"' + result.redirect + '",' + result.xml + ',' + result.items + ',' + result.pdfs + ',' + 0 || result.completion;
 
     let found = false;
 
@@ -805,13 +805,14 @@ for (let j = 0; j < sitemapResults.length; j++) {
         const currentVersion = sitemapHistory[i];
 
         result.history = currentVersion.history || [];
-        if (currentVersion.status !== result.status || currentVersion.redirect !== result.redirect || currentVersion.xml !== result.xml || currentVersion.items !== result.items)
+        if (currentVersion.status !== result.status || currentVersion.redirect !== result.redirect || currentVersion.xml !== result.xml || currentVersion.items !== result.items || (currentVersion.completion !== null && currentVersion.completion !== undefined && currentVersion.completion !== result.completion))
             result.history.push({ time, 
                 status: currentVersion.status,
                 redirect: currentVersion.redirect,
                 xml: currentVersion.xml,
                 items: currentVersion.items,
-                pdfs: currentVersion.pdfs
+                pdfs: currentVersion.pdfs,
+                completion: currentVersion.completion
             });
 
         sitemapHistory.slice(i, 1);
