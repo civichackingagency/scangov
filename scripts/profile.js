@@ -112,14 +112,15 @@ const load = async page => {
         }
 
         const data = sitemapJson;
+        const complete = data.completion === 1;
 
         document.getElementById('site').innerText = data.url;
         document.getElementById('parent').innerText = data.name;
         document.getElementById('parent').href = '/?search=' + data.name + '&agency=1';
 
-        const score = 100 * ((data.status === 200) + data.xml) / 2;
-        document.getElementById('percent').innerText = score;
-        document.getElementById('amount').innerText = 2 * score / 100 + ' of 2 elements';
+        const score = 100 * ((data.status === 200) + data.xml + complete) / 3;
+        document.getElementById('percent').innerText = Math.round(score);
+        document.getElementById('amount').innerText = 3 * score / 100 + ' of 3 elements';
         gradeCard.classList.add('text-bg-' + getColor(score));
         document.getElementById('grade').innerText = getGrade(score);
 
@@ -145,6 +146,17 @@ const load = async page => {
                 </td>
                 <td>
                     <i class="fa-solid ${data.xml ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code>Complete</code></pre>
+                </td>
+                <td>
+                    Every link on the home page is in the sitemap.
+                </td>
+                <td>
+                    <i class="fa-solid ${complete ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i> <span class="d-xl-inline">${data.xml ? 'Active' : 'Missing'}</span>
                 </td>
             </tr>
         `;
@@ -495,7 +507,7 @@ const load = async page => {
             document.getElementById('parent').innerText = sitemapJson.name;
             document.getElementById('parent').href = '/?search=' + sitemapJson.name + '&agency=1';
 
-            sitemapScore = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml) / 2);
+            sitemapScore = Math.round(100 * ((sitemapJson.status === 200) + sitemapJson.xml + (sitemapJson.completion === 1)) / 3);
             document.getElementById('sitemap-grade').innerText = getGrade(sitemapScore);
             document.getElementById('sitemap-card').classList.add('text-bg-' + getColor(sitemapScore));
             document.getElementById('sitemap-card').title = Math.round(sitemapScore) + '%';

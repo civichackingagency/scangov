@@ -297,6 +297,7 @@ if (field === 'overview' || field === 'sitemap')
             domain.failures = [];
             (domain.status === 200 ? domain.successes : domain.failures).push('Status');
             (domain.xml ? domain.successes : domain.failures).push('XML');
+            (domain.completion === 1 ? domain.successes : domain.failures).push('Complete');
             domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
             domain.grade = getGrade(domain.score);
 
@@ -317,7 +318,7 @@ if (field === 'overview' || field === 'sitemap')
 
         done++;
         if (field === 'sitemap') {
-            showScore(total / data.length / 2, 2, 'elements');
+            showScore(total / data.length / 3, 3, 'elements');
             show('sitemap');
         }
         else if (done === 5)
