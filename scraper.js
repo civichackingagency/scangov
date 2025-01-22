@@ -611,7 +611,7 @@ scrapers.push(new Promise(async (resolve, reject) => {
                             xml: sitemap.url.endsWith('.xml') && sitemap.statusCode < 300 && !!sitemap.headers && (sitemap.headers['content-type'].startsWith('text/xml') || sitemap.headers['content-type'].startsWith('application/xml')),
                             items,
                             pdfs,
-                            completion: 1 - (links.size / linksLength)
+                            completion: 1 - (links.size / linksLength || 0)
                         };
                         sitemapResults.push(sitemapOutcome);
                     });
@@ -795,7 +795,7 @@ console.log('Done with robots history');
 csv = 'domain,agency,status,redirect,xml,items,pdfs,completion';
 for (let j = 0; j < sitemapResults.length; j++) {
     const result = sitemapResults[j];
-    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',"' + result.redirect + '",' + result.xml + ',' + result.items + ',' + result.pdfs + ',' + 0 || result.completion;
+    csv += '\n' + result.url + ',"' + result.name + '",' + result.status + ',"' + result.redirect + '",' + result.xml + ',' + result.items + ',' + result.pdfs + ',' + result.completion;
 
     let found = false;
 
@@ -805,7 +805,7 @@ for (let j = 0; j < sitemapResults.length; j++) {
         const currentVersion = sitemapHistory[i];
 
         result.history = currentVersion.history || [];
-        if (currentVersion.status !== result.status || currentVersion.redirect !== result.redirect || currentVersion.xml !== result.xml || currentVersion.items !== result.items || (currentVersion.completion !== null && currentVersion.completion !== undefined && currentVersion.completion !== result.completion))
+        if (currentVersion.status !== result.status || currentVersion.redirect !== result.redirect || currentVersion.xml !== result.xml || currentVersion.items !== result.items)
             result.history.push({ time, 
                 status: currentVersion.status,
                 redirect: currentVersion.redirect,
