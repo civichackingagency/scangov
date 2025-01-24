@@ -166,3 +166,8 @@ h2:hover a#heading-hashtag,
 h3:hover a#heading-hashtag {
     display: revert;
 }
+
+/* Bootstrap dark mode WCAG compliance override */
+[data-bs-theme=dark] .text-bg-danger .card {
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.0);
+}
