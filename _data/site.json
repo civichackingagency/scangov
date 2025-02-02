@@ -1,0 +1,23 @@
+{
+  "title": "ScanGov",
+  "description": "Government digital experience monitor",
+  "url": "https://scangov.org",
+  "org": "Civic Hacking Agency",
+  "org-url": "https://civichackingagency.org",
+  "repo": "https://github.com/civichackingagency/scangov",
+  "rss": "https://docs.scangov.org/feed.xml",
+  "github-url": "https://github.com/civichackingagency",
+  "linkedin-url": "https://www.linkedin.com/company/civic-hacking-agency",
+  "twitter-url": "https://twitter.com/civic_hacking",
+  "twitter-username": "civic_hacking",
+  "twitter": "@civichacking",
+  "date": "%B %-d, %Y",
+  "timezone": "America/Los_Angeles",
+  "data": [
+    "Metadata",
+    "URL",
+    "Sitemap",
+    "Robots",
+    "Security"
+  ]
+}

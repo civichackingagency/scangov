@@ -1,5 +1,6 @@
 <ul class="list-group list-group-horizontal-sm">
-    {% unless include.no_report %}
+    {% if home %}
+    {% else %}
     <li class="list-group-item">
         <div class="dropdown btn dropdown-toggle">
             <a
@@ -11,7 +12,7 @@
             </a>
         </div>
     </li>
-    {% endunless %}
+    {% endif %}
     <li class="list-group-item">
         <div class="dropdown btn dropdown-toggle">
             <a

@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Docs",
+    "icon": "fa-solid fa-book",
+    "url": "https://docs.scangov.org"
+  },
+  {
+    "title": "Community",
+    "icon": "fa-solid fa-users",
+    "url": "https://docs.scangov.org/community"
+  },
+  {
+    "title": "About",
+    "icon": "fa-solid fa-circle-info",
+    "url": "https://docs.scangov.org/about"
+  }
+]

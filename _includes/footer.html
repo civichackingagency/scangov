@@ -1,17 +1,42 @@
 <div class="container-fluid">
   <footer class="pt-5 border-top">
     <div class="row">
-      {% for col in site.data.nav-footer.docs %}
-        <div class="col-4 mb-3">
-          <ul class="nav flex-column">
-            {% for item in col %}
-              <li>
-                <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link p-0 text-body-secondary">{{ item.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
+      <div class="col-4 mb-3">
+        <ul class="nav flex-column">
+          <li>
+            <a href="https://docs.scangov.org/about/" class="nav-link p-0 text-body-secondary">About</a>
+          </li>
+          <li>
+            <a href="https://docs.scangov.org/blog/" class="nav-link p-0 text-body-secondary">Blog</a>
+          </li>
+          <li>
+            <a href="https://docs.scangov.org/press/" class="nav-link p-0 text-body-secondary">Press</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4 mb-3">
+        <ul class="nav flex-column">
+          <li>
+            <a href="https://docs.scangov.org" class="nav-link p-0 text-body-secondary">Docs</a>
+          </li>
+          <li>
+            <a href="https://docs.scangov.org/help" class="nav-link p-0 text-body-secondary">Help</a>
+          </li>
+          <li>
+            <a href="https://docs.scangov.org/community" class="nav-link p-0 text-body-secondary">Community</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4 mb-3">
+        <ul class="nav flex-column">
+          <li>
+            <a href="https://github.com/civichackingagency/scangov/issues/new/choose" class="nav-link p-0 text-body-secondary">Issues</a>
+          </li>
+          <li>
+            <a href="https://github.com/orgs/civichackingagency/projects/2" class="nav-link p-0 text-body-secondary">Project board</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p class="small">{{ site.title }}
@@ -23,7 +48,7 @@
           <li class="ms-3">
             <a href="{{ site.repo }}">
               <span class="sr-only">GitHub</span>
-              <i class="fa-brands fa-github fa-xl" aria-hidden="true"></i>
+              <i class="fa-brands fa-github sizeicon-xl" aria-hidden="true"></i>
             </a>
           </li>
         {% endif %}
@@ -31,7 +56,7 @@
           <li class="ms-3">
             <a href="{{ site.rss }}">
               <span class="sr-only">RSS</span>
-              <i class="fa-solid fa-rss fa-xl" aria-hidden="true"></i>
+              <i class="fa-solid fa-rss sizeicon-xl" aria-hidden="true"></i>
             </a>
           </li>
         {% endif %}
@@ -42,4 +67,5 @@
 {% if jekyll.environment == 'production' %}
   <!-- TODO: add analytics -->
 {% endif %}
-{% include js.html %}</body></html>
+{% include "js.html" %}</body>
+</html>

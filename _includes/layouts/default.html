@@ -1,0 +1,13 @@
+{% include "header.html" %}
+{% include "nav.html" %}
+<main>
+  {% include "jumbotron.html" %}
+  <div class="container-fluid">
+    <div class="row">
+      {{ content | safe }}
+    </div>
+  </div>
+</main>
+{% include "footer.html" %}
+<!-- outputs all the icons used on the page -->
+{% getBundle "fontawesome" %}

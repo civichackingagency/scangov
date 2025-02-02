@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "displayName": "Metadata",
+    "attributes": [
+      {
+        "key": "title",
+        "tag": "<title>",
+        "description": "Defines the document's title that is shown in a browser's title bar or a page's tab"
+      },
+      {
+        "key": "description",
+        "tag": "<meta name=\"description\">",
+        "description": "A short and accurate summary of the content of the page"
+      },
+      {
+        "key": "viewport",
+        "tag": "<meta name=\"viewport\">",
+        "description": "Gives hints about the size of the initial size of the viewport"
+      },
+      {
+        "key": "canonical",
+        "tag": "<link rel=\"canonical\">",
+        "description": "Indicates that another page is representative of the content on the page"
+      },
+      {
+        "key": "ogSiteName",
+        "tag": "<meta property=\"og:site_name\">",
+        "description": "The name which should be displayed for the overall site"
+      },
+      {
+        "key": "ogType",
+        "tag": "<meta property=\"og:type\">",
+        "description": "The type of the object"
+      },
+      {
+        "key": "ogTitle",
+        "tag": "<meta property=\"og:title\">",
+        "description": "The title of the object as it should appear within the graph"
+      },
+      {
+        "key": "ogDescription",
+        "tag": "<meta property=\"og:description\">",
+        "description": "A one to two sentence description of the object"
+      },
+      {
+        "key": "ogUrl",
+        "tag": "<meta property=\"og:url\">",
+        "description": "The canonical URL of the object that will be used as its permanent ID in the graph"
+      },
+      {
+        "key": "ogImage",
+        "tag": "<meta property=\"og:image\">",
+        "description": "An image URL which should represent the object within the graph"
+      },
+      {
+        "key": "ogImageAlt",
+        "tag": "<meta property=\"og:image:alt\">",
+        "description": "A description of what is in the image"
+      }
+    ]
+  },
+  "url": {
+    "displayName": "URL",
+    "attributes": [
+      {
+        "key": "https",
+        "tag": "HTTPS",
+        "description": "Privacy and integrity protection."
+      },
+      {
+        "key": "dotgov",
+        "tag": "sTLD",
+        "description": "Sponsored top-level domain (.gov / .edu / .mil). "
+      },
+      {
+        "key": "www",
+        "tag": "www",
+        "description": "Resolves with www and non-www input. "
+      }      
+    ]
+  },
+  "sitemap": {
+    "displayName": "Sitemap",
+    "attributes": [
+      {
+        "key": "status",
+        "tag": "Status",
+        "description": "The HTTP status of /sitemap.xml is OK."
+      },
+      {
+        "key": "xml",
+        "tag": "XML",
+        "description": "The sitemap file type is XML."
+      },
+      {
+        "key": "completion",
+        "tag": "Complete",
+        "description": "Every link on the home page is in the sitemap."
+      }
+    ]
+  },
+  "robots": {
+    "displayName": "Robots",
+    "attributes": [
+      {
+        "key": "valid",
+        "tag": "Valid",
+        "description": "The site has a valid robots policy."
+      },
+      {
+        "key": "allowed",
+        "tag": "Allowed",
+        "description": "The robots policy allows access to browsers and scrapers."
+      },
+      {
+        "key": "sitemap",
+        "tag": "Sitemap",
+        "description": "The robots.txt file points to a sitemap file."
+      }
+    ]
+  },
+  "security": {
+    "displayName": "Security",
+    "attributes": [
+      {
+        "key": "hsts",
+        "tag": "HSTS",
+        "description": "The site automatically upgrades from HTTP to HTTPS."
+      },
+      {
+        "key": "csp",
+        "tag": "CSP",
+        "description": "The site restricts what can be loaded."
+      },
+      {
+        "key": "xContentTypeOptions",
+        "tag": "X-Content-Type-Options",
+        "description": "The site prevents mime type sniffing."
+      },
+      {
+        "key": "securityTxt",
+        "tag": "security.txt",
+        "description": "The site has a security.txt file."
+      }
+    ]
+  }
+}

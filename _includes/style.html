@@ -1,10 +1,32 @@
-<!-- Bootstrap -->
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css">
-  <!-- Custom CSS -->
+<link rel="stylesheet" href="{{ site.baseurl }}/bootstrap-purged.css">
 <link href="{{site.baseurl}}/css/style.css" rel="stylesheet">
-  <!-- Font Awesome -->
-<link
-  rel="stylesheet"
-  href="{{site.baseurl}}/assets/font-awesome/css/all.min.css"
-  crossorigin="anonymous">
-<script src="{{site.baseurl}}/assets/font-awesome/js/all.min.js" crossorigin="anonymous"></script>
+<!-- styles that went missing in font awesome purge -->
+<style>
+fa-sr-only, .fa-sr-only-focusable:not(:focus), .sr-only, .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+svg {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em;
+  max-width: 1rem;
+  margin: 0 .3rem;
+}
+svg.sizeicon-xl {
+  height: 1.5em;
+  max-width: 1.5em;
+  line-height: .04167em;
+}
+table svg {
+  margin: 0;
+}
+</style>
