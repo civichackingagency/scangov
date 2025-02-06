@@ -11,6 +11,7 @@ import { EleventyRenderPlugin } from '@11ty/eleventy'
 import * as fs from 'fs'
 import pluginFilters from './_config/filters.js'
 import fontAwesomePlugin from "@11ty/font-awesome";
+import { PurgeCSS } from 'purgecss'
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -92,7 +93,7 @@ export default async function (eleventyConfig) {
     return `Grade: ${gradeThis(score)} / Score: ${score}% (${numCorrect} of ${scoreAttributeCount} tags)`;
   })
 
-  eleventyConfig.addFilter('auditStatusIcons', (log, scorekey) => {
+  function writeStatusIconsForAttribute(log, scorekey) {
     let output = '';
     let attributesToCheck = [];
     for(var a in audits[scorekey].attributes) {
@@ -101,21 +102,112 @@ export default async function (eleventyConfig) {
     for(var attr in log) {
       if(attributesToCheck.indexOf(attr) > -1) {
         if(log[attr]) {
-          output +=` <i class="fa-solid fa-circle-check text-success" span title="${attr} success">check</i>`;
+          output +=` <span title="${attr} (${scorekey})"><i class="fa-solid fa-circle-check text-success" >check</i></span>`;
         } else {
-          output += ` <i class="fa-solid fa-circle-xmark text-danger" title="${attr} failure">x</i>`
+          output += ` <span title="${attr} (${scorekey})"><i class="fa-solid fa-circle-xmark text-danger">x</i></span>`
         }
-        
       }
     }
     return output;
+  }
+  eleventyConfig.addFilter('auditStatusIcons', (log, scorekey) => {
+    let output = writeStatusIconsForAttribute(log, scorekey);
+    return output;
+  })
+
+  eleventyConfig.addFilter('allAuditStatusIcons', (domainData) => {
+    let output = '';
+    if(domainData.status !== 200) {
+      // output = '<span title="Inaccessible (status 500)"><i class="svg-inline--fa fa-circle-exclamation"></i></span>';
+      output = `<span title="Inaccessible (status 500)"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>`
+    } else {
+      for(var a in audits) {
+        output += writeStatusIconsForAttribute(domainData[a], a);
+      }
+    }
+    return output;
+  })
+
+  eleventyConfig.addFilter('averageElements', (data) => {
+    let elementTally = 0;
+    let respondingDomains = 0;
+    let overallPossibleElements = data[0].overallPossibleScore;
+    data.forEach(d => {
+      if(d.status === 200) {
+        elementTally += d.overallScoreCount;
+        respondingDomains++;
+      }
+    })
+    let averageElements = Math.round(elementTally / respondingDomains);
+    return `${averageElements} out of ${overallPossibleElements} elements`;
+  })
+
+  eleventyConfig.addFilter('averageGrade', (data) => {
+    let score = scoreCalc(data);
+    let grade = gradeThis(score);
+    return grade;
+  })
+  
+  function scoreCalc(data) {
+    let totalScore = 0;
+    let respondingDomains = 0;
+    data.forEach(d => {
+      if(d.status === 200) {
+        totalScore += d.overallScore;
+        respondingDomains++;  
+      }
+    })
+    let averageScore = Math.round(totalScore / respondingDomains);
+    return averageScore;
+  }
+
+  eleventyConfig.addFilter('averageScore', (data) => {
+    let output= scoreCalc(data);
+    return output;
+  })
+
+  eleventyConfig.addFilter('specificAverageScore', (data, attribute) => {
+    let totalScores = 0;
+    let totalItems = 0;
+    data.forEach(d => {
+      if(d.status === 200) {
+        totalScores += d.scores[attribute].score;
+        totalItems++;
+      }
+    })
+    return Math.round(totalScores / totalItems);
+  })
+
+  eleventyConfig.addFilter('specificAverageElements', (data, attribute) => {
+    let elementTally = 0;
+    let respondingDomains = 0;
+    let overallPossibleElements = 0;
+    
+    for(var attr in audits[attribute].attributes) {
+      overallPossibleElements++;
+    }
+    data.forEach(d => {
+      if(d.status === 200) {
+        for(var attr in audits[attribute].attributes) {
+          let key = audits[attribute].attributes[attr].key;
+          if(d[attribute][key] === true) {
+            elementTally++;
+          }
+        }
+        respondingDomains++;
+      }
+    })
+    let averageElements = Math.round(elementTally / respondingDomains);
+    return `${averageElements} out of ${overallPossibleElements} elements`;
+  })
+
+  eleventyConfig.addFilter('averageColor', (data) => {
+    return gradeColor(scoreCalc(data));
   })
   
   eleventyConfig.addFilter('timeSort', (logs) => {
     return logs.sort((a,b) => b.time - a.time);
   })
-
-  
 
   eleventyConfig.addPlugin(EleventyRenderPlugin)
 
@@ -135,10 +227,14 @@ export default async function (eleventyConfig) {
     return Math.round(score) + '%'
   })
 
-  eleventyConfig.addFilter('colorify', (score) => {
+  function gradeColor(score) {
     if (score >= 90) return 'success'
     if (score >= 70) return 'warning'
     return 'danger'
+  }
+
+  eleventyConfig.addFilter('colorify', (score) => {
+    return gradeColor(score);
   })
 
   // Features to make your build faster (when you need them)
@@ -148,6 +244,23 @@ export default async function (eleventyConfig) {
   // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+  eleventyConfig.on(
+		"eleventy.after",
+		async ({ dir, results, runMode, outputMode }) => {
+      console.log('truncating css')
+      const purgeCSSResults = await new PurgeCSS().purge({
+        content: [
+          '_site/assets/purge/states.html',
+          '_site/index.html'
+        ],
+        css: ['public/assets/bootstrap/css/bootstrap.min.css'],
+      })
+
+      fs.writeFileSync('./_site/bootstrap-purged.css',purgeCSSResults[0].css,'utf8');
+
+		}
+	);
 }
 
 export const config = {

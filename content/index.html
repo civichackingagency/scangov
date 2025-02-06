@@ -6,9 +6,9 @@ description: Monitoring government digital experience.
 keywords: government domains, government websites
 
 pagination:
-  data: sorts
-  size: 10
-  alias: member
+  data: sorts.overall
+  size: 100
+  alias: overallmember
 ---
 
 <main id="home">
@@ -20,13 +20,15 @@ pagination:
           {% include "updated.html" %}
           <li class="text-body-secondary">
             <span id="filters">
-              Filters:
+              Filters: 
+              <span class="badge text-bg-primary">all domains</span> 
+              <span class="badge text-bg-primary">overview</span>
             </span>
           </li>
           <li class="text-body-secondary">
-            Showing:
+            Showing: {{ pagination.pageNumber * pagination.size + 1 }} - {{ (pagination.pageNumber + 1) * pagination.size }}
             <span id="showing-count"></span>
-            of
+            of {{ sorts.overall.length }}
             <span id="showing-total"></span>
           </li>
         </ul>
@@ -35,12 +37,12 @@ pagination:
     <div class="row" id="score-card">
       <h3 class="h4">Grade/score</h3>
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
-        <div class="card mb-3" id="grade-card">
+        <div class="card mb-3 text-bg-{{ sorts.overall | averageColor }}" id="grade-card">
           <div class="card-header">
             Average grade
           </div>
           <div class="card-body text-center pt-5">
-            <p class="display-1" id="grade"></p>
+            <p class="display-1" id="grade">{{ sorts.overall | averageGrade }}</p>
           </div>
         </div>
       </div>
@@ -51,10 +53,10 @@ pagination:
           </div>
           <div class="card-body text-center">
             <p class="display-1">
-              <span id="percent"></span>%
+              <span id="percent">{{ sorts.overall | averageScore }}</span>%
             </p>
           </div>
-          <div class="card-footer text-center" id="amount"></div>
+          <div class="card-footer text-center" id="amount">{{ sorts.overall | averageElements }}</div>
         </div>
       </div>
     </div>
@@ -71,28 +73,18 @@ pagination:
               </tr>
             </thead>
             <tbody id="table">
-              {% for d in member %}
+              {% for d in overallmember %}
                 <tr>
                   <td>
-                    <a href="/profile/?domain=ca.gov#overview">{{ d.urlkey }}</a>
+                    <a href="/profile/{{d.urlkey | slugify }}/overview">{{ d.urlkey }}</a>
                     <br>
                     <a class="small text-muted" href="?search={{ d.name }}&amp;agency=1&amp;field=overview">{{ d.name }}</a>
                   </td>
                   <td>
-                    <span title="HSTS (security)">
-                      <svg class="svg-inline--fa fa-circle-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path>
-                      </svg>
-                    </span>
-                    <br>
-                    <span title="security.txt (security)">
-                      <svg class="svg-inline--fa fa-circle-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"></path>
-                      </svg>
-                    </span>
+                    {{ d | allAuditStatusIcons | safe }}
                   </td>
                   <td class="text-center grade-display-column">
-                    <span class="badge text-bg-success" title="96%">A</span>
+                    <span class="badge text-bg-{{ d.overallScore | colorify }}" title="{{ d.overallScore }}%">{{ d.overallScore | gradify }}</span>
                   </td>
                 </tr>
               {% endfor %}
@@ -108,6 +100,11 @@ pagination:
             <li class="page-item" id="previous">
               <a class="page-link" href="#1" id="previous-link">Previous</a>
             </li>
+            {%- for pageEntry in pagination.pages %}
+              <li class="page-item {% if page.url == pagination.hrefs[ loop.index0 ] %}active{% endif %}">
+                <a class="page-link" href="{{ pagination.hrefs[ loop.index0 ] }}">{{ loop.index }}</a>
+              </li>
+            {%- endfor %}
             <li class="page-item" id="next">
               <a class="page-link" href="#1" id="next-link">Next</a>
             </li>
@@ -117,8 +114,3 @@ pagination:
     </div>
   </div>
 </main>
-<!--
-<script src="/scripts/variables.js"></script>
-<script src="/scripts/util.js"></script>
-<script src="/scripts/home.js"></script>
--->

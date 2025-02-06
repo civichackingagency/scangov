@@ -3,11 +3,13 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
+		"build": "npx @11ty/eleventy --quiet",
 		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/scangov/",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"start-ghpages": "npx @11ty/eleventy --pathprefix=/scangov/ --serve --quiet",
+		"deploy:test": "aws s3 cp _site s3://test.scangov.org/ --recursive",
+		"test:manual": "npx http-server _site",
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet"
 	},
@@ -18,6 +20,7 @@
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"cross-env": "^7.0.3",
+		"csv-parse": "^5.6.0",
 		"follow-redirects": "^1.15.6",
 		"luxon": "^3.5.0",
 		"readline-sync": "^1.4.10",

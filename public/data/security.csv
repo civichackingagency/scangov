@@ -1969,3 +1969,282 @@ az.gov,"State of Arizona",200,true,300,1737427479067,false,true,false
 alaska.gov,"State of Alaska",200,true,31536000,1737459014767,true,true,false
 alabama.gov,"State of Alabama",301,false,-1,-1,false,true,false
 ca.gov,"State of California",200,true,31536000,1737543577312,true,true,false
+chicago.gov,"City of Chicago, IL",301,false,-1,-1,false,false,false
+cityofsouthfultonga.gov,"City of South Fulton, GA",301,false,-1,-1,true,true,false
+yumaaz.gov,"City of Yuma, AZ",301,false,-1,-1,false,true,false
+eugene-or.gov,"City of Eugene, OR",200,false,-1,-1,true,true,false
+yonkersny.gov,"City of Yonkers, NY",301,false,-1,-1,true,true,false
+worcesterma.gov,"City of Worcester, MA",301,true,15552000,1738795630511,false,false,false
+wilmingtonnc.gov,"City of Wilmington, NC",301,false,-1,-1,true,true,false
+wichitafallstx.gov,"City of Wichita Falls, TX",200,false,-1,-1,true,true,false
+wichita.gov,"City of Wichita, KS",301,false,-1,-1,true,true,false
+walkermi.gov,"City of Grand Rapids, MI",200,false,-1,-1,true,true,false
+waco-texas.com,"City of Waco, TX",301,false,-1,-1,true,true,false
+visalia.gov,"City of Visalia, CA",302,false,-1,-1,false,false,false
+victorvilleca.gov,"City of Victorville, CA",301,false,-1,-1,false,true,false
+warrenmi.gov,"City of Warren, MI",301,false,-1,-1,false,true,false
+cityofvancouver.us,"City of Vancouver, WA",301,false,-1,-1,false,false,false
+tylertexas.gov,"City of Tyler, TX",400,false,-1,-1,false,false,false
+tuscaloosa-al.gov,"City of Tuscaloosa, AL",301,false,-1,-1,false,true,false
+vallejo.gov,"City of Vallejo, CA",302,false,-1,-1,true,true,false
+tucsonaz.gov,"City of Tucson, AZ",301,false,-1,-1,true,true,false
+topeka.org,"City of Topeka, KS",500,false,-1,-1,false,true,false
+toaks.gov,"City of Thousand Oaks, CA",200,true,31536000,1738811614511,true,true,false
+thorntonco.gov,"City of Thornton, CO",301,true,15768000,1738795846511,false,true,false
+tempe.gov,"City of Tempe, AZ",301,false,-1,-1,false,true,false
+toledo.oh.gov,"City of Toledo, OH",200,false,-1,-1,false,true,true
+temeculaca.gov,"City of Temecula, CA",200,false,-1,-1,true,true,false
+tacoma.gov,"City of Tacoma, WA",200,true,16070400,1738796148911,false,false,false
+syr.gov,"City of Syracuse, NY",301,false,-1,-1,true,true,false
+tampa.gov,"City of Tampa, FL",301,false,-1,-1,true,true,false
+stpaul.gov,"City of Saint Paul, MN",301,false,-1,-1,false,true,false
+stocktonca.gov,"City of Stockton, CA",200,false,-1,-1,true,true,false
+sugarlandtx.gov,"City of Sugar Land, TX",200,false,-1,-1,true,true,false
+stgeorgela.gov,"City of Baton Rouge, LA",200,false,-1,-1,false,true,false
+stlouis-mo.gov,"City of St. Louis, MO",301,true,31536000,1738811614511,true,true,false
+virginiabeach.gov,"City of Virginia Beach, VA",200,false,-1,-1,false,true,false
+stamfordct.gov,"City of Stamford, CT",301,false,-1,-1,false,true,false
+sterlingheights.gov,"City of Sterling Heights, MI",200,false,-1,-1,true,true,false
+springfield-ma.gov,"City of Springfield, MA",302,false,-1,-1,false,true,false
+spokane.gov,"City of Spokane, WA",200,true,31536000,1738811614511,false,false,false
+sparksnv.gov,"City of Sparks, NV",301,false,-1,-1,false,true,false
+spokanevalleywa.gov,"City of Spokane Valley, WA",200,false,-1,-1,true,true,false
+springfieldmo.gov,"City of Springfield, MO",301,false,-1,-1,true,true,false
+southsideplacetx.gov,"City of Houston, TX",200,false,-1,-1,true,true,false
+siouxfalls.gov,"City of Sioux Falls, SD",301,false,-1,-1,true,true,false
+simivalley.gov,"City of Simi Valley, CA",301,false,-1,-1,false,true,false
+sgcityutah.gov,"City of St. George, UT",200,false,-1,-1,true,true,false
+shreveportla.gov,"City of Shreveport, LA",200,false,-1,-1,true,true,false
+scottsdaleaz.gov,"City of Scottsdale, AZ",301,false,-1,-1,true,true,false
+srcity.org,"City of Santa Rosa, CA",301,false,-1,-1,true,true,false
+savannahga.gov,"City of Savannah, GA",200,false,-1,-1,true,true,false
+santafenm.gov,"City of Santa Fe, NM",200,true,31536000,1738811614511,false,true,false
+southbendin.gov,"City of South Bend, IN",200,false,-1,-1,false,false,false
+santaclaraca.gov,"City of Santa Clara, CA",301,false,-1,-1,false,true,false
+sanjoseca.gov,"City of San Jose, CA",301,false,-1,-1,true,true,false
+sandyspringsga.gov,"City of Sandy Springs, GA",301,true,31536000,1738811614511,false,false,false
+santaclarita.gov,"City of Santa Clarita, CA",200,false,-1,-1,false,false,false
+sanbernardino.gov,"City of San Bernardino, CA",301,false,-1,-1,true,true,false
+cityofsalinas.org,"City of Salinas, CA",301,false,-1,-1,true,true,false
+salemor.gov,"City of Salem, OR",302,true,1209600,1738781288111,false,false,true
+sandiego.gov,"City of San Diego, CA",301,false,-1,-1,true,true,false
+sa.gov,"City of San Antonio, TX",301,false,-1,-1,true,true,false
+rva.gov,"City of Richmond, VA",200,false,-1,-1,false,true,false
+rrnm.gov,"City of Rio Rancho, NM",200,true,1200,1738780079711,true,true,false
+rockfordil.gov,"City of Rockford, IL",200,false,-1,-1,true,true,false
+rochestermn.gov,"City of Rochester, MN",301,false,-1,-1,false,true,false
+richmondca.gov,"City of Richmond, CA",200,false,-1,-1,true,true,false
+roundrocktexas.gov,"City of Round Rock, TX",301,false,-1,-1,false,false,false
+rialtoca.gov,"City of Rialto, CA",200,false,-1,-1,true,true,false
+rentonwa.gov,"City of Renton, WA",301,false,-1,-1,true,true,false
+cityofrc.us,"City of Rancho Cucamonga, CA",301,false,-1,-1,true,true,false
+raleighnc.gov,"City of Raleigh, NC",200,true,31536000,1738811614511,false,true,false
+quincyma.gov,"City of Quincy, MA",200,false,-1,-1,false,true,false
+reno.gov,"City of Reno, NV",301,false,-1,-1,false,true,false
+portland.gov,"City of Portland, OR",301,false,-1,-1,true,true,false
+pompanobeachfl.gov,"City of Pompano Beach, FL",301,false,-1,-1,false,false,false
+pomonaca.gov,"City of Pomona, CA",301,false,-1,-1,false,true,false
+plano.gov,"City of Plano, TX",301,false,-1,-1,true,true,false
+pittsburghpa.gov,"City of Pittsburgh, PA",301,false,-1,-1,true,true,false
+peoriagov.org,"City of Peoria, IL",200,false,-1,-1,true,true,false
+peoriaaz.gov,"City of Peoria, AZ",301,false,-1,-1,false,false,false
+pearlandtx.gov,"City of Pearland, TX",301,false,-1,-1,false,true,false
+patersonnj.gov,"City of Paterson, NJ",301,false,-1,-1,false,true,false
+pasadenatx.gov,"City of Pasadena, TX",200,false,-1,-1,true,true,false
+pasadena.gov,"City of Pasadena, CA",301,false,-1,-1,false,false,false
+palmbayflorida.org,"City of Palm Bay, FL",301,false,-1,-1,false,true,false
+opkansas.org,"City of Overland Park, KS",301,true,31536000,1738811614511,true,true,false
+orlando.gov,"City of Orlando, FL",301,false,-1,-1,true,true,false
+providenceri.gov,"City of Providence, RI",301,true,31536000,1738811614511,true,true,false
+cityoforange.org,"City of Orange, CA",301,false,-1,-1,false,true,false
+olympiawa.gov,"City of Olympia, WA",301,false,-1,-1,false,true,false
+olatheks.gov,"City of Olathe, KS",301,false,-1,-1,false,true,false
+odessa-tx.gov,"City of Odessa, TX",200,false,-1,-1,true,true,false
+santa-ana.org,"City of Santa Ana, CA",302,true,15724800,1738795803311,false,false,true
+ontarioca.gov,"City of Ontario, CA",301,true,31536000,1738811614511,false,true,false
+normanok.gov,"City of Norman, OK",301,true,31536000,1738811614511,false,true,false
+northcharleston.org,"City of North Charleston, SC",200,false,-1,-1,true,true,false
+nola.gov,"City of New Orleans, LA",500,false,-1,-1,false,false,false
+nnva.gov,"City of Newport News, VA",301,false,-1,-1,true,true,false
+norfolk.gov,"City of Norfolk, VA",301,false,-1,-1,true,true,false
+newhavenct.gov,"City of New Haven, CT",301,false,-1,-1,false,true,false
+newbedford-ma.gov,"City of New Bedford, MA",403,false,-1,-1,false,false,false
+newbraunfels.gov,"City of New Braunfels, TX",200,false,-1,-1,true,true,false
+newarknj.gov,"City of newark, NJ",301,true,31536000,1738811614511,false,false,false
+cityofnampa.us,"City of Nampa, ID",301,false,-1,-1,true,true,false
+murrietaca.gov,"City of Murrieta, CA",301,false,-1,-1,true,true,false
+murfreesborotn.gov,"City of Murfreesboro, TN",301,false,-1,-1,true,true,false
+moval.gov,"City of Moreno Valley, CA",200,false,-1,-1,false,false,false
+montgomeryal.gov,"City of Montgomery, AL",301,false,-1,-1,false,true,false
+modestogov.com,"City of Modesto, CA",200,false,-1,-1,true,true,false
+miramarfl.gov,"City of Miramar, FL",301,false,-1,-1,true,true,false
+miramarfl.gov,"City of Miramar, FL",301,false,-1,-1,true,true,false
+milwaukee.gov,"City of Milwaukee, WI",301,false,-1,-1,false,false,false
+minneapolismn.gov,"City of Minneapolis, MN",301,true,31536000,1738811614511,false,false,false
+midlandtexas.gov,"City of Midland, TX",200,false,-1,-1,true,true,false
+miamigardens-fl.gov,"City of Miami Gardens, FL",200,false,-1,-1,true,true,false
+miami.gov,"City of Miami, FL",301,false,-1,-1,true,true,false
+mesquitetx.gov,"City of Mesquite, TX",302,false,-1,-1,true,true,false
+manchesternh.gov,"City of Manchester, NH",301,false,-1,-1,false,false,false
+cityofmadison.com,"City of Madison, WI",301,false,-1,-1,true,true,false
+lynnma.gov,"City of Lynn, MA",301,false,-1,-1,false,false,false
+lowellma.gov,"City of Lowell, MA",200,false,-1,-1,true,true,false
+louisvilleky.gov,"City of Louisville, KY",403,false,-1,-1,false,false,false
+longbeach.gov,"City of Long Beach, CA",200,false,-1,-1,false,false,false
+oaklandca.gov,"City of Oakland, CA",301,false,-1,-1,false,false,false
+leaguecitytx.gov,"City of League City, TX",200,false,-1,-1,true,true,false
+lasvegasnevada.gov,"City of Las Vegas, NV",301,true,31536000,1738811614511,true,true,false
+memphistn.gov,"City of Memphis, TN",301,false,-1,-1,false,false,false
+cityoflaredo.com,"City of Laredo, TX",301,false,-1,-1,false,true,false
+lansingmi.gov,"City of Lansing, MI",301,false,-1,-1,false,true,false
+lascruces.gov,"City of Las Cruces, NM",200,false,-1,-1,false,false,true
+lacity.gov,"City of Los Angeles, CA",200,true,31536000,1738811614511,true,true,false
+lakewood.org,"City of Lakewood, CO",301,false,-1,-1,true,true,false
+killeentexas.gov,"City of Killeen, TX",200,false,-1,-1,true,true,false
+knoxvilletnpolice.gov,"City of Knoxville, TN",200,true,31536000,1738811614511,true,true,false
+kcmo.gov,"City of Kansas City, MO",301,false,-1,-1,false,true,false
+kannapolisnc.gov,"City of Concord, NC",301,false,-1,-1,false,false,false
+joliet.gov,"City of Joliet, IL",301,false,-1,-1,false,true,false
+kentwa.gov,"City of Kent, WA",301,false,-1,-1,false,true,false
+jeffersoncitymo.gov,"City of Jefferson City, MO",200,false,-1,-1,true,true,false
+knoxvilletn.gov,"City of Knoxville, TN",302,false,-1,-1,false,false,false
+jcmo.gov,"City of Jefferson City, MO",200,false,-1,-1,true,true,false
+jacksonville.gov,"City of Jacksonville, FL",302,false,-1,-1,false,false,false
+jerseycitynj.gov,"City of Jersey City, NJ",301,false,-1,-1,true,true,false
+indy.gov,"City of Indianapolis, IN",403,false,-1,-1,false,false,false
+irvingtx.gov,"City of Irving, TX",200,false,-1,-1,false,true,false
+independencemo.gov,"City of Independence, MO",301,true,31536000,1738811614511,false,true,false
+jacksonms.gov,"City of Jackson, MS",301,false,-1,-1,false,false,false
+indianhill.gov,"City of Cincinnati, OH",200,false,-1,-1,false,false,false
+houstontx.gov,"City of Houston, TX",200,false,-1,-1,false,false,false
+huntingtonbeachca.gov,"City of Huntington Beach, CA",200,false,-1,-1,true,true,false
+hillsboro-oregon.gov,"City of Hillsboro, OR",301,false,-1,-1,false,true,false
+hialeahfl.gov,"City of Hialeah, FL",500,false,-1,-1,true,true,false
+highpointnc.gov,"City of High Point, NC",308,false,-1,-1,true,true,false
+cityofhenderson.com,"City of Henderson, NV",301,false,-1,-1,true,true,false
+harrisburgpa.gov,"City of Harrisburg, PA",403,false,-1,-1,false,false,false
+helenamt.gov,"City of Helena, MT",301,false,-1,-1,true,true,false
+greshamoregon.gov,"City of Gresham, OR",301,false,-1,-1,false,false,false
+hampton.gov,"City of Hampton, VA",301,false,-1,-1,true,true,false
+greensboro-nc.gov,"City of Greensboro, NC",301,false,-1,-1,true,true,false
+greeleygov.com,"City of Greeley, CO",200,true,31536000,1738811614511,true,true,false
+greenbaywi.gov,"City of Green Bay, WI",301,false,-1,-1,true,true,false
+huntsvilleal.gov,"City of Huntsville, AL",301,false,-1,-1,false,false,false
+goodyearaz.gov,"City of Goodyear, AZ",301,false,-1,-1,true,true,false
+grandrapidsmi.gov,"City of Grand Rapids, MI",301,false,-1,-1,true,true,false
+glendaleaz.gov,"City of Glendale, AZ",500,false,-1,-1,false,false,false
+ggcity.org,"City of GARDEN GROVE, CA",200,false,-1,-1,false,true,true
+gainesvillefl.gov,"City of Gainesville, FL",301,false,-1,-1,true,true,false
+garlandtx.gov,"City of Garland, TX",200,true,10000,1738780088511,true,true,false
+glendaleca.gov,"City of Glendale, CA",301,false,-1,-1,false,true,false
+fresno.gov,"City of Fresno, CA",400,false,-1,-1,true,false,false
+friscotexas.gov,"City of Frisco, TX",301,false,-1,-1,true,true,false
+cityoffullerton.com,"City of Fullerton, CA",301,false,-1,-1,false,true,false
+fremontpolice.gov,"City of Fremont, CA",301,false,-1,-1,false,true,false
+fremont.gov,"City of Fremont, CA",301,false,-1,-1,false,true,false
+fcgov.com,"City of Fort Collins, CO",301,true,15768000,1738795846511,false,true,false
+fortworthtexas.gov,"City of Fort Worth, TX",301,true,31536000,1738811614511,false,true,false
+fontanaca.gov,"City of Fontana, CA",200,false,-1,-1,true,true,false
+surpriseaz.gov,"City of Surprise, AZ",200,false,-1,-1,false,true,false
+seattle.gov,"City of Seattle, WA",200,true,16070400,1738796148911,false,false,false
+flpd.gov,"City of Fort Lauderdale, FL",301,false,-1,-1,false,true,false
+fayettevillenc.gov,"City of Fayetteville, NC",301,false,-1,-1,false,true,false
+fargond.gov,"City of Fargo, ND",200,true,31536000,1738811614511,true,true,true
+fayetteville-ar.gov,"City of Fayetteville, AR",301,false,-1,-1,true,true,false
+everettwa.gov,"City of Everett, WA",301,false,-1,-1,true,true,false
+escondido.gov,"City of Escondido, CA",200,false,-1,-1,true,true,false
+elkgrovecity.org,"City of Elk Grove, CA",301,false,-1,-1,false,true,false
+elmonteca.gov,"City of El Monte, CA",200,true,31536000,1738811614511,true,true,false
+elginil.gov,"City of Elgin, IL",200,false,-1,-1,true,true,false
+elcajon.gov,"City of El Cajon, CA",301,false,-1,-1,false,true,false
+fishersin.gov,"City of Fishers, IN",200,false,-1,-1,false,true,false
+eastgrmi.gov,"City of Grand Rapids, MI",200,false,-1,-1,true,true,false
+durhamnc.gov,"City of Durham, NC",301,false,-1,-1,true,true,false
+detroitmi.gov,"City of Detroit, MI",200,false,-1,-1,false,true,false
+detroitmi.gov,"City of Detroit, MI",200,false,-1,-1,false,true,false
+dearborn.gov,"City of Dearborn, MI",200,false,-1,-1,false,true,false
+cityofdenton.com,"City of Denton, TX",301,false,-1,-1,true,true,false
+daytonohio.gov,"City of Dayton, OH",200,false,-1,-1,true,true,false
+dallas.gov,"City of Dallas, TX",302,false,-1,-1,false,true,false
+costamesaca.gov,"City of Costa Mesa, CA",301,false,-1,-1,false,true,false
+corpuschristitx.gov,"City of Corpus Christi, TX",301,true,31536000,1738811614511,false,true,false
+coronaca.gov,"City of Corona, CA",301,false,-1,-1,false,true,false
+coralsprings.gov,"City of CORAL SPRINGS, FL",301,false,-1,-1,true,true,false
+cor.net,"City of Richardson, TX",301,false,-1,-1,false,true,false
+concordnh.gov,"City of Concord, NH",200,false,-1,-1,true,true,false
+como.gov,"City of Columbia, MO",403,false,-1,-1,false,true,false
+concordnc.gov,"City of Concord, NC",200,false,-1,-1,false,false,false
+columbus.gov,"City of Columbus, OH",301,false,-1,-1,false,true,false
+cstx.gov,"City of College Station, TX",301,false,-1,-1,false,false,false
+coloradosprings.gov,"City of Colorado Springs, CO",200,false,-1,-1,false,true,false
+clevelandohio.gov,"City of Cleveland, OH",301,true,600,1738780079111,false,true,false
+clarksvilletn.gov,"City of Clarksville, TN",200,false,-1,-1,true,true,false
+cityofvacaville.gov,"City of Vacaville, CA",301,false,-1,-1,false,true,false
+columbiasc.gov,"City of Columbia, SC",200,false,-1,-1,false,false,false
+cityoftulsa.org,"City of Tulsa, OK",200,false,-1,-1,false,false,false
+cityofsanmateo.org,"City of San Mateo, CA",200,false,-1,-1,true,true,false
+cityofsacramento.gov,"City of Sacramento, CA",301,false,-1,-1,false,true,false
+phoenix.gov,"City of Phoenix, AZ",302,false,-1,-1,false,true,false
+cityofpalmdaleca.gov,"City of Palmdale, CA",200,false,-1,-1,true,true,false
+cityofmobile.gov,"City of Mobile, AL",403,false,-1,-1,false,false,false
+cityofclovis.com,"City of Clovis, CA",200,false,-1,-1,false,true,false
+cityofnormandy.gov,"City of St. Louis, MO",301,false,-1,-1,false,true,false
+cityofirvine.org,"City of Irvine, CA",301,false,-1,-1,false,true,false
+cityoflancasterca.org,"City of Lancaster, CA",301,false,-1,-1,false,true,false
+ci.lubbock.tx.us,"City of Lubbock, TX",200,false,-1,-1,false,true,false
+cityofconroe.org,"City of Conroe, TX",200,false,-1,-1,true,true,false
+hayward-ca.gov,"City of Hayward, CA",200,false,-1,-1,false,true,false
+chicoca.gov,"City of Chico, CA",302,false,-1,-1,true,true,false
+cityofchesapeake.net,"City of Chesapeake, VA",301,true,300,1738780078811,true,true,false
+cincinnati-oh.gov,"City of Cincinnati, OH",301,true,63072000,1738843150511,false,false,false
+chattanooga.gov,"City of Chattanooga, TN",200,true,31622400,1738811700911,false,true,false
+chulavistaca.gov,"City of Chula Vista, CA",301,false,-1,-1,true,true,false
+charlestonwv.gov,"City of Charleston, WV",200,false,-1,-1,false,true,false
+charlottenc.gov,"City of Charlotte, NC",301,false,-1,-1,true,true,false
+chandleraz.gov,"City of Chandler, AZ",301,true,300,1738780078811,false,true,false
+charleston-sc.gov,"City of Charleston, SC",200,false,-1,-1,true,true,false
+carmelindiana.gov,"City of Carmel, IN",400,false,-1,-1,false,false,false
+cityofcarrollton.com,"City of Carrollton, TX",301,false,-1,-1,false,true,false
+chandlerazpd.gov,"City of Chandler, AZ",200,true,31536000,1738811614511,false,true,false
+capecoral.gov,"City of Cape Coral, FL",301,false,-1,-1,true,true,false
+capecoral.gov,"City of Cape Coral, FL",301,false,-1,-1,true,true,false
+burbankca.gov,"City of Burbank, CA",403,false,-1,-1,false,false,false
+cambridgema.gov,"City of Cambridge, MA",301,false,-1,-1,false,false,false
+carlsbadca.gov,"City of Carlsbad, CA",301,false,-1,-1,false,true,false
+buffalony.gov,"City of Buffalo, NY",500,false,-1,-1,true,true,false
+buckeyeaz.gov,"City of Buckeye, AZ",301,false,-1,-1,false,true,false
+brokenarrowok.gov,"City of Broken Arrow, OK",301,false,-1,-1,false,true,false
+brownsvilletx.gov,"City of Brownsville, TX",301,false,-1,-1,true,true,false
+brockton.ma.us,"City of Brockton, MA",200,false,-1,-1,false,false,false
+bridgeportct.gov,"City of Bridgeport, CT",301,true,31536000,1738811614511,false,true,false
+bouldercolorado.gov,"City of Boulder, CO",200,true,300,1738780078811,false,true,false
+brla.gov,"City of Baton Rouge, LA",301,false,-1,-1,true,true,false
+cityofboise.org,"City of Boise, ID",301,false,-1,-1,false,false,false
+boston.gov,"City of Boston, MA",301,true,31536000,1738811614511,false,true,false
+bunkerhilltx.gov,"City of Houston, TX",200,true,63072000,1738843150511,false,true,false
+bismarcknd.gov,"City of Bismarck, ND",200,false,-1,-1,true,true,false
+billingsmtpublicworks.gov,"City of Billings, MT",200,false,-1,-1,true,true,false
+berkeleyca.gov,"City of Berkeley, CA",200,true,1000,1738780079511,true,true,false
+billingsmt.gov,"City of Billings, MT",200,false,-1,-1,true,true,false
+bellevuewa.gov,"City of Bellevue, WA",200,true,1000,1738780079511,true,true,false
+birminghamal.gov,"City of Birmingham, AL",301,true,31536000,1738811614511,false,true,false
+bendoregon.gov,"City of Bend, OR",301,false,-1,-1,false,true,false
+beaumonttexas.gov,"City of Beaumont, TX",301,false,-1,-1,true,true,false
+bakersfieldcity.us,"City of Bakersfield, CA",301,false,-1,-1,false,true,false
+austintexas.gov,"City of Austin, TX",308,false,-1,-1,false,true,false
+atlantaga.gov,"City of Atlanta, GA",301,false,-1,-1,false,true,false
+arvadaco.gov,"City of Arvada, CO",301,false,-1,-1,true,true,false
+augustamaine.gov,"City of Augusta, ME",301,false,-1,-1,false,false,false
+augustaga.gov,"City of Augusta, GA",301,false,-1,-1,true,true,false
+annapolis.gov,"City of Annapolis, MD",200,false,-1,-1,true,true,false
+anaheim.net,"City of Anaheim, CA",200,false,-1,-1,true,true,false
+antiochca.gov,"City of Antioch, CA",301,false,-1,-1,false,false,false
+allentx.gov,"City of Allen, TX",200,false,-1,-1,true,true,false
+amarillo.gov,"City of Amarillo, TX",301,false,-1,-1,false,true,false
+alexandriava.gov,"City of Alexandria, VA",200,false,-1,-1,false,true,false
+arlingtontx.gov,"City of Arlington, TX",301,false,-1,-1,false,false,false
+allentownpa.gov,"City of Allentown, PA",301,false,-1,-1,false,false,false
+cabq.gov,"City of Albuquerque, NM",302,false,-1,-1,false,false,false
+akronohio.gov,"City of Akron, OH",200,false,-1,-1,true,true,false
+albanyny.gov,"City of Albany, NY",200,false,-1,-1,true,true,false
+abilenetx.gov,"City of Abilene, TX",200,false,-1,-1,true,true,false

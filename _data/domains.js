@@ -40,7 +40,7 @@ const urlDataVariables = [
 ]
 
 export default function () {
-  let devModeDomainLimit = 10;
+  let devModeDomainLimit = 100;
 
   let metadata = JSON.parse(fs.readFileSync('./public/data/metadata.json'));
   let robotdata = JSON.parse(fs.readFileSync('./public/data/robots.json'));
@@ -51,8 +51,6 @@ export default function () {
   let allDataMap = new Map();
   let allDataArray = [];
   let truncateCount = 0;
-  let overallPossibleScore = 0;
-  let overallScoreCount = 0;
   metadata.forEach(m => {
     let newObject = {};
     newObject.metadata = m;
@@ -100,11 +98,13 @@ export default function () {
 
   // compute the grades here
   allDataMap.forEach((d, keys) => {
+    let overallPossibleScore = 0;
+    let overallScoreCount = 0;
     let metadataTotal = 0;
     d.scores = {};
     let metaDataAttributeResults = {};
     MetaDataVariables.forEach(v => {
-      if (d.metadata[v]) {
+      if (d.metadata[v] === true) {
         metadataTotal++;
       }
       metaDataAttributeResults[v] = d.metadata[v];
@@ -143,11 +143,16 @@ export default function () {
         }
         if(v=='completion') {
           if(d.sitemap[v] === 1) {
-          d.sitemap[v] = true;
-          sitemapTotal++;
+            d.sitemap[v] = true;
+            sitemapTotal++;
+          } else {
+            d.sitemap[v] = false;
+          }
         }
-        } else {
-          sitemapTotal++;
+        if(v=='xml') {
+          if(d.sitemap[v] === true) {
+            sitemapTotal++;
+          }
         }
       }
       sitemapAttributeResults[v] = d.sitemap[v];
@@ -160,7 +165,7 @@ export default function () {
     let securityTotal = 0;
     let securityAttributeResults = {};
     securityDataVariables.forEach(v => {
-      if (d.security[v]) {
+      if (d.security[v] === true) {
         securityTotal++;
       }
       securityAttributeResults[v] = d.security[v];
@@ -173,7 +178,7 @@ export default function () {
     let urlTotal = 0;
     let urlAttributeResults = {};
     urlDataVariables.forEach(v => {
-      if (d.url[v]) {
+      if (d.url[v] === true) {
         urlTotal++;
       }
       urlAttributeResults[v] = d.url[v];
@@ -186,6 +191,8 @@ export default function () {
 
     d.overallPossibleScore = overallPossibleScore;
     d.overallScoreCount = overallScoreCount;
+    d.overallScore = Math.round(overallScoreCount / overallPossibleScore * 100);
+
     allDataArray.push(d)
   })
 

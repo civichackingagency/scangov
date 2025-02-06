@@ -11,7 +11,8 @@ document.getElementById('return').href = '/profile?domain=' + domain;
 let done = 0;
 const finish = () => {
     done++;
-    if (done !== length)
+    console.log(`finishing, done: ${done} of ${length}`)
+    if (done !== 5)
         return;
 
     print();

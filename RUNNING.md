@@ -26,10 +26,11 @@ To use the tool for your own set of domains:
 - Run [with](#running-with-the-website) or [without](#running-without-the-website) the website
 
 ## Running with the website 
-- Install [Jekyll](https://jekyllrb.com/docs/)
-- Run `bundle exec jekyll serve` to start the website
+- Install dependencies: ```npm install```
+- Run `npm run start` to start the website
 - The URL of the local site will be printed
 - (Optional) [Publish to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
+- When running and being served locally the list of domains to build on every file change is truncated by a variable in `_data/domains.js`. This can be increased or removed if you want to run the whole dataset locally. Running the ```npm run build``` command will always complete a full dataset backed site build.
 
 ### Single-level government
 

@@ -3,110 +3,139 @@ layout: layouts/default
 profile: true
 
 pagination:
-  data: profiles
+  data: domains
   size: 1
   addAllPagesToCollections: true
   alias: domain
 
-permalink: "profile/{{ domain.urlkey | slugify }}/{{ domain.scorekey }}/"
+permalink: "profile/{{ domain.urlkey | slugify }}/details/"
 
 eleventyComputed:
-  title: site {{ domain.urlkey }} {{ domain.scoredisplayname }} results
-  description: Scangov's {{ domain.scoredisplayname }} audit details for the {{ domain.urlkey }} domain
-  agency: by {{ domain.details.name }}
+  title: site {{ domain.urlkey }} audit category results
+  description: audit details for the {{ domain.urlkey }} domain
+  agency: by {{ domain.name }}
 ---
 
 {% set domainSlug = domain.urlkey %}
-{% set domainLink = domain.details.metadata.redirect %}
+{% set domainLink = domain.metadata.redirect %}
 {% include "profilelinks.html" %}
 
-<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-  <h2 class="h2" id="page">{{ domain.scoredisplayname }}</h2>
-  <div id="specific">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
-        <div class="card mb-3 text-bg-{{ domain.details.scores[domain.scorekey].score | colorify }}" id="grade-card">
-          <div class="card-header">
-            Grade
-            <a href="https://docs.scangov.org/grades">
-              <i class="fa-solid fa-circle-question"></i>
-            </a>
+{% set cards = site.data %}
+{% for card in cards %}
+  {% set scorekey = card.toLowerCase() %}
+  <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 d-none" id="details-{{ scorekey }}">
+    <h2 class="h2" id="page-title-{{ scorekey }}">{{ card }}</h2>
+    <div id="specific-{{ scorekey }}">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
+          <div class="card mb-3 text-bg-{{ domain.scores[scorekey].score | colorify }}" id="grade-card-{{ scorekey }}">
+            <div class="card-header">
+              Grade
+              <a href="https://docs.scangov.org/grades">
+                <i class="fa-solid fa-circle-question"></i>
+              </a>
+            </div>
+            <div class="card-body text-center pt-5">
+              <p class="display-1" id="grade-{{ scorekey }}">{{ domain.scores[scorekey].score | gradify }}</p>
+            </div>
           </div>
-          <div class="card-body text-center pt-5">
-            <p class="display-1" id="grade">{{ domain.details.scores[domain.scorekey].score | gradify }}</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
+          <div class="card mb-3 text-bg-dark" id="score-{{ scorekey }}">
+            <div class="card-header">
+              Score
+              <a href="https://docs.scangov.org/scores">
+                <i class="fa-solid fa-circle-question"></i>
+              </a>
+            </div>
+            <div class="card-body text-center">
+              <p class="display-1">
+                <span id="percent-{{ scorekey }}">{{ domain.scores[scorekey].score }}</span>%
+              </p>
+            </div>
+            <div class="card-footer text-center" id="amount-{{ scorekey }}">{{ domain.scores[scorekey].correct }} of {{ domain.scores[scorekey].all }} elements</div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
-        <div class="card mb-3 text-bg-dark" id="score">
-          <div class="card-header">
-            Score
-            <a href="https://docs.scangov.org/scores">
-              <i class="fa-solid fa-circle-question"></i>
-            </a>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="mt-3">Status</h3>
+          <div class="table-responsive table-hover">
+            <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Tag</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="table-compliance-{{ scorekey }}">
+                {% set attributeCards = audits[scorekey].attributes %}
+                {% for attribute in attributeCards %}
+                <tr>
+                  <td>
+                    <pre><code>{{ attribute.tag }}</code></pre>
+                  </td> 
+                  <td>
+                    {{ attribute.description }}
+                  </td>
+                  <td>
+                    <i class="fa-solid {% if domain[scorekey][attribute.key] %}fa-circle-check text-success{% else %}fa-circle-xmark text-danger{% endif %}"></i>
+                    <span class="d-xl-inline">
+                      {% if domain[scorekey][attribute.key] %}Active{% else %}Missing{% endif %}
+                    </span>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
           </div>
-          <div class="card-body text-center">
-            <p class="display-1">
-              <span id="percent">{{ domain.details.scores[domain.scorekey].score }}</span>%
-            </p>
-          </div>
-          <div class="card-footer text-center" id="amount">{{ domain.details.scores[domain.scorekey].correct }} of {{ domain.details.scores[domain.scorekey].all }} elements</div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 class="mt-3">Status</h3>
-        <div class="table-responsive table-hover">
-          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Tag</th>
-                <th scope="col">Description</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody id="table">
-              {% set cards = audits[domain.scoredisplayname.toLowerCase()].attributes %}
-              {% for attribute in cards %}
-              <tr>
-                <td>
-                  <pre><code>{{ attribute.tag }}</code></pre>
-                </td> 
-                <td>
-                  {{ attribute.description }}
-                </td>
-                <td>
-                  <i class="fa-solid {% if domain.details[domain.scorekey][attribute.key] %}fa-circle-check text-success{% else %}fa-circle-xmark text-danger{% endif %}"></i>
-                  <span class="d-xl-inline">
-                    {% if domain.details[domain.scorekey][attribute.key] %}Active{% else %}Missing{% endif %}
-                  </span>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="row" id="changelog">
-      <div class="col-12">
-        <h2>Changelog</h2>
-        <section class="pt-2">
-          <ul class="timeline" id="timeline">
-              {% set history = domain.details[domain.scorekey].history | timeSort %}
-              {% for log in history %}
+      <div class="row" id="changelog-{{ scorekey }}">
+        <div class="col-12">
+          {% set history = domain[scorekey].history | timeSort %}
+          {% if history.length > 0 %}
+            <h2>Changelog</h2>
+            <section class="pt-2">
+              <ul class="timeline" id="timeline-{{ scorekey }}">
                 <li class="timeline-item">
-                    <h5 class="fw-bold">Status: {{log.status}} / {{ log | scanResultWriteUp(domain.scorekey) }}</h5>
-                    <p class="mb-1 text-muted">{{ log.time | standardFormatDate }}</p>
+                    <h5 class="fw-bold">Status: {{domain.status}} / {{ domain.scores[scorekey].attributes | scanResultWriteUp(scorekey) }}</h5>
+                    <p class="mb-1 text-muted">Current</p>
                     <p>
-                      {{ log | auditStatusIcons(domain.scorekey) | safe }}
+                      {{ domain.scores[scorekey].attributes | auditStatusIcons(scorekey) | safe }}
                     </p>
                 </li>
-              {% endfor %}
-          </ul>
-        </section>
+                {% for log in history %}
+                  <li class="timeline-item">
+                      <h5 class="fw-bold">Status: {{log.status}} / {{ log | scanResultWriteUp(scorekey) }}</h5>
+                      <p class="mb-1 text-muted">{{ log.time | standardFormatDate }}</p>
+                      <p>
+                        {{ log | auditStatusIcons(scorekey) | safe }}
+                      </p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endfor %}
+<script>
+// generating these all during build was ballooning the file count too much so doing minimal show/hide here
+(function () {
+  let params = new URLSearchParams(window.location.search);
+  let attrToShow = 'metadata';
+  if(params.get('attr')) {
+    attrToShow = params.get('attr');
+  }
+  let elToShow = document.getElementById(`details-${attrToShow}`);
+  if(elToShow) {
+    elToShow.classList.remove('d-none');
+  } else {
+    document.getElementById(`details-metadata`).classList.remove('d-none');
+  }
+})();
+</script>

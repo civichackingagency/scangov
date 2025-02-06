@@ -1,0 +1,116 @@
+---
+home: true
+layout: layouts/default
+title: Government digital experience monitor
+description: Monitoring government digital experience.
+keywords: government domains, government websites
+
+pagination:
+  data: security
+  size: 100
+  alias: member
+---
+
+<main id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2>Security Results</h2>
+        <ul class="small list-unstyled">
+          {% include "updated.html" %}
+          <li class="text-body-secondary">
+            <span id="filters">
+              Filters:
+              <span class="badge text-bg-primary">all domains</span> 
+              <span class="badge text-bg-primary">security</span>
+            </span>
+          </li>
+          <li class="text-body-secondary">
+            Showing: {{ pagination.pageNumber * pagination.size + 1 }} - {{ (pagination.pageNumber + 1) * pagination.size }}
+            <span id="showing-count"></span>
+            of {{ sorts.overall.length }}
+            <span id="showing-total"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="score-card">
+      <h3 class="h4">Grade/score</h3>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+        <div class="card mb-3 text-bg-{{ security | specificAverageScore("security") | colorify }}" id="grade-card">
+          <div class="card-header">
+            Average grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="grade">{{ security | specificAverageScore("security") | gradify }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="score">
+          <div class="card-header">
+            Average score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="percent">{{ security | specificAverageScore("security") }}</span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="amount">{{ security | specificAverageElements("security") }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class="h4" id="table-header">Domains</h3>
+        <div class="table-responsive">
+          <table class="table table-responsive table-bordered table-hover mt-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" style="width: 500px;">Domain</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-center">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="table">
+              {% for d in member %}
+                <tr>
+                  <td>
+                    <a href="/profile/{{d.urlkey | slugify }}/overview">{{ d.urlkey }}</a>
+                    <br>
+                    <a class="small text-muted" href="?search={{ d.name }}&amp;agency=1&amp;field=overview">{{ d.name }}</a>
+                  </td>
+                  <td>
+                    {{ d.security | auditStatusIcons("security") | safe }}
+                  </td>
+                  <td class="text-center grade-display-column">
+                    <span class="badge text-bg-{{ d.scores["security"].score | colorify }}" title="{{ d.scores["security"].score }}%">{{ d.scores["security"].score | gradify }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <nav>
+          <ul class="pagination flex-wrap" id="pagination">
+            <li class="page-item" id="previous">
+              <a class="page-link" href="#1" id="previous-link">Previous</a>
+            </li>
+            {%- for pageEntry in pagination.pages %}
+              <li class="page-item {% if page.url == pagination.hrefs[ loop.index0 ] %}active{% endif %}">
+                <a class="page-link" href="{{ pagination.hrefs[ loop.index0 ] }}">{{ loop.index }}</a>
+              </li>
+            {%- endfor %}
+            <li class="page-item" id="next">
+              <a class="page-link" href="#1" id="next-link">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</main>

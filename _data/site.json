@@ -19,5 +19,27 @@
     "Sitemap",
     "Robots",
     "Security"
+  ],
+  "nav": [
+    {
+      "url": "/rankings/cities/",
+      "title": "Rankings",
+      "icon": "filter"
+    },
+    {
+      "url": "https://docs.scangov.org/community",
+      "title": "Community",
+      "icon": "circle-nodes"
+    },
+    {
+      "url": "https://docs.scangov.org/",
+      "title": "Docs",
+      "icon": "file-lines"
+    },
+    {
+      "url": "https://docs.scangov.org/about",
+      "title": "About",
+      "icon": "circle-info"
+    }
   ]
 }

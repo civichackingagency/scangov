@@ -9,14 +9,16 @@
             {% endif %}
           </div>
         </div>
-        <form id="search-form" class="row">
+        <form id="search-form" action="/search/" class="row">
           <div class="col-sm-12 col-lg-6 mt-3">
             <label class="pb-2" for="search">
-                        Search:
-                    </label>
-            <input name="search" type="text" class="form-control mb-3" placeholder="enter domain" id="search">
+              Search:
+            </label>
+            <div>
+            <input name="search" type="text" class="form-control" placeholder="enter domain" id="search">
+            </div>
             <!-- single-level delete start -->
-            <label class="pb-2" for="filter">Filter:</label>
+            <label class="pb-2 mt-3" for="filter">Filter:</label>
             <select class="form-select form-control-lg" aria-label="Default select example" id="filter">
               <option value="1">all domains</option>
               <option value="2">federal domains</option>
@@ -26,10 +28,10 @@
           </div>
           <div class="col-sm-12 col-lg-6 mt-3">
             <label for="overview-radio" class="d-block">
-              <input type="radio" name="field" id="overview-radio"> Overview</label>
+              <input type="radio" name="field" id="overview-radio" value="overview"> Overview</label>
             <label for="url-radio" class="d-block">
               <label for="metadata-radio" class="d-block">
-                <input type="radio" name="field" id="metadata-radio"> Metadata</label>
+                <input type="radio" name="field" id="metadata-radio" value="metadata"> Metadata</label>
               <label for="url-radio" class="d-block">
                 <input type="radio" name="field" id="url-radio"> URL
                         </label>
@@ -45,6 +47,34 @@
               <input type="submit" value="Go" class="mt-2 btn btn-primary">
             </div>
           </form>
+          <script>
+            if(window.location.pathname == '/') {
+              document.getElementById('overview-radio').checked = true;
+            }
+            if(window.location.pathname.indexOf('/sorts/') == 0) {
+              let sort = window.location.pathname.split('/')[2];
+              if(document.getElementById(`${sort}-radio`)) {
+                document.getElementById(`${sort}-radio`).checked = true;
+              }
+            }
+            let pregenSearches = ['metadata','robots','url','sitemap','security'];
+            document.getElementById('search-form').addEventListener('submit',function(e) {
+              if(document.getElementById('search').value.trim() == '') {
+                let redirecting = false;
+                let destination = '';
+                pregenSearches.forEach(p => {                  
+                  if(document.getElementById(`${p}-radio`).checked) { 
+                    redirecting = true;
+                    destination = `/sorts/${p}/`
+                  }
+                })
+                if(redirecting) {
+                  e.preventDefault();
+                  window.location.href = destination;
+                }
+              }
+            })
+          </script>
           <div class="row d-none" id="share">
             {% include "share.html" %}
           </div>

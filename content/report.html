@@ -62,19 +62,12 @@ permalink: /report/
         <span id="parent"></span>
       </p>
     </div>
-    <div class="row" style="position: absolute; bottom: 0;">
-      {% for item in site.pages %}
-      {% if item.title == "About" %}
-      {{ item.content }}
-      {% endif %}
-      {% endfor %}
-    </div>
   </div>
   <div class="container-fluid">
-    {% for item in site.data.report.docs %}
-    <h2 {% if loop.index0 == 0 %} style="page-break-before: always; break-before: always;" {% endif %}>{{ item }}
+    {% for item in site.data %}
+    <h2 {% if loop.index0 != 0 %} style="page-break-before: always; break-before: always;" {% endif %}>{{ item }}
     </h2>
-    {% set id = item | downcase %}
+    {% set id = item | slugify %}
     <div class="row">
       <div class="col-6 align-items-stretch">
         <div class="card mb-3" id="{{ id }}-grade-card">
@@ -87,7 +80,7 @@ permalink: /report/
         </div>
       </div>
       <div class="col-6 align-items-stretch">
-        <div class="card mb-3 text-bg-dark" id="score">
+        <div class="card mb-3 text-bg-dark" id="{{ id }}-score">
           <div class="card-header">
             Score
           </div>
@@ -119,11 +112,6 @@ permalink: /report/
 
     <div class="row">
       <div class="col-12">
-        {% for doc in site.docs %}
-        {% if doc.title == item %}
-        {{ doc.content | markdownify }}
-        {% endif %}
-        {% endfor %}
       </div>
     </div>
     {% endfor %}

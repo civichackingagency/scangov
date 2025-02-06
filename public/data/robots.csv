@@ -1969,3 +1969,282 @@ az.gov,"State of Arizona",200,"https://az.gov/robots.txt",true,"null",true,robot
 alaska.gov,"State of Alaska",200,"https://alaska.gov/robots.txt",true,"null",true,robots.txt
 alabama.gov,"State of Alabama",200,"https://www.alabama.gov/robots.txt",true,"null",true,robots.txt
 ca.gov,"State of California",200,"https://www.ca.gov/robots.txt",true,"https://www.ca.gov/sitemaps/sitemapindex.xml",true,robots.txt
+chicago.gov,"City of Chicago, IL",404,"https://www.chicago.gov/robots.txt",false,"null",false,false
+cityofsouthfultonga.gov,"City of South Fulton, GA",200,"https://www.cityofsouthfultonga.gov/robots.txt",true,"https://cityofsouthfultonga.gov/sitemap.xml",true,robots.txt
+yumaaz.gov,"City of Yuma, AZ",200,"https://www.yumaaz.gov/robots.txt",true,"null",true,robots.txt
+eugene-or.gov,"City of Eugene, OR",200,"https://eugene-or.gov/robots.txt",true,"https://eugene-or.gov/sitemap.xml",true,robots.txt
+yonkersny.gov,"City of Yonkers, NY",200,"https://www.yonkersny.gov/robots.txt",true,"https://www.yonkersny.gov/sitemap.xml",true,robots.txt
+worcesterma.gov,"City of Worcester, MA",200,"https://www.worcesterma.gov/robots.txt",true,"null",true,robots.txt
+wilmingtonnc.gov,"City of Wilmington, NC",200,"https://www.wilmingtonnc.gov/robots.txt",true,"null",true,robots.txt
+wichitafallstx.gov,"City of Wichita Falls, TX",200,"https://wichitafallstx.gov/robots.txt",true,"https://wichitafallstx.gov/sitemap.xml",true,robots.txt
+wichita.gov,"City of Wichita, KS",200,"https://www.wichita.gov/robots.txt",true,"https://wichita.gov/sitemap.xml",true,robots.txt
+walkermi.gov,"City of Grand Rapids, MI",200,"https://walkermi.gov/robots.txt",true,"https://walkermi.gov/sitemap.xml",true,robots.txt
+waco-texas.com,"City of Waco, TX",200,"https://www.waco-texas.com/robots.txt",true,": https://www.waco-texas.com/sitemap.xml",true,robots.txt
+visalia.gov,"City of Visalia, CA",200,"https://www.visalia.city/robots.txt",true,"null",true,robots.txt
+victorvilleca.gov,"City of Victorville, CA",200,"https://www.victorvilleca.gov/robots.txt",true,"null",true,robots.txt
+warrenmi.gov,"City of Warren, MI",200,"https://www.warrenmi.gov/robots.txt",true,"https://www.cityofwarren.org/sitemap_index.xml",true,robots.txt
+cityofvancouver.us,"City of Vancouver, WA",200,"https://www.cityofvancouver.us/robots.txt",true,"https://www.cityofvancouver.us/sitemap_index.xml",true,robots.txt
+tylertexas.gov,"City of Tyler, TX",400,"http://www.tylertexas.gov/",false,"null",false,undefined
+tuscaloosa-al.gov,"City of Tuscaloosa, AL",200,"https://www.tuscaloosa-al.gov/robots.txt",true,"null",true,robots.txt
+vallejo.gov,"City of Vallejo, CA",200,"https://www.vallejo.gov/robots.txt/Default.aspx",true,"null",true,false
+tucsonaz.gov,"City of Tucson, AZ",200,"https://www.tucsonaz.gov/robots.txt",true,": https://www.tucsonaz.gov/sitemap.xml",true,robots.txt
+topeka.org,"City of Topeka, KS",200,"https://www.topeka.org/robots.txt",true,"null",true,robots.txt
+toaks.gov,"City of Thousand Oaks, CA",200,"https://toaks.gov/robots.txt",true,"null",true,robots.txt
+thorntonco.gov,"City of Thornton, CO",200,"https://www.thorntonco.gov/robots.txt",true,"null",true,robots.txt
+tempe.gov,"City of Tempe, AZ",200,"https://www.tempe.gov/robots.txt",true,"null",true,robots.txt
+toledo.oh.gov,"City of Toledo, OH",404,"https://toledo.oh.gov/robots.txt",true,"null",true,meta
+temeculaca.gov,"City of Temecula, CA",200,"https://temeculaca.gov/robots.txt",true,"https://temeculaca.gov/sitemap.xml",true,robots.txt
+tacoma.gov,"City of Tacoma, WA",404,"https://tacoma.gov/robots.txt",false,"null",false,false
+syr.gov,"City of Syracuse, NY",200,"https://www.syr.gov/robots.txt",true,": https://www.syr.gov/sitemap.xml",true,robots.txt
+tampa.gov,"City of Tampa, FL",200,"https://www.tampa.gov/robots.txt",true,"https://www.tampa.gov/sitemap.xml",true,robots.txt
+stpaul.gov,"City of Saint Paul, MN",200,"https://www.stpaul.gov/robots.txt",true,"null",true,robots.txt
+stocktonca.gov,"City of Stockton, CA",404,"https://cms3.revize.com/revize/stockton/robots.txt",true,"null",true,meta
+sugarlandtx.gov,"City of Sugar Land, TX",200,"https://sugarlandtx.gov/robots.txt",true,"https://sugarlandtx.gov/sitemap.xml",true,robots.txt
+stgeorgela.gov,"City of Baton Rouge, LA",404,"https://stgeorgela.gov/robots.txt",false,"null",false,false
+stlouis-mo.gov,"City of St. Louis, MO",200,"https://www.stlouis-mo.gov/robots.txt",true,"null",true,robots.txt
+virginiabeach.gov,"City of Virginia Beach, VA",200,"https://virginiabeach.gov/robots.txt",true,"null",true,robots.txt
+stamfordct.gov,"City of Stamford, CT",200,"https://www.stamfordct.gov/robots.txt",true,"null",true,robots.txt
+sterlingheights.gov,"City of Sterling Heights, MI",200,"https://sterlingheights.gov/robots.txt",true,"https://sterlingheights.gov/sitemap.xml",true,robots.txt
+springfield-ma.gov,"City of Springfield, MA",200,"https://www.springfield-ma.gov/robots.txt",true,"null",true,robots.txt
+spokane.gov,"City of Spokane, WA",404,"https://spokane.gov/robots.txt",false,"null",false,false
+sparksnv.gov,"City of Sparks, NV",200,"https://cms7files1.revize.com/sparksnv/robots.txt",true,"null",true,robots.txt
+spokanevalleywa.gov,"City of Spokane Valley, WA",200,"https://spokanevalleywa.gov/robots.txt",true,"https://spokanevalleywa.gov/sitemap.xml",true,robots.txt
+springfieldmo.gov,"City of Springfield, MO",200,"https://www.springfieldmo.gov/robots.txt",true,"https://springfieldmo.gov/sitemap.xml",true,robots.txt
+southsideplacetx.gov,"City of Houston, TX",200,"https://southsideplacetx.gov/robots.txt",true,"https://southsideplacetx.gov/sitemap.xml",true,robots.txt
+siouxfalls.gov,"City of Sioux Falls, SD",200,"https://www.siouxfalls.gov/robots.txt",true,": https://www.siouxfalls.gov/sitemap.xml",true,robots.txt
+simivalley.gov,"City of Simi Valley, CA",200,"https://www.simivalley.org/robots.txt",true,"null",true,robots.txt
+sgcityutah.gov,"City of St. George, UT",404,"https://cms3.revize.com/revize/stgeorge/robots.txt",true,"null",true,meta
+shreveportla.gov,"City of Shreveport, LA",200,"https://shreveportla.gov/robots.txt",true,"https://shreveportla.gov/sitemap.xml",true,robots.txt
+scottsdaleaz.gov,"City of Scottsdale, AZ",404,"https://www.scottsdaleaz.gov/robots.txt",false,"null",false,false
+srcity.org,"City of Santa Rosa, CA",200,"https://www.srcity.org/robots.txt",true,"https://srcity.org/sitemap.xml",true,robots.txt
+savannahga.gov,"City of Savannah, GA",200,"https://savannahga.gov/robots.txt",true,"https://savannahga.gov/sitemap.xml",true,robots.txt
+santafenm.gov,"City of Santa Fe, NM",200,"https://santafenm.gov/robots.txt",true,"https://santafenm.gov/site/sitemap/sitemap.xml",true,robots.txt
+southbendin.gov,"City of South Bend, IN",200,"https://southbendin.gov/robots.txt",true,"https://southbendin.gov/sitemap_index.xml",true,robots.txt
+santaclaraca.gov,"City of Santa Clara, CA",200,"https://www.santaclaraca.gov/robots.txt",true,"null",true,robots.txt
+sanjoseca.gov,"City of San Jose, CA",200,"https://www.sanjoseca.gov/robots.txt",true,"null",true,robots.txt
+sandyspringsga.gov,"City of Sandy Springs, GA",404,"https://www.sandyspringsga.gov/robots.txt",false,"null",false,false
+santaclarita.gov,"City of Santa Clarita, CA",200,"https://santaclarita.gov/robots.txt",true,"https://santaclarita.gov/sitemap_index.xml",true,robots.txt
+sanbernardino.gov,"City of San Bernardino, CA",200,"https://www.sanbernardino.gov/robots.txt",true,"https://sanbernardino.gov/sitemap.xml",true,robots.txt
+cityofsalinas.org,"City of Salinas, CA",200,"https://www.cityofsalinas.org/robots.txt",true,": https://www.cityofsalinas.org/sitemap.xml",true,robots.txt
+salemor.gov,"City of Salem, OR",200,"https://salemor.gov/robots.txt",true,"null",true,robots.txt
+sandiego.gov,"City of San Diego, CA",200,"https://www.sandiego.gov/robots.txt",true,"null",true,robots.txt
+sa.gov,"City of San Antonio, TX",200,"https://www.sa.gov/robots.txt",true,": https://www.sa.gov/sitemap.xml",true,robots.txt
+rva.gov,"City of Richmond, VA",200,"https://rva.gov/robots.txt",true,"null",true,robots.txt
+rrnm.gov,"City of Rio Rancho, NM",200,"https://rrnm.gov/robots.txt",true,"https://rrnm.gov/sitemap.xml",true,robots.txt
+rockfordil.gov,"City of Rockford, IL",200,"https://rockfordil.gov/robots.txt",true,"https://rockfordil.gov/sitemap.xml",true,robots.txt
+rochestermn.gov,"City of Rochester, MN",200,"https://www.rochestermn.gov/robots.txt",true,"null",true,robots.txt
+richmondca.gov,"City of Richmond, CA",200,"https://richmondca.gov/robots.txt",true,"https://richmondca.gov/sitemap.xml",true,robots.txt
+roundrocktexas.gov,"City of Round Rock, TX",200,"https://www.roundrocktexas.gov/robots.txt",true,"null",true,robots.txt
+rialtoca.gov,"City of Rialto, CA",200,"https://rialtoca.gov/robots.txt",true,"https://rialtoca.gov/sitemap.xml",true,robots.txt
+rentonwa.gov,"City of Renton, WA",200,"https://www.rentonwa.gov/robots.txt",true,": https://www.rentonwa.gov/sitemap.xml",true,robots.txt
+cityofrc.us,"City of Rancho Cucamonga, CA",200,"https://www.cityofrc.us/robots.txt",true,"null",true,robots.txt
+raleighnc.gov,"City of Raleigh, NC",200,"https://raleighnc.gov/robots.txt",true,"null",true,robots.txt
+quincyma.gov,"City of Quincy, MA",404,"https://cms7files1.revize.com/quincyma2024/robots.txt",true,"null",true,meta
+reno.gov,"City of Reno, NV",200,"https://www.reno.gov/robots.txt",true,"null",true,robots.txt
+portland.gov,"City of Portland, OR",200,"https://www.portland.gov/robots.txt",true,"null",true,robots.txt
+pompanobeachfl.gov,"City of Pompano Beach, FL",200,"https://www.pompanobeachfl.gov/robots.txt",true,"null",true,robots.txt
+pomonaca.gov,"City of Pomona, CA",200,"https://www.pomonaca.gov/robots.txt",true,"null",true,robots.txt
+plano.gov,"City of Plano, TX",200,"https://www.plano.gov/robots.txt",true,"null",true,robots.txt
+pittsburghpa.gov,"City of Pittsburgh, PA",200,"https://www.pittsburghpa.gov/robots.txt",true,": https://www.pittsburghpa.gov/sitemap.xml",true,robots.txt
+peoriagov.org,"City of Peoria, IL",200,"https://peoriagov.org/robots.txt",true,"https://peoriagov.org/sitemap.xml",true,robots.txt
+peoriaaz.gov,"City of Peoria, AZ",403,"https://www.peoriaaz.gov/",false,"null",false,undefined
+pearlandtx.gov,"City of Pearland, TX",200,"https://www.pearlandtx.gov/robots.txt",true,"null",true,robots.txt
+patersonnj.gov,"City of Paterson, NJ",200,"https://www.patersonnj.gov/robots.txt",true,"null",true,robots.txt
+pasadenatx.gov,"City of Pasadena, TX",200,"https://pasadenatx.gov/robots.txt",true,"https://pasadenatx.gov/sitemap.xml",true,robots.txt
+pasadena.gov,"City of Pasadena, CA",200,"https://www.cityofpasadena.net/",true,"null",true,meta
+palmbayflorida.org,"City of Palm Bay, FL",200,"https://www.palmbayflorida.org/robots.txt",true,"null",true,robots.txt
+opkansas.org,"City of Overland Park, KS",200,"https://www.opkansas.org/robots.txt",true,"https://www.opkansas.org/wp-sitemap.xml",true,robots.txt
+orlando.gov,"City of Orlando, FL",200,"https://www.orlando.gov/robots.txt",true,": https://www.orlando.gov/sitemap.xml",true,robots.txt
+providenceri.gov,"City of Providence, RI",200,"https://www.providenceri.gov/robots.txt",true,"null",true,robots.txt
+cityoforange.org,"City of Orange, CA",200,"https://www.cityoforange.org/robots.txt",true,"null",true,robots.txt
+olympiawa.gov,"City of Olympia, WA",200,"https://www.olympiawa.gov/robots.txt",true,"null",true,robots.txt
+olatheks.gov,"City of Olathe, KS",200,"https://www.olatheks.gov/robots.txt",true,"null",true,robots.txt
+odessa-tx.gov,"City of Odessa, TX",200,"https://odessa-tx.gov/robots.txt",true,"https://odessa-tx.gov/sitemap.xml",true,robots.txt
+santa-ana.org,"City of Santa Ana, CA",200,"https://www.santa-ana.org/robots.txt",true,"https://www.santa-ana.org/sitemap_index.xml",true,robots.txt
+ontarioca.gov,"City of Ontario, CA",200,"https://www.ontarioca.gov/robots.txt",true,"https://www.ontariothinksbusiness.com/sitemap.xml",true,robots.txt
+normanok.gov,"City of Norman, OK",200,"https://www.normanok.gov/robots.txt",true,"null",true,robots.txt
+northcharleston.org,"City of North Charleston, SC",404,"https://cms2.revize.com/revize/cityofnorthcharleston/robots.txt",true,"null",true,meta
+nola.gov,"City of New Orleans, LA",500,"https://nola.gov/",false,"null",false,undefined
+nnva.gov,"City of Newport News, VA",200,"https://www.nnva.gov/robots.txt",true,"https://nnva.gov/sitemap.xml",true,robots.txt
+norfolk.gov,"City of Norfolk, VA",200,"https://www.norfolk.gov/robots.txt",true,"https://norfolk.gov/sitemap.xml",true,robots.txt
+newhavenct.gov,"City of New Haven, CT",200,"https://www.newhavenct.gov/robots.txt",true,"null",true,robots.txt
+newbedford-ma.gov,"City of New Bedford, MA",403,"https://www.newbedford-ma.gov/",false,"null",false,undefined
+newbraunfels.gov,"City of New Braunfels, TX",200,"https://newbraunfels.gov/robots.txt",true,"https://newbraunfels.gov/sitemap.xml",true,robots.txt
+newarknj.gov,"City of newark, NJ",404,"https://www.newarknj.gov/robots.txt",false,"null",false,false
+cityofnampa.us,"City of Nampa, ID",200,"https://www.cityofnampa.us/robots.txt",true,"https://cityofnampa.us/sitemap.xml",true,robots.txt
+murrietaca.gov,"City of Murrieta, CA",200,"https://www.murrietaca.gov/robots.txt",true,"https://murrietaca.gov/sitemap.xml",true,robots.txt
+murfreesborotn.gov,"City of Murfreesboro, TN",200,"https://www.murfreesborotn.gov/robots.txt",true,"https://murfreesborotn.gov/sitemap.xml",true,robots.txt
+moval.gov,"City of Moreno Valley, CA",200,"https://moval.gov/robots.txt",true,"null",true,robots.txt
+montgomeryal.gov,"City of Montgomery, AL",200,"https://www.montgomeryal.gov/robots.txt",true,"null",true,robots.txt
+modestogov.com,"City of Modesto, CA",200,"https://modestogov.com/robots.txt",true,"https://modestogov.com/sitemap.xml",true,robots.txt
+miramarfl.gov,"City of Miramar, FL",200,"https://www.miramarfl.gov/robots.txt",true,": https://www.miramarfl.gov/sitemap.xml",true,robots.txt
+miramarfl.gov,"City of Miramar, FL",200,"https://www.miramarfl.gov/robots.txt",true,": https://www.miramarfl.gov/sitemap.xml",true,robots.txt
+milwaukee.gov,"City of Milwaukee, WI",403,"https://www.milwaukee.gov/",false,"null",false,undefined
+minneapolismn.gov,"City of Minneapolis, MN",404,"https://www.minneapolismn.gov/robots.txt",true,"null",true,meta
+midlandtexas.gov,"City of Midland, TX",200,"https://midlandtexas.gov/robots.txt",true,"https://midlandtexas.gov/sitemap.xml",true,robots.txt
+miamigardens-fl.gov,"City of Miami Gardens, FL",200,"https://miamigardens-fl.gov/robots.txt",true,"https://miamigardens-fl.gov/sitemap.xml",true,robots.txt
+miami.gov,"City of Miami, FL",200,"https://www.miami.gov/robots.txt",true,": https://www.miami.gov/sitemap.xml",true,robots.txt
+mesquitetx.gov,"City of Mesquite, TX",200,"https://www.cityofmesquite.com/",false,"null",false,false
+manchesternh.gov,"City of Manchester, NH",200,"https://www.manchesternh.gov/robots.txt",true,"null",true,robots.txt
+cityofmadison.com,"City of Madison, WI",200,"https://www.cityofmadison.com/robots.txt",true,"null",true,robots.txt
+lynnma.gov,"City of Lynn, MA",200,"https://www.lynnma.gov/robots.txt/Default.aspx",true,"null",true,false
+lowellma.gov,"City of Lowell, MA",200,"https://lowellma.gov/robots.txt",true,"https://lowellma.gov/sitemap.xml",true,robots.txt
+louisvilleky.gov,"City of Louisville, KY",403,"https://www.louisvilleky.gov/",false,"null",false,undefined
+longbeach.gov,"City of Long Beach, CA",200,"https://longbeach.gov/robots.txt",true,"null",true,robots.txt
+oaklandca.gov,"City of Oakland, CA",200,"https://www.oaklandca.gov/robots.txt",true,"null",true,robots.txt
+leaguecitytx.gov,"City of League City, TX",200,"https://leaguecitytx.gov/robots.txt",true,"https://leaguecitytx.gov/sitemap.xml",true,robots.txt
+lasvegasnevada.gov,"City of Las Vegas, NV",200,"https://www.lasvegasnevada.gov/robots.txt",true,"https://www.lasvegasnevada.gov/sitemap.aspx",true,robots.txt
+memphistn.gov,"City of Memphis, TN",200,"https://www.memphistn.gov/robots.txt",true,"https://www.memphistn.gov/sitemap_index.xml",true,robots.txt
+cityoflaredo.com,"City of Laredo, TX",200,"https://www.cityoflaredo.com/robots.txt",true,"null",true,robots.txt
+lansingmi.gov,"City of Lansing, MI",200,"https://www.lansingmi.gov/robots.txt",true,"null",true,robots.txt
+lascruces.gov,"City of Las Cruces, NM",404,"https://lascruces.gov/robots.txt",true,"null",true,meta
+lacity.gov,"City of Los Angeles, CA",200,"https://lacity.gov/robots.txt",true,"null",true,robots.txt
+lakewood.org,"City of Lakewood, CO",200,"https://www.lakewood.org/robots.txt",true,": https://www.lakewood.org/sitemap.xml",true,robots.txt
+killeentexas.gov,"City of Killeen, TX",200,"https://killeentexas.gov/robots.txt",true,"https://killeentexas.gov/sitemap.xml",true,robots.txt
+knoxvilletnpolice.gov,"City of Knoxville, TN",200,"https://knoxvilletnpolice.gov/robots.txt",true,"null",true,robots.txt
+kcmo.gov,"City of Kansas City, MO",200,"https://www.kcmo.gov/robots.txt",true,"null",true,robots.txt
+kannapolisnc.gov,"City of Concord, NC",200,"https://www.kannapolisnc.gov/robots.txt",true,"null",true,robots.txt
+joliet.gov,"City of Joliet, IL",200,"https://www.joliet.gov/robots.txt",true,"null",true,robots.txt
+kentwa.gov,"City of Kent, WA",200,"https://www.kentwa.gov/robots.txt",true,"null",true,robots.txt
+jeffersoncitymo.gov,"City of Jefferson City, MO",404,"https://jeffersoncitymo.gov/robots.txt",true,"null",true,meta
+knoxvilletn.gov,"City of Knoxville, TN",200,"https://www.knoxvilletn.gov/robots.txt/Default.aspx",true,"null",true,false
+jcmo.gov,"City of Jefferson City, MO",404,"https://jcmo.gov/robots.txt",true,"null",true,meta
+jacksonville.gov,"City of Jacksonville, FL",200,"https://www.jacksonville.gov/robots.txt",true,"https://www.jacksonville.gov/cmspages/jaxgov/sitemapxml.aspx",true,robots.txt
+jerseycitynj.gov,"City of Jersey City, NJ",200,"https://www.jerseycitynj.gov/robots.txt/Default.aspx",true,"null",true,false
+indy.gov,"City of Indianapolis, IN",403,"http://www.indy.gov/",false,"null",false,undefined
+irvingtx.gov,"City of Irving, TX",200,"https://irvingtx.gov/robots.txt",true,"https://irvingtx.gov/wp-sitemap.xml",true,robots.txt
+independencemo.gov,"City of Independence, MO",200,"https://www.independencemo.gov/robots.txt",true,"null",true,robots.txt
+jacksonms.gov,"City of Jackson, MS",200,"https://www.jacksonms.gov/robots.txt",true,"https://www.jacksonms.gov/sitemap_index.xml",true,robots.txt
+indianhill.gov,"City of Cincinnati, OH",200,"https://indianhill.gov/robots.txt",true,"https://indianhill.gov/wp-sitemap.xml",true,robots.txt
+houstontx.gov,"City of Houston, TX",200,"https://houstontx.gov/robots.txt",true,"null",true,robots.txt
+huntingtonbeachca.gov,"City of Huntington Beach, CA",404,"https://cms3.revize.com/revize/huntingtonbeachca/robots.txt",true,"null",true,meta
+hillsboro-oregon.gov,"City of Hillsboro, OR",200,"https://www.hillsboro-oregon.gov/robots.txt",true,"null",true,robots.txt
+hialeahfl.gov,"City of Hialeah, FL",200,"http://www.hialeahfl.gov/robots.txt",true,"http://hialeahfl.gov/sitemap.xml",true,robots.txt
+highpointnc.gov,"City of High Point, NC",200,"https://www.highpointnc.gov/robots.txt",true,"https://highpointnc.gov/sitemap.xml",true,robots.txt
+cityofhenderson.com,"City of Henderson, NV",200,"https://www.cityofhenderson.com/robots.txt",true,"null",true,robots.txt
+harrisburgpa.gov,"City of Harrisburg, PA",403,"https://www.harrisburgpa.gov/",false,"null",false,undefined
+helenamt.gov,"City of Helena, MT",200,"https://www.helenamt.gov/robots.txt",true,": https://www.helenamt.gov/sitemap.xml",true,robots.txt
+greshamoregon.gov,"City of Gresham, OR",200,"https://www.greshamoregon.gov/robots.txt",true,"null",true,robots.txt
+hampton.gov,"City of Hampton, VA",200,"https://www.hampton.gov/robots.txt",true,"https://hampton.gov/sitemap.xml",true,robots.txt
+greensboro-nc.gov,"City of Greensboro, NC",200,"https://www.greensboro-nc.gov/robots.txt",true,"null",true,robots.txt
+greeleygov.com,"City of Greeley, CO",200,"https://greeleygov.com/robots.txt",true,"http://greeleygov.com/sitemap.gz",true,robots.txt
+greenbaywi.gov,"City of Green Bay, WI",200,"https://www.greenbaywi.gov/robots.txt",true,"https://greenbaywi.gov/sitemap.xml",true,robots.txt
+huntsvilleal.gov,"City of Huntsville, AL",200,"http://www.huntsvilleal.gov/robots.txt",true,"null",true,robots.txt
+goodyearaz.gov,"City of Goodyear, AZ",200,"https://www.goodyearaz.gov/robots.txt",true,"null",true,robots.txt
+grandrapidsmi.gov,"City of Grand Rapids, MI",200,"https://www.grandrapidsmi.gov/robots.txt",true,": https://www.grandrapidsmi.gov/sitemap.xml",true,robots.txt
+glendaleaz.gov,"City of Glendale, AZ",404,"https://www.glendaleaz.gov/errors/FileNotFound.aspx",false,"null",false,undefined
+ggcity.org,"City of GARDEN GROVE, CA",200,"https://ggcity.org/robots.txt",true,"null",true,robots.txt
+gainesvillefl.gov,"City of Gainesville, FL",200,"https://www.gainesvillefl.gov/robots.txt",true,": https://www.gainesvillefl.gov/sitemap.xml",true,robots.txt
+garlandtx.gov,"City of Garland, TX",200,"https://garlandtx.gov/robots.txt",true,"https://garlandtx.gov/sitemap.xml",true,robots.txt
+glendaleca.gov,"City of Glendale, CA",200,"https://www.glendaleca.gov/robots.txt",true,"null",true,robots.txt
+fresno.gov,"City of Fresno, CA",200,"http://www.fresno.gov/robots.txt",true,"https://www.fresno.gov/wp-sitemap.xml",true,robots.txt
+friscotexas.gov,"City of Frisco, TX",200,"https://www.friscotexas.gov/robots.txt",true,"https://friscotexas.gov/sitemap.xml",true,robots.txt
+cityoffullerton.com,"City of Fullerton, CA",200,"https://www.cityoffullerton.com/robots.txt",true,"null",true,robots.txt
+fremontpolice.gov,"City of Fremont, CA",200,"https://www.fremontpolice.gov/robots.txt",true,"null",true,robots.txt
+fremont.gov,"City of Fremont, CA",200,"https://www.fremont.gov/robots.txt",true,"null",true,robots.txt
+fcgov.com,"City of Fort Collins, CO",200,"https://www.fcgov.com/robots.txt",true,"null",true,robots.txt
+fortworthtexas.gov,"City of Fort Worth, TX",200,"https://www.fortworthtexas.gov/robots.txt",true,": https://www.fortworthtexas.gov/sitemap.xml",true,robots.txt
+fontanaca.gov,"City of Fontana, CA",200,"https://fontanaca.gov/robots.txt",true,"https://fontanaca.gov/sitemap.xml",true,robots.txt
+surpriseaz.gov,"City of Surprise, AZ",200,"https://surpriseaz.gov/robots.txt",true,"null",true,robots.txt
+seattle.gov,"City of Seattle, WA",200,"https://seattle.gov/robots.txt",true,"null",true,robots.txt
+flpd.gov,"City of Fort Lauderdale, FL",200,"https://www.flpd.gov/robots.txt",true,"null",true,robots.txt
+fayettevillenc.gov,"City of Fayetteville, NC",200,"https://www.fayettevillenc.gov/robots.txt",true,"null",true,robots.txt
+fargond.gov,"City of Fargo, ND",404,"https://fargond.gov/robots.txt",false,"null",false,false
+fayetteville-ar.gov,"City of Fayetteville, AR",200,"https://www.fayetteville-ar.gov/robots.txt",true,"https://fayetteville-ar.gov/sitemap.xml",true,robots.txt
+everettwa.gov,"City of Everett, WA",200,"https://www.everettwa.gov/robots.txt",true,"https://everettwa.gov/sitemap.xml",true,robots.txt
+escondido.gov,"City of Escondido, CA",200,"https://escondido.gov/robots.txt",true,"https://escondido.gov/sitemap.xml",true,robots.txt
+elkgrovecity.org,"City of Elk Grove, CA",200,"https://www.elkgrovecity.org/robots.txt",true,"null",true,robots.txt
+elmonteca.gov,"City of El Monte, CA",200,"https://elmonteca.gov/robots.txt",true,"https://elmonteca.gov/sitemap.xml",true,robots.txt
+elginil.gov,"City of Elgin, IL",200,"https://elginil.gov/robots.txt",true,"https://elginil.gov/sitemap.xml",true,robots.txt
+elcajon.gov,"City of El Cajon, CA",200,"https://www.elcajon.gov/robots.txt",true,"null",true,robots.txt
+fishersin.gov,"City of Fishers, IN",200,"https://fishersin.gov/robots.txt",true,"null",true,robots.txt
+eastgrmi.gov,"City of Grand Rapids, MI",200,"https://eastgrmi.gov/robots.txt",true,"https://eastgrmi.gov/sitemap.xml",true,robots.txt
+durhamnc.gov,"City of Durham, NC",200,"https://www.durhamnc.gov/robots.txt",true,"https://durhamnc.gov/sitemap.xml",true,robots.txt
+detroitmi.gov,"City of Detroit, MI",200,"https://detroitmi.gov/robots.txt",true,"null",false,robots.txt
+detroitmi.gov,"City of Detroit, MI",200,"https://detroitmi.gov/robots.txt",true,"null",false,robots.txt
+dearborn.gov,"City of Dearborn, MI",200,"https://dearborn.gov/robots.txt",true,"null",true,robots.txt
+cityofdenton.com,"City of Denton, TX",200,"https://www.cityofdenton.com/robots.txt",true,"https://cityofdenton.com/sitemap.xml",true,robots.txt
+daytonohio.gov,"City of Dayton, OH",200,"https://daytonohio.gov/robots.txt",true,"https://daytonohio.gov/sitemap.xml",true,robots.txt
+dallas.gov,"City of Dallas, TX",200,"https://dallas.gov/robots.txt",true,"https://dallascityhall.com:443/sitemap.xml",true,robots.txt
+costamesaca.gov,"City of Costa Mesa, CA",200,"https://www.costamesaca.gov/robots.txt",true,"null",true,robots.txt
+corpuschristitx.gov,"City of Corpus Christi, TX",200,"https://www.corpuschristitx.gov/robots.txt",true,"https://www.corpuschristitx.gov/sitemap-xml/",true,robots.txt
+coronaca.gov,"City of Corona, CA",200,"https://www.coronaca.gov/robots.txt",true,"null",true,robots.txt
+coralsprings.gov,"City of CORAL SPRINGS, FL",200,"https://www.coralsprings.gov/robots.txt",true,": https://www.coralsprings.gov/sitemap.xml",true,robots.txt
+cor.net,"City of Richardson, TX",200,"https://www.cor.net/robots.txt",true,"null",true,robots.txt
+concordnh.gov,"City of Concord, NH",200,"https://concordnh.gov/robots.txt",true,"https://concordnh.gov/sitemap.xml",true,robots.txt
+como.gov,"City of Columbia, MO",403,"https://www.como.gov/",false,"null",false,undefined
+concordnc.gov,"City of Concord, NC",200,"https://concordnc.gov/robots.txt",true,"null",true,robots.txt
+columbus.gov,"City of Columbus, OH",200,"https://www.columbus.gov/robots.txt",true,": https://www.columbus.gov/sitemap.xml",true,robots.txt
+cstx.gov,"City of College Station, TX",200,"https://www.cstx.gov/robots.txt/Default.aspx",true,"null",true,false
+coloradosprings.gov,"City of Colorado Springs, CO",200,"https://coloradosprings.gov/robots.txt",true,"null",true,robots.txt
+clevelandohio.gov,"City of Cleveland, OH",200,"https://www.clevelandohio.gov/robots.txt",true,"null",true,robots.txt
+clarksvilletn.gov,"City of Clarksville, TN",200,"https://clarksvilletn.gov/robots.txt",true,"https://clarksvilletn.gov/sitemap.xml",true,robots.txt
+cityofvacaville.gov,"City of Vacaville, CA",200,"https://www.cityofvacaville.gov/robots.txt",true,"null",true,robots.txt
+columbiasc.gov,"City of Columbia, SC",200,"https://columbiasc.gov/robots.txt",true,"https://columbiasc.gov/sitemap_index.xml",true,robots.txt
+cityoftulsa.org,"City of Tulsa, OK",200,"https://cityoftulsa.org/robots.txt",true,"null",true,robots.txt
+cityofsanmateo.org,"City of San Mateo, CA",200,"https://cityofsanmateo.org/robots.txt",true,"https://cityofsanmateo.org/sitemap.xml",true,robots.txt
+cityofsacramento.gov,"City of Sacramento, CA",404,"https://www.cityofsacramento.gov/robots.txt",false,"null",false,false
+phoenix.gov,"City of Phoenix, AZ",200,"https://www.phoenix.gov/robots.txt",true,"null",true,robots.txt
+cityofpalmdaleca.gov,"City of Palmdale, CA",200,"https://cityofpalmdaleca.gov/robots.txt",true,"https://cityofpalmdaleca.gov/sitemap.xml",true,robots.txt
+cityofmobile.gov,"City of Mobile, AL",403,"https://www.cityofmobile.gov/",false,"null",false,undefined
+cityofclovis.com,"City of Clovis, CA",200,"https://cityofclovis.com/robots.txt",true,"null",true,robots.txt
+cityofnormandy.gov,"City of St. Louis, MO",200,"https://www.cityofnormandy.gov/robots.txt",true,"null",true,robots.txt
+cityofirvine.org,"City of Irvine, CA",200,"https://www.cityofirvine.org/robots.txt",true,"null",true,robots.txt
+cityoflancasterca.org,"City of Lancaster, CA",200,"https://www.cityoflancasterca.org/robots.txt",true,"null",true,robots.txt
+ci.lubbock.tx.us,"City of Lubbock, TX",200,"https://ci.lubbock.tx.us/robots.txt",true,"null",true,robots.txt
+cityofconroe.org,"City of Conroe, TX",404,"https://cms3.revize.com/revize/conroetx/robots.txt",true,"null",true,meta
+hayward-ca.gov,"City of Hayward, CA",200,"https://hayward-ca.gov/robots.txt",true,"null",true,robots.txt
+chicoca.gov,"City of Chico, CA",200,"https://chico.ca.us/Site-Search/?404;https://chico.ca.us:443/robots.txt",true,"null",true,robots.txt
+cityofchesapeake.net,"City of Chesapeake, VA",200,"https://www.cityofchesapeake.net/robots.txt",true,"https://cityofchesapeake.net/sitemap.xml",true,robots.txt
+cincinnati-oh.gov,"City of Cincinnati, OH",200,"https://www.cincinnati-oh.gov/robots.txt",true,"null",true,robots.txt
+chattanooga.gov,"City of Chattanooga, TN",200,"https://chattanooga.gov/robots.txt",true,"null",true,robots.txt
+chulavistaca.gov,"City of Chula Vista, CA",200,"https://www.chulavistaca.gov/robots.txt",true,"null",true,robots.txt
+charlestonwv.gov,"City of Charleston, WV",200,"https://charlestonwv.gov/robots.txt",true,"null",true,robots.txt
+charlottenc.gov,"City of Charlotte, NC",200,"https://www.charlottenc.gov/robots.txt",true,": https://www.charlottenc.gov/cmpd/sitemap.xml",true,robots.txt
+chandleraz.gov,"City of Chandler, AZ",200,"https://www.chandleraz.gov/robots.txt",true,"https://www.chandleraz.gov/sitemap.xml",true,robots.txt
+charleston-sc.gov,"City of Charleston, SC",200,"https://charleston-sc.gov/robots.txt",true,"https://charleston-sc.gov/sitemap.xml",true,robots.txt
+carmelindiana.gov,"City of Carmel, IN",400,"http://www.carmelindiana.gov/",false,"null",false,undefined
+cityofcarrollton.com,"City of Carrollton, TX",200,"https://www.cityofcarrollton.com/robots.txt",true,"null",true,robots.txt
+chandlerazpd.gov,"City of Chandler, AZ",200,"https://chandlerazpd.gov/robots.txt",true,"https://chandlerazpd.gov/wp-sitemap.xml",true,robots.txt
+capecoral.gov,"City of Cape Coral, FL",404,"https://cms4files.revize.com/capecoralfl/robots.txt",true,"null",true,meta
+capecoral.gov,"City of Cape Coral, FL",404,"https://cms4files.revize.com/capecoralfl/robots.txt",true,"null",true,meta
+burbankca.gov,"City of Burbank, CA",403,"https://www.burbankca.gov/",false,"null",false,undefined
+cambridgema.gov,"City of Cambridge, MA",200,"https://www.cambridgema.gov/robots.txt",true,"null",true,robots.txt
+carlsbadca.gov,"City of Carlsbad, CA",200,"https://www.carlsbadca.gov/robots.txt",true,"null",true,robots.txt
+buffalony.gov,"City of Buffalo, NY",200,"http://www.buffalony.gov/robots.txt",true,"http://buffalony.gov/sitemap.xml",true,robots.txt
+buckeyeaz.gov,"City of Buckeye, AZ",200,"https://www.buckeyeaz.gov/robots.txt",true,"null",true,robots.txt
+brokenarrowok.gov,"City of Broken Arrow, OK",200,"https://www.brokenarrowok.gov/robots.txt",true,"null",true,robots.txt
+brownsvilletx.gov,"City of Brownsville, TX",200,"https://www.brownsvilletx.gov/robots.txt",true,"https://brownsvilletx.gov/sitemap.xml",true,robots.txt
+brockton.ma.us,"City of Brockton, MA",200,"https://brockton.ma.us/robots.txt",true,"https://brockton.ma.us/sitemap.xml",true,robots.txt
+bridgeportct.gov,"City of Bridgeport, CT",200,"https://www.bridgeportct.gov/robots.txt",true,"https://www.bridgeportct.gov/sitemap.xml",true,robots.txt
+bouldercolorado.gov,"City of Boulder, CO",200,"https://bouldercolorado.gov/robots.txt",true,"null",true,robots.txt
+brla.gov,"City of Baton Rouge, LA",200,"https://www.brla.gov/robots.txt",true,"https://brla.gov/sitemap.xml",true,robots.txt
+cityofboise.org,"City of Boise, ID",500,"https://www.cityofboise.org/",false,"null",false,undefined
+boston.gov,"City of Boston, MA",200,"https://www.boston.gov/robots.txt",true,"null",true,robots.txt
+bunkerhilltx.gov,"City of Houston, TX",200,"https://bunkerhilltx.gov/robots.txt",true,"https://bunkerhilltx.gov/xml-sitemap?format=xml",true,robots.txt
+bismarcknd.gov,"City of Bismarck, ND",200,"https://bismarcknd.gov/robots.txt",true,"https://bismarcknd.gov/sitemap.xml",true,robots.txt
+billingsmtpublicworks.gov,"City of Billings, MT",200,"https://billingsmtpublicworks.gov/robots.txt",true,"https://billingsmtpublicworks.gov/sitemap.xml",true,robots.txt
+berkeleyca.gov,"City of Berkeley, CA",200,"https://berkeleyca.gov/robots.txt",true,"null",true,robots.txt
+billingsmt.gov,"City of Billings, MT",200,"https://billingsmt.gov/robots.txt",true,"https://billingsmt.gov/sitemap.xml",true,robots.txt
+bellevuewa.gov,"City of Bellevue, WA",200,"https://bellevuewa.gov/robots.txt",true,"null",true,robots.txt
+birminghamal.gov,"City of Birmingham, AL",200,"https://www.birminghamal.gov/robots.txt",true,"https://www.birminghamal.gov.ifsight.net/sitemap.xml",true,robots.txt
+bendoregon.gov,"City of Bend, OR",200,"https://www.bendoregon.gov/robots.txt",true,"null",true,robots.txt
+beaumonttexas.gov,"City of Beaumont, TX",200,"https://www.beaumonttexas.gov/robots.txt",true,"https://beaumonttexas.gov/sitemap.xml",true,robots.txt
+bakersfieldcity.us,"City of Bakersfield, CA",200,"https://www.bakersfieldcity.us/robots.txt",true,"null",true,robots.txt
+austintexas.gov,"City of Austin, TX",200,"https://www.austintexas.gov/robots.txt",true,"null",true,robots.txt
+atlantaga.gov,"City of Atlanta, GA",200,"https://www.atlantaga.gov/robots.txt",true,"null",true,robots.txt
+arvadaco.gov,"City of Arvada, CO",200,"https://www.arvadaco.gov/robots.txt",true,"https://arvadaco.gov/sitemap.xml",true,robots.txt
+augustamaine.gov,"City of Augusta, ME",200,"https://www.augustamaine.gov/robots.txt",true,"null",true,robots.txt
+augustaga.gov,"City of Augusta, GA",200,"https://www.augustaga.gov/robots.txt",true,"https://augustaga.gov/sitemap.xml",true,robots.txt
+annapolis.gov,"City of Annapolis, MD",200,"https://annapolis.gov/robots.txt",true,"https://annapolis.gov/sitemap.xml",true,robots.txt
+anaheim.net,"City of Anaheim, CA",200,"https://anaheim.net/robots.txt",true,"https://anaheim.net/sitemap.xml",true,robots.txt
+antiochca.gov,"City of Antioch, CA",200,"https://www.antiochca.gov/robots.txt",true,"null",true,robots.txt
+allentx.gov,"City of Allen, TX",404,"https://allentx.gov/robots.txt",false,"null",false,false
+amarillo.gov,"City of Amarillo, TX",404,"https://www.amarillo.gov/robots.txt",true,"null",true,meta
+alexandriava.gov,"City of Alexandria, VA",200,"https://alexandriava.gov/robots.txt",true,"null",true,robots.txt
+arlingtontx.gov,"City of Arlington, TX",200,"https://www.arlingtontx.gov/robots.txt/Default.aspx",true,"null",true,false
+allentownpa.gov,"City of Allentown, PA",200,"https://www.allentownpa.gov/robots.txt",true,"null",true,robots.txt
+cabq.gov,"City of Albuquerque, NM",200,"https://www.cabq.gov/robots.txt",true,"null",true,robots.txt
+akronohio.gov,"City of Akron, OH",404,"https://cms2.revize.com/revize/akronoh/robots.txt",true,"null",true,meta
+albanyny.gov,"City of Albany, NY",200,"https://albanyny.gov/robots.txt",true,"https://albanyny.gov/sitemap.xml",true,robots.txt
+abilenetx.gov,"City of Abilene, TX",200,"https://abilenetx.gov/robots.txt",true,"https://abilenetx.gov/sitemap.xml",true,robots.txt

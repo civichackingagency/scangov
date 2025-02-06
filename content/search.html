@@ -1,0 +1,91 @@
+---
+home: true
+layout: layouts/default
+title: ScanGov search results
+description: Monitoring government digital experience.
+keywords: government domains, government websites
+---
+
+<main id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2>Results</h2>
+        <ul class="small list-unstyled">
+          {% include "updated.html" %}
+          <li class="text-body-secondary">
+            <span id="filters">
+              Filters:
+            </span>
+          </li>
+          <li class="text-body-secondary">
+            Showing:
+            <span id="showing-count"></span>
+            of
+            <span id="showing-total"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" id="score-card">
+      <h3 class="h4">Grade/score</h3>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+        <div class="card mb-3" id="grade-card">
+          <div class="card-header">
+            Average grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="score">
+          <div class="card-header">
+            Average score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class="h4" id="table-header">Domains</h3>
+        <div class="table-responsive">
+          <table class="table table-responsive table-bordered table-hover mt-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" style="width: 500px;">Domain</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-center">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <nav>
+          <ul class="pagination flex-wrap" id="pagination">
+            <li class="page-item" id="previous">
+              <a class="page-link" href="#1" id="previous-link">Previous</a>
+            </li>
+            <li class="page-item" id="next">
+              <a class="page-link" href="#1" id="next-link">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="/scripts/variables.js"></script>
+<script src="/scripts/util.js"></script>
+<script src="/scripts/home.js"></script>

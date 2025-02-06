@@ -58,18 +58,20 @@ if (MULTI_LEVEL) {
 const radios = document.querySelectorAll('input[type="radio"][name="field"]');
 form.onsubmit = (e) => {
     e.preventDefault();
-    let field;
-    for (const radio of radios)
-        if (radio.checked) {
-            field = radio.id.substring(0, radio.id.length - 6);
-            break;
-        }
-    let href = '?field=' + field + (MULTI_LEVEL ? '&level=' + levelInput.value : '');
-    if (searchInput.value.length > 0)
-        href += '&search=' + searchInput.value;
-    if (agencyPage && searchInput.value === search)
-        href += '&agency=1';
-    location.href = href;
+    if(searchInput.value.trim() !== '') {
+        let field;
+        for (const radio of radios)
+            if (radio.checked) {
+                field = radio.id.substring(0, radio.id.length - 6);
+                break;
+            }
+        let href = '?field=' + field + (MULTI_LEVEL ? '&level=' + levelInput.value : '');
+        if (searchInput.value.length > 0)
+            href += '&search=' + searchInput.value;
+        if (agencyPage && searchInput.value === search)
+            href += '&agency=1';
+        location.href = href;
+}
 }
 
 let done = 0;
