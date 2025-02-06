@@ -101,10 +101,16 @@ export default async function (eleventyConfig) {
     }
     for(var attr in log) {
       if(attributesToCheck.indexOf(attr) > -1) {
+        let attrDisplayName = attr;
+        audits[scorekey].attributes.forEach(attrEl => {
+          if(attrEl.key === attr) {
+            attrDisplayName = attrEl.displayName;
+          }
+        })
         if(log[attr]) {
-          output +=` <span title="${attr} (${scorekey})"><i class="fa-solid fa-circle-check text-success" >check</i></span>`;
+          output +=` <span title="${attrDisplayName} (${scorekey})"><i class="fa-solid fa-circle-check text-success" >check</i></span>`;
         } else {
-          output += ` <span title="${attr} (${scorekey})"><i class="fa-solid fa-circle-xmark text-danger">x</i></span>`
+          output += ` <span title="${attrDisplayName} (${scorekey})"><i class="fa-solid fa-circle-xmark text-danger">x</i></span>`
         }
       }
     }
@@ -118,7 +124,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('allAuditStatusIcons', (domainData) => {
     let output = '';
     if(domainData.status !== 200) {
-      // output = '<span title="Inaccessible (status 500)"><i class="svg-inline--fa fa-circle-exclamation"></i></span>';
       output = `<span title="Inaccessible (status 500)"><svg class="svg-inline--fa fa-circle-exclamation" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-exclamation" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></span>`
     } else {
       for(var a in audits) {

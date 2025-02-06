@@ -1,4 +1,5 @@
 domain,agency,status,redirect,https,dot_gov,www
+slc.gov,"Salt Lake City, UT",200,"https://www.slc.gov/",true,true,true
 apps.nationalmap.gov,"United States Geological Survey",200,"https://apps.nationalmap.gov/",true,true,false
 ipdaac.usgs.gov,"United States Geological Survey",500,"http://www.ipdaac.usgs.gov/",false,true,false
 water.usgs.gov,"United States Geological Survey",200,"https://www.usgs.gov/mission-areas/water-resources",true,true,false

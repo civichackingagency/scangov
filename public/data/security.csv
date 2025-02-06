@@ -1,4 +1,5 @@
 domain,agency,status,hsts,max_age,expire_time,csp,x_content_type_options,security_txt
+slc.gov,"Salt Lake City, UT",302,false,-1,-1,false,false,false
 apps.nationalmap.gov,"United States Geological Survey",200,true,31536000,1737459014767,false,true,false
 ipdaac.usgs.gov,"United States Geological Survey",500,false,-1,-1,false,false,false
 water.usgs.gov,"United States Geological Survey",302,true,31536000,1737459014767,false,false,false

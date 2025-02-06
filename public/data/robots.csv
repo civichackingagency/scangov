@@ -1,4 +1,5 @@
 domain,agency,status,redirect,valid,sitemap,allowed,source
+slc.gov,"Salt Lake City, UT",200,"https://www.slc.gov/robots.txt",true,"https://www.slc.gov/wp-sitemap.xml",true,robots.txt
 apps.nationalmap.gov,"United States Geological Survey",200,"https://apps.nationalmap.gov/robots.txt",true,"null",true,robots.txt
 ipdaac.usgs.gov,"United States Geological Survey",500,"http://www.ipdaac.usgs.gov/",false,"null",false,undefined
 water.usgs.gov,"United States Geological Survey",200,"https://water.usgs.gov/robots.txt",true,"null",true,robots.txt

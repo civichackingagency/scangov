@@ -1,4 +1,5 @@
 domain,redirect,agency,status,title,description,keywords,robots,content_security_policy,viewport,canonical,og_locale,og_site_name,og_type,og_title,og_description,og_url,og_image,og_image_width,og_image_height,og_image_alt,twitter_site,twitter_card,twitter_title,twitter_description,twitter_image
+slc.gov,"https://www.slc.gov/","Salt Lake City, UT",200,true,true,false,true,false,true,true,false,true,true,false,true,false,true,false,false,false,false,false,false,false,false
 apps.nationalmap.gov,"https://apps.nationalmap.gov/","United States Geological Survey",200,true,true,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 ipdaac.usgs.gov,"undefined","United States Geological Survey",500,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
 water.usgs.gov,"https://www.usgs.gov/mission-areas/water-resources","United States Geological Survey",200,true,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false

@@ -1,4 +1,5 @@
 @import url('code.css');
+@import url('colors.css');
 
 @font-face {
   font-family: 'Public Sans Bold';
@@ -21,66 +22,6 @@
     format('truetype');
 }
 
-/* color overrides */
-[data-bs-theme=dark] {
-  color-scheme: dark;
-  --bs-body-color: #fff;
-  --bs-body-color-rgb: 255, 255, 255;
-  --bs-body-bg: #13171f;
-  --bs-body-bg-rgb: 0, 0, 0;
-  --bs-link-color: #70e17b;
-  --bs-link-color-rgb: 112, 225, 123;
-  --bs-link-hover-color: #70e17b;
-  --bs-link-hover-color-rgb: 112, 225, 123;
-  --bs-highlight-bg: #70e17b;
-  --bs-highlight-color: #13171f;
-  --bs-btn-bg: #70e17b !important;
-  --bs-btn-border-color: #70e17b;
-  --bs-btn-color: #13171f;
-  --bs-btn-hover-bg: #70e17b;
-  --bs-btn-hover-border-color: #70e17b;
-  --bs-btn-hover-color: #000;
-  --bs-btn-primary-bg: #70e17b !important;
-  --bs-nav-link-color: #fff !important;
-  --bs-border-color: #252f3e;
-  --bs-link-hover-decoration: none;
-  --bs-body-font-size: 1.1rem;
-  --bs-shadow: 0 0.25rem 0.5rem #0f1218;
-  --bs-card-shadow: 0 0.25rem .5rem #0f1218;
-  --bs-font-sans-serif: "Public Sans Regular", sans-serif;
-  --bs-font-monospace: "JetBrains Mono Medium", monospace;
-  --bs-font-light: "Public Sans Light", sans-serif;
-  --bs-font-bold: "Public Sans Bold", sans-serif;
-  --bs-font-regular: "Public Sans Regular", sans-serif;
-  --bs-font-serif: "Merriweather Light", sans-serif;
-  --bs-secondary: #afaea2;
-  --bs-nav-link-color: rgba(255, 255, 255, 1) !important;
-  --bs-navbar-color: rgba(255, 255, 255, 1) !important;
-
-  --bs- .btn {
-      color: #000;
-      background-color: #70e17b;
-      border-color: #70e17b;
-  }
-
-  .btn-primary {
-    --bs-btn-bg: #70e17b !important;
-    --bs-btn-border-color: #70e17b;
-    --bs-btn-color: #13171f;
-    --bs-btn-hover-bg: #70e17b;
-    --bs-btn-hover-border-color: #70e17b;
-    --bs-btn-hover-color: #000;
-    --bs-btn-primary-bg: #70e17b !important;
-  }
-  .btn-primary:hover {
-    background-color: var(--bs-body-bg);
-    box-shadow: var(--bs-card-shadow);
-    border: 1px solid var(--bs-border-color);
-    color: var(--bs-body-color);
-    box-shadow: 0 0.25rem 0.5rem #252f3e;
-    transition: all 0.5s ease;
-  }
-}
 input[type="submit"] {
   min-width: 80px;
 }

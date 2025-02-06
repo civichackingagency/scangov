@@ -22,9 +22,14 @@
   ],
   "nav": [
     {
+      "url": "/",
+      "title": "Filter",
+      "icon": "filter"
+    },
+    {
       "url": "/rankings/cities/",
       "title": "Rankings",
-      "icon": "filter"
+      "icon": "medal"
     },
     {
       "url": "https://docs.scangov.org/community",

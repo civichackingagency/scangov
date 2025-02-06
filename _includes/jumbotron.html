@@ -86,16 +86,11 @@
           <div class="row">
             <div class="col-12">
               <h1 class="display-6" id="jumbotron-title">
-                <span id="site">{{ title.replace('site','').toLowerCase() }}</span>
+                <span id="site">{{ title }}</span>
               </h1>
               {% if description %}
                 <p class="lead">{{ description }}</p>
               {% endif %}
-              <ul class="list-unstyled small">
-                <li>Managed by: <a id="parent" href="/search?q={{ agency.replace('by','') }}">{{ agency.replace('by','') }}</a>
-                </li>
-                {% include "updated.html" %}
-              </ul>
               {% include "share.html" %}
             </div>
           </div>
