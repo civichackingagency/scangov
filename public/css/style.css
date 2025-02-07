@@ -105,27 +105,6 @@ main#home img {
   margin-bottom: 0.5rem;
 }
 
-svg {
-  color: var(--bs-body-color) !important;
-  fill: var(--bs-body-color);
-}
-
-svg.fa-circle-check {
-  fill: var(--bs-success);
-}
-
-svg.fa-circle-xmark {
-  fill: var(--bs-danger);
-}
-
-svg.fa-circle-exclamation {
-  fill: var(--bs-warning);
-}
-
-svg.fa-circle-right {
-  fill: var(--bs-info);
-}
-
 .dropdown-toggle::after {
   display: none;
 }
@@ -184,6 +163,7 @@ h3:hover a#heading-hashtag {
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0);
 }
 
+/* autocomplete search menu */
 .awesomplete [hidden] {
   display: none;
 }
