@@ -266,13 +266,13 @@ const fetch = (url, httpAgent, httpsAgent, visited, followRedirects=true, method
 
 
 const urlResults = [], metadataResults = [], robotsResults = [], sitemapResults = [], securityResults = [];
-const urlHistory = existsSync('data/url.json') ? JSON.parse(readFileSync('data/url.json')) : [],
-sitemapHistory = existsSync('data/sitemap.json') ? JSON.parse(readFileSync('data/sitemap.json')) : [],
-robotsHistory = existsSync('data/robots.json') ? JSON.parse(readFileSync('data/robots.json')) : [],
-metadataHistory = existsSync('data/metadata.json') ? JSON.parse(readFileSync('data/metadata.json')) : [],
-securityHistory = existsSync('data/security.json') ? JSON.parse(readFileSync('data/security.json')) : [];
+const urlHistory = existsSync('public/data/url.json') ? JSON.parse(readFileSync('public/data/url.json')) : [],
+sitemapHistory = existsSync('public/data/sitemap.json') ? JSON.parse(readFileSync('public/data/sitemap.json')) : [],
+robotsHistory = existsSync('public/data/robots.json') ? JSON.parse(readFileSync('public/data/robots.json')) : [],
+metadataHistory = existsSync('public/data/metadata.json') ? JSON.parse(readFileSync('public/data/metadata.json')) : [],
+securityHistory = existsSync('public/data/security.json') ? JSON.parse(readFileSync('public/data/security.json')) : [];
 
-const domainsCsv = readFileSync('data/domains.csv', 'utf8');
+const domainsCsv = readFileSync('public/data/domains.csv', 'utf8');
 let domains = domainsCsv.split('\n').slice(1).filter(d => d.includes(','));
 // domains = domains.slice(0, 50);
 domains = domains.reverse();
@@ -300,7 +300,7 @@ if (process.argv[2]) {
             org = '"' + org + '"';
         const domain = process.argv[2] + ',' + org;
         domains = [ domain ];
-        writeFileSync('data/domains.csv', domainsCsv + '\n' + domain);
+        writeFileSync('public/data/domains.csv', domainsCsv + '\n' + domain);
     }
 }
 
@@ -717,7 +717,7 @@ for (let j = 0; j < urlResults.length; j++) {
     if (!found)
         result.history = [];
 }
-writeFileSync('data/url.csv', csv);
+writeFileSync('public/data/url.csv', csv);
 console.log('Done with URL history');
 
 // Metadata history
@@ -754,7 +754,7 @@ for (let j = 0; j < metadataResults.length; j++) {
     if (!found)
         metadataResults[j].history = [];
 }
-writeFileSync('data/metadata.csv', csv);
+writeFileSync('public/data/metadata.csv', csv);
 console.log('Done with metadata history');
 
 // Robots history
@@ -788,7 +788,7 @@ for (let j = 0; j < robotsResults.length; j++) {
     if (!found)
         result.history = [];
 }
-writeFileSync('data/robots.csv', csv);
+writeFileSync('public/data/robots.csv', csv);
 console.log('Done with robots history');
 
 // Sitemap history
@@ -822,7 +822,7 @@ for (let j = 0; j < sitemapResults.length; j++) {
     if (!found)
         result.history = [];
 }
-writeFileSync('data/sitemap.csv', csv);
+writeFileSync('public/data/sitemap.csv', csv);
 console.log('Done with sitemap history');
 
 // Security history
@@ -855,15 +855,15 @@ for (let i = 0; i < securityResults.length; i++) {
     if (!found)
         result.history = [];
 }
-writeFileSync('data/security.csv', csv);
+writeFileSync('public/data/security.csv', csv);
 console.log('Done with security history');
 
-writeFileSync('data/url.json', JSON.stringify(urlResults));
-writeFileSync('data/metadata.json', JSON.stringify(metadataResults));
-writeFileSync('data/robots.json', JSON.stringify(robotsResults));
-writeFileSync('data/sitemap.json', JSON.stringify(sitemapResults));
-writeFileSync('data/security.json', JSON.stringify(securityResults));
-writeFileSync('data/updated_time', Date.now().toString());
+writeFileSync('public/data/url.json', JSON.stringify(urlResults));
+writeFileSync('public/data/metadata.json', JSON.stringify(metadataResults));
+writeFileSync('public/data/robots.json', JSON.stringify(robotsResults));
+writeFileSync('public/data/sitemap.json', JSON.stringify(sitemapResults));
+writeFileSync('public/data/security.json', JSON.stringify(securityResults));
+writeFileSync('public/data/updated_time', Date.now().toString());
 
 const endTime = Math.round((Date.now() - startTime) / 1000);
 console.log('Done in ' + Math.round(endTime / 60).toString().padStart(2, '0') + ':' + (endTime % 60).toString().padStart(2, '0'))
