@@ -1,0 +1,193 @@
+.highlight pre,
+pre.highlight {
+    background-color: #272822
+}
+
+.highlight .hll {
+    background-color: #22282a
+}
+
+.highlight .c {
+    color: #99aa8a
+}
+
+.highlight .err {
+    background-color: #1e0010;
+    color: #960050
+}
+
+.highlight .k {
+    color: #93c763
+}
+
+.highlight .l {
+    color: #ae81ff
+}
+
+.highlight .n {
+    color: #f1f2f3
+}
+
+.highlight .o {
+    color: #e8e2b7
+}
+
+.highlight .p {
+    color: #f1f2f3
+}
+
+.highlight .c1,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .cs {
+    color: #99aa8a
+}
+
+.highlight .gd {
+    color: #e8e2b7
+}
+
+.highlight .ge {
+    font-style: italic
+}
+
+.highlight .gi {
+    color: #678cb1
+}
+
+.highlight .gs {
+    font-weight: 700
+}
+
+.highlight .gu {
+    color: #99aa8a
+}
+
+.highlight .kc,
+.highlight .kd {
+    color: #93c763
+}
+
+.highlight .kn {
+    color: #e8e2b7
+}
+
+.highlight .kp,
+.highlight .kr {
+    color: #93c763
+}
+
+.highlight .kt {
+    color: #83d8e1
+}
+
+.highlight .ld {
+    color: #ec7600
+}
+
+.highlight .m {
+    color: #ffcd22
+}
+
+.highlight .s {
+    color: #ec7600
+}
+
+.highlight .na {
+    color: #678cb1
+}
+
+.highlight .nb {
+    color: #f1f2f3
+}
+
+.highlight .nc {
+    color: #678cb1
+}
+
+.highlight .no {
+    color: #93c763
+}
+
+.highlight .nd {
+    color: #678cb1
+}
+
+.highlight .ni {
+    color: #f1f2f3
+}
+
+.highlight .ne,
+.highlight .nf {
+    color: #678cb1
+}
+
+.highlight .nl,
+.highlight .nn {
+    color: #f1f2f3
+}
+
+.highlight .nx {
+    color: #678cb1
+}
+
+.highlight .py {
+    color: #f1f2f3
+}
+
+.highlight .nt {
+    color: #e8e2b7
+}
+
+.highlight .nv {
+    color: #f1f2f3
+}
+
+.highlight .ow {
+    color: #e8e2b7
+}
+
+.highlight .w {
+    color: #f1f2f3
+}
+
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+    color: #ffcd22
+}
+
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd {
+    color: #ec7600
+}
+
+.highlight .se {
+    color: #ae81ff
+}
+
+.highlight .s1,
+.highlight .sh,
+.highlight .si,
+.highlight .sr,
+.highlight .ss,
+.highlight .sx {
+    color: #ec7600
+}
+
+.highlight .bp,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+    color: #f1f2f3
+}
+
+.highlight .il {
+    color: #ffcd22
+}

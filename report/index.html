@@ -1,0 +1,394 @@
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    
+    
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://scangov.org/report/">
+    <!-- Title -->
+    <title>Report - ScanGov</title>
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="ScanGov">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://scangov.org/report/">
+    
+      <!-- Created date -->
+      <meta property="article:published_time" content="Sat Feb 08 2025 02:09:51 GMT+0000 (Coordinated Universal Time)">
+      <meta name="dc.date" content="Sat Feb 08 2025 02:09:51 GMT+0000 (Coordinated Universal Time)">
+      <meta name="dc.date.created" content="Sat Feb 08 2025 02:09:51 GMT+0000 (Coordinated Universal Time)">
+      <meta name="dcterms.created" content="Sat Feb 08 2025 02:09:51 GMT+0000 (Coordinated Universal Time)">
+    
+    
+    
+    <!-- Meta site -->
+    <meta property="linkedin:site" content="NaN">
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@civichacking">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    
+      <meta property="twitter:image" content="https://scangov.org/assets/img/avatar-twitter.png">
+    
+    
+      <meta property="og:image" content="https://scangov.org/assets/img/avatar-og.png">
+    
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicon/manifest.json">
+<meta content="#ffffff" name="msapplication-TileColor">
+<meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png">
+<meta content="#ffffff" name="theme-color">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/bootstrap-purged.css">
+<link href="/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="" data-bs-theme="dark">
+    <a class="sr-only sr-only-focusable skip-link" href="#main-content">
+        Skip to main content
+    </a>
+<style>
+  @media print {
+    body {
+      font-family: "Public Sans Regular"
+        , sans-serif;
+    }
+
+    svg {
+      fill: black !important;
+    }
+
+    div.card {
+      border: 1px solid black;
+    }
+
+    div.card-header {
+      border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    div.card-footer {
+      border-top: 1px solid var(--bs-border-color);
+    }
+
+    * {
+      color: black !important;
+    }
+
+    main#page {
+      display: none;
+    }
+  }
+
+  @media screen {
+
+    main#print,
+    main#print * {
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+</style>
+<main id="page">
+  <a id="return">Return to dashboard</a>
+</main>
+<main id="print">
+  <div class="container-fluid" style="page-break-after: always; break-after: always;">
+    <div class="row">
+      <h1 class="display-1 mb-5 mt-5" id="domain-scan-report">Domain scan report</h1>
+      <h2 id="domain" class="display-3"></h2>
+      <p class="lead">Managed by:
+        <span id="parent"></span>
+      </p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    
+    <h2 id="metadata">Metadata
+    </h2>
+    
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="metadata-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="metadata-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="metadata-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="metadata-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="metadata-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="metadata-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    
+    <h2 style="page-break-before: always; break-before: always;" id="url">URL
+    </h2>
+    
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="url-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="url-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="url-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="url-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="url-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="url-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    
+    <h2 style="page-break-before: always; break-before: always;" id="sitemap">Sitemap
+    </h2>
+    
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="sitemap-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="sitemap-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="sitemap-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="sitemap-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="sitemap-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="sitemap-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    
+    <h2 style="page-break-before: always; break-before: always;" id="robots">Robots
+    </h2>
+    
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="robots-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="robots-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="robots-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="robots-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="robots-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="robots-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    
+    <h2 style="page-break-before: always; break-before: always;" id="security">Security
+    </h2>
+    
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="security-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="security-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="security-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="security-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="security-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="security-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    
+  </div>
+</main>
+<script src="/scripts/variables.js"></script>
+<script src="/scripts/util.js"></script>
+<script src="/scripts/report.js"></script>
+</body></html>
