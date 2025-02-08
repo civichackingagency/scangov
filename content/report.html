@@ -1,0 +1,122 @@
+---
+title: Report
+description: Report.
+permalink: /report/
+---
+
+{% include "header.html" %}
+<style>
+  @media print {
+    body {
+      font-family: "Public Sans Regular"
+        , sans-serif;
+    }
+
+    svg {
+      fill: black !important;
+    }
+
+    div.card {
+      border: 1px solid black;
+    }
+
+    div.card-header {
+      border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    div.card-footer {
+      border-top: 1px solid var(--bs-border-color);
+    }
+
+    * {
+      color: black !important;
+    }
+
+    main#page {
+      display: none;
+    }
+  }
+
+  @media screen {
+
+    main#print,
+    main#print * {
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+</style>
+<main id="page">
+  <a id="return">Return to dashboard</a>
+</main>
+<main id="print">
+  <div class="container-fluid" style="page-break-after: always; break-after: always;">
+    <div class="row">
+      <h1 class="display-1 mb-5 mt-5">Domain scan report</h1>
+      <h2 id="domain" class="display-3"></h2>
+      <p class="lead">Managed by:
+        <span id="parent"></span>
+      </p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% for item in site.data %}
+    <h2 {% if loop.index0 != 0 %} style="page-break-before: always; break-before: always;" {% endif %}>{{ item }}
+    </h2>
+    {% set id = item | slugify %}
+    <div class="row">
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3" id="{{ id }}-grade-card">
+          <div class="card-header">
+            Grade
+          </div>
+          <div class="card-body text-center pt-5">
+            <p class="display-1" id="{{ id }}-grade"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 align-items-stretch">
+        <div class="card mb-3 text-bg-dark" id="{{ id }}-score">
+          <div class="card-header">
+            Score
+          </div>
+          <div class="card-body text-center">
+            <p class="display-1">
+              <span id="{{ id }}-percent"></span>%
+            </p>
+          </div>
+          <div class="card-footer text-center" id="{{ id }}-amount"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive table-hover">
+          <table class="table table-responsive table-bordered table-hover mt-3 mb-3">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="{{ id }}-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+<script src="/scripts/variables.js"></script>
+<script src="/scripts/util.js"></script>
+<script src="/scripts/report.js"></script>

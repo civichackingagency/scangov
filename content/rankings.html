@@ -1,0 +1,58 @@
+---
+home: false
+layout: layouts/default
+title: Rankings
+description: Government websites ranked by key digital experience performance indicators.
+keywords: government domains, government websites
+permalink: /rankings/cities/
+---
+
+<main id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2>Cities</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table table-responsive table-bordered table-hover mt-3">
+            <thead class="table-dark">
+              <tr>
+                <td scope="col">Rank</th>
+                <th scope="col" style="width: 500px;">Domain</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-center">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="table">
+              {% set rankingPosition = 1 %}
+              {% set currentScore = cities[0].overallScore %}
+              {% for d in cities %}
+              {% if d.overallScore != currentScore %}
+                {% set currentScore = d.overallScore %}
+                {% set rankingPosition = rankingPosition + 1 %}
+              {% endif %}
+                <tr>
+                  <td>{{ rankingPosition }}</td>
+                  <td>
+                    <a href="/profile/{{d.urlkey | slugify }}/overview">{{ d.urlkey }}</a>
+                    <br>
+                    <a class="small text-muted" href="?search={{ d.name }}&amp;agency=1&amp;field=overview">{{ d.name }}</a>
+                  </td>
+                  <td>
+                    {{ d | allAuditStatusIcons | safe }}
+                  </td>
+                  <td class="text-center grade-display-column">
+                    <span class="badge text-bg-{{ d.overallScore | colorify }}" title="{{ d.overallScore }}%">{{ d.overallScore | gradify }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

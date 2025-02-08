@@ -1,0 +1,2251 @@
+domain,agency,status,hsts,max_age,expire_time,csp,x_content_type_options,security_txt
+slc.gov,"Salt Lake City, UT",302,false,-1,-1,false,false,false
+apps.nationalmap.gov,"United States Geological Survey",200,true,31536000,1737459014767,false,true,false
+ipdaac.usgs.gov,"United States Geological Survey",500,false,-1,-1,false,false,false
+water.usgs.gov,"United States Geological Survey",302,true,31536000,1737459014767,false,false,false
+volcanoes.usgs.gov,"United States Geological Survey",302,true,63072000,1737490550767,false,false,false
+ers.cr.usgs.gov,"United States Geological Survey",302,true,31536000,1737459014767,true,false,false
+ngmdb.usgs.gov,"United States Geological Survey",200,true,31536000,1737459014767,false,false,false
+earthexplorer.usgs.gov,"United States Geological Survey",200,true,31536000,1737459014767,true,false,false
+store.usgs.gov,"United States Geological Survey",200,true,15724800,1737443203567,false,true,false
+dashboard.waterdata.usgs.gov,"United States Geological Survey",200,true,31536000,1737459014767,false,false,false
+waterdata.usgs.gov,"United States Geological Survey",301,true,31536000,1737459014767,true,false,false
+earthquake.usgs.gov,"United States Geological Survey",301,true,31536000,1737459014767,false,false,false
+bha.colorado.gov,"Colorado Behavioral Health Administration",200,true,43200,1737427521967,false,true,false
+cityofmonongahela-pa.gov,"City of Monongahela, Pennsylvania",301,false,-1,-1,false,true,true
+altoonawater.gov,"Altoona Water Authority",301,false,-1,-1,false,true,true
+jocogov.org,"Johnson County, Kansas",301,true,31536000,1737459014767,false,true,false
+usarmyband.com,"Department of Defense",200,false,-1,-1,false,false,true
+vavmc.com,"Department of Veterans Affairs",500,false,-1,-1,false,false,false
+vaitcampus.com,"Department of Veterans Affairs",500,false,-1,-1,false,false,false
+treatmentworksforvets.org,"Department of Veterans Affairs",200,false,-1,-1,false,false,false
+shopvcs.com,"Department of Veterans Affairs",301,true,31557600,1737459036367,false,true,false
+otianywhere.net,"United States Agency for International Development ",200,false,-1,-1,false,false,false
+monitor.net.co,"United States Agency for International Development",302,false,-1,-1,false,true,false
+smithsonianstudentadventures.com,"Smithsonian Institution",301,false,-1,-1,false,false,false
+smithsonianearthtv.com,"Smithsonian Institution",500,false,-1,-1,false,false,false
+smithsoniancraftshow.org,"Smithsonian Institution",200,false,-1,-1,false,false,false
+smithsoniancraft2wear.org,"Smithsonian Institution",500,false,-1,-1,false,false,false
+smithsonianchambermusic.org,"Smithsonian Institution",200,false,-1,-1,false,false,false
+smithsonianapa.org,"Smithsonian Institution",500,false,-1,-1,false,false,false
+seecstories.com,"Smithsonian Institution",200,true,31536000,1737459014767,false,false,false
+searchablemuseum.com,"Smithsonian Institution",301,false,-1,-1,false,false,false
+paleoglot.org,"Smithsonian Institution",301,false,-1,-1,false,true,false
+nmaahcstore.com,"Smithsonian Institution",403,true,31536000,1737459014767,false,false,false
+museumonmainstreet.org,"Smithsonian Institution",200,true,31536000,1737459014767,false,true,false
+mughalgardens.org,"Smithsonian Institution",200,false,-1,-1,false,false,false
+ellajenkins.com,"Smithsonian Institution",200,false,-1,-1,false,false,false
+ecosystemsontheedge.org,"Smithsonian Institution",200,false,-1,-1,false,false,false
+discoverytheater.org,"Smithsonian Institution",200,true,31536000,1737459014767,true,true,false
+cicadamerch.com,"Smithsonian Institution",403,true,31536000,1737459014767,false,false,false
+artcollectorsprogram.org,"Smithsonian Institution",200,true,31536000,1737459014767,true,true,false
+howeycoins.com,"Securities and Exchange Commission",500,false,-1,-1,false,false,false
+pbgc.us,"Pension Benefit Guaranty Corporation",301,true,31536000,1737459014767,false,true,false
+pbgc.net,"Pension Benefit Guaranty Corporation",301,true,31536000,1737459014767,false,true,false
+pbgc.com,"Pension Benefit Guaranty Corporation",301,true,31536000,1737459014767,false,true,false
+pbgc.biz,"Pension Benefit Guaranty Corporation",301,true,31536000,1737459014767,false,true,false
+xsp.org,"Office of Personnel Management",500,false,-1,-1,false,false,false
+usajobsrecruit.us,"Office of Personnel Management",500,false,-1,-1,false,false,false
+usajobsrecruit.com,"Office of Personnel Management",500,false,-1,-1,false,false,false
+usajobsassess.us,"Office of Personnel Management",500,false,-1,-1,false,false,false
+usajobsassess.com,"Office of Personnel Management",500,false,-1,-1,false,false,false
+usajobs.com,"Office of Personnel Management",301,true,31536000,1737459014767,true,true,false
+federalcampaign.org,"Office of Personnel Management",500,false,-1,-1,false,false,false
+combinedfederal.org,"Office of Personnel Management",500,false,-1,-1,false,false,false
+cfcgiving.org,"Office of Personnel Management",500,false,-1,-1,false,false,false
+fedroom.com,"General Services Administration",200,false,-1,-1,false,false,true
+doi.net,"Department of the Interior",500,false,-1,-1,false,false,false
+rfj.tips,"Department of State",200,true,63072000,1737490550767,false,true,false
+workforcegps.org,"Department of Labor",403,false,-1,-1,false,false,false
+whatcanyoudocampaign.org,"Department of Labor",301,true,31536000,1737459014767,false,false,false
+ustedquepuedehacer.org,"Department of Labor",500,false,-1,-1,false,false,false
+useuosh.org,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+servicelocator.org,"Department of Labor",301,false,-1,-1,false,false,false
+peatworks.org,"Department of Labor",301,false,-1,-1,false,true,false
+onetcenter.org,"Department of Labor",301,true,63072000,1737490550767,false,false,false
+neapmap.com,"Department of Labor",200,false,-1,-1,false,false,false
+mynextmove.org,"Department of Labor",301,true,63072000,1737490550767,false,false,false
+joinjobcorps.com,"Department of Labor",500,false,-1,-1,false,false,false
+jobcorps.org,"Department of Labor",500,false,-1,-1,false,false,false
+jctalentworks.com,"Department of Labor",500,false,-1,-1,true,false,false
+jcsuccess.org,"Department of Labor",401,false,-1,-1,false,true,false
+jcmarketplace.com,"Department of Labor",200,true,2592000,1737430070767,true,true,false
+inclusiveapprenticeship.org,"Department of Labor",200,false,-1,-1,false,false,false
+euusosh.org,"Department of Labor",500,true,31536000,1737459014767,true,true,false
+epolicyworks.org,"Department of Labor",200,true,63072000,1737490550767,true,false,false
+capeyouth.org,"Department of Labor",200,false,-1,-1,false,true,false
+bonds4jobs.com,"Department of Labor",200,false,-1,-1,false,false,false
+alx.org,"Department of Labor",301,true,63072000,1737490550767,false,false,false
+acinet.org,"Department of Labor",301,true,63072000,1737490550767,false,false,false
+protectivedns.net,"Department of Homeland Security",500,false,-1,-1,false,false,false
+cyberstorm8.com,"Department of Homeland Security",500,false,-1,-1,false,false,false
+cdmdashboard.com,"Department of Homeland Security",500,false,-1,-1,false,false,false
+worklife4you.com,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+vetmedinfo.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+vetmed.wiki,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+vaccinefinder.org,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+uspreventiveservicestaskforce.org,"Department of Health and Human Services",302,false,-1,-1,true,true,false
+thesisterstudy.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+thehearttruth.org,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+thehearttruth.net,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+thehearttruth.com,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+ssbgportal.net,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+sitenv.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+sisterstudy.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+scienceforum.sc,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+racwarehouse.org,"Department of Health and Human Services",302,false,-1,-1,true,true,false
+quehacerahora.org,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+qualitynet.org,"Department of Health and Human Services",302,false,-1,-1,true,false,false
+pubmedcentral.us,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubmedcentral.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubmed-central.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubmed-central.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubmed-central.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubmed-central.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubchem.us,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubchem.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pubchem.biz,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+psoppc.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+proteincapture.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+presidentschallenge.org,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+phs-nurse.org,"Department of Health and Human Services",302,false,-1,-1,false,true,false
+phiresearchlab.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pcorcds-ln.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+pccqualitymonitoring.com,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+pccds-ln.org,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+oahpmdata.net,"Department of Health and Human Services",302,true,31536000,1737459014767,true,true,false
+nlmgiftshop.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nlmgiftshop.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nlmgiftshop.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nlm.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nlm.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nihseniorhealth.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nihseniorhealth.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nihseniorhealth.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nihseniorhealth.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nihseniorhealth.biz,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nih.com,"Department of Health and Human Services",301,true,31557600,1737459036367,true,true,false
+nhlbiwgs.org,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+ncihub.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nci-fyi.org,"Department of Health and Human Services",200,true,15552000,1737443030767,false,true,false
+ncats.io,"Department of Health and Human Services",301,true,15768000,1737443246767,false,false,false
+ncands.net,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+namrs.net,"Department of Health and Human Services",302,true,31536000,1737459014767,false,false,false
+mesh.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+mepstech.com,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+mepsdocs.org,"Department of Health and Human Services",302,true,31536000,1737459014767,false,false,false
+medlneplus.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlneplus.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlineplus.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlineplus.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlineplus.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlars.us,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlars.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlars.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlars.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlars.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medicalbillrights.org,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+medicalbillrights.net,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+medicalbillrights.com,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+loansomedoc.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+loansomedoc.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+informationrx.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+informationrx.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+igm.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+howrightnow.org,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+howrightnow.online,"Department of Health and Human Services",401,true,31536000,1737459014767,false,false,false
+howrightnow.com,"Department of Health and Human Services",401,true,31536000,1737459014767,false,false,false
+hfpp-ttp.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+hearttruth.org,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+hearttruth.net,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+hearttruth.com,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+hcgov.us,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+hapmap.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+gratefulmed.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+gratefulmed.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+gratefulmed.info,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+gratefulmed.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+genbank.xyz,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+genbank.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+genbank.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+genbank.com,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+gem-measures.org,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+gem-beta.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+fatherhoodgov.info,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+everytrycounts.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+everytry.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+every-try-counts.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+docline.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+directihs.net,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+detroitself.org,"Department of Health and Human Services",200,true,2592000,1737430070767,false,false,false
+ctsu.org,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+csscoperations.com,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+coronaviruspreventionnetwork.org,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+citdbase.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+charmmtutorial.org,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+charmm.org,"Department of Health and Human Services",500,false,-1,-1,true,true,false
+chainonline.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+cfsrportal.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+cdcpartners.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+ccwdata.org,"Department of Health and Human Services",302,false,-1,-1,false,true,false
+cahpsusernetwork.net,"Department of Health and Human Services",403,true,31536000,1737459014767,false,false,false
+brainattackcoalition.org,"Department of Health and Human Services",403,false,-1,-1,false,false,false
+ahrqstg.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+ahrqdev.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+ahrqadmin.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+actagainstaids.org,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+americanmadechallenges.org,"Department of Energy",200,true,31536000,1737459014767,true,true,false
+cultureready.org,"Department of Defense",500,false,-1,-1,false,false,false
+dcsafesurrender.org,"Court Services and Offender Supervision Agency",301,false,-1,-1,true,false,false
+dcsafesurrender.net,"Court Services and Offender Supervision Agency",301,false,-1,-1,true,false,false
+dcsafesurrender.com,"Court Services and Offender Supervision Agency",301,false,-1,-1,true,false,false
+csosadev.net,"Court Services and Offender Supervision Agency",500,false,-1,-1,false,false,false
+csosa.org,"Court Services and Offender Supervision Agency",301,false,-1,-1,true,false,false
+csosa.net,"Court Services and Offender Supervision Agency",500,false,-1,-1,false,false,false
+csosa.mobi,"Court Services and Offender Supervision Agency",500,false,-1,-1,true,false,false
+csosa.me,"Court Services and Offender Supervision Agency",500,false,-1,-1,true,false,false
+csosa.info,"Court Services and Offender Supervision Agency",500,false,-1,-1,true,false,false
+csosa.com,"Court Services and Offender Supervision Agency",500,false,-1,-1,false,false,false
+csosa.co,"Court Services and Offender Supervision Agency",500,false,-1,-1,true,false,false
+csosa.biz,"Court Services and Offender Supervision Agency",301,false,-1,-1,true,false,false
+abmceducation.org,"American Battle Memorial Commission",500,false,-1,-1,false,false,false
+yesprograms.org,"Department of State",200,false,-1,-1,false,false,false
+yes-abroad.org,"Department of State",200,false,-1,-1,false,false,false
+ycq2.org,"Department of Defense",200,false,-1,-1,false,false,false
+wibeaches.us,"Department of the Interior",301,false,-1,-1,false,true,false
+westpoint.edu,"Department of the Army",500,false,-1,-1,false,false,false
+westernmarylandcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+westernmacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+waterqualitydata.us,"Department of Interior",500,false,-1,-1,true,true,false
+war-on-pineapple.com,"Department of Homeland Security",500,false,-1,-1,false,false,false
+voatour.com,"U.S. Agency for Global Media",301,false,-1,-1,true,true,false
+voanews.com,"U.S. Agency for Global Media",301,true,31536000,1737459014767,true,true,true
+vetmedinfo.org,"Health and Human Services (HHS)",500,false,-1,-1,false,false,false
+veteranshealthlibrary.org,"",500,false,-1,-1,false,false,false
+veteranscrisisline.net,"Department of Veterans Affairs (VA)",301,true,63072000,1737490550767,true,true,false
+vasc.org/erc,"National Aeronautics and Space Administration",404,false,-1,-1,false,false,false
+usuhs.edu,"Uniformed Services University of the Health Services",301,false,-1,-1,true,true,false
+usu.edu/beetle,"U.S. Forest Service (USFS)",301,false,-1,-1,false,false,false
+ustraveldocs.com,"Department of State (DOS)",200,false,-1,-1,false,false,false
+usps.com,"U.S. Postal Service",301,true,31536000,1737459014767,true,true,false
+usna.edu,"United States Naval Academy",302,true,31536000,1737459014767,false,false,false
+usmma.edu,"United States Merchant Marine Academy",500,false,-1,-1,false,true,true
+usmcu.edu,"Marine Corps University",500,false,-1,-1,false,true,false
+usmc-mccs.org,"U.S. Marine Corps",302,false,-1,-1,false,true,false
+usma.edu,"Department of the Army",500,false,-1,-1,false,false,false
+usembassy-china.org.cn,"Department of State (DOS)",500,false,-1,-1,false,false,false
+usdirectexpress.com,"Bureau of Fiscal Service",500,false,-1,-1,false,true,false
+usda.mannlib.cornell.edu,"Department of Agriculture (USDA)",301,false,-1,-1,false,true,false
+uscgnews.com,"U.S. Coast Guard",301,false,-1,-1,false,false,false
+uscgboating.org,"U.S. Coast Guard",200,false,-1,-1,false,false,false
+uscgaux.info,"U.S. Coast Guard Auxiliary",200,false,-1,-1,false,false,false
+uscgalaska.com,"U.S. Coast Guard",500,false,-1,-1,false,false,false
+uscga.edu,"U.S. Coast Guard",200,false,-1,-1,false,true,false
+usarmymars.org,"US Army Network Enterprise Technology Command",200,false,-1,-1,false,false,false
+usarmyjrotc.com,"Department of the Army",404,false,-1,-1,false,false,false
+usafa.edu,"Department of the Air Force",500,false,-1,-1,false,false,false
+us-mission.ch,"Department of State (DOS)",500,false,-1,-1,false,false,false
+tvars.com,"Tennessee Valley Authority",200,false,-1,-1,false,false,false
+tvaed.com,"Tennessee Valley Authority",302,true,31536000,1737459014767,false,false,false
+tva.com,"Tennessee Valley Authority",302,true,31536000,1737459014767,false,false,false
+trumanlibrary.org,"National Archives and Records Administration (NARA)",200,false,-1,-1,false,false,false
+trainex.org,"Environmental Protection Agency (EPA)",200,true,31536000,1737459014767,true,false,false
+todaysmilitary.com,"Department of Defense",302,false,-1,-1,false,true,false
+todaysdocument.tumblr.com,"National Archives and Records Administration (NARA)",500,false,-1,-1,false,false,false
+tnregionalcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+theshoalscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+thecommunityguide.org,"Department of Health and Human Services",200,true,31536000,1737459014767,false,false,false
+t2health.org,"Department of Defense",500,false,-1,-1,false,false,false
+suncoastcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+suicidepreventionlifeline.org,"Substance Abuse and Mental Health Services Administration",301,false,-1,-1,false,false,false
+stripes.com,"Department of Defense",301,false,-1,-1,false,false,false
+spaceappschallenge.org,"National Aeronautics and Space Administration (NASA)",302,true,2592000,1737430070767,false,false,false
+southwestfloridacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+socalcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+smokymountaincfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+smokeybear.com,"U.S. Forest Service (USFS)",200,true,31536000,1737459014767,false,false,false
+smithsonianstore.com,"Smithsonian Institution",301,true,300,1737427479067,false,true,false
+smithsonianscience.org,"Smithsonian Institution",500,false,-1,-1,false,false,false
+smithsonianmag.com,"Smithsonian Institution",301,false,-1,-1,false,true,false
+smithsonianjourneys.org,"Smithsonian Institution",301,false,-1,-1,false,false,false
+smithsonianeducation.org,"Smithsonian Institution",200,false,-1,-1,false,false,false
+smithsonianchannel.com,"Smithsonian Institution",301,true,31536000,1737459014767,false,true,false
+smithsonian.org,"Smithsonian Institution",500,false,-1,-1,true,true,false
+smithsonian.com,"Smithsonian Institution",200,false,-1,-1,false,true,false
+si.edu,"Smithsonian Institution",301,false,-1,-1,true,true,false
+sftool.ecomedes.com,"General Services Administration (GSA)",403,false,-1,-1,false,false,false
+sepa-lehighcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+senccfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+scportal.us,"Department of Defense",500,false,-1,-1,false,false,false
+sanangelocfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+rockymountaincfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+richmondfed.org,"Federal Reserve Board",500,false,-1,-1,false,false,false
+riandsemacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+rferl.org,"U.S. Agency for Global Media",301,true,31536000,1737459014767,false,true,true
+rfa.org,"U.S. Agency for Global Media",301,true,31536000,1737459014767,true,false,false
+rewardsforjustice.net,"Department of State (DOS)",200,true,31536000,1737459014767,false,false,false
+reirs.com,"Nuclear Regulatory Commission",500,true,31536000,1737459014767,false,false,false
+realwarriors.net,"Department of Defense",301,false,-1,-1,false,false,false
+radiosawa.com,"U.S. Agency for Global Media",301,true,31536000,1737459014767,false,true,false
+r3coastal.com,"Federal Emergency Management Agency (FEMA)",500,false,-1,-1,false,false,false
+psoppc.org,"Department of Health and Human Services (HHS)",200,true,63072000,1737490550767,false,false,false
+psoppc.net,"Department of Health and Human Services (HHS)",500,false,-1,-1,false,false,false
+psoppc.com,"Department of Health and Human Services (HHS)",500,false,-1,-1,false,false,false
+psctool.us,"Department of Defense",200,true,16000000,1737443478767,false,false,false
+project-open-data.github.io,"General Services Administration (GSA)",301,false,-1,-1,false,true,false
+potomaccfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+phpartners.org,"Employment and Training Administration",500,false,-1,-1,false,false,false
+philadelphiafed.org,"Federal Reserve Board",500,false,-1,-1,true,true,false
+pepfar.net,"Department of State (DOS)",500,false,-1,-1,false,false,false
+peakcfc.com,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+pbgc.org,"Pension Benefit Guarantee Corporation (PBGC)",301,true,31536000,1737459014767,false,true,false
+pantex.com,"Department of Energy (DOE)",500,false,-1,-1,false,true,false
+pancanal.com,"Autoridad del Canal de Panama/Panama Canal Authority",200,true,31536000,1737459014767,true,true,false
+pacificnwcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+ownyourlimits.org,"Department of Defense",200,false,-1,-1,false,false,false
+oup.org,"Department of Housing and Urban Development",200,false,-1,-1,false,false,false
+orvcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+opengovplatform.org,"General Services Administration (GSA)",301,false,-1,-1,false,false,false
+onslowcountycfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+onetonline.org,"Employment and Training Administration",301,true,63072000,1737490550767,false,false,false
+onecpd.info,"Department of Housing and Urban Development",301,true,31536000,1737459014767,true,true,false
+okaloosa-waltoncfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+nyccfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+nutmegcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+nsopw.org,"Department of Justice (DOJ)",302,false,-1,-1,false,true,false
+nps.edu,"Naval Postgraduate School",200,true,31536000,1737459014767,false,true,false
+northwestfloridacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+northernnewenglandcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+northernlightscfc.org,"Combined Federal Campaign",301,false,-1,-1,false,true,false
+northcoastcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+norcalcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+noradsanta.org,"North American Aerospace Defense Command (NORAD)",302,false,-1,-1,false,false,false
+newyorkfed.org,"Federal Reserve Board",500,false,-1,-1,false,false,false
+newmexicocfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+newhire-reporting.com,"Administration for Children and Families",302,true,31536000,1737459014767,false,true,false
+nevadacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+nepacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+nefl-sega-cfc.org,"Combined Federal Campaign",301,false,-1,-1,false,false,false
+necfuture.com,"Federal Railroad Administration",301,false,-1,-1,false,true,false
+neabigread.org,"National Endowment for the Arts (NEA)",301,false,-1,-1,false,false,false
+ndu.edu,"National Defense University (NDU)",500,false,-1,-1,false,true,false
+ncwvcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+navyreserve.com,"Department of the Navy",301,true,31536000,1737459014767,false,true,false
+navy.com,"Department of the Navy",403,true,31536000,1737459014767,false,true,false
+nationalguard.com,"U.S. National Guard",200,true,31536000,1737459014767,false,true,false
+nationalatlas.org,"Department of Interior (DOI)",500,false,-1,-1,false,false,false
+nationalatlas.com,"Department of Interior (DOI)",500,false,-1,-1,false,false,false
+nasa-usa.de,"National Aeronautical and Space Administration (NASA)",500,false,-1,-1,false,false,false
+nagb.org,"National Assessment Governing Board",301,true,63072000,1737490550767,false,true,false
+myskillsmyfuture.org,"Employment and Training Administration",301,false,-1,-1,false,true,false
+mynextmove.org,"Department of Labor",301,true,63072000,1737490550767,false,false,false
+mymcx.com,"U.S. Marine Corps",302,false,-1,-1,false,true,false
+myfuture.com,"Department of Defense (DOD)",200,true,15552000,1737443030767,false,false,false
+myedaccount.com,"Department of Education (ED)",200,false,-1,-1,false,false,false
+moon-cal.org,"U.S. Geological Survey (USGS)",200,false,-1,-1,false,false,false
+moneyfactory.com,"Bureau of Engraving and Printing",301,false,-1,-1,false,false,false
+minneapolisfed.org,"Federal Reserve Board",500,false,-1,-1,false,false,false
+midlandsareacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+michcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+micanaldepanama.com,"Autoridad del Canal de Panama/Panama Canal Authority",301,false,-1,-1,true,true,false
+miamivalleycfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+metrodenvercfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+mdacareers.com,"Missile Defense Agency",500,false,-1,-1,false,false,false
+mcmregistration.com,"U.S. Marine Corps (USMC)",200,false,-1,-1,false,false,false
+martinoticias.com,"U.S. Agency for Global Media",301,true,31536000,1737459014767,false,true,true
+marshallcenter.org,"George C. Marshall European Center for Security Studies",500,false,-1,-1,false,false,false
+marines.com,"U.S. Marine Corps (USMC)",301,true,58099000,1737485577767,true,true,false
+marinemarathon.com,"U.S. Marine Corps (USMC)",301,false,-1,-1,false,false,false
+marineforlife.org,"U.S. Marine Corps (USMC)",302,false,-1,-1,false,true,false
+maricopacfc.org,"Combined Federal Campaign",301,false,-1,-1,false,false,false
+manufacturingusa.com,"National Institute of Standards and Technology",500,true,31536000,1737459014767,true,true,false
+makersinspaces.org,"Department of State",500,false,-1,-1,false,false,false
+livingmemorialsproject.net,"U.S. Forest Service (USFS)",301,false,-1,-1,false,false,false
+literacydirectory.org,"Department of Education (ED)",301,false,-1,-1,false,false,false
+lifeasamarine.com,"U.S. Marine Corps (USMC)",500,false,-1,-1,false,false,false
+leopold.wilderness.net,"U.S. Forest Service (USFS)",200,true,31536000,1737459014767,false,false,false
+lbjlibrary.org,"National Archives and Records Administration (NARA)",200,false,-1,-1,false,false,false
+ktcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+knowyouroptions.com,"Federal National Mortgage Association",301,true,15552000,1737443030767,false,true,false
+kcp.com,"Department of Energy (DOE)",500,false,-1,-1,false,true,false
+kansascfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+johnsoncity-mountainhomecfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+jlab.org,"Department of Energy (DOE)",301,true,63072000,1737490550767,false,true,false
+jfklibrary.org,"National Archives and Records Administration (NARA)",301,false,-1,-1,false,true,false
+jamrs.org,"Department of Defense (DOD)",301,false,-1,-1,false,true,false
+inwcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+intermountaincfc.org,"Combined Federal Campaign",200,false,-1,-1,false,false,false
+insidevoa.com,"U.S. Agency for Global Media",301,true,31536000,1737459014767,true,true,true
+informationrx.org,"Health and Human Services (HHS)",500,false,-1,-1,false,false,false
+illowacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+iipdigital.ait.org.tw,"Department of State (DOS)",500,false,-1,-1,false,false,false
+igs.org,"National Aeronautics and Space Administration (NASA)",200,false,-1,-1,false,false,false
+huduser.org,"Department of Housing and Urban Development (HUD)",302,false,-1,-1,false,false,false
+hudnsphelp.info,"Department of Housing and Urban Development (HUD)",200,false,-1,-1,false,false,false
+hudhre.info,"Department of Housing and Urban Development (HUD)",301,false,-1,-1,false,true,false
+hudhomestore.com,"Department of Housing and Urban Development (HUD)",301,false,-1,-1,false,false,false
+hudexchange.info,"Department of Housing and Urban Development (HUD)",301,true,31536000,1737459014767,true,true,false
+hubblesite.org,"National Aeronautics and Space Administration (NASA)",403,false,-1,-1,false,false,false
+hsdl.org,"Department of Homeland Security (DHS)",301,false,-1,-1,false,true,false
+homelandsecurity.conferenceon.tv,"Department of Homeland Security (DHS)",500,false,-1,-1,false,false,false
+heartofthemidlandscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+heartofalabamacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+heartlandcfc.org,"Combined Federal Campaign",200,false,-1,-1,false,false,false
+greencountrycfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+greaterwicfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+greatermscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+greaterhartfordcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+gopcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+godirect.org,"Federal Reserve Board",301,true,86400,1737427565167,false,false,false
+gocoastguard.com,"U.S. Coast Guard",200,false,-1,-1,false,false,false
+gocivilairpatrol.com,"U.S. Air Force Auxiliary",301,true,31536000,1737459014767,false,true,false
+goarmy.com,"Department of the Army",301,false,-1,-1,false,true,false
+goang.com,"Department of the Air Force",301,true,63072000,1737490550767,true,true,false
+glnpo.net,"Environmental Protection Agency (EPA)",500,false,-1,-1,false,false,false
+getsmartaboutdrugs.com,"Drug Enforcement Agency (DEA)",301,true,31536000,1737459014767,false,true,false
+georgewbushlibrary.smu.edu,"National Archives and Records Administration (NARA)",302,true,31536000,1737459014767,false,true,false
+genomereference.org,"Department of Health and Human Services (HHS)",301,true,31536000,1737459014767,true,true,false
+gatewaycfc.org,"Combined Federal Campaign",301,false,-1,-1,false,false,false
+ftcampbellareacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+fsafeds.com,"Office of Personnel Management (OPM)",301,false,-1,-1,false,false,false
+freefilefillableforms.com,"Internal Revenue Service",302,true,31536000,1737459014767,false,true,false
+freddiemac.com,"Federal Home Loan Mortgage Corporation",302,false,-1,-1,true,true,false
+frbsf.org,"Federal Reserve Board",301,false,-1,-1,false,false,false
+frbatlanta.org,"Federal Reserve Board",500,false,-1,-1,true,true,false
+forestryimages.org,"U.S. Forest Service (USFS)",301,false,-1,-1,false,false,false
+fmjfee.com,"U.S. Citizenship and Immigration Service (USCIS)",301,true,31536000,1737459014767,false,true,false
+firelab.org,"U.S. Forest Service (USFS)",200,false,-1,-1,false,true,false
+findtbresources.org,"Centers for Disease Control and Prevention (CDC)",500,false,-1,-1,false,false,false
+fhlbtopeka.com,"Interagency Collaboration",301,false,-1,-1,true,true,false
+fhlbsf.com,"Interagency Collaboration",301,true,31536000,1737459014767,false,true,false
+fhlbsea.com,"Interagency Collaboration",200,false,-1,-1,false,false,false
+fhlbny.com,"Interagency Collaboration",301,true,63072000,1737490550767,true,true,false
+fhlbi.com,"Interagency Collaboration",500,false,-1,-1,true,true,false
+fhlbdm.com,"Interagency Collaboration",200,false,-1,-1,false,false,false
+fhlbcin.com,"Interagency Collaboration",500,false,-1,-1,false,false,false
+fhlbc.com,"Interagency Collaboration",301,false,-1,-1,false,false,false
+fhlbboston.com,"Interagency Collaboration",500,false,-1,-1,true,false,false
+fhlbatl.com,"Interagency Collaboration",500,false,-1,-1,false,true,false
+fhlbanks.com,"Interagency Collaboration",200,false,-1,-1,true,true,false
+fhlb.com,"Interagency Collaboration",301,false,-1,-1,false,true,false
+fhlb-pgh.com,"Interagency Collaboration",301,true,31536000,1737459014767,true,true,false
+fhlb-of.com,"Interagency Collaboration",302,false,-1,-1,false,true,false
+federalreserveeducation.org,"Federal Reserve Board",500,false,-1,-1,false,true,false
+federalrelay.us,"General Services Administration",500,false,-1,-1,true,false,false
+federallabs.org,"Interagency Collaboration",200,false,-1,-1,false,false,false
+fdrlibrary.marist.edu,"National Archives and Records Administration (NARA)",500,false,-1,-1,false,true,false
+fd.org,"U.S. Courts",500,false,-1,-1,false,true,false
+fcc.us,"Federal Communications Commission (FCC)",500,false,-1,-1,false,false,false
+fbiacademy.edu,"Federal Bureau of Investigation (FBI)",500,false,-1,-1,false,false,false
+farmermac.com,"Federal Agricultural Mortgage Corporation",301,true,300,1737427479067,false,false,false
+farmcreditbank.com,"Farm Credit Administration",301,false,-1,-1,true,true,true
+fanniemae.com,"Federal National Mortgage Association",301,false,-1,-1,false,true,false
+fairhousingfirst.org,"Department of Housing and Urban Development (HUD)",500,false,-1,-1,false,false,false
+escarosacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+ertvideo.org,"Environmental Protection Agency (EPA)",500,false,-1,-1,false,false,false
+ertsupport.org,"Environmental Protection Agency (EPA)",500,false,-1,-1,false,false,false
+epcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+epaosc.org,"Environmental Protection Agency (EPA)",301,true,31536000,1737459014767,true,false,false
+epancic.org,"Environmental Protection Agency (EPA)",500,false,-1,-1,false,false,false
+epa.maps.arcgis.com,"Environmental Protection Agency (EPA)",302,true,63072000,1737490550767,true,false,false
+enviroflash.info,"Environmental Protection Agency (EPA)",301,false,-1,-1,false,false,false
+elcivicsonline.org,"Department of Education (ED)",200,false,-1,-1,false,false,false
+efts.scportal.us,"Department of Defense",500,false,-1,-1,false,false,false
+easternmasscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+earthsystemmodeling.org,"National Aeronautics and Space Administration (NASA)",200,false,-1,-1,false,false,false
+earthkam.ucsd.edu,"National Aeronautics and Space Administration (NASA)",500,false,-1,-1,false,false,false
+e2.gov.cwtsatotravel.com,"General Services Administration (GSA)",200,true,31536000,1737459014767,true,true,false
+dvidshub.net,"Department of Defense (DOD)",301,true,31536000,1737459014767,false,false,false
+dvbic.org,"Department of Defense (DOD)",200,false,-1,-1,false,false,false
+dodstarbase.org,"Department of Defense (DOD)",200,true,31536000,1737459014767,false,true,false
+dodsbir.net,"Department of Defense (DOD)",302,false,-1,-1,false,false,false
+dodea.edu,"Department of Defense (DOD)",301,true,600,1737427479367,false,true,false
+dodccrp.org,"Department of Defense (DOD)",500,false,-1,-1,false,false,false
+docsteach.org,"National Archives and Records Administration (NARA)",403,false,-1,-1,false,false,false
+digitalvaults.org,"National Archives and Records Administration (NARA)",200,false,-1,-1,false,false,false
+dhs-summit.us,"Department of Homeland Security (DHS)",500,false,-1,-1,false,false,false
+dfwmetroplexcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+defensetv.tv,"Department of Defense (DOD)",500,false,-1,-1,false,false,false
+deamuseum.org,"Drug Enforcement Agency (DEA)",301,true,31536000,1737459014767,false,true,false
+dallasfed.org,"Federal Reserve Board",500,false,-1,-1,true,false,false
+d13cgaux.com,"U.S. Coast Guard Auxiliary",500,false,-1,-1,false,false,false
+d11nuscgaux.info,"U.S. Coast Guard Auxiliary",301,false,-1,-1,false,false,false
+cybercemetery.unt.edu,"Quasigovernmental",301,false,-1,-1,false,false,false
+cvand29palmscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+ctandwmacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cowvcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cooperhewitt.org,"Smithsonian Institution",301,false,-1,-1,false,false,false
+cooperativepatentclassification.org,"U.S. Patent and Trademark Office (USPTO)",301,false,-1,-1,false,true,false
+commissaries.com,"Defense Commissary Agency (DeCA)",500,false,-1,-1,false,false,false
+columbusbenningcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cobank.com,"Farm Credit Administration",200,true,86400,1737427565167,false,false,false
+coastalcarolinacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+coastalbendareacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+clu-in.org,"Environmental Protection Agency (EPA)",200,true,31536000,1737459014767,true,false,false
+clevelandfed.org,"Federal Reserve Board",500,false,-1,-1,true,false,false
+cldcentral.usalearning.net,"Office of Personnel Management (OPM)",301,true,63072000,1737490550767,false,false,true
+cipm.info,"National Science Foundation (NSF)",500,false,-1,-1,false,false,false
+cidi.org,"U.S. Agency for International Development (USAID)",301,true,15552000,1737443030767,true,true,false
+chicagofed.org,"Federal Reserve Board",500,false,-1,-1,true,true,false
+chicagocfc.net,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+chemcatbio.org,"Department of Energy (DOE)",301,true,31536000,1737459014767,true,true,true
+chattanoogacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cge.concursolutions.com,"General Services Administration (GSA)",302,true,15552000,1737443030767,false,true,false
+cgaux.org,"U.S. Coast Guard Auxiliary",200,false,-1,-1,false,false,false
+cga.edu,"U.S. Coast Guard",500,false,-1,-1,false,false,false
+cfe-dmha.org,"Department of Defense (DOD)",500,false,-1,-1,false,false,false
+cfcwnc.com,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcwesternmontana.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcwesternmichigan.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcvp.org,"Combined Federal Campaign",200,false,-1,-1,false,false,false
+cfctexasgulfcoast.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcsnj.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcshr.org,"Combined Federal Campaign",403,false,-1,-1,false,false,false
+cfcsemi.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcsanantonio.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcredrivervalley.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcofthecsra.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcofgreatersocal.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcofcva.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcnps.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcnorthtexas.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcnnj.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcnexus.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcnca.org,"Combined Federal Campaign",301,false,-1,-1,false,true,false
+cfcmontereysantacruz.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcmidsouth.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcmaine.org,"Combined Federal Campaign",301,true,86400,1737427565167,false,true,false
+cfcindiana.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcgreaternc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcgreaterarkansas.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcgno.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcgive.org,"Combined Federal Campaign",200,false,-1,-1,false,false,false
+cfcforthood.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfccoastalga.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcaz.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfcaaga.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cfc-centralok.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cf-cfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+centraltexascfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+centralpacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+centralcaliforniacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+cdse.edu,"Department of Defense (DOD)",500,false,-1,-1,false,true,false
+cdcnpin.org,"Centers for Disease Control and Prevention (CDC)",500,false,-1,-1,false,true,false
+cbp-ntep.info,"Customs and Border Patrol (CBP)",500,false,-1,-1,false,false,false
+cbacfc.org,"Combined Federal Campaign",200,false,-1,-1,true,false,false
+careeronestop.org,"Employment and Training Administration",301,false,-1,-1,false,false,false
+careerinfonet.org,"Employment and Training Administration",301,true,63072000,1737490550767,false,false,false
+capmembers.com,"U.S. Air Force Auxiliary",301,true,31536000,1737459014767,false,true,false
+buyaccessible.net,"General Services Administration (GSA)",500,false,-1,-1,false,false,false
+bushlibrary.tamu.edu,"National Archives and Records Administration (NARA)",301,false,-1,-1,false,false,false
+bobber.info,"U.S. Army Corps of Engineers",200,false,-1,-1,false,false,false
+bie.edu,"Department of the Interior",301,true,31536000,1737459014767,true,true,false
+benefeds.com,"Office of Personnel Management (OPM)",301,true,31536000,1737459014767,true,true,false
+badgerlandcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+aww.aww-sp.com,"U.S. Coast Guard",302,false,-1,-1,false,false,false
+auxpa.org,"U.S. Coast Guard Auxiliary",500,false,-1,-1,false,false,false
+atlanticcoastcfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+askjan.org,"Department of Labor",200,true,31536000,1737459014767,true,false,true
+armyfuturescommand.com,"Department of the Army",500,false,-1,-1,true,true,false
+armedforcessports.com,"Department of Defense (DOD)",500,false,-1,-1,false,true,false
+amver.com,"U.S. Coast Guard",200,true,31536000,1737459014767,false,true,false
+amtrak.com,"National Railroad Passenger Corporation",301,true,31536000,1737459014767,true,false,false
+americorpsconnect.org,"Corporation for National and Community Service",500,false,-1,-1,false,false,false
+alhurra.com,"U.S. Agency for Global Media",301,true,31536000,1737459014767,false,true,false
+alaskacfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+ajb.org,"Employment and Training Administration",301,true,63072000,1737490550767,false,false,false
+airspacemag.com,"Smithsonian Institution",301,false,-1,-1,false,true,false
+airforce.com,"Department of the Air Force",301,true,63072000,1737490550767,true,true,false
+airdefenseartillery.com,"Department of Defense (DOD)",200,false,-1,-1,false,false,false
+agribank.com,"Farm Credit Administration",302,false,-1,-1,true,true,false
+agfirst.com,"Farm Credit Administration",301,false,-1,-1,false,true,false
+afthunderbirds.com,"Department of the Air Force",200,false,-1,-1,false,false,false
+afreserve.com,"Department of the Air Force",301,true,63072000,1737490550767,true,true,false
+afpmb.org,"Department of Defense (DOD)",500,false,-1,-1,false,false,false
+afnpacific.net,"Department of Defense (DOD)",500,false,-1,-1,false,true,false
+afneurope.net,"Department of Defense (DOD)",500,false,-1,-1,false,true,false
+afacademy.af.edu,"Department of Defense (DOD)",500,false,-1,-1,false,false,false
+adlnet.org,"Department of Defense (DOD)",301,false,-1,-1,false,false,false
+academyadmissions.com,"Department of Defense (DOD)",403,false,-1,-1,false,false,false
+aal.army,"Department of the Army",301,false,-1,-1,false,false,true
+3riverscfc.org,"Combined Federal Campaign",500,false,-1,-1,false,false,false
+18f.us,"General Services Administration (GSA)",200,false,-1,-1,false,false,false
+data.medicaid.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+openpaymentsdata.cms.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+whdpc.gov,"Western Hemisphere Drug Policy Commission",500,false,-1,-1,false,false,false
+senate.gov,"United States Senate",301,true,31536000,1737459014767,false,false,false
+sen.gov,"United States Senate",200,true,31536000,1737459014767,false,true,false
+uscc.gov,"U.S.-China Economic and Security Review Commission",301,false,-1,-1,false,false,false
+ussemiquincentennial.gov,"U.S. Semiquincentennial Commission",200,false,-1,-1,false,false,false
+usa250.gov,"U.S. Semiquincentennial Commission",301,false,-1,-1,false,false,false
+america250.gov,"U.S. Semiquincentennial Commission",301,false,-1,-1,false,false,false
+uscp.gov,"U.S. Capitol Police",500,false,-1,-1,true,true,false
+uscapitolpolice.gov,"U.S. Capitol Police",500,false,-1,-1,false,false,false
+ushr.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+ushouse.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+tmdbhouse.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+taxreform.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+speaker.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+republicanwhip.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+republicans.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+republicanleader.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+ppdcecc.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+minoritywhip.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+majoritywhip.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+majorityleader.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+jct.gov,"The Legislative Branch",301,false,-1,-1,false,false,false
+housenewsletters.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+houselive.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+housedems.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+housedemocrats.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+housed.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+housecommunications.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+house.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+gopwhip.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+gopleader.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+gop.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+dems.gov,"The Legislative Branch",500,false,-1,-1,true,false,false
+democrats.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+democraticwhip.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+democraticleader.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+csce.gov,"The Legislative Branch",500,false,-1,-1,false,true,false
+chinacommission.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+china-commission.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+cecc.gov,"The Legislative Branch",500,false,-1,-1,true,true,false
+assistantdemocraticleader.gov,"The Legislative Branch",500,false,-1,-1,false,false,false
+stennis.gov,"Stennis Center for Public Service",200,false,-1,-1,false,false,false
+openworld.gov,"Open World Leadership Center",500,false,-1,-1,true,true,false
+coil.gov,"Open World Leadership Center",500,false,-1,-1,false,false,false
+ocwr.gov,"Office of Congressional Workplace Rights",301,true,31536000,1737459014767,false,false,false
+compliance.gov,"Office of Congressional Workplace Rights",500,false,-1,-1,false,false,false
+medpac.gov,"Medical Payment Advisory Commission",301,true,31536000,1737459014767,false,false,false
+macpac.gov,"Medicaid and CHIP Payment and Access Commission",301,true,31536000,1737459014767,false,false,false
+womenshistorymonth.gov,"Library of Congress",200,false,-1,-1,false,false,false
+uscongress.gov,"Library of Congress",500,false,-1,-1,false,false,false
+unitedstatescongress.gov,"Library of Congress",500,false,-1,-1,false,false,false
+tps.gov,"Library of Congress",500,false,-1,-1,true,true,false
+thomas.gov,"Library of Congress",500,false,-1,-1,false,false,false
+section108.gov,"Library of Congress",200,false,-1,-1,false,false,false
+read.gov,"Library of Congress",200,false,-1,-1,false,false,false
+nativeamericanheritagemonth.gov,"Library of Congress",200,false,-1,-1,false,false,false
+loctps.gov,"Library of Congress",500,false,-1,-1,true,true,false
+loc.gov,"Library of Congress",301,true,3600,1737427482367,true,true,true
+literacy.gov,"Library of Congress",500,false,-1,-1,false,false,false
+lis.gov,"Library of Congress",500,false,-1,-1,false,false,false
+libraryofcongress.gov,"Library of Congress",500,false,-1,-1,true,true,true
+lctl.gov,"Library of Congress",500,false,-1,-1,false,false,false
+law.gov,"Library of Congress",500,false,-1,-1,true,true,false
+jewishheritagemonth.gov,"Library of Congress",200,false,-1,-1,false,false,false
+jewishheritage.gov,"Library of Congress",500,false,-1,-1,false,false,false
+hispanicheritagemonth.gov,"Library of Congress",200,false,-1,-1,false,false,false
+digitizationguidelines.gov,"Library of Congress",302,false,-1,-1,false,false,false
+digitalpreservation.gov,"Library of Congress",200,false,-1,-1,false,false,false
+currencyreaderapplication.gov,"Library of Congress",301,false,-1,-1,false,true,false
+currencyreader.gov,"Library of Congress",200,true,10886400,1737438365167,false,true,false
+crs.gov,"Library of Congress",500,false,-1,-1,false,false,false
+crb.gov,"Library of Congress",301,false,-1,-1,true,true,false
+copyrightclaimsboard.gov,"Library of Congress",500,false,-1,-1,false,false,false
+copyright.gov,"Library of Congress",200,true,31536000,1737459014767,true,true,false
+congress.gov,"Library of Congress",403,false,-1,-1,false,false,false
+ccb.gov,"Library of Congress",200,true,31536000,1737459014767,true,true,false
+blackhistorymonth.gov,"Library of Congress",200,false,-1,-1,false,false,false
+asianpacificheritage.gov,"Library of Congress",200,false,-1,-1,false,false,false
+americaslibrary.gov,"Library of Congress",301,false,-1,-1,true,true,false
+americanmemory.gov,"Library of Congress",503,false,-1,-1,true,true,true
+africanamericanhistorymonth.gov,"Library of Congress",302,false,-1,-1,false,false,false
+usgovernmentmanual.gov,"Government Publishing Office",200,false,-1,-1,false,false,false
+uscode.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+senatecalendar.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+presidentialdocuments.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+ofr.gov,"Government Publishing Office",500,false,-1,-1,false,true,false
+housecalendar.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+gpodev.gov,"Government Publishing Office",500,false,-1,-1,false,false,false
+gpo.gov,"Government Publishing Office",302,false,-1,-1,true,true,false
+govinfo.gov,"Government Publishing Office",302,true,31536000,1737459014767,true,true,false
+fedreg.gov,"Government Publishing Office",500,false,-1,-1,false,false,false
+federalregister.gov,"Government Publishing Office",302,false,-1,-1,true,true,false
+fdsys.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+fdlp.gov,"Government Publishing Office",200,true,63072000,1737490550767,true,true,false
+ecfr.gov,"Government Publishing Office",302,false,-1,-1,true,true,false
+congressionalrecord.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+congressionaldirectory.gov,"Government Publishing Office",301,false,-1,-1,true,true,false
+gaonet.gov,"Government Accountability Office",500,false,-1,-1,false,false,false
+gaoinnovations.gov,"Government Accountability Office",200,false,-1,-1,true,false,false
+gaoinnovationlab.gov,"Government Accountability Office",500,false,-1,-1,false,false,false
+gaoinnovation.gov,"Government Accountability Office",500,false,-1,-1,false,false,false
+gao.gov,"Government Accountability Office",302,false,-1,-1,true,true,false
+fasab.gov,"Government Accountability Office",200,true,31536000,1737459014767,false,false,false
+eseclab.gov,"Government Accountability Office",500,false,-1,-1,false,false,false
+solarium.gov,"Cyberspace Solarium Commission",500,false,-1,-1,true,true,false
+cbonews.gov,"Congressional Budget Office",500,false,-1,-1,false,false,false
+cbo.gov,"Congressional Budget Office",301,false,-1,-1,false,true,false
+visitthecapitol.gov,"Architect of the Capitol",301,false,-1,-1,false,true,false
+visitthecapital.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+uscapitolgiftstore.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+uscapitolgiftshop.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+uscapitol.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+uscapitalgiftshop.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+uscapital.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+usbg.gov,"Architect of the Capitol",301,false,-1,-1,false,true,false
+capitolgiftshop.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+capitol.gov,"Architect of the Capitol",301,false,-1,-1,true,false,false
+capitalgiftshop.gov,"Architect of the Capitol",500,false,-1,-1,false,false,false
+capital.gov,"Architect of the Capitol",301,false,-1,-1,true,false,false
+aoc.gov,"Architect of the Capitol",301,false,-1,-1,true,false,false
+ustaxcourt.gov,"U.S. Courts",200,false,-1,-1,false,false,false
+ussc.gov,"U.S. Courts",500,false,-1,-1,false,false,false
+usprobation.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+uscourts.gov,"U.S. Courts",301,false,-1,-1,true,true,false
+uscavc.gov,"U.S. Courts",500,false,-1,-1,false,false,false
+usc.gov,"U.S. Courts",500,false,-1,-1,false,false,false
+usbankruptcy.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+pacer.gov,"U.S. Courts",301,true,16070400,1737443549167,false,true,false
+judicialconference.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+fjc.gov,"U.S. Courts",301,false,-1,-1,true,false,false
+federalrules.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+federalprobation.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+federalcourts.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+cavc.gov,"U.S. Courts",500,false,-1,-1,false,false,false
+bankruptcy.gov,"U.S. Courts",500,false,-1,-1,true,true,false
+supremecourtus.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+supremecourt.gov,"The Supreme Court",301,true,31536000,1737459014767,false,false,false
+supreme-court.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+scuspd.gov,"The Supreme Court",301,true,31536000,1737459014767,false,false,false
+scus.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+scinet.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+scinet-test.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+sc-us.gov,"The Supreme Court",500,false,-1,-1,false,false,false
+fd.gov,"Administrative Office of the U. S. Courts",500,false,-1,-1,false,false,false
+rpo.gov,"gov Administration",500,false,-1,-1,false,false,false
+pubservices.gov,"gov Administration",500,false,-1,-1,false,false,false
+psup.gov,"gov Administration",500,false,-1,-1,false,false,false
+psd.gov,"gov Administration",500,false,-1,-1,false,false,false
+owc.gov,"gov Administration",500,false,-1,-1,false,false,false
+osdls.gov,"gov Administration",500,false,-1,-1,false,false,false
+nrpo.gov,"gov Administration",500,false,-1,-1,false,false,false
+jpo.gov,"gov Administration",500,false,-1,-1,false,false,false
+fraho.gov,"gov Administration",500,false,-1,-1,false,false,false
+erpo.gov,"gov Administration",500,false,-1,-1,false,false,false
+ecfc.gov,"gov Administration",500,false,-1,-1,false,false,false
+domainops.gov,"gov Administration",403,false,-1,-1,false,false,false
+ata.gov,"gov Administration",500,false,-1,-1,false,false,false
+ustda.gov,"United States Trade and Development Agency",301,true,31536000,1737459014767,false,true,false
+uspsoig.gov,"United States Postal Service",301,true,31536000,1737459014767,true,false,false
+uspsinnovates.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+uspsinformeddelivery.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+usps.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+uspis.gov,"United States Postal Service",301,false,-1,-1,false,false,false
+purchasing.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+postoffice.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+myusps.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+mail.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+changeofaddress.gov,"United States Postal Service",500,false,-1,-1,false,false,false
+usitcoig.gov,"United States International Trade Commission",500,false,-1,-1,false,false,false
+usitc.gov,"United States International Trade Commission",301,true,31536000,1737459014767,false,true,false
+usidfc.gov,"United States International Development Finance Corporation",301,false,-1,-1,false,true,false
+usdfc.gov,"United States International Development Finance Corporation",301,false,-1,-1,false,true,false
+opic.gov,"United States International Development Finance Corporation",500,false,-1,-1,false,false,false
+idfc.gov,"United States International Development Finance Corporation",301,false,-1,-1,false,true,false
+dfc.gov,"United States International Development Finance Corporation",301,false,-1,-1,false,true,false
+usich.gov,"United States Interagency Council on Homelessness",200,true,31536000,1737459014767,true,false,false
+ich.gov,"United States Interagency Council on Homelessness",500,false,-1,-1,false,false,false
+usip.gov,"United States Institute of Peace",200,false,-1,-1,false,false,false
+ushmm.gov,"United States Holocaust Memorial Museum",500,false,-1,-1,false,false,false
+usgcrp.gov,"United States Global Change Research Program",500,false,-1,-1,false,false,false
+ipcc-wg3.gov,"United States Global Change Research Program",500,false,-1,-1,true,true,false
+globalchange.gov,"United States Global Change Research Program",403,false,-1,-1,false,false,false
+voa.gov,"United States Agency for Global Media",301,true,31536000,1737459014767,true,true,true
+usagm.gov,"United States Agency for Global Media",301,true,31536000,1737459014767,false,false,false
+ocb.gov,"United States Agency for Global Media",500,false,-1,-1,false,false,false
+ibb.gov,"United States Agency for Global Media",302,true,31536000,1737459014767,false,false,false
+bbg.gov,"United States Agency for Global Media",301,true,31536000,1737459014767,false,false,false
+usadf.gov,"United States African Development Foundation",200,true,63072000,1737490550767,false,false,false
+adf.gov,"United States African Development Foundation",500,false,-1,-1,false,false,false
+access-board.gov,"United States Access Board",500,false,-1,-1,false,true,false
+jwod.gov,"United States AbilityOne",500,false,-1,-1,false,false,false
+abilityone.gov,"United States AbilityOne",200,true,31536000,1737459014767,true,true,false
+peacecorpsoig.gov,"U.S. Peace Corps",500,false,-1,-1,false,false,false
+peacecorps.gov,"U.S. Peace Corps",301,false,-1,-1,false,true,false
+oscnet.gov,"U.S. Office of Special Counsel",500,false,-1,-1,false,false,false
+osc.gov,"U.S. Office of Special Counsel",200,false,-1,-1,true,true,false
+nwtrb.gov,"U.S. Nuclear Waste Technical Review Board",301,false,-1,-1,false,false,false
+wildfire.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+usdapii.gov,"U.S. Department of Agriculture",500,false,-1,-1,false,false,false
+usda.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,true,true,false
+symbols.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,true,true,false
+rural.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,true,false
+recreation.gov,"U.S. Department of Agriculture",301,false,-1,-1,true,true,false
+rec.gov,"U.S. Department of Agriculture",301,false,-1,-1,true,true,false
+nwcg.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,true,false
+nutrition.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+nafri.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,false,true,false
+myplate.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,true,true,false
+lcacommons.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+itap.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,false,false,false
+invasivespeciesinfo.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+forestsandrangelands.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,true,false,false
+fedsfeedfamilies.gov,"U.S. Department of Agriculture",500,false,-1,-1,false,false,false
+farmers.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,true,true,false
+farmerfairness.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,true,true,false
+execsec.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,true,true,false
+empowhr.gov,"U.S. Department of Agriculture",500,false,-1,-1,false,false,false
+dietaryguidelines.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,true,true,false
+connect.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+choosemyplate.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,true,true,false
+bosque.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,true,false,false
+biopreferred.gov,"U.S. Department of Agriculture",302,true,31536000,1737459014767,false,true,false
+arsusda.gov,"U.S. Department of Agriculture",500,false,-1,-1,false,false,false
+ars-grin.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,false,true,false
+ag.gov,"U.S. Department of Agriculture",500,false,-1,-1,false,false,false
+aff.gov,"U.S. Department of Agriculture",301,true,31536000,1737459014767,false,false,false
+22007apply.gov,"U.S. Department of Agriculture",200,true,31536000,1737459014767,true,true,false
+uscirf.gov,"U.S. Commission on International Religious Freedom",301,false,-1,-1,false,false,false
+usccr.gov,"U.S. Commission on Civil Rights",301,false,-1,-1,true,true,false
+cssbmb.gov,"U.S. Commission on Civil Rights",200,true,31536000,1737459014767,false,false,false
+civilrightsusa.gov,"U.S. Commission on Civil Rights",500,false,-1,-1,false,false,false
+cfa.gov,"U.S. Commission of Fine Arts",200,true,63072000,1737490550767,false,true,false
+heritageabroad.gov,"U.S. Commission for the Preservation of Americas Heritage Abroad",301,false,-1,-1,false,true,false
+workwithusaid.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+usaid.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+prosperafrica.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+pmi.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+neglecteddiseases.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+foreignassistance.gov,"U.S. Agency for International Development",200,true,63072000,1737490550767,true,true,false
+feedthefuture.gov,"U.S. Agency for International Development",301,false,-1,-1,false,true,false
+dfafacts.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,false,false
+childreninadversity.gov,"U.S. Agency for International Development",200,true,31536000,1737459014767,false,true,false
+worldwar1centennial.gov,"The United States World War One Centennial Commission",301,false,-1,-1,false,true,false
+ptf.gov,"The Intelligence Community",500,false,-1,-1,false,false,false
+tvaoig.gov,"Tennessee Valley Authority",301,true,31536000,1737459014767,true,false,false
+tva.gov,"Tennessee Valley Authority",302,true,31536000,1737459014767,false,false,false
+stb.gov,"Surface Transportation Board",301,true,31536000,1737459014767,true,true,false
+sji.gov,"State Justice Institute",301,false,-1,-1,false,false,false
+sbrc.gov,"Southwest Border Regional Commission",200,true,31536000,1737459014767,false,true,false
+scrc.gov,"Southeast Crescent Regional Commission",200,true,300,1737427479067,false,true,false
+ssab.gov,"Social Security Advisory Board",301,false,-1,-1,false,true,false
+ssa.gov,"Social Security Administration",301,true,31536000,1737459014767,true,true,false
+socialsecurity.gov,"Social Security Administration",301,true,31536000,1737459014767,true,true,false
+segurosocial.gov,"Social Security Administration",301,true,31536000,1737459014767,true,true,false
+smithsonian.gov,"Smithsonian Institution",500,false,-1,-1,false,false,false
+itis.gov,"Smithsonian Institution",200,true,63072000,1737490550767,false,false,false
+sbir.gov,"Small Business Administration",301,true,31536000,1737459014767,true,false,false
+sba.gov,"Small Business Administration",301,true,31536000,1737459014767,false,true,false
+nwbc.gov,"Small Business Administration",301,true,31536000,1737459014767,false,false,false
+business.gov,"Small Business Administration",500,false,-1,-1,false,false,false
+sss.gov,"Selective Service System",301,false,-1,-1,true,false,false
+sec.gov,"Securities and Exchange Commission",301,true,31536000,1737459014767,true,true,false
+investor.gov,"Securities and Exchange Commission",301,true,31536000,1737459014767,true,true,false
+rrb.gov,"Railroad Retirement Board",200,true,31536000,1737459014767,false,true,false
+pbrb.gov,"Public Buildings Reform Board",302,true,31536000,1737459014767,false,false,false
+pclob.gov,"Privacy and Civil Liberties Oversight Board",301,true,31536000,1737459014767,false,false,false
+presidiotunneltops.gov,"Presidio Trust",308,true,31536000,1737459014767,false,true,false
+presidiotrust.gov,"Presidio Trust",308,true,31536000,1737459014767,false,true,false
+presidiocommercial.gov,"Presidio Trust",500,false,-1,-1,false,false,false
+presidio.gov,"Presidio Trust",200,true,31536000,1737459014767,false,true,false
+prc.gov,"Postal Regulatory Commission",200,false,-1,-1,false,true,false
+pbgc.gov,"Pension Benefit Guaranty Corporation",301,true,31536000,1737459014767,false,true,false
+usastaffing.gov,"Office of Personnel Management",302,true,31536000,1737459014767,true,true,false
+usalearning.gov,"Office of Personnel Management",200,true,31536000,1737459014767,false,false,false
+usajobs.gov,"Office of Personnel Management",301,true,31536000,1737459014767,true,true,false
+unlocktalent.gov,"Office of Personnel Management",301,true,31536000,1737459014767,false,true,false
+telework.gov,"Office of Personnel Management",301,true,31536000,1737459014767,false,true,false
+pmf.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,true,false
+pac.gov,"Office of Personnel Management",500,false,-1,-1,false,false,false
+opm.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,true,false
+governmentjobs.gov,"Office of Personnel Management",301,true,31536000,1737459014767,true,true,false
+golearn.gov,"Office of Personnel Management",500,false,-1,-1,false,false,false
+fsafeds.gov,"Office of Personnel Management",403,false,-1,-1,false,false,false
+fegli.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,true,false
+fedshirevets.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,true,false
+fedjobs.gov,"Office of Personnel Management",301,true,31536000,1737459014767,true,true,false
+federaljobs.gov,"Office of Personnel Management",301,true,31536000,1737459014767,true,true,false
+feb.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,true,false
+employeeexpress.gov,"Office of Personnel Management",301,true,31536000,1737459014767,true,false,false
+e-qip.gov,"Office of Personnel Management",500,false,-1,-1,false,false,false
+cybercareers.gov,"Office of Personnel Management",301,true,31536000,1737459014767,false,true,false
+chcoc.gov,"Office of Personnel Management",302,true,31536000,1737459014767,false,false,false
+applicationmanager.gov,"Office of Personnel Management",500,false,-1,-1,false,false,false
+oge.gov,"Office of Government Ethics",500,false,-1,-1,false,false,false
+integrity.gov,"Office of Government Ethics",200,true,63072000,1737490550767,true,true,false
+oshrc.gov,"Occupational Safety & Health Review Commission",301,true,31536000,1737459014767,false,false,false
+nrc.gov,"Nuclear Regulatory Commission",301,true,31536000,1737459014767,false,true,false
+nrc-gateway.gov,"Nuclear Regulatory Commission",301,true,32140800,1737459619567,false,false,false
+nbrc.gov,"Northern Border Regional Commission",301,true,63072000,1737490550767,false,false,false
+igorville.gov,"Non-Federal Agency",500,false,-1,-1,false,false,false
+nitrd.gov,"Networking Information Technology Research and Development",301,true,31536000,1737459014767,true,true,false
+itrd.gov,"Networking Information Technology Research and Development",500,false,-1,-1,false,false,false
+ntsb.gov,"National Transportation Safety Board",302,true,15552000,1737443030767,true,true,false
+nscai.gov,"National Security Commission on Artificial Intelligence",301,false,-1,-1,false,false,false
+usap.gov,"National Science Foundation",301,true,31536000,1737459014767,true,true,false
+sac.gov,"National Science Foundation",301,true,31536000,1737459014767,false,true,false
+research.gov,"National Science Foundation",301,true,31536000,1737459014767,true,true,false
+nsf.gov/staff,"National Science Foundation",301,true,31536000,1737459014767,false,false,false
+new.nsf.gov,"National Science Foundation",200,true,31536000,1737459014767,false,false,false
+arctic.gov,"National Science Foundation",301,true,604800,1737428083567,false,true,false
+nmb.gov,"National Mediation Board",200,true,63072000,1737490550767,true,true,false
+nlrb.gov,"National Labor Relations Board",301,false,-1,-1,false,true,false
+nigc.gov,"National Indian Gaming Commission",301,true,31536000,1737459014767,true,true,false
+nga.gov,"National Gallery of Art",500,false,-1,-1,false,true,false
+neh.gov,"National Endowment for the Humanities",301,false,-1,-1,true,true,false
+humanities.gov,"National Endowment for the Humanities",301,true,31536000,1737459014767,true,true,false
+nea.gov,"National Endowment for the Arts",301,true,31536000,1737459014767,true,true,false
+arts.gov,"National Endowment for the Arts",301,true,31536000,1737459014767,true,true,false
+ncua.gov,"National Credit Union Administration",200,true,31536000,1737459014767,true,true,false
+mycreditunion.gov,"National Credit Union Administration",200,true,31536000,1737459014767,true,true,false
+ncd.gov,"National Council on Disability",301,false,-1,-1,false,true,false
+ncpc.gov,"National Capital Planning Commission",301,true,31536000,1737459014767,true,true,false
+webharvest.gov,"National Archives and Records Administration",200,true,63072000,1737490550767,false,false,false
+wartimecontracting.gov,"National Archives and Records Administration",301,true,31536000,1737459014767,false,false,false
+trumpwhitehouse.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+trumplibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+trumanlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+recordsmanagement.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+reaganlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,true,true,false
+ourdocuments.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+obamawhitehouse.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+obamalibrary.gov,"National Archives and Records Administration",301,true,31536000,1737459014767,false,true,false
+nixonlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+nara.gov,"National Archives and Records Administration",301,true,31536000,1737459014767,false,true,false
+lbjlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+jimmycarterlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+jfklibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+history.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,true,false,false
+georgewbushlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+frc.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+fordlibrarymuseum.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+fcic.gov,"National Archives and Records Administration",301,true,31536000,1737459014767,false,false,false
+emergency-federal-register.gov,"National Archives and Records Administration",302,false,-1,-1,false,true,false
+eisenhowerlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+dd214.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+clintonlibrary.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,true,true,false
+bush41library.gov,"National Archives and Records Administration",302,true,31536000,1737459014767,false,true,false
+archives.gov,"National Archives and Records Administration",301,true,31536000,1737459014767,false,true,false
+911commission.gov,"National Archives and Records Administration",200,false,-1,-1,false,false,false
+9-11commission.gov,"National Archives and Records Administration",200,false,-1,-1,false,false,false
+usgeo.gov,"National Aeronautics and Space Administration",500,false,-1,-1,false,false,false
+scijinks.gov,"National Aeronautics and Space Administration",200,true,31536000,1737459014767,false,false,false
+nasa.gov,"National Aeronautics and Space Administration",302,true,31536000,1737459014767,false,false,false
+globe.gov,"National Aeronautics and Space Administration",301,true,31536000,1737459014767,true,true,false
+earth.gov,"National Aeronautics and Space Administration",200,true,31536000,1737459014767,false,true,false
+udall.gov,"Morris K. Udall and Stewart L. Udall Foundation",200,true,31536000,1737459014767,false,true,false
+ecr.gov,"Morris K. Udall and Stewart L. Udall Foundation",500,false,-1,-1,false,true,false
+mcctest.gov,"Millennium Challenge Corporation",500,false,-1,-1,false,false,false
+mcc.gov,"Millennium Challenge Corporation",301,true,31536000,1737459014767,false,true,false
+mspb.gov,"Merit Systems Protection Board",301,false,-1,-1,false,false,false
+mmc.gov,"Marine Mammal Commission",301,true,31536000,1737459014767,false,false,false
+lsc.gov,"Legal Services Corporation",200,true,3516000,1737430994767,true,true,false
+kennedy-center.gov,"John F. Kennedy Center for Performing Arts",500,false,-1,-1,false,false,false
+jusfc.gov,"Japan-US Friendship Commission",200,true,31536000,1737459014767,true,true,false
+jamesmadison.gov,"James Madison Memorial Fellowship Foundation",301,false,-1,-1,false,true,false
+iaf.gov,"Inter-American Foundation",403,false,-1,-1,false,false,false
+pcah.gov,"Institute of Museum and Library Services",200,false,-1,-1,false,false,false
+informationliteracy.gov,"Institute of Museum and Library Services",403,false,-1,-1,false,false,false
+imls.gov,"Institute of Museum and Library Services",200,false,-1,-1,false,true,false
+truman.gov,"Harry S. Truman Scholarship Foundation",301,false,-1,-1,false,true,false
+restorethegulf.gov,"Gulf Coast Ecosystem Restoration Council",200,true,31536000,1737459014767,false,true,false
+vote.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+ussm.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+usagov.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+usability.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+usa.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+us.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+thenamingcommission.gov,"General Services Administration",500,false,-1,-1,false,false,false
+statspolicy.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+sftool.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+section508.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+search.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+sbst.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+sam.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+saferfederalworkforce.gov,"General Services Administration",500,false,-1,-1,false,false,false
+rpa.gov,"General Services Administration",500,false,-1,-1,false,false,false
+rocis.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+reporting.gov,"General Services Administration",500,false,-1,-1,false,false,false
+regulations.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+reginfo.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+realpropertyprofile.gov,"General Services Administration",301,true,31536000,1737459014767,true,true,false
+realestatesales.gov,"General Services Administration",200,true,63072000,1737490550767,false,true,false
+ptt.gov,"General Services Administration",500,false,-1,-1,false,false,false
+presidentialinnovationfellows.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+ppms.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+plainlanguage.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+pki.gov,"General Services Administration",500,false,-1,-1,false,false,false
+pki-lab.gov,"General Services Administration",500,false,-1,-1,false,false,false
+pif.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+pic.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+performance.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+pcscotus.gov,"General Services Administration",500,false,-1,-1,false,false,false
+paymentaccuracy.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+notify.gov,"General Services Administration",302,true,31556926,1737459035693,true,true,true
+ncmms.gov,"General Services Administration",500,false,-1,-1,false,false,false
+madeinamerica.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+login.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,true
+kids.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+itdashboard.gov,"General Services Administration",200,true,31536000,1737459014767,false,false,false
+innovation.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+info.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+idmanagement.gov,"General Services Administration",301,true,31536000,1737459014767,true,true,false
+identitysandbox.gov,"General Services Administration",500,false,-1,-1,false,false,false
+gsaxcess.gov,"General Services Administration",500,false,-1,-1,false,false,false
+gsatest2.gov,"General Services Administration",500,false,-1,-1,false,false,false
+gsaig.gov,"General Services Administration",200,true,31536000,1737459014767,true,true,false
+gsafleet.gov,"General Services Administration",200,false,-1,-1,false,false,false
+gsaauctions.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+gsaadvantage.gov,"General Services Administration",200,true,63072000,1737490550767,false,true,false
+gsa.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+gobiernousa.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+fsrs.gov,"General Services Administration",302,true,63072000,1737490550767,false,false,false
+fsd.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+frpg.gov,"General Services Administration",307,true,31536000,1737459014767,false,false,false
+fpki.gov,"General Services Administration",500,false,-1,-1,false,false,false
+fpki-lab.gov,"General Services Administration",500,false,-1,-1,false,false,false
+fpds.gov,"General Services Administration",200,true,31536000,1737459014767,false,false,false
+fpc.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+forms.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+fmi.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+fleet.gov,"General Services Administration",500,false,-1,-1,false,false,false
+firstgov.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+fedrooms.gov,"General Services Administration",307,true,31536000,1737459014767,false,true,false
+fedramp.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+fedinfo.gov,"General Services Administration",500,false,-1,-1,false,false,false
+fedidcard.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+fdms.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+fcsm.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+fbo.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+fbf.gov,"General Services Administration",301,true,31536000,1737459014767,false,false,false
+fapiis.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+fai.gov,"General Services Administration",301,true,63072000,1737490550767,false,false,false
+facadatabase.gov,"General Services Administration",301,true,31536000,1737459014767,true,true,false
+faca.gov,"General Services Administration",307,true,31536000,1737459014767,false,true,false
+fac.gov,"General Services Administration",301,true,31536000,1737459014767,true,true,false
+evaluation.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+esrs.gov,"General Services Administration",302,true,63072000,1737490550767,false,false,false
+ecpic.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+digitalgov.gov,"General Services Administration",301,true,63072000,1737490550767,false,true,false
+digitaldashboard.gov,"General Services Administration",200,true,31536000,1737459014767,false,false,false
+digital.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+data.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+csusop.gov,"General Services Administration",500,false,-1,-1,false,false,false
+cpars.gov,"General Services Administration",200,true,31557600,1737459036367,true,true,false
+contractdirectory.gov,"General Services Administration",200,true,31536000,1737459014767,false,false,false
+consumeraction.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+computersforlearning.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+code.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,false
+cloud.gov,"General Services Administration",200,true,31536000,1737459014767,false,true,true
+citizenscience.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+cio.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+challenge.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+cfo.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+cdo.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+cbca.gov,"General Services Administration",500,false,-1,-1,false,false,false
+cao.gov,"General Services Administration",500,false,-1,-1,false,false,false
+buyamerican.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+buyaccessible.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+businessusa.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+afadvantage.gov,"General Services Administration",200,true,63072000,1737490550767,false,true,false
+acquisitiongateway.gov,"General Services Administration",200,true,31536000,1737459014767,false,false,false
+acquisition.gov,"General Services Administration",301,true,63072000,1737490550767,false,false,false
+accessibility.gov,"General Services Administration",301,true,31536000,1737459014767,false,true,false
+400yaahc.gov,"General Services Administration",302,true,31536000,1737459014767,false,false,false
+18f.gov,"General Services Administration",302,true,31536000,1737459014767,false,true,false
+sentinel.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+robodeidentidad.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+protecciondelconsumidor.gov,"Federal Trade Commission",500,false,-1,-1,false,false,false
+onguardonline.gov,"Federal Trade Commission",301,false,-1,-1,false,true,false
+militaryconsumer.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+idtheft.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+identitytheft.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+hsr.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+ftc.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+econsumer.gov,"Federal Trade Commission",200,true,31536000,1737459014767,false,true,false
+dontserveteens.gov,"Federal Trade Commission",301,true,31536000,1737459014767,false,true,false
+donotcall.gov,"Federal Trade Commission",302,false,-1,-1,true,true,false
+consumidor.gov,"Federal Trade Commission",200,true,31536000,1737459014767,false,true,false
+consumersentinel.gov,"Federal Trade Commission",200,true,31536000,1737459014767,false,false,false
+consumer.gov,"Federal Trade Commission",200,true,31536000,1737459014767,false,true,false
+alertaenlinea.gov,"Federal Trade Commission",301,false,-1,-1,false,true,false
+tsptest.gov,"Federal Retirement Thrift Investment Board",500,false,-1,-1,false,false,false
+tsp.gov,"Federal Retirement Thrift Investment Board",302,false,-1,-1,true,true,false
+frtibtest.gov,"Federal Retirement Thrift Investment Board",500,false,-1,-1,false,false,false
+frtib.gov,"Federal Retirement Thrift Investment Board",301,false,-1,-1,false,true,false
+exploretsp.gov,"Federal Retirement Thrift Investment Board",302,false,-1,-1,false,false,false
+uscurrency.gov,"Federal Reserve Board of Governors",301,true,31536000,1737459014767,true,true,false
+newmoney.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+frs.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+frb.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+ffiec.gov,"Federal Reserve Board of Governors",301,true,31536000,1737459014767,false,false,false
+fedres.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+fedpartnership.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+federalreserveconsumerhelp.gov,"Federal Reserve Board of Governors",500,false,-1,-1,false,false,false
+federalreserve.gov,"Federal Reserve Board of Governors",301,true,31536000,1737459014767,false,false,false
+fbiic.gov,"Federal Reserve Board of Governors",301,true,31536000,1737459014767,false,false,false
+billetes.gov,"Federal Reserve Board of Governors",301,true,31536000,1737459014767,true,true,false
+permitting.gov,"Federal Permitting Improvement Steering Council",301,true,31536000,1737459014767,false,false,false
+fpisc.gov,"Federal Permitting Improvement Steering Council",301,true,63072000,1737490550767,false,true,false
+fmshrc.gov,"Federal Mine Safety and Health Review Commission",200,true,15552000,1737443030767,true,true,false
+fmcs.gov,"Federal Mediation and Conciliation Service",301,true,63072000,1737490550767,false,false,false
+adr.gov,"Federal Mediation and Conciliation Service",301,true,63072000,1737490550767,false,false,false
+fmc.gov,"Federal Maritime Commission",301,true,31536000,1737459014767,true,true,false
+flra.gov,"Federal Labor Relations Authority",301,true,31536000,1737459014767,false,true,false
+mortgagetranslations.gov,"Federal Housing Finance Agency",500,false,-1,-1,false,true,false
+fhfaoig.gov,"Federal Housing Finance Agency",302,true,31536000,1737459014767,true,true,false
+fhfa.gov,"Federal Housing Finance Agency",301,false,-1,-1,false,true,false
+ferc.gov,"Federal Energy Regulatory Commission",200,true,15724800,1737443203567,false,true,false
+fec.gov,"Federal Election Commission",301,false,-1,-1,true,true,false
+ofia.gov,"Federal Deposit Insurance Corporation",404,true,31536000,1737459014767,false,true,false
+myfdic.gov,"Federal Deposit Insurance Corporation",500,false,-1,-1,false,false,false
+fdicseguro.gov,"Federal Deposit Insurance Corporation",301,false,-1,-1,false,true,false
+fdicoig.gov,"Federal Deposit Insurance Corporation",301,true,31536000,1737459014767,true,false,false
+fdicig.gov,"Federal Deposit Insurance Corporation",500,false,-1,-1,false,false,false
+fdicconnect.gov,"Federal Deposit Insurance Corporation",500,false,-1,-1,false,false,false
+fdic.gov,"Federal Deposit Insurance Corporation",200,true,15768000,1737443246767,false,true,false
+economicinclusion.gov,"Federal Deposit Insurance Corporation",301,false,-1,-1,false,true,false
+getinternet.gov,"Federal Communications Commission",301,true,31536000,1737459014767,false,true,false
+fcc.gov,"Federal Communications Commission",301,true,31536000,1737459014767,true,true,false
+broadbandmap.gov,"Federal Communications Commission",301,true,31536000,1737459014767,true,true,false
+affordableconnectivity.gov,"Federal Communications Commission",200,true,31540000,1737459018767,false,true,false
+acpbenefit.gov,"Federal Communications Commission",301,false,-1,-1,false,true,false
+accedeainternet.gov,"Federal Communications Commission",301,true,31536000,1737459014767,false,true,false
+fcsic.gov,"Farm Credit Administration",301,true,31536000,1737459014767,false,true,false
+fca.gov,"Farm Credit Administration",301,true,31536000,1737459014767,false,true,false
+exim.gov,"Export/Import Bank of the U.S.",200,true,31536000,1737459014767,false,true,false
+whitehousedrugpolicy.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+whitehouse.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+wh.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+ustr.gov,"Executive Office of the President",200,true,31536000,1737459014767,true,true,false
+usds.gov,"Executive Office of the President",301,false,-1,-1,false,false,false
+usdigitalservice.gov,"Executive Office of the President",302,true,31536000,1737459014767,false,false,false
+unitedwestand.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+reprorights.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+reproductiverights.gov,"Executive Office of the President",200,true,31536000,1737459014767,false,false,false
+reproductiveaccess.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+reproaccess.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+quantum.gov,"Executive Office of the President",301,false,-1,-1,true,true,false
+publicserviceloanforgiveness.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+pslf.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+pitctestdomain.gov,"Executive Office of the President",500,false,-1,-1,false,false,false
+pitc.gov,"Executive Office of the President",500,false,-1,-1,false,false,false
+pci.gov,"Executive Office of the President",500,false,-1,-1,false,false,false
+ostp.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+ondcp.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+omb.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+nepa.gov,"Executive Office of the President",500,false,-1,-1,false,false,false
+nano.gov,"Executive Office of the President",302,false,-1,-1,false,true,false
+max.gov,"Executive Office of the President",302,true,31536000,1737459014767,true,true,false
+investinginamerica.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+investinamerica.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+invest.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+invertir.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+eop.gov,"Executive Office of the President",301,true,31536000,1737459014767,true,true,false
+environmentaljustice.gov,"Executive Office of the President",200,false,-1,-1,true,true,false
+ej.gov,"Executive Office of the President",301,false,-1,-1,true,true,false
+earmarks.gov,"Executive Office of the President",302,true,31536000,1737459014767,true,true,false
+crisisnextdoor.gov,"Executive Office of the President",302,true,31536000,1737459014767,false,false,false
+cleanenergy.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+childtaxcredit.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+buildbackbetter.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+build.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+budget.gov,"Executive Office of the President",301,true,31536000,1737459014767,false,false,false
+ai.gov,"Executive Office of the President",200,false,-1,-1,true,true,false
+eeoc.gov,"Equal Employment Opportunity Commission",302,true,63072000,1737490550767,false,true,false
+urbanwaters.gov,"Environmental Protection Agency",302,true,63072000,1737490550767,true,true,false
+sustainability.gov,"Environmental Protection Agency",301,false,-1,-1,true,true,false
+relocatefeds.gov,"Environmental Protection Agency",302,true,63072000,1737490550767,true,true,false
+greengov.gov,"Environmental Protection Agency",503,false,-1,-1,false,false,false
+glnpo.gov,"Environmental Protection Agency",500,false,-1,-1,false,false,false
+frtr.gov,"Environmental Protection Agency",302,true,31536000,1737459014767,true,false,false
+foiaonline.gov,"Environmental Protection Agency",500,false,-1,-1,false,false,false
+fedcenter.gov,"Environmental Protection Agency",404,false,-1,-1,false,false,false
+epaoig.gov,"Environmental Protection Agency",301,true,31536000,1737459014767,true,false,false
+epa.gov,"Environmental Protection Agency",301,true,63072000,1737490550767,true,true,false
+energystar.gov,"Environmental Protection Agency",301,true,31536000,1737459014767,false,true,false
+cbi-epa.gov,"Environmental Protection Agency",500,false,-1,-1,false,false,false
+airnow.gov,"Environmental Protection Agency",200,true,63072000,1737490550767,true,true,false
+airknowledge.gov,"Environmental Protection Agency",500,false,-1,-1,false,false,false
+votebymail.gov,"Election Assistance Commission",301,false,-1,-1,false,true,false
+helpamericavote.gov,"Election Assistance Commission",301,false,-1,-1,false,true,false
+eac.gov,"Election Assistance Commission",200,false,-1,-1,false,true,false
+ugov.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+osis.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+odni.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+nctc.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+ncsc.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+ncix.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+ise.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+intelligence.gov,"Director of National Intelligence",301,false,-1,-1,false,false,false
+intelink.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+intel.gov,"Director of National Intelligence",301,false,-1,-1,false,false,false
+icjointduty.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+iarpa.gov,"Director of National Intelligence",301,false,-1,-1,true,true,false
+iarpa-ideas.gov,"Director of National Intelligence",302,true,1,1737427478768,false,true,false
+famep.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+dni.gov,"Director of National Intelligence",301,false,-1,-1,false,true,false
+ce-ncsc.gov,"Director of National Intelligence",500,false,-1,-1,false,false,false
+workplace.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+wizard.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+ustreas.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+usmint.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+usdebitcard.gov,"Department of the Treasury",301,true,31536000,1737459014767,true,true,false
+usaspending.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,false,false
+twai.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+ttlplus.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+ttbonline.gov,"Department of the Treasury",301,true,31536000,1737459014767,true,true,false
+ttb.gov,"Department of the Treasury",500,false,-1,-1,false,true,false
+treasuryscams.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+treasuryhunt.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+treasuryecm.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+treasurydirect.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+treasuryauctions.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+treasuryauction.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+treasury.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+treaslockbox.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+treas.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+transparency.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+tigtanet.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+tigta.gov,"Department of the Treasury",302,true,31536000,1737459014767,true,false,false
+tcis.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+tax.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+taaps.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+slgs.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+sigtarp.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+sigpr.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+savingsbondwizard.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+savingsbonds.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+savingsbond.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+qatesttwai.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+pay.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,false,false
+patriotbonds.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+ots.gov,"Department of the Treasury",302,false,-1,-1,false,false,false
+occnet.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+occhelps.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+occ.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+navycash.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+nationalbanknet.gov,"Department of the Treasury",302,false,-1,-1,false,false,false
+nationalbankhelp.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+nationalbank.gov,"Department of the Treasury",404,true,31536000,1737459014767,false,false,false
+mytreasury.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+myra.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+mymoney.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+myira.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+msb.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+moneyfactorystore.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+moneyfactory.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+mha.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+makinghomeaffordable.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+its.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+irsvideos.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+irssales.gov,"Department of the Treasury",500,false,-1,-1,false,true,false
+irsnet.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+irsauctions.gov,"Department of the Treasury",500,false,-1,-1,false,true,false
+irs.gov,"Department of the Treasury",500,false,-1,-1,false,true,false
+ipp.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+ipac.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+helpwithmymortgagebank.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+helpwithmymortgage.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+helpwithmycreditcardbank.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+helpwithmycreditcard.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+helpwithmycheckingaccount.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+helpwithmybank.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+godirect.gov,"Department of the Treasury",302,true,86400,1737427565167,false,false,false
+fsoc.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+fincen.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+financialstability.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+financialresearch.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+ffb.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,false,false
+fedinvest.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+federalspending.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+federalinvestments.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+eyenote.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+ethicsburg.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+eta-find.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+eftps.gov,"Department of the Treasury",302,true,31536000,1737459014767,true,true,false
+eaglecash.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+directoasucuenta.gov,"Department of the Treasury",302,true,86400,1737427565167,false,false,false
+comptrollerofthecurrency.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+complaintreferralexpress.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+cdfifund.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+ccac.gov,"Department of the Treasury",302,true,120,1737427478887,false,true,false
+bondpro.gov,"Department of the Treasury",301,true,31536000,1737459014767,false,true,false
+bfem.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+bep.gov,"Department of the Treasury",302,true,31536000,1737459014767,false,true,false
+banknet.gov,"Department of the Treasury",500,false,-1,-1,false,false,false
+bankhelp.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+bankcustomerassistance.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+bankcustomer.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+bankanswers.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+ayudaconmibanco.gov,"Department of the Treasury",200,true,31536000,1737459014767,true,true,false
+asap.gov,"Department of the Treasury",200,true,31536000,1737459014767,false,true,false
+americathebeautifulquarters.gov,"Department of the Treasury",302,true,63072000,1737490550767,false,false,false
+ama.gov,"Department of the Treasury",500,false,-1,-1,false,true,false
+wlci.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+watermonitor.gov,"Department of the Interior",500,true,31536000,1737459014767,false,false,false
+volunteer.gov,"Department of the Interior",302,true,15552000,1737443030767,false,false,false
+volcano.gov,"Department of the Interior",301,true,63072000,1737490550767,false,false,false
+utahfireinfo.gov,"Department of the Interior",301,false,-1,-1,true,true,false
+usgs.gov,"Department of the Interior",500,true,31536000,1737519478265,false,false,false
+usbr.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+sierrawild.gov,"Department of the Interior",301,true,31536000,1737459014767,false,false,false
+sciencebase.gov,"Department of the Interior",301,false,-1,-1,false,false,false
+salmonrecovery.gov,"Department of the Interior",200,true,31536000,1737459014767,false,true,false
+safecom.gov,"Department of the Interior",200,true,63072000,1737490550767,true,true,false
+rivers.gov,"Department of the Interior",200,true,31536000,1737459014767,false,true,false
+reportband.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+piedrasblancas.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+osmre.gov,"Department of the Interior",500,false,-1,-1,false,true,false
+osm.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+onrr.gov,"Department of the Interior",200,true,31536000,1737459014767,false,true,false
+onhir.gov,"Department of the Interior",302,false,-1,-1,false,true,false
+nps.gov,"Department of the Interior",302,true,31536000,1737459014767,false,false,false
+nifc.gov,"Department of the Interior",302,false,-1,-1,false,true,false
+nfpors.gov,"Department of the Interior",200,false,-1,-1,false,false,false
+nemi.gov,"Department of the Interior",301,true,31536000,1737459014767,false,true,false
+nbc.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+nationalmap.gov,"Department of the Interior",500,true,31536000,1737459014767,false,false,false
+mtbs.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+mrlc.gov,"Department of the Interior",302,true,31536000,1737459014767,true,true,false
+mms.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+mitigationcommission.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+lmvsci.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+lcrmscp.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+lca.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+landimaging.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+landfire.gov,"Department of the Interior",200,true,31536000,1737459014767,false,true,false
+lacoast.gov,"Department of the Interior",301,true,31536000,1737459014767,false,false,false
+jem.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+invasivespecies.gov,"Department of the Interior",302,true,31536000,1737459014767,false,true,false
+interior.gov,"Department of the Interior",302,true,31536000,1737459014767,false,true,false
+indianaffairs.gov,"Department of the Interior",301,true,31536000,1737459014767,true,true,false
+iat.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+geoplatform.gov,"Department of the Interior",200,true,31536000,1737459014767,true,true,false
+gcmrc.gov,"Department of the Interior",301,true,31536000,1737459014767,false,false,false
+fws.gov,"Department of the Interior",301,true,31536000,1737459014767,false,true,false
+firescience.gov,"Department of the Interior",302,true,31536000,1737459014767,false,true,false
+firenet.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+fireleadership.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+firecode.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+ficor.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+fgdc.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+fcg.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+everykidoutdoors.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+evergladesrestoration.gov,"Department of the Interior",301,false,-1,-1,false,true,false
+earthquake.gov,"Department of the Interior",301,true,31536000,1737459014767,false,false,false
+doioig.gov,"Department of the Interior",301,true,31536000,1737459014767,true,false,false
+doi.gov,"Department of the Interior",301,true,31536000,1737459014767,false,true,false
+cupcao.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+criticalminerals.gov,"Department of the Interior",302,false,-1,-1,true,true,false
+coralreef.gov,"Department of the Interior",200,true,31536000,1737459014767,false,false,false
+conservation.gov,"Department of the Interior",302,true,31536000,1737459014767,true,true,false
+btfa.gov,"Department of the Interior",302,true,31536000,1737459014767,false,true,false
+bsee.gov,"Department of the Interior",301,false,-1,-1,false,true,false
+bor.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+boemre.gov,"Department of the Interior",500,false,-1,-1,false,false,false
+boem.gov,"Department of the Interior",301,false,-1,-1,true,true,false
+blm.gov,"Department of the Interior",302,false,-1,-1,false,true,false
+bia.gov,"Department of the Interior",301,true,31536000,1737459014767,true,true,false
+anstaskforce.gov,"Department of the Interior",301,true,31536000,1737459014767,false,true,false
+acwi.gov,"Department of the Interior",500,true,31536000,1737459014767,false,false,false
+vets.gov,"Department of Veterans Affairs",301,true,31536000,1737459014767,false,false,true
+vaoig.gov,"Department of Veterans Affairs",301,true,31536000,1737459014767,true,false,false
+va.gov,"Department of Veterans Affairs",301,true,31536000,1737459014767,false,false,true
+reach.gov,"Department of Veterans Affairs",301,true,63072000,1737490550767,false,false,false
+ehr.gov,"Department of Veterans Affairs",500,false,-1,-1,false,false,false
+transportation.gov,"Department of Transportation",302,false,-1,-1,false,true,true
+trafficsafetymarketing.gov,"Department of Transportation",302,true,63072000,1737490550767,false,true,false
+sharetheroadsafely.gov,"Department of Transportation",500,false,-1,-1,false,true,true
+safertruck.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+safercar.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+safeocs.gov,"Department of Transportation",200,true,31536000,1737459014767,false,true,false
+safecar.gov,"Department of Transportation",500,false,-1,-1,false,false,false
+protectyourmove.gov,"Department of Transportation",500,false,-1,-1,false,true,true
+nhtsa.gov,"Department of Transportation",302,true,63072000,1737490550767,false,true,false
+jccbi.gov,"Department of Transportation",500,false,-1,-1,false,false,false
+flyhealthy.gov,"Department of Transportation",500,false,-1,-1,false,false,false
+flightrights.gov,"Department of Transportation",301,true,31536000,1737459014767,false,true,false
+faasafety.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+faa.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+esc.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+ems.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+dotideahub.gov,"Department of Transportation",500,false,-1,-1,false,false,false
+dot.gov,"Department of Transportation",500,false,-1,-1,false,true,true
+distraction.gov,"Department of Transportation",500,false,-1,-1,false,false,false
+distracteddriving.gov,"Department of Transportation",302,true,63072000,1737490550767,false,true,false
+bts.gov,"Department of Transportation",500,false,-1,-1,false,true,true
+911.gov,"Department of Transportation",500,false,-1,-1,false,true,false
+usmission.gov,"Department of State",500,false,-1,-1,false,false,false
+usembassy.gov,"Department of State",500,false,-1,-1,false,false,false
+usdoscloud.gov,"Department of State",500,false,-1,-1,false,false,false
+usconsulate.gov,"Department of State",500,false,-1,-1,false,false,false
+usaseanconnect.gov,"Department of State",500,false,-1,-1,false,false,false
+supportfan.gov,"Department of State",500,false,-1,-1,false,false,false
+stateoig.gov,"Department of State",301,true,31536000,1737459014767,false,false,false
+state.gov,"Department of State",500,false,-1,-1,false,false,false
+securitytestfan.gov,"Department of State",500,false,-1,-1,false,false,false
+preprodfan.gov,"Department of State",500,false,-1,-1,false,false,false
+pepfar.gov,"Department of State",500,false,-1,-1,false,false,false
+osac.gov,"Department of State",500,false,-1,-1,false,false,false
+ibwc.gov,"Department of State",301,false,-1,-1,false,false,false
+iawg.gov,"Department of State",200,true,31536000,1737459014767,false,false,false
+fsgb.gov,"Department of State",500,false,-1,-1,false,true,false
+fan.gov,"Department of State",200,false,-1,-1,false,false,false
+devtestfan1.gov,"Department of State",500,false,-1,-1,false,false,false
+america.gov,"Department of State",500,false,-1,-1,false,false,false
+youthrules.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+wrp.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+worker.gov,"Department of Labor",301,false,-1,-1,false,false,false
+workcenter.gov,"Department of Labor",301,false,-1,-1,false,false,false
+whistleblowers.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+veterans.gov,"Department of Labor",500,true,31536000,1737459014767,true,true,false
+unionreports.gov,"Department of Labor",302,true,31536000,1737459014767,true,true,false
+unemployment.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+ui.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+trainingproviderresults.gov,"Department of Labor",301,true,31536000,1737459014767,false,false,false
+trabajadormigrante.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+persuader-reports.gov,"Department of Labor",301,true,31536000,1737459014767,false,false,false
+osha.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+mshastanddown.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+msha.gov,"Department of Labor",500,false,-1,-1,true,true,false
+migrantworker.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+labor.gov,"Department of Labor",500,false,-1,-1,false,false,false
+jobcorps.gov,"Department of Labor",500,false,-1,-1,false,true,false
+hirevets.gov,"Department of Labor",301,false,-1,-1,true,true,false
+govloans.gov,"Department of Labor",301,true,31536000,1737459014767,false,true,false
+goodjobs.gov,"Department of Labor",301,true,31536000,1737459014767,false,true,false
+employer.gov,"Department of Labor",301,false,-1,-1,false,false,false
+doleta.gov,"Department of Labor",500,false,-1,-1,true,true,false
+dol.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+dol-esa.gov,"Department of Labor",500,false,-1,-1,false,false,false
+bls.gov,"Department of Labor",500,false,-1,-1,true,false,false
+benefits.gov,"Department of Labor",301,true,31536000,1737459014767,false,true,false
+apprenticeships.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+apprenticeship.gov,"Department of Labor",301,true,31536000,1737459014767,true,true,false
+vehiclehistory.gov,"Department of Justice",302,true,31536000,1737459014767,false,true,false
+vcf.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+usmarshals.gov,"Department of Justice",500,false,-1,-1,true,true,false
+userra.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+usdoj.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+unicor.gov,"Department of Justice",302,true,31536000,1737459014767,false,false,false
+ucrdatatool.gov,"Department of Justice",500,false,-1,-1,false,false,false
+tsc.gov,"Department of Justice",302,true,31536000,1737459014767,false,false,false
+tribaljusticeandsafety.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+smart.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+servicemembers.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+seized.gov,"Department of Justice",500,false,-1,-1,false,false,false
+scra.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+reentry.gov,"Department of Justice",500,false,-1,-1,false,false,false
+rcfl.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+psob.gov,"Department of Justice",301,true,31536000,1737459014767,false,false,false
+projectsafeneighborhoods.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+projectsafechildhood.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+ovcttac.gov,"Department of Justice",302,false,-1,-1,true,true,false
+ovc.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+ojp.gov,"Department of Justice",200,true,31536000,1737459014767,false,true,false
+ojjdp.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+nvtc.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+nsopw.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+nsopr.gov,"Department of Justice",500,false,-1,-1,false,false,false
+nmvtis.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+nij.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+nicsezcheckfbi.gov,"Department of Justice",200,true,63072000,1737490550767,false,true,false
+nicic.gov,"Department of Justice",200,true,63072000,1737490550767,true,true,false
+ncjrs.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+ncirc.gov,"Department of Justice",301,true,63072000,1737490550767,false,true,false
+nationalgangcenter.gov,"Department of Justice",301,true,63072000,1737490550767,false,true,false
+namus.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+medalofvalor.gov,"Department of Justice",301,true,31536000,1737459014767,false,false,false
+malwareinvestigator.gov,"Department of Justice",500,false,-1,-1,false,false,false
+lep.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+leo.gov,"Department of Justice",500,false,-1,-1,false,false,false
+learndoj.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+learnatf.gov,"Department of Justice",301,false,-1,-1,false,true,false
+juvenilecouncil.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+justthinktwice.gov,"Department of Justice",500,true,31536000,1737459014767,false,true,false
+justice.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+jcode.gov,"Department of Justice",500,false,-1,-1,false,false,false
+iprcenter.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+interpol.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+ic3.gov,"Department of Justice",308,true,31536000,1737459014767,true,true,false
+getsmartaboutdrugs.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+fpi.gov,"Department of Justice",500,false,-1,-1,false,false,false
+forfeiture.gov,"Department of Justice",500,false,-1,-1,false,false,false
+foia.gov,"Department of Justice",301,true,31536000,1737459014767,true,false,false
+firstfreedom.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+fbilab.gov,"Department of Justice",500,false,-1,-1,false,false,false
+fbijobs.gov,"Department of Justice",403,true,31536000,1737459014767,false,true,false
+fbihr.gov,"Department of Justice",500,false,-1,-1,false,false,false
+fbi.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+fara.gov,"Department of Justice",500,false,-1,-1,false,false,false
+epic.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+elderjustice.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+dsac.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+doj.gov,"Department of Justice",500,false,-1,-1,false,false,false
+deaecom.gov,"Department of Justice",302,false,-1,-1,false,false,false
+dea.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+cybercrime.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+crimevictims.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+crimesolutions.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+cjis.gov,"Department of Justice",500,false,-1,-1,true,true,false
+campusdrugprevention.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+bop.gov,"Department of Justice",500,false,-1,-1,false,false,false
+bjs.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+bja.gov,"Department of Justice",500,false,-1,-1,false,false,false
+biometriccoe.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+bats.gov,"Department of Justice",301,true,31536000,1737459014767,false,false,false
+atfonline.gov,"Department of Justice",500,false,-1,-1,false,false,false
+atf.gov,"Department of Justice",500,false,-1,-1,false,true,false
+amberalert.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+ada.gov,"Department of Justice",301,true,31536000,1737459014767,false,true,false
+opportunityzones.gov,"Department of Housing and Urban Development",302,true,31536000,1737459014767,false,false,false
+nls.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+nhl.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+nationalhousinglocator.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+nationalhousing.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+huduser.gov,"Department of Housing and Urban Development",302,true,31536000,1737459014767,false,false,false
+hudoig.gov,"Department of Housing and Urban Development",200,true,31536000,1737459014767,false,true,false
+hudhomestore.gov,"Department of Housing and Urban Development",526,false,-1,-1,false,false,false
+hud.gov,"Department of Housing and Urban Development",301,false,-1,-1,false,false,false
+ginniemae.gov,"Department of Housing and Urban Development",301,false,-1,-1,true,true,false
+fha.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+disasterhousing.gov,"Department of Housing and Urban Development",301,true,31536000,1737459014767,false,false,false
+usss.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+uscis.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+uscg.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+us-cert.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+tsa.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+together.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,false,false
+stopransomware.gov,"Department of Homeland Security",302,true,31536000,1737459014767,false,true,false
+secretservice.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+schoolsafety.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+safetyact.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,false,false
+readybusiness.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+ready.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+preventionresourcefinder.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+power2prevent.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+ns.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+nmsc.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+niem.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+nic.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+listo.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+know2protect.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+juntos.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,false,false
+ice.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+homelandsecurity.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+globalentry.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+get.gov,"Department of Homeland Security",200,true,31536000,1737459014767,false,true,false
+floodsmart.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+fletc.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+fleta.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+firstrespondertraining.gov,"Department of Homeland Security",302,true,31536000,1737459014767,true,true,false
+fema.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+evus.gov,"Department of Homeland Security",302,false,-1,-1,true,true,false
+everify.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+e-verify.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+dotgov.gov,"Department of Homeland Security",301,false,-1,-1,false,true,false
+dns.gov,"Department of Homeland Security",500,false,-1,-1,false,false,false
+disasterassistance.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,false,false
+dhs.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+cybersecurity.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,true
+cyber.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,true
+cpnireporting.gov,"Department of Homeland Security",302,true,63072000,1737490550767,true,true,false
+cisa.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,true
+cbp.gov,"Department of Homeland Security",301,true,31536000,1737459014767,true,true,false
+biometrics.gov,"Department of Homeland Security",301,true,31536000,1737459014767,false,true,false
+youth.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+womenshealth.gov,"Department of Health and Human Services",200,true,1000,1737427479767,false,true,false
+whitehouseconferenceonaging.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,false,false
+whaging.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+visforvaccinated.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+vacunas.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+vacuna.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+vacines.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+vacine.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+vaccines.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+vaccine.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,true,false
+usphs.gov,"Department of Health and Human Services",302,false,-1,-1,false,true,false
+usbm.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+tox21.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+tobacco.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+thisfreelife.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+therealcost.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+thebraininitiative.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+surgeongeneral.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+stopbullying.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+stopalcoholabuse.gov,"Department of Health and Human Services",302,false,-1,-1,true,true,false
+smokefree.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+simplereport.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+selectagents.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,false,false
+samhsa.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+reproductivehealthservices.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+recoverymonth.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,false,false
+pubmed.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+psc.gov,"Department of Health and Human Services",301,false,-1,-1,true,false,false
+phe.gov,"Department of Health and Human Services",500,true,31536000,1737459014767,false,false,false
+pandemicflu.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+organdonor.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+opioids.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+nnlm.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+nlm.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+niosh.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+nih.gov,"Department of Health and Human Services",301,true,31557600,1737459036367,true,true,false
+nextlegends.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,true,false,false
+ncifcrf.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+mymedicare.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+mesh.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+mentalhealth.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medlineplus.gov,"Department of Health and Human Services",200,true,63072000,1737490550767,true,true,false
+medicare.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+medicalcountermeasures.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,false,false
+medicalbillrights.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+medicaid.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+longtermcare.gov,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+insurekidsnow.gov,"Department of Health and Human Services",500,false,-1,-1,false,true,false
+ihs.gov,"Department of Health and Human Services",301,false,-1,-1,true,false,false
+idealab.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+hrsa.gov,"Department of Health and Human Services",500,false,-1,-1,true,false,false
+hiv.gov,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+hhsops.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+hhsoig.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+hhs.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+hearttruth.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,true,false
+healthypeople.gov,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+healthit.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+healthindicators.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+healthfinder.gov,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+healthdata.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+healthcare.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+health.gov,"Department of Health and Human Services",200,true,1000,1737427479767,false,true,false
+hc.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+guidelines.gov,"Department of Health and Human Services",403,false,-1,-1,false,false,false
+guideline.gov,"Department of Health and Human Services",403,false,-1,-1,false,false,false
+grantsolutions.gov,"Department of Health and Human Services",301,false,-1,-1,false,true,false
+grants.gov,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+gmta.gov,"Department of Health and Human Services",200,true,63072000,1737490550767,false,false,false
+globalhealth.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+girlshealth.gov,"Department of Health and Human Services",200,true,1000,1737427479767,false,true,false
+genome.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+fruitsandveggiesmatter.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+freshempire.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+foodsafety.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+flu.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+fitness.gov,"Department of Health and Human Services",500,false,-1,-1,true,true,false
+findtreatment.gov,"Department of Health and Human Services",500,true,31536000,1737459014767,false,true,false
+findsupport.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+fda.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+fatherhood.gov,"Department of Health and Human Services",403,false,-1,-1,false,false,false
+familyplanning.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+everytrycounts.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+encuentraapoyo.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+eldercare.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+drugabuse.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+donaciondeorganos.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,true,false,false
+docline.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+diabetescommittee.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+dhhs.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+cuidadodesalud.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+covidtests.gov,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+covidtest.gov,"Department of Health and Human Services",200,false,-1,-1,false,false,false
+covid.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+coronavirus.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+collegedrinkingprevention.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+cms.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+clinicaltrials.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,false,false
+clinicaltrial.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+childwelfare.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+childcare.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,true,true,false
+cerebrosano.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+cdcpartners.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+cdc.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,false,false
+cancer.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+brainhealth.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+brain.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+birthcontrol.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+bioethics.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+betobaccofree.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+bam.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+aspr.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+arpah.gov,"Department of Health and Human Services",301,true,31557600,1737459036367,false,true,false
+arpa-h.gov,"Department of Health and Human Services",200,true,31536000,1737459014767,false,true,false
+aoa.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+alzheimers.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,false,true,false
+aids.gov,"Department of Health and Human Services",301,false,-1,-1,true,true,false
+ahrq.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,false,false
+ahcpr.gov,"Department of Health and Human Services",302,true,31536000,1737459014767,false,false,false
+agingstats.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+aging.gov,"Department of Health and Human Services",301,true,31536000,1737459014767,true,false,false
+afterschool.gov,"Department of Health and Human Services",500,false,-1,-1,false,false,false
+acl.gov,"Department of Health and Human Services",200,false,-1,-1,true,true,false
+acf.gov,"Department of Health and Human Services",301,false,-1,-1,false,true,false
+988.gov,"Department of Health and Human Services",301,false,-1,-1,false,false,false
+ymp.gov,"Department of Energy",500,false,-1,-1,false,false,false
+wapa.gov,"Department of Energy",301,true,63072000,1737490550767,true,false,false
+unrpnet.gov,"Department of Energy",500,false,-1,-1,false,false,false
+unnpp.gov,"Department of Energy",500,false,-1,-1,false,false,false
+swpa.gov,"Department of Energy",500,false,-1,-1,false,false,false
+srs.gov,"Department of Energy",500,false,-1,-1,false,true,false
+srnl.gov,"Department of Energy",301,true,31536000,1737459014767,false,true,false
+solardecathlon.gov,"Department of Energy",500,false,-1,-1,false,false,false
+sns.gov,"Department of Energy",200,true,300,1737427479067,false,true,false
+smartgrid.gov,"Department of Energy",301,false,-1,-1,false,false,false
+science.gov,"Department of Energy",200,true,31536000,1737459014767,false,false,true
+scidac.gov,"Department of Energy",200,true,31622400,1737459101167,true,true,false
+sandia.gov,"Department of Energy",302,true,31536000,1737459014767,true,true,false
+safgrandchallenge.gov,"Department of Energy",500,false,-1,-1,false,false,false
+rl.gov,"Department of Energy",500,false,-1,-1,false,false,false
+rideelectric.gov,"Department of Energy",302,false,-1,-1,true,true,false
+pr100.gov,"Department of Energy",200,true,63072000,1737490550767,false,true,false
+pppo.gov,"Department of Energy",500,false,-1,-1,false,false,false
+pppl.gov,"Department of Energy",500,false,-1,-1,true,true,false
+pnnl.gov,"Department of Energy",302,true,31536000,1737459014767,false,true,false
+pnl.gov,"Department of Energy",500,false,-1,-1,false,true,false
+pcast.gov,"Department of Energy",500,false,-1,-1,false,false,false
+osti.gov,"Department of Energy",301,true,31536000,1737459014767,false,false,true
+ornl.gov,"Department of Energy",301,false,-1,-1,false,true,false
+orau.gov,"Department of Energy",301,true,31536000,1737459014767,true,false,true
+nuclear.gov,"Department of Energy",500,false,-1,-1,false,false,false
+ntrc.gov,"Department of Energy",500,false,-1,-1,false,false,false
+nrelhub.gov,"Department of Energy",500,false,-1,-1,false,false,false
+nrel.gov,"Department of Energy",301,true,31622444,1737459101211,false,true,true
+nnss.gov,"Department of Energy",200,true,31536000,1737459014767,true,false,false
+neup.gov,"Department of Energy",301,true,63072000,1737490550767,true,true,false
+nersc.gov,"Department of Energy",301,true,31536000,1737459014767,false,false,false
+ncrc.gov,"Department of Energy",500,false,-1,-1,false,false,false
+nccs.gov,"Department of Energy",500,false,-1,-1,false,false,false
+llnl.gov,"Department of Energy",301,true,31536000,1737459014767,true,true,false
+lbl.gov,"Department of Energy",301,false,-1,-1,true,false,false
+lanl.gov,"Department of Energy",500,false,-1,-1,false,true,false
+isotopes.gov,"Department of Energy",200,true,31622400,1737459101167,false,true,false
+isotope.gov,"Department of Energy",500,false,-1,-1,false,false,false
+inl.gov,"Department of Energy",200,true,31560000,1737459038767,true,true,false
+inel.gov,"Department of Energy",500,false,-1,-1,false,false,false
+hydrogen.gov,"Department of Energy",302,false,-1,-1,true,true,false
+homeenergyscore.gov,"Department of Energy",302,false,-1,-1,false,false,false
+hanford.gov,"Department of Energy",302,true,31536000,1737459014767,false,false,false
+fueleconomy.gov,"Department of Energy",200,true,31622400,1737459101167,true,false,false
+fnal.gov,"Department of Energy",200,true,31536000,1737459014767,false,false,true
+energysavers.gov,"Department of Energy",302,false,-1,-1,false,false,false
+energysaver.gov,"Department of Energy",302,false,-1,-1,false,false,false
+energycommunities.gov,"Department of Energy",200,false,-1,-1,false,false,false
+energycodes.gov,"Department of Energy",302,true,31536000,1737459014767,false,true,false
+energy.gov,"Department of Energy",500,false,-1,-1,false,false,false
+eia.gov,"Department of Energy",301,false,-1,-1,false,false,false
+driveelectric.gov,"Department of Energy",200,true,31536000,1737459014767,true,true,true
+doe.gov,"Department of Energy",500,false,-1,-1,false,false,false
+citap.gov,"Department of Energy",200,true,63072000,1737490550767,true,true,false
+cendi.gov,"Department of Energy",200,true,31536000,1737459014767,false,false,true
+cebaf.gov,"Department of Energy",500,false,-1,-1,false,false,false
+casl.gov,"Department of Energy",500,false,-1,-1,false,false,false
+buildingamerica.gov,"Department of Energy",500,false,-1,-1,false,false,false
+bpa.gov,"Department of Energy",301,true,31536000,1737459014767,true,false,false
+bnl.gov,"Department of Energy",301,false,-1,-1,false,false,false
+biomassboard.gov,"Department of Energy",200,true,31536000,1737459014767,false,true,true
+arm.gov,"Department of Energy",200,true,31536000,1737459014767,false,false,false
+anl.gov,"Department of Energy",500,false,-1,-1,false,false,false
+ameslab.gov,"Department of Energy",500,false,-1,-1,false,true,false
+studentloans.gov,"Department of Education",301,false,-1,-1,false,true,false
+studentaid.gov,"Department of Education",200,true,31536000,1737459014767,false,true,false
+nationsreportcard.gov,"Department of Education",301,true,31536000,1737459014767,true,false,false
+nagb.gov,"Department of Education",301,true,63072000,1737490550767,false,true,false
+g5.gov,"Department of Education",200,true,31536000,1737459014767,true,false,false
+fafsa.gov,"Department of Education",301,true,31536000,1737459014767,false,true,false
+ed.gov,"Department of Education",301,true,63072000,1737490550767,false,true,false
+collegenavigator.gov,"Department of Education",301,true,31536000,1737459014767,true,false,false
+childstats.gov,"Department of Education",301,true,31536000,1737459014767,true,false,false
+budgetlob.gov,"Department of Education",500,false,-1,-1,false,false,false
+usandc.gov,"Department of Defense",500,false,-1,-1,false,false,false
+tswg.gov,"Department of Defense",200,false,-1,-1,false,false,false
+tak.gov,"Department of Defense",421,false,-1,-1,false,false,false
+oneaftac.gov,"Department of Defense",500,false,-1,-1,false,false,false
+oldcc.gov,"Department of Defense",500,false,-1,-1,false,false,false
+oea.gov,"Department of Defense",500,false,-1,-1,false,false,false
+nsep.gov,"Department of Defense",500,false,-1,-1,false,false,false
+nsa.gov,"Department of Defense",301,true,31536000,1737459014767,false,true,false
+nro.gov,"Department of Defense",500,false,-1,-1,false,true,false
+nrd.gov,"Department of Defense",200,true,31536000,1737459014767,false,false,false
+nbib.gov,"Department of Defense",301,true,31536000,1737459014767,false,true,false
+nationalresourcedirectory.gov,"Department of Defense",301,true,31536000,1737459014767,false,false,false
+mypay.gov,"Department of Defense",500,false,-1,-1,false,false,false
+mtmc.gov,"Department of Defense",500,false,-1,-1,false,false,false
+lps.gov,"Department of Defense",500,false,-1,-1,false,false,false
+jccs.gov,"Department of Defense",500,false,-1,-1,false,false,false
+iwtsd.gov,"Department of Defense",403,false,-1,-1,false,false,false
+itc.gov,"Department of Defense",500,false,-1,-1,false,false,false
+ioss.gov,"Department of Defense",500,false,-1,-1,false,false,false
+intelligencecareers.gov,"Department of Defense",500,false,-1,-1,true,true,false
+iad.gov,"Department of Defense",500,false,-1,-1,false,false,false
+hive.gov,"Department of Defense",500,false,-1,-1,false,true,false
+fvap.gov,"Department of Defense",301,true,31536000,1737459014767,false,false,false
+fehrm.gov,"Department of Defense",500,false,-1,-1,false,true,false
+defense.gov,"Department of Defense",500,false,-1,-1,false,true,false
+dc3on.gov,"Department of Defense",500,false,-1,-1,false,false,false
+cttso.gov,"Department of Defense",200,false,-1,-1,false,false,false
+ctoc.gov,"Department of Defense",200,false,-1,-1,false,false,false
+cnss.gov,"Department of Defense",500,false,-1,-1,false,false,false
+cmts.gov,"Department of Defense",302,false,-1,-1,false,true,false
+capnhq.gov,"Department of Defense",302,true,31536000,1737459014767,true,true,false
+cap.gov,"Department of Defense",500,false,-1,-1,false,false,false
+businessdefense.gov,"Department of Defense",500,false,-1,-1,false,false,false
+altusandc.gov,"Department of Defense",500,false,-1,-1,false,false,false
+aftac.gov,"Department of Defense",500,false,-1,-1,false,false,false
+adlnet.gov,"Department of Defense",200,true,31536000,1737459014767,false,true,false
+xd.gov,"Department of Commerce",302,false,-1,-1,false,true,false
+wwtg.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+weather.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+uspto.gov,"Department of Commerce",302,false,-1,-1,true,true,true
+usicecenter.gov,"Department of Commerce",200,false,-1,-1,false,false,false
+tsunami.gov,"Department of Commerce",200,true,31536000,1737459014767,false,true,false
+trade.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+time.gov,"Department of Commerce",200,true,31536000,1737459014767,true,true,false
+techhubs.gov,"Department of Commerce",301,false,-1,-1,true,true,false
+tasefiling.gov,"Department of Commerce",302,true,31536000,1737459014767,false,true,false
+sworm.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+stopfakes.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+standards.gov,"Department of Commerce",307,true,31536000,1737459014767,true,true,false
+spectrum.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+spd15revision.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+spaceweather.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+semiconductors.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+selectusa.gov,"Department of Commerce",302,false,-1,-1,false,true,false
+sdr.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+pscr.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+privacyshield.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+papahanaumokuakea.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+ofcm.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+nwirp.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+ntis.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+ntia.gov,"Department of Commerce",500,false,-1,-1,false,true,false
+noaa.gov,"Department of Commerce",500,false,-1,-1,false,true,false
+nist.gov,"Department of Commerce",500,false,-1,-1,true,true,false
+nehrp.gov,"Department of Commerce",500,true,31536000,1737459014767,false,true,false
+my2020census.gov,"Department of Commerce",400,false,-1,-1,false,false,false
+mgi.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+mbda.gov,"Department of Commerce",526,false,-1,-1,true,true,false
+marinecadastre.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+manufacturing.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+luca-appeals.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+internetforall.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+internet4all.gov,"Department of Commerce",301,true,31536000,1737459014767,false,true,false
+iedison.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+icts.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+icams-portal.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+hurricanes.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+heat.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+gps.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+goes-r.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+fishwatch.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+firstnet.gov,"Department of Commerce",200,false,-1,-1,false,true,false
+export.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+edison.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+eda.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+drought.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+doc.gov,"Department of Commerce",301,false,-1,-1,true,true,false
+dnsops.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+dataprivacyframework.gov,"Department of Commerce",301,true,31536000,1737459014767,false,false,false
+cwc.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+commerce.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+climate.gov,"Department of Commerce",500,true,31536000,1737459014767,false,false,false
+chips.gov,"Department of Commerce",500,true,31536000,1737459014767,true,true,false
+census.gov,"Department of Commerce",302,false,-1,-1,true,true,false
+buyusa.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+bldrdoc.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+bis.gov,"Department of Commerce",301,false,-1,-1,false,true,false
+bea.gov,"Department of Commerce",301,true,31536000,1737459014767,true,true,false
+aviationweather.gov,"Department of Commerce",200,true,63072000,1737490550767,true,false,false
+ap.gov,"Department of Commerce",301,false,-1,-1,false,false,false
+2020census.gov,"Department of Commerce",500,false,-1,-1,false,false,false
+denali.gov,"Denali Commission",301,true,31536000,1737459014767,true,false,false
+dra.gov,"Delta Regional Authority",200,true,31536000,1737459014767,false,true,false
+dnfsb.gov,"Defense Nuclear Facilities Safety Board",500,false,-1,-1,false,true,false
+psa.gov,"Court Services and Offender Supervision",200,false,-1,-1,false,true,false
+pretrialservices.gov,"Court Services and Offender Supervision",200,false,-1,-1,false,true,false
+csosa.gov,"Court Services and Offender Supervision",301,true,31536000,1737459014767,true,false,false
+pandemicoversight.gov,"Council of Inspectors General on Integrity and Efficiency",200,true,31536000,1737459014767,false,true,false
+oversight.gov,"Council of Inspectors General on Integrity and Efficiency",301,true,31536000,1737459014767,false,true,false
+ignet.gov,"Council of Inspectors General on Integrity and Efficiency",301,true,31536000,1737459014767,true,false,false
+cigie.gov,"Council of Inspectors General on Integrity and Efficiency",500,false,-1,-1,false,false,false
+volunteeringinamerica.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+vistacampus.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+serve.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+presidentialserviceawards.gov,"Corporation for National & Community Service",200,true,63072000,1737490550767,false,true,false
+nationalservice.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+mlkday.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+mentor.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+joinamericorps.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+cns.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+cncsoig.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+cncs.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+ccc.gov,"Corporation for National & Community Service",500,false,-1,-1,false,false,false
+americorpsoig.gov,"Corporation for National & Community Service",301,true,31536000,1737459014767,true,false,false
+americorps.gov,"Corporation for National & Community Service",200,false,-1,-1,false,true,false
+americanclimatecorps.gov,"Corporation for National & Community Service",301,true,31536000,1737459014767,true,true,false
+acc.gov,"Corporation for National & Community Service",301,true,31536000,1737459014767,true,true,false
+seguridadconsumidor.gov,"Consumer Product Safety Commission",302,false,-1,-1,true,true,false
+saferproducts.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,false,false,false
+saferproduct.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,false,false,false
+recalls.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,true,false,false
+poolsafety.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,false,true,false
+poolsafely.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,false,true,false
+drywallresponse.gov,"Consumer Product Safety Commission",302,false,-1,-1,true,true,false
+cpsc.gov,"Consumer Product Safety Commission",301,false,-1,-1,true,true,false
+atvsafety.gov,"Consumer Product Safety Commission",302,false,-1,-1,true,true,false
+anchorit.gov,"Consumer Product Safety Commission",301,true,31536000,1737459014767,false,true,false
+mimm.gov,"Consumer Financial Protection Bureau",301,true,31536000,1737459014767,true,false,false
+consumerprotectionbureau.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerprotection.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerfinancialprotectionbureau.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerfinancialbureau.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerfinancial.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerfinance.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+consumerbureau.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+cfpb.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+cfpa.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+bcfp.gov,"Consumer Financial Protection Bureau",500,false,-1,-1,true,false,true
+whistleblower.gov,"Commodity Futures Trading Commission",301,true,15552000,1737443030767,false,true,false
+smartcheck.gov,"Commodity Futures Trading Commission",301,false,-1,-1,false,false,false
+devcftc.gov,"Commodity Futures Trading Commission",500,false,-1,-1,false,false,false
+cftc.gov,"Commodity Futures Trading Commission",301,true,15552000,1737443030767,false,false,false
+coldcaserecords.gov,"Civil Rights Cold Case Records Review Board",301,true,31536000,1737459014767,false,true,false
+safetyvideos.gov,"Chemical Safety Board",301,true,31536000,1737459014767,false,false,false
+csb.gov,"Chemical Safety Board",301,true,31536000,1737459014767,false,false,false
+ucia.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+osde.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+opensource.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+odci.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+istac.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+ic.gov,"Central Intelligence Agency",500,false,-1,-1,false,false,false
+cia.gov,"Central Intelligence Agency",301,true,63072000,1737490550767,false,false,false
+goldwaterscholarship.gov,"Barry Goldwater Scholarship and Excellence in Education Foundation",500,false,-1,-1,false,false,false
+afrh.gov,"Armed Forces Retirement Home",500,false,-1,-1,false,false,false
+asc.gov,"Appraisal Subcommittee",200,false,-1,-1,false,true,false
+arc.gov,"Appalachian Regional Commission",200,true,300,1737427479067,false,false,false
+abmc.gov,"American Battle Monuments Commission",301,false,-1,-1,true,true,false
+preserveamerica.gov,"Advisory Council on Historic Preservation",500,false,-1,-1,false,false,false
+achp.gov,"Advisory Council on Historic Preservation",500,false,-1,-1,false,false,false
+acus.gov,"Administrative Conference of the United States",301,false,-1,-1,false,true,false
+amtrakoig.gov,"AMTRAK",200,true,31536000,1737459014767,false,true,false
+wyo.gov,"State of Wyoming",500,false,-1,-1,true,true,false
+wisconsin.gov,"State of Wisconsin",302,false,-1,-1,true,true,false
+wv.gov,"State of West Virginia",500,false,-1,-1,true,true,false
+wa.gov,"State of Washington",200,true,300,1737427479067,false,true,false
+virginia.gov,"State of Virginia",500,false,-1,-1,false,true,false
+vermont.gov,"State of Vermont",302,false,-1,-1,false,true,false
+utah.gov,"State of Utah",302,false,-1,-1,false,false,false
+texas.gov,"State of Texas",302,false,-1,-1,false,false,false
+tn.gov,"State of Tennessee",302,true,63072000,1737490550767,true,false,false
+sd.gov,"State of South Dakota",302,false,-1,-1,false,true,false
+sc.gov,"State of South Carolina",200,true,31536000,1737459014767,false,true,false
+ri.gov,"State of Rhode Island",301,false,-1,-1,false,false,false
+pa.gov,"State of Pennsylvania",200,true,31557600,1737459036367,false,true,false
+oregon.gov,"State of Oregon",302,false,-1,-1,true,true,false
+oklahoma.gov,"State of Oklahoma",200,true,63072000,1737490550767,false,true,false
+ohio.gov,"State of Ohio",404,false,-1,-1,false,false,false
+nd.gov,"State of North Dakota",200,true,31536000,1737459014767,false,true,false
+nc.gov,"State of North Carolina",301,true,63072000,1737490550767,true,true,false
+ny.gov,"State of New York",301,false,-1,-1,true,true,false
+nm.gov,"State of New Mexico",301,false,-1,-1,false,false,false
+nj.gov,"State of New Jersey",200,false,-1,-1,false,false,false
+nh.gov,"State of New Hampshire",301,false,-1,-1,false,false,false
+nv.gov,"State of Nevada",200,false,-1,-1,false,false,false
+nebraska.gov,"State of Nebraska",302,false,-1,-1,false,false,false
+mt.gov,"State of Montana",200,false,-1,-1,false,false,false
+mo.gov,"State of Missouri",301,true,31536000,1737459014767,true,true,false
+mississippi.gov,"State of Mississippi",302,true,31536000,1737459014767,false,true,false
+mn.gov,"State of Minnesota",500,false,-1,-1,false,false,false
+michigan.gov,"State of Michigan",302,false,-1,-1,true,false,false
+mass.gov,"State of Massachusetts",301,false,-1,-1,false,true,false
+maryland.gov,"State of Maryland",301,false,-1,-1,true,true,false
+maine.gov,"State of Maine",302,false,-1,-1,true,false,false
+louisiana.gov,"State of Louisiana",301,false,-1,-1,false,false,false
+kentucky.gov,"State of Kentucky",301,true,31536000,1737459014767,true,true,false
+kansas.gov,"State of Kansas",302,true,63072000,1737490550767,false,true,false
+iowa.gov,"State of Iowa",301,false,-1,-1,true,true,true
+in.gov,"State of Indiana",302,false,-1,-1,false,false,false
+illinois.gov,"State of Illinois",301,false,-1,-1,false,true,false
+idaho.gov,"State of Idaho",200,false,-1,-1,false,false,false
+hawaii.gov,"State of Hawaii",302,false,-1,-1,false,false,false
+georgia.gov,"State of Georgia",200,true,31536000,1737459014767,false,true,false
+myflorida.com,"State of Florida",200,true,31536000,1737459014767,true,true,false
+de.gov,"State of Delaware",200,false,-1,-1,false,false,false
+ct.gov,"State of Connecticut",301,false,-1,-1,false,true,false
+colorado.gov,"State of Colorado",302,false,-1,-1,true,true,false
+arkansas.gov,"State of Arkansas",301,false,-1,-1,false,false,false
+az.gov,"State of Arizona",200,true,300,1737427479067,false,true,false
+alaska.gov,"State of Alaska",200,true,31536000,1737459014767,true,true,false
+alabama.gov,"State of Alabama",301,false,-1,-1,false,true,false
+ca.gov,"State of California",200,true,31536000,1737543577312,true,true,false
+chicago.gov,"City of Chicago, IL",301,false,-1,-1,false,false,false
+cityofsouthfultonga.gov,"City of South Fulton, GA",301,false,-1,-1,true,true,false
+yumaaz.gov,"City of Yuma, AZ",301,false,-1,-1,false,true,false
+eugene-or.gov,"City of Eugene, OR",200,false,-1,-1,true,true,false
+yonkersny.gov,"City of Yonkers, NY",301,false,-1,-1,true,true,false
+worcesterma.gov,"City of Worcester, MA",301,true,15552000,1738795630511,false,false,false
+wilmingtonnc.gov,"City of Wilmington, NC",301,false,-1,-1,true,true,false
+wichitafallstx.gov,"City of Wichita Falls, TX",200,false,-1,-1,true,true,false
+wichita.gov,"City of Wichita, KS",301,false,-1,-1,true,true,false
+walkermi.gov,"City of Grand Rapids, MI",200,false,-1,-1,true,true,false
+waco-texas.com,"City of Waco, TX",301,false,-1,-1,true,true,false
+visalia.gov,"City of Visalia, CA",302,false,-1,-1,false,false,false
+victorvilleca.gov,"City of Victorville, CA",301,false,-1,-1,false,true,false
+warrenmi.gov,"City of Warren, MI",301,false,-1,-1,false,true,false
+cityofvancouver.us,"City of Vancouver, WA",301,false,-1,-1,false,false,false
+tylertexas.gov,"City of Tyler, TX",400,false,-1,-1,false,false,false
+tuscaloosa-al.gov,"City of Tuscaloosa, AL",301,false,-1,-1,false,true,false
+vallejo.gov,"City of Vallejo, CA",302,false,-1,-1,true,true,false
+tucsonaz.gov,"City of Tucson, AZ",301,false,-1,-1,true,true,false
+topeka.org,"City of Topeka, KS",500,false,-1,-1,false,true,false
+toaks.gov,"City of Thousand Oaks, CA",200,true,31536000,1738811614511,true,true,false
+thorntonco.gov,"City of Thornton, CO",301,true,15768000,1738795846511,false,true,false
+tempe.gov,"City of Tempe, AZ",301,false,-1,-1,false,true,false
+toledo.oh.gov,"City of Toledo, OH",200,false,-1,-1,false,true,true
+temeculaca.gov,"City of Temecula, CA",200,false,-1,-1,true,true,false
+tacoma.gov,"City of Tacoma, WA",200,true,16070400,1738796148911,false,false,false
+syr.gov,"City of Syracuse, NY",301,false,-1,-1,true,true,false
+tampa.gov,"City of Tampa, FL",301,false,-1,-1,true,true,false
+stpaul.gov,"City of Saint Paul, MN",301,false,-1,-1,false,true,false
+stocktonca.gov,"City of Stockton, CA",200,false,-1,-1,true,true,false
+sugarlandtx.gov,"City of Sugar Land, TX",200,false,-1,-1,true,true,false
+stgeorgela.gov,"City of Baton Rouge, LA",200,false,-1,-1,false,true,false
+stlouis-mo.gov,"City of St. Louis, MO",301,true,31536000,1738811614511,true,true,false
+virginiabeach.gov,"City of Virginia Beach, VA",200,false,-1,-1,false,true,false
+stamfordct.gov,"City of Stamford, CT",301,false,-1,-1,false,true,false
+sterlingheights.gov,"City of Sterling Heights, MI",200,false,-1,-1,true,true,false
+springfield-ma.gov,"City of Springfield, MA",302,false,-1,-1,false,true,false
+spokane.gov,"City of Spokane, WA",200,true,31536000,1738811614511,false,false,false
+sparksnv.gov,"City of Sparks, NV",301,false,-1,-1,false,true,false
+spokanevalleywa.gov,"City of Spokane Valley, WA",200,false,-1,-1,true,true,false
+springfieldmo.gov,"City of Springfield, MO",301,false,-1,-1,true,true,false
+southsideplacetx.gov,"City of Houston, TX",200,false,-1,-1,true,true,false
+siouxfalls.gov,"City of Sioux Falls, SD",301,false,-1,-1,true,true,false
+simivalley.gov,"City of Simi Valley, CA",301,false,-1,-1,false,true,false
+sgcityutah.gov,"City of St. George, UT",200,false,-1,-1,true,true,false
+shreveportla.gov,"City of Shreveport, LA",200,false,-1,-1,true,true,false
+scottsdaleaz.gov,"City of Scottsdale, AZ",301,false,-1,-1,true,true,false
+srcity.org,"City of Santa Rosa, CA",301,false,-1,-1,true,true,false
+savannahga.gov,"City of Savannah, GA",200,false,-1,-1,true,true,false
+santafenm.gov,"City of Santa Fe, NM",200,true,31536000,1738811614511,false,true,false
+southbendin.gov,"City of South Bend, IN",200,false,-1,-1,false,false,false
+santaclaraca.gov,"City of Santa Clara, CA",301,false,-1,-1,false,true,false
+sanjoseca.gov,"City of San Jose, CA",301,false,-1,-1,true,true,false
+sandyspringsga.gov,"City of Sandy Springs, GA",301,true,31536000,1738811614511,false,false,false
+santaclarita.gov,"City of Santa Clarita, CA",200,false,-1,-1,false,false,false
+sanbernardino.gov,"City of San Bernardino, CA",301,false,-1,-1,true,true,false
+cityofsalinas.org,"City of Salinas, CA",301,false,-1,-1,true,true,false
+salemor.gov,"City of Salem, OR",302,true,1209600,1738781288111,false,false,true
+sandiego.gov,"City of San Diego, CA",301,false,-1,-1,true,true,false
+sa.gov,"City of San Antonio, TX",301,false,-1,-1,true,true,false
+rva.gov,"City of Richmond, VA",200,false,-1,-1,false,true,false
+rrnm.gov,"City of Rio Rancho, NM",200,true,1200,1738780079711,true,true,false
+rockfordil.gov,"City of Rockford, IL",200,false,-1,-1,true,true,false
+rochestermn.gov,"City of Rochester, MN",301,false,-1,-1,false,true,false
+richmondca.gov,"City of Richmond, CA",200,false,-1,-1,true,true,false
+roundrocktexas.gov,"City of Round Rock, TX",301,false,-1,-1,false,false,false
+rialtoca.gov,"City of Rialto, CA",200,false,-1,-1,true,true,false
+rentonwa.gov,"City of Renton, WA",301,false,-1,-1,true,true,false
+cityofrc.us,"City of Rancho Cucamonga, CA",301,false,-1,-1,true,true,false
+raleighnc.gov,"City of Raleigh, NC",200,true,31536000,1738811614511,false,true,false
+quincyma.gov,"City of Quincy, MA",200,false,-1,-1,false,true,false
+reno.gov,"City of Reno, NV",301,false,-1,-1,false,true,false
+portland.gov,"City of Portland, OR",301,false,-1,-1,true,true,false
+pompanobeachfl.gov,"City of Pompano Beach, FL",301,false,-1,-1,false,false,false
+pomonaca.gov,"City of Pomona, CA",301,false,-1,-1,false,true,false
+plano.gov,"City of Plano, TX",301,false,-1,-1,true,true,false
+pittsburghpa.gov,"City of Pittsburgh, PA",301,false,-1,-1,true,true,false
+peoriagov.org,"City of Peoria, IL",200,false,-1,-1,true,true,false
+peoriaaz.gov,"City of Peoria, AZ",301,false,-1,-1,false,false,false
+pearlandtx.gov,"City of Pearland, TX",301,false,-1,-1,false,true,false
+patersonnj.gov,"City of Paterson, NJ",301,false,-1,-1,false,true,false
+pasadenatx.gov,"City of Pasadena, TX",200,false,-1,-1,true,true,false
+pasadena.gov,"City of Pasadena, CA",301,false,-1,-1,false,false,false
+palmbayflorida.org,"City of Palm Bay, FL",301,false,-1,-1,false,true,false
+opkansas.org,"City of Overland Park, KS",301,true,31536000,1738811614511,true,true,false
+orlando.gov,"City of Orlando, FL",301,false,-1,-1,true,true,false
+providenceri.gov,"City of Providence, RI",301,true,31536000,1738811614511,true,true,false
+cityoforange.org,"City of Orange, CA",301,false,-1,-1,false,true,false
+olympiawa.gov,"City of Olympia, WA",301,false,-1,-1,false,true,false
+olatheks.gov,"City of Olathe, KS",301,false,-1,-1,false,true,false
+odessa-tx.gov,"City of Odessa, TX",200,false,-1,-1,true,true,false
+santa-ana.org,"City of Santa Ana, CA",302,true,15724800,1738795803311,false,false,true
+ontarioca.gov,"City of Ontario, CA",301,true,31536000,1738811614511,false,true,false
+normanok.gov,"City of Norman, OK",301,true,31536000,1738811614511,false,true,false
+northcharleston.org,"City of North Charleston, SC",200,false,-1,-1,true,true,false
+nola.gov,"City of New Orleans, LA",500,false,-1,-1,false,false,false
+nnva.gov,"City of Newport News, VA",301,false,-1,-1,true,true,false
+norfolk.gov,"City of Norfolk, VA",301,false,-1,-1,true,true,false
+newhavenct.gov,"City of New Haven, CT",301,false,-1,-1,false,true,false
+newbedford-ma.gov,"City of New Bedford, MA",403,false,-1,-1,false,false,false
+newbraunfels.gov,"City of New Braunfels, TX",200,false,-1,-1,true,true,false
+newarknj.gov,"City of newark, NJ",301,true,31536000,1738811614511,false,false,false
+cityofnampa.us,"City of Nampa, ID",301,false,-1,-1,true,true,false
+murrietaca.gov,"City of Murrieta, CA",301,false,-1,-1,true,true,false
+murfreesborotn.gov,"City of Murfreesboro, TN",301,false,-1,-1,true,true,false
+moval.gov,"City of Moreno Valley, CA",200,false,-1,-1,false,false,false
+montgomeryal.gov,"City of Montgomery, AL",301,false,-1,-1,false,true,false
+modestogov.com,"City of Modesto, CA",200,false,-1,-1,true,true,false
+miramarfl.gov,"City of Miramar, FL",301,false,-1,-1,true,true,false
+miramarfl.gov,"City of Miramar, FL",301,false,-1,-1,true,true,false
+milwaukee.gov,"City of Milwaukee, WI",301,false,-1,-1,false,false,false
+minneapolismn.gov,"City of Minneapolis, MN",301,true,31536000,1738811614511,false,false,false
+midlandtexas.gov,"City of Midland, TX",200,false,-1,-1,true,true,false
+miamigardens-fl.gov,"City of Miami Gardens, FL",200,false,-1,-1,true,true,false
+miami.gov,"City of Miami, FL",301,false,-1,-1,true,true,false
+mesquitetx.gov,"City of Mesquite, TX",302,false,-1,-1,true,true,false
+manchesternh.gov,"City of Manchester, NH",301,false,-1,-1,false,false,false
+cityofmadison.com,"City of Madison, WI",301,false,-1,-1,true,true,false
+lynnma.gov,"City of Lynn, MA",301,false,-1,-1,false,false,false
+lowellma.gov,"City of Lowell, MA",200,false,-1,-1,true,true,false
+louisvilleky.gov,"City of Louisville, KY",403,false,-1,-1,false,false,false
+longbeach.gov,"City of Long Beach, CA",200,false,-1,-1,false,false,false
+oaklandca.gov,"City of Oakland, CA",301,false,-1,-1,false,false,false
+leaguecitytx.gov,"City of League City, TX",200,false,-1,-1,true,true,false
+lasvegasnevada.gov,"City of Las Vegas, NV",301,true,31536000,1738811614511,true,true,false
+memphistn.gov,"City of Memphis, TN",301,false,-1,-1,false,false,false
+cityoflaredo.com,"City of Laredo, TX",301,false,-1,-1,false,true,false
+lansingmi.gov,"City of Lansing, MI",301,false,-1,-1,false,true,false
+lascruces.gov,"City of Las Cruces, NM",200,false,-1,-1,false,false,true
+lacity.gov,"City of Los Angeles, CA",200,true,31536000,1738811614511,true,true,false
+lakewood.org,"City of Lakewood, CO",301,false,-1,-1,true,true,false
+killeentexas.gov,"City of Killeen, TX",200,false,-1,-1,true,true,false
+knoxvilletnpolice.gov,"City of Knoxville, TN",200,true,31536000,1738811614511,true,true,false
+kcmo.gov,"City of Kansas City, MO",301,false,-1,-1,false,true,false
+kannapolisnc.gov,"City of Concord, NC",301,false,-1,-1,false,false,false
+joliet.gov,"City of Joliet, IL",301,false,-1,-1,false,true,false
+kentwa.gov,"City of Kent, WA",301,false,-1,-1,false,true,false
+jeffersoncitymo.gov,"City of Jefferson City, MO",200,false,-1,-1,true,true,false
+knoxvilletn.gov,"City of Knoxville, TN",302,false,-1,-1,false,false,false
+jcmo.gov,"City of Jefferson City, MO",200,false,-1,-1,true,true,false
+jacksonville.gov,"City of Jacksonville, FL",302,false,-1,-1,false,false,false
+jerseycitynj.gov,"City of Jersey City, NJ",301,false,-1,-1,true,true,false
+indy.gov,"City of Indianapolis, IN",403,false,-1,-1,false,false,false
+irvingtx.gov,"City of Irving, TX",200,false,-1,-1,false,true,false
+independencemo.gov,"City of Independence, MO",301,true,31536000,1738811614511,false,true,false
+jacksonms.gov,"City of Jackson, MS",301,false,-1,-1,false,false,false
+indianhill.gov,"City of Cincinnati, OH",200,false,-1,-1,false,false,false
+houstontx.gov,"City of Houston, TX",200,false,-1,-1,false,false,false
+huntingtonbeachca.gov,"City of Huntington Beach, CA",200,false,-1,-1,true,true,false
+hillsboro-oregon.gov,"City of Hillsboro, OR",301,false,-1,-1,false,true,false
+hialeahfl.gov,"City of Hialeah, FL",500,false,-1,-1,true,true,false
+highpointnc.gov,"City of High Point, NC",308,false,-1,-1,true,true,false
+cityofhenderson.com,"City of Henderson, NV",301,false,-1,-1,true,true,false
+harrisburgpa.gov,"City of Harrisburg, PA",403,false,-1,-1,false,false,false
+helenamt.gov,"City of Helena, MT",301,false,-1,-1,true,true,false
+greshamoregon.gov,"City of Gresham, OR",301,false,-1,-1,false,false,false
+hampton.gov,"City of Hampton, VA",301,false,-1,-1,true,true,false
+greensboro-nc.gov,"City of Greensboro, NC",301,false,-1,-1,true,true,false
+greeleygov.com,"City of Greeley, CO",200,true,31536000,1738811614511,true,true,false
+greenbaywi.gov,"City of Green Bay, WI",301,false,-1,-1,true,true,false
+huntsvilleal.gov,"City of Huntsville, AL",301,false,-1,-1,false,false,false
+goodyearaz.gov,"City of Goodyear, AZ",301,false,-1,-1,true,true,false
+grandrapidsmi.gov,"City of Grand Rapids, MI",301,false,-1,-1,true,true,false
+glendaleaz.gov,"City of Glendale, AZ",500,false,-1,-1,false,false,false
+ggcity.org,"City of GARDEN GROVE, CA",200,false,-1,-1,false,true,true
+gainesvillefl.gov,"City of Gainesville, FL",301,false,-1,-1,true,true,false
+garlandtx.gov,"City of Garland, TX",200,true,10000,1738780088511,true,true,false
+glendaleca.gov,"City of Glendale, CA",301,false,-1,-1,false,true,false
+fresno.gov,"City of Fresno, CA",400,false,-1,-1,true,false,false
+friscotexas.gov,"City of Frisco, TX",301,false,-1,-1,true,true,false
+cityoffullerton.com,"City of Fullerton, CA",301,false,-1,-1,false,true,false
+fremontpolice.gov,"City of Fremont, CA",301,false,-1,-1,false,true,false
+fremont.gov,"City of Fremont, CA",301,false,-1,-1,false,true,false
+fcgov.com,"City of Fort Collins, CO",301,true,15768000,1738795846511,false,true,false
+fortworthtexas.gov,"City of Fort Worth, TX",301,true,31536000,1738811614511,false,true,false
+fontanaca.gov,"City of Fontana, CA",200,false,-1,-1,true,true,false
+surpriseaz.gov,"City of Surprise, AZ",200,false,-1,-1,false,true,false
+seattle.gov,"City of Seattle, WA",200,true,16070400,1738796148911,false,false,false
+flpd.gov,"City of Fort Lauderdale, FL",301,false,-1,-1,false,true,false
+fayettevillenc.gov,"City of Fayetteville, NC",301,false,-1,-1,false,true,false
+fargond.gov,"City of Fargo, ND",200,true,31536000,1738811614511,true,true,true
+fayetteville-ar.gov,"City of Fayetteville, AR",301,false,-1,-1,true,true,false
+everettwa.gov,"City of Everett, WA",301,false,-1,-1,true,true,false
+escondido.gov,"City of Escondido, CA",200,false,-1,-1,true,true,false
+elkgrovecity.org,"City of Elk Grove, CA",301,false,-1,-1,false,true,false
+elmonteca.gov,"City of El Monte, CA",200,true,31536000,1738811614511,true,true,false
+elginil.gov,"City of Elgin, IL",200,false,-1,-1,true,true,false
+elcajon.gov,"City of El Cajon, CA",301,false,-1,-1,false,true,false
+fishersin.gov,"City of Fishers, IN",200,false,-1,-1,false,true,false
+eastgrmi.gov,"City of Grand Rapids, MI",200,false,-1,-1,true,true,false
+durhamnc.gov,"City of Durham, NC",301,false,-1,-1,true,true,false
+detroitmi.gov,"City of Detroit, MI",200,false,-1,-1,false,true,false
+detroitmi.gov,"City of Detroit, MI",200,false,-1,-1,false,true,false
+dearborn.gov,"City of Dearborn, MI",200,false,-1,-1,false,true,false
+cityofdenton.com,"City of Denton, TX",301,false,-1,-1,true,true,false
+daytonohio.gov,"City of Dayton, OH",200,false,-1,-1,true,true,false
+dallas.gov,"City of Dallas, TX",302,false,-1,-1,false,true,false
+costamesaca.gov,"City of Costa Mesa, CA",301,false,-1,-1,false,true,false
+corpuschristitx.gov,"City of Corpus Christi, TX",301,true,31536000,1738811614511,false,true,false
+coronaca.gov,"City of Corona, CA",301,false,-1,-1,false,true,false
+coralsprings.gov,"City of CORAL SPRINGS, FL",301,false,-1,-1,true,true,false
+cor.net,"City of Richardson, TX",301,false,-1,-1,false,true,false
+concordnh.gov,"City of Concord, NH",200,false,-1,-1,true,true,false
+como.gov,"City of Columbia, MO",403,false,-1,-1,false,true,false
+concordnc.gov,"City of Concord, NC",200,false,-1,-1,false,false,false
+columbus.gov,"City of Columbus, OH",301,false,-1,-1,false,true,false
+cstx.gov,"City of College Station, TX",301,false,-1,-1,false,false,false
+coloradosprings.gov,"City of Colorado Springs, CO",200,false,-1,-1,false,true,false
+clevelandohio.gov,"City of Cleveland, OH",301,true,600,1738780079111,false,true,false
+clarksvilletn.gov,"City of Clarksville, TN",200,false,-1,-1,true,true,false
+cityofvacaville.gov,"City of Vacaville, CA",301,false,-1,-1,false,true,false
+columbiasc.gov,"City of Columbia, SC",200,false,-1,-1,false,false,false
+cityoftulsa.org,"City of Tulsa, OK",200,false,-1,-1,false,false,false
+cityofsanmateo.org,"City of San Mateo, CA",200,false,-1,-1,true,true,false
+cityofsacramento.gov,"City of Sacramento, CA",301,false,-1,-1,false,true,false
+phoenix.gov,"City of Phoenix, AZ",302,false,-1,-1,false,true,false
+cityofpalmdaleca.gov,"City of Palmdale, CA",200,false,-1,-1,true,true,false
+cityofmobile.gov,"City of Mobile, AL",403,false,-1,-1,false,false,false
+cityofclovis.com,"City of Clovis, CA",200,false,-1,-1,false,true,false
+cityofnormandy.gov,"City of St. Louis, MO",301,false,-1,-1,false,true,false
+cityofirvine.org,"City of Irvine, CA",301,false,-1,-1,false,true,false
+cityoflancasterca.org,"City of Lancaster, CA",301,false,-1,-1,false,true,false
+ci.lubbock.tx.us,"City of Lubbock, TX",200,false,-1,-1,false,true,false
+cityofconroe.org,"City of Conroe, TX",200,false,-1,-1,true,true,false
+hayward-ca.gov,"City of Hayward, CA",200,false,-1,-1,false,true,false
+chicoca.gov,"City of Chico, CA",302,false,-1,-1,true,true,false
+cityofchesapeake.net,"City of Chesapeake, VA",301,true,300,1738780078811,true,true,false
+cincinnati-oh.gov,"City of Cincinnati, OH",301,true,63072000,1738843150511,false,false,false
+chattanooga.gov,"City of Chattanooga, TN",200,true,31622400,1738811700911,false,true,false
+chulavistaca.gov,"City of Chula Vista, CA",301,false,-1,-1,true,true,false
+charlestonwv.gov,"City of Charleston, WV",200,false,-1,-1,false,true,false
+charlottenc.gov,"City of Charlotte, NC",301,false,-1,-1,true,true,false
+chandleraz.gov,"City of Chandler, AZ",301,true,300,1738780078811,false,true,false
+charleston-sc.gov,"City of Charleston, SC",200,false,-1,-1,true,true,false
+carmelindiana.gov,"City of Carmel, IN",400,false,-1,-1,false,false,false
+cityofcarrollton.com,"City of Carrollton, TX",301,false,-1,-1,false,true,false
+chandlerazpd.gov,"City of Chandler, AZ",200,true,31536000,1738811614511,false,true,false
+capecoral.gov,"City of Cape Coral, FL",301,false,-1,-1,true,true,false
+capecoral.gov,"City of Cape Coral, FL",301,false,-1,-1,true,true,false
+burbankca.gov,"City of Burbank, CA",403,false,-1,-1,false,false,false
+cambridgema.gov,"City of Cambridge, MA",301,false,-1,-1,false,false,false
+carlsbadca.gov,"City of Carlsbad, CA",301,false,-1,-1,false,true,false
+buffalony.gov,"City of Buffalo, NY",500,false,-1,-1,true,true,false
+buckeyeaz.gov,"City of Buckeye, AZ",301,false,-1,-1,false,true,false
+brokenarrowok.gov,"City of Broken Arrow, OK",301,false,-1,-1,false,true,false
+brownsvilletx.gov,"City of Brownsville, TX",301,false,-1,-1,true,true,false
+brockton.ma.us,"City of Brockton, MA",200,false,-1,-1,false,false,false
+bridgeportct.gov,"City of Bridgeport, CT",301,true,31536000,1738811614511,false,true,false
+bouldercolorado.gov,"City of Boulder, CO",200,true,300,1738780078811,false,true,false
+brla.gov,"City of Baton Rouge, LA",301,false,-1,-1,true,true,false
+cityofboise.org,"City of Boise, ID",301,false,-1,-1,false,false,false
+boston.gov,"City of Boston, MA",301,true,31536000,1738811614511,false,true,false
+bunkerhilltx.gov,"City of Houston, TX",200,true,63072000,1738843150511,false,true,false
+bismarcknd.gov,"City of Bismarck, ND",200,false,-1,-1,true,true,false
+billingsmtpublicworks.gov,"City of Billings, MT",200,false,-1,-1,true,true,false
+berkeleyca.gov,"City of Berkeley, CA",200,true,1000,1738780079511,true,true,false
+billingsmt.gov,"City of Billings, MT",200,false,-1,-1,true,true,false
+bellevuewa.gov,"City of Bellevue, WA",200,true,1000,1738780079511,true,true,false
+birminghamal.gov,"City of Birmingham, AL",301,true,31536000,1738811614511,false,true,false
+bendoregon.gov,"City of Bend, OR",301,false,-1,-1,false,true,false
+beaumonttexas.gov,"City of Beaumont, TX",301,false,-1,-1,true,true,false
+bakersfieldcity.us,"City of Bakersfield, CA",301,false,-1,-1,false,true,false
+austintexas.gov,"City of Austin, TX",308,false,-1,-1,false,true,false
+atlantaga.gov,"City of Atlanta, GA",301,false,-1,-1,false,true,false
+arvadaco.gov,"City of Arvada, CO",301,false,-1,-1,true,true,false
+augustamaine.gov,"City of Augusta, ME",301,false,-1,-1,false,false,false
+augustaga.gov,"City of Augusta, GA",301,false,-1,-1,true,true,false
+annapolis.gov,"City of Annapolis, MD",200,false,-1,-1,true,true,false
+anaheim.net,"City of Anaheim, CA",200,false,-1,-1,true,true,false
+antiochca.gov,"City of Antioch, CA",301,false,-1,-1,false,false,false
+allentx.gov,"City of Allen, TX",200,false,-1,-1,true,true,false
+amarillo.gov,"City of Amarillo, TX",301,false,-1,-1,false,true,false
+alexandriava.gov,"City of Alexandria, VA",200,false,-1,-1,false,true,false
+arlingtontx.gov,"City of Arlington, TX",301,false,-1,-1,false,false,false
+allentownpa.gov,"City of Allentown, PA",301,false,-1,-1,false,false,false
+cabq.gov,"City of Albuquerque, NM",302,false,-1,-1,false,false,false
+akronohio.gov,"City of Akron, OH",200,false,-1,-1,true,true,false
+albanyny.gov,"City of Albany, NY",200,false,-1,-1,true,true,false
+abilenetx.gov,"City of Abilene, TX",200,false,-1,-1,true,true,false

@@ -1,9 +1,10 @@
 <ul class="list-group list-group-horizontal-sm">
-    {% unless include.no_report %}
+    {% if home %}
+    {% else %}
     <li class="list-group-item">
         <div class="dropdown btn dropdown-toggle">
             <a
-                    href="/report"
+                    href="/report/?domain={{ domain.urlkey }}"
                     id="report"
                     class="dropdown-item">
                 <i class="fa-solid fa-download"></i>
@@ -11,7 +12,7 @@
             </a>
         </div>
     </li>
-    {% endunless %}
+    {% endif %}
     <li class="list-group-item">
         <div class="dropdown btn dropdown-toggle">
             <a

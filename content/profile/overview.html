@@ -1,0 +1,60 @@
+---
+layout: layouts/default
+profile: true
+
+pagination:
+  data: domains
+  size: 1
+  addAllPagesToCollections: true
+  alias: domain
+
+permalink: "profile/{{ domain.urlkey | slugify }}/overview/"
+
+eleventyComputed:
+  title: Digital experience monitoring for {{ domain.urlkey }}
+  description: Managed by {{ domain.name }}
+  agency: by {{ domain.name }}
+---
+
+{% set domainSlug = domain.urlkey %}
+{% set domainLink = domain.metadata.redirect %}
+{% include "profilelinks.html" %}
+
+<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+  <h2 class="h2" id="page">Dashboard</h2>
+  <div id="overview-section">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+        <div class="card mb-3 text-bg-{{ domain.overallScore | colorify }}" id="overview-card" score="{{ domain.overallScore }}">
+          <div class="card-header">
+            <a href="/profile/ca-gov/overview/" class="text-decoration-none" style="color: inherit">Overview</a>
+            <a href="https://docs.scangov.org/overall">
+              <i class="fa-solid fa-circle-question"></i>
+            </a>
+          </div>
+          <a href="/profile/{{ domain.urlkey | slugify }}/overview/" class="card-body text-center pt-5 text-decoration-none">
+            <p class="display-1" id="overview-grade">{{ domain.overallScore | gradify }}</p>
+          </a>
+        </div>
+      </div>
+      {% set cards = site.data %}
+      {% for card in cards %}
+        {% set lower = card.toLowerCase() %}
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+          <div class="card mb-3 text-bg-{{ domain.scores[lower].score | colorify }}" id="{{ lower }}-card" score="{{ domain.scores[lower].score }}">
+            <div class="card-header">
+              <a href="/profile/{{ domain.urlkey | slugify }}/details/?attr={{ lower }}" class="text-decoration-none" style="color: inherit">{{ card }}</a>
+              <a href="https://docs.scangov.org/{{ lower }}">
+                <i class="fa-solid fa-circle-question"></i>
+              </a>
+            </div>
+            <a href="/profile/{{ domain.urlkey | slugify }}/details/?attr={{ lower }}" class="card-body text-center pt-5 text-decoration-none">
+              <p class="display-1" id="{{ lower }}-grade">{{ domain.scores[lower].score | gradify }}</p>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% include "help.html" %}
+</div>
