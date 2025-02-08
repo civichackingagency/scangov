@@ -301,3 +301,30 @@ table svg {
   width: 100%;
   height: 100%;
 }
+
+.navbar {
+  box-shadow: var(--bs-shadow);
+}
+
+.navbar-brand {
+  font-family: var(--bs-font-bold);
+}
+
+.navbar-brand {
+  color: var(--bs-body-color) !important;
+}
+.navbar-brand>svg {
+  fill: var(--bs-body-color) !important;
+}
+
+.navbar-nav, .nav-link, .navbar-nav .nav-link, a.list-group-item {
+  color: var(--bs-body-color) !important;
+}
+
+.navbar-brand:hover, .navbar-nav:hover, .nav-link:hover, .navbar-nav .nav-link:hover, a.list-group-item:hover {
+  color: var(--bs-link-color) !important;
+}
+
+.navbar-brand:hover>svg {
+  fill: var(--bs-link-color) !important;
+}
