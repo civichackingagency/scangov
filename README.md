@@ -4,4 +4,4 @@
 
 * [Documentation](https://docs.scangov.org)
 * [Help](https://docs.scangov.org/help)
-* [Discussions](https://github.com/civichackingagency/scangov/discussions)
+* [Discussions](https://github.com/ScanGov/scangov/discussions)
