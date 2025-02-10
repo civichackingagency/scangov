@@ -39,6 +39,14 @@ const urlDataVariables = [
   'www'
 ]
 
+const performanceDataVariables = [
+  'ttfb',
+  'fcp',
+  'lcp',
+  'cls',
+  'inp'
+]
+
 export default function () {
   let devModeDomainLimit = 100;
 
@@ -47,6 +55,7 @@ export default function () {
   let securitydata = JSON.parse(fs.readFileSync('./public/data/security.json'));
   let sitemapdata = JSON.parse(fs.readFileSync('./public/data/sitemap.json'));
   let urldata = JSON.parse(fs.readFileSync('./public/data/url.json'));
+  let performancedata = JSON.parse(fs.readFileSync('./public/data/performance.json'));
 
   let allDataMap = new Map();
   let allDataArray = [];
@@ -92,6 +101,14 @@ export default function () {
     if(allDataMap.get(u.url)) {
       newObject = allDataMap.get(u.url);
       newObject.url = u;
+      allDataMap.set(u.url,newObject);
+    }
+  })
+  performancedata.forEach(u => {
+    let newObject = {};
+    if(allDataMap.get(u.url)) {
+      newObject = allDataMap.get(u.url);
+      newObject.performance = u;
       allDataMap.set(u.url,newObject);
     }
   })
@@ -184,10 +201,26 @@ export default function () {
       urlAttributeResults[v] = d.url[v];
     })
     let urlScore = Math.round(urlTotal / urlDataVariables.length * 100);
+    d.scores['url'] = {"score": urlScore, "correct": urlTotal, "all": urlDataVariables.length, attributes: urlAttributeResults };
     overallPossibleScore += urlDataVariables.length;
     overallScoreCount += urlTotal;
   
-    d.scores['url'] = {"score": urlScore, "correct": urlTotal, "all": urlDataVariables.length, attributes: urlAttributeResults };
+    // performance section
+    if(d.performance) {
+      let performanceTotal = 0;
+      let performanceAttributeResults = {};
+      performanceDataVariables.forEach(v => {
+        if (d.performance[v] === true) {
+          performanceTotal++;
+        }
+        performanceAttributeResults[v] = d.performance[v];
+      })
+      let performanceScore = Math.round(performanceTotal / performanceDataVariables.length * 100);
+      d.scores['performance'] = {"score": performanceScore, "correct": performanceTotal, "all": performanceDataVariables.length, attributes: performanceAttributeResults };
+      overallPossibleScore += performanceDataVariables.length;
+      overallScoreCount += performanceTotal;
+    }
+    // only adding overall score if there is performance data
 
     d.overallPossibleScore = overallPossibleScore;
     d.overallScoreCount = overallScoreCount;

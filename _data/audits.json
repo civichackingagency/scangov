@@ -166,7 +166,46 @@
         "tag": "security.txt",
         "description": "The site has a security.txt file."
       }
-      
+    ]
+  },
+  "performance": {
+    "displayName": "Performance",
+    "attributes": [
+      {
+        "key": "ttfb",
+        "displayName": "Time to first byte",
+        "tag": "TTFB",
+        "description": "The application code is received within 0.8 seconds.",
+        "docs": "https://docs.scangov.org/time-to-first-byte"
+      },
+      {
+        "key": "fcp",
+        "displayName": "First contentful paint",
+        "tag": "FCP",
+        "description": "The page begins to display within 1.8 seconds.",
+        "docs": "https://docs.scangov.org/first-contentful-paint"
+      },
+      {
+        "key": "lcp",
+        "displayName": "Largest contentful paint",
+        "tag": "LCP",
+        "description": "A large part of the application has been displayed within 2.5 seconds.",
+        "docs": "https://docs.scangov.org/largest-contentful-paint"
+      },
+      {
+        "key": "cls",
+        "displayName": "Cumulative layout shift",
+        "tag": "CLS",
+        "description": "The page does not move visible elements around during initial display for more than 0.1 seconds at a time.",
+        "docs": "https://docs.scangov.org/cumulative-layout-shift"
+      },
+      {
+        "key": "inp",
+        "displayName": "Interaction to next paint",
+        "tag": "INP",
+        "description": "It takes the application less than 0.2 seconds to respond to a user interaction.",
+        "docs": "https://docs.scangov.org/interaction-to-next-paint"
+      }
     ]
   }
 }

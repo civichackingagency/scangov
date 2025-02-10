@@ -212,7 +212,10 @@ export default async function (eleventyConfig) {
   })
   
   eleventyConfig.addFilter('timeSort', (logs) => {
-    return logs.sort((a,b) => b.time - a.time);
+    if(logs) {
+      return logs.sort((a,b) => b.time - a.time);
+    }
+    return [];
   })
 
   eleventyConfig.addPlugin(EleventyRenderPlugin)

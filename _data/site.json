@@ -18,18 +18,14 @@
     "URL",
     "Sitemap",
     "Robots",
-    "Security"
+    "Security",
+    "Performance"
   ],
   "nav": [
     {
       "url": "/",
       "title": "Filter",
       "icon": "filter"
-    },
-    {
-      "url": "/rankings/cities/",
-      "title": "Rankings",
-      "icon": "medal"
     },
     {
       "url": "https://docs.scangov.org/community",

@@ -44,6 +44,9 @@
               <label for="security-radio" class="d-block">
                 <input type="radio" name="field" id="security-radio"> Security
                         </label>
+              <label for="performance-radio" class="d-block">
+                <input type="radio" name="field" id="performance-radio"> Performance
+                        </label>
               <input type="submit" value="Go" class="mt-2 btn btn-primary">
             </div>
           </form>
@@ -57,7 +60,7 @@
                 document.getElementById(`${sort}-radio`).checked = true;
               }
             }
-            let pregenSearches = ['metadata','robots','url','sitemap','security'];
+            let pregenSearches = ['metadata','robots','url','sitemap','security','performance'];
             document.getElementById('search-form').addEventListener('submit',function(e) {
               if(document.getElementById('search').value.trim() == '') {
                 let redirecting = false;

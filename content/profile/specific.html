@@ -30,7 +30,7 @@ eleventyComputed:
     <div id="specific-{{ scorekey }}">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 d-flex align-items-stretch">
-          <div class="card mb-3 {% if domain.status != 200 %}{% else %}text-bg-{{ domain.scores[scorekey].score | colorify }}{% endif %}" id="grade-card-{{ scorekey }}">
+          <div class="card mb-3 {% if (domain.status != 200) or (domain.scores[scorekey] | length === 0) %}{% else %}text-bg-{{ domain.scores[scorekey].score | colorify }}{% endif %}" id="grade-card-{{ scorekey }}">
             <div class="card-header">
               Grade
               <a href="https://docs.scangov.org/grades">
@@ -38,7 +38,7 @@ eleventyComputed:
               </a>
             </div>
             <div class="card-body text-center pt-5">
-              <p class="display-1" id="grade-{{ scorekey }}">{% if domain.status != 200 %}-{% else %}{{ domain.scores[scorekey].score | gradify }}{% endif %}</p>
+              <p class="display-1" id="grade-{{ scorekey }}">{% if (domain.status != 200) or (domain.scores[scorekey] | length === 0) %}-{% else %}{{ domain.scores[scorekey].score | gradify }}{% endif %}</p>
             </div>
           </div>
         </div>
@@ -52,10 +52,10 @@ eleventyComputed:
             </div>
             <div class="card-body text-center">
               <p class="display-1">
-                <span id="percent-{{ scorekey }}">{% if domain.status != 200 %}-{% else %}{{ domain.scores[scorekey].score }}{% endif %}</span>%
+                <span id="percent-{{ scorekey }}">{% if domain.status != 200 %}-{% else %}{% if (domain.scores[scorekey] | length === 0) %}N/A{% else %}{{ domain.scores[scorekey].score }}%{% endif %}{% endif %}</span>
               </p>
             </div>
-            <div class="card-footer text-center" id="amount-{{ scorekey }}">{% if domain.status != 200 %}-{% else %}{{ domain.scores[scorekey].correct }} of {{ domain.scores[scorekey].all }} elements{% endif %}</div>
+            <div class="card-footer text-center" id="amount-{{ scorekey }}">{% if (domain.status != 200) or (domain.scores[scorekey] | length === 0) %}-{% else %}{{ domain.scores[scorekey].correct }} of {{ domain.scores[scorekey].all }} elements{% endif %}</div>
           </div>
         </div>
       </div>
@@ -76,7 +76,11 @@ eleventyComputed:
                 {% for attribute in attributeCards %}
                 <tr>
                   <td>
-                    <pre><code>{{ attribute.tag }}</code></pre>
+                    {% if attribute.docs %}
+                      <a href="{{ attribute.docs }}">{{ attribute.tag }}</a>
+                    {% else %}
+                      <pre><code>{{ attribute.tag }}</code></pre>
+                    {% endif %}
                   </td> 
                   <td>
                     {{ attribute.description }}
@@ -86,10 +90,14 @@ eleventyComputed:
                       <i class="fa-solid fa-circle-exclamation text-warning"></i>
                       <span class="d-xl-inline">Can't access (<a href="https://docs.scangov.org/status#500">500</a>)</span>
                     {% else %}
-                      <i class="fa-solid {% if domain[scorekey][attribute.key] %}fa-circle-check text-success{% else %}fa-circle-xmark text-danger{% endif %}"></i>
-                      <span class="d-xl-inline">
-                        {% if domain[scorekey][attribute.key] %}Active{% else %}Missing{% endif %}
-                      </span>
+                      {% if (domain.scores[scorekey] | length === 0) %}
+                        N/A
+                      {% else %}
+                        <i class="fa-solid {% if domain[scorekey][attribute.key] %}fa-circle-check text-success{% else %}fa-circle-xmark text-danger{% endif %}"></i>
+                        <span class="d-xl-inline">
+                          {% if domain[scorekey][attribute.key] %}Active{% else %}Missing{% endif %}
+                        </span>
+                      {% endif %}
                     {% endif %}
                   </td>
                 </tr>
