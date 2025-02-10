@@ -1,0 +1,11 @@
+[
+  {
+    "status": 200,
+    "url": "ca.gov",
+    "inp": true,
+    "lcp": true,
+    "fcp": true,
+    "ttfb": true,
+    "cls": true
+  }
+]
