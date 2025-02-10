@@ -110,7 +110,7 @@ const show = field => {
         const domain = json[i];
         row.innerHTML = `
             <td>
-                <a href="/profile/?domain=${domain.url}#${field}">${domain.url}</a>
+                <a href="/profile/${domain.url.replace(/\./g,'-')}/overview/">${domain.url}</a>
                 <br>
                 <a class="small text-muted" href="?search=${domain.name}&agency=1&field=${field}">${domain.name}</a>
             </td>
