@@ -125,8 +125,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('allAuditStatusIcons', (domainData) => {
     let output = '';
     if(domainData.status !== 200) {
-      output = `<span title="Inaccessible (status 500)">
-      <i class="fa-solid fa-circle-exclamation text-warning">!</i></span>`
+      output = `<span title="Inaccessible (status 500)"><i class="fa-solid fa-circle-exclamation text-warning">!</i></span>`
     } else {
       for(var a in audits) {
         output += writeStatusIconsForAttribute(domainData[a], a);
