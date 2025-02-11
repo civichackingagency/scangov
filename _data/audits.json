@@ -6,67 +6,78 @@
         "key": "title",
         "displayName": "title",
         "tag": "<title>",
-        "description": "Defines the document's title that is shown in a browser's title bar or a page's tab"
+        "description": "Defines the document's title that is shown in a browser's title bar or a page's tab",
+        "docs": "https://docs.scangov.org/metadata"
       },
       {
         "key": "description",
         "displayName": "description",
         "tag": "<meta name=\"description\">",
-        "description": "A short and accurate summary of the content of the page"
+        "description": "A short and accurate summary of the content of the page",
+        "docs": "https://docs.scangov.org/metadata"
       },
       {
         "key": "viewport",
         "displayName": "viewport",
         "tag": "<meta name=\"viewport\">",
-        "description": "Gives hints about the size of the initial size of the viewport"
+        "description": "Gives hints about the size of the initial size of the viewport",
+        "docs": "https://docs.scangov.org/metadata"
       },
       {
         "key": "canonical",
         "displayName": "canonical",
         "tag": "<link rel=\"canonical\">",
-        "description": "Indicates that another page is representative of the content on the page"
+        "description": "Indicates that another page is representative of the content on the page",
+        "docs": "https://docs.scangov.org/metadata"
       },
       {
         "key": "ogSiteName",
         "displayName": "og:site_name",
         "tag": "<meta property=\"og:site_name\">",
-        "description": "The name which should be displayed for the overall site"
+        "description": "The name which should be displayed for the overall site",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogType",
         "displayName": "og:type",
         "tag": "<meta property=\"og:type\">",
-        "description": "The type of the object"
+        "description": "The type of the object",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogTitle",
         "displayName": "og:title",
         "tag": "<meta property=\"og:title\">",
-        "description": "The title of the object as it should appear within the graph"
+        "description": "The title of the object as it should appear within the graph",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogDescription",
         "displayName": "og:description",
         "tag": "<meta property=\"og:description\">",
-        "description": "A one to two sentence description of the object"
+        "description": "A one to two sentence description of the object",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogUrl",
         "displayName": "og:url",
         "tag": "<meta property=\"og:url\">",
-        "description": "The canonical URL of the object that will be used as its permanent ID in the graph"
+        "description": "The canonical URL of the object that will be used as its permanent ID in the graph",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogImage",
         "displayName": "og:image",
         "tag": "<meta property=\"og:image\">",
-        "description": "An image URL which should represent the object within the graph"
+        "description": "An image URL which should represent the object within the graph",
+        "docs": "https://docs.scangov.org/open-graph"
       },
       {
         "key": "ogImageAlt",
         "displayName": "og:image:alt",
         "tag": "<meta property=\"og:image:alt\">",
-        "description": "A description of what is in the image"
+        "description": "A description of what is in the image",
+        "docs": "https://docs.scangov.org/open-graph"
       }      
     ]
   },
@@ -77,19 +88,22 @@
         "key": "https",
         "displayName": "HTTPS",
         "tag": "HTTPS",
-        "description": "Privacy and integrity protection."
+        "description": "Privacy and integrity protection.",
+        "docs": "https://docs.scangov.org/https"
       },
       {
         "key": "dotgov",
         "displayName": "sTLD",
         "tag": "sTLD",
-        "description": "Sponsored top-level domain (.gov / .edu / .mil). "
+        "description": "Sponsored top-level domain (.gov / .edu / .mil). ",
+        "docs": "https://docs.scangov.org/stld"
       },
       {
         "key": "www",
         "displayName": "WWW",
         "tag": "www",
-        "description": "Resolves with www and non-www input. "
+        "description": "Resolves with www and non-www input. ",
+        "docs": "https://docs.scangov.org/canonicalization"
       }      
     ]
   },
@@ -100,19 +114,22 @@
         "key": "status",
         "displayName": "Status",
         "tag": "Status",
-        "description": "The HTTP status of /sitemap.xml is OK."
+        "description": "The HTTP status of /sitemap.xml is OK.",
+        "docs": "https://docs.scangov.org/sitemaps"
       },
       {
         "key": "xml",
         "displayName": "XML",
         "tag": "XML",
-        "description": "The sitemap file type is XML."
+        "description": "The sitemap file type is XML.",
+        "docs": "https://docs.scangov.org/sitemaps"
       },
       {
         "key": "completion",
         "displayName": "Complete",
         "tag": "Complete",
-        "description": "Every link on the home page is in the sitemap."
+        "description": "Every link on the home page is in the sitemap.",
+        "docs": "https://docs.scangov.org/sitemaps"
       }
     ]
   },
@@ -123,19 +140,22 @@
         "key": "valid",
         "displayName": "Valid",
         "tag": "Valid",
-        "description": "The site has a valid robots policy."
+        "description": "The site has a valid robots policy.",
+        "docs": "https://docs.scangov.org/robots-txt"
       },
       {
         "key": "allowed",
         "displayName": "Allowed",
         "tag": "Allowed",
-        "description": "The robots policy allows access to browsers and scrapers."
+        "description": "The robots policy allows access to browsers and scrapers.",
+        "docs": "https://docs.scangov.org/robots-txt"
       },
       {
         "key": "sitemap",
         "displayName": "Sitemap",
         "tag": "Sitemap",
-        "description": "The robots.txt file points to a sitemap file."
+        "description": "The robots.txt file points to a sitemap file.",
+        "docs": "https://docs.scangov.org/sitemaps"
       }
     ]
   },
@@ -146,25 +166,29 @@
         "key": "hsts",
         "displayName": "HSTS",
         "tag": "HSTS",
-        "description": "The site automatically upgrades from HTTP to HTTPS."
+        "description": "The site automatically upgrades from HTTP to HTTPS.",
+        "docs": "https://docs.scangov.org/hsts"
       },
       {
         "key": "csp",
         "displayName": "CSP",
         "tag": "CSP",
-        "description": "The site restricts what can be loaded."
+        "description": "The site restricts what can be loaded.",
+        "docs": "https://docs.scangov.org/content-security-policy"
       },
       {
         "key": "xContentTypeOptions",
         "displayName": "X-Content-Type-Options",
         "tag": "X-Content-Type-Options",
-        "description": "The site prevents mime type sniffing."
+        "description": "The site prevents mime type sniffing.",
+        "docs": "https://docs.scangov.org/x-content-type-options"
       },
       {
         "key": "securityTxt",
         "displayName": "security.txt",
         "tag": "security.txt",
-        "description": "The site has a security.txt file."
+        "description": "The site has a security.txt file.",
+        "docs": "https://docs.scangov.org/security-txt"
       }
     ]
   },

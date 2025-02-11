@@ -1,7 +1,7 @@
 let params = new URLSearchParams(location.search);
 
 let field = params.get('field');
-if (!(field === 'metadata' || field === 'url' || field === 'sitemap' || field === 'robots' || field === 'security'))
+if (!(field === 'metadata' || field === 'url' || field === 'sitemap' || field === 'robots' || field === 'security' || field === 'performance'))
     field = 'overview';
 document.getElementById(field + '-radio').checked = true;
 
@@ -58,27 +58,25 @@ if (MULTI_LEVEL) {
 const radios = document.querySelectorAll('input[type="radio"][name="field"]');
 form.onsubmit = (e) => {
     e.preventDefault();
-    if(searchInput.value.trim() !== '') {
-        let field;
-        for (const radio of radios)
-            if (radio.checked) {
-                field = radio.id.substring(0, radio.id.length - 6);
-                break;
-            }
-        let href = '?field=' + field + (MULTI_LEVEL ? '&level=' + levelInput.value : '');
-        if (searchInput.value.length > 0)
-            href += '&search=' + searchInput.value;
-        if (agencyPage && searchInput.value === search)
-            href += '&agency=1';
-        location.href = href;
-}
+    let field;
+    for (const radio of radios)
+        if (radio.checked) {
+            field = radio.id.substring(0, radio.id.length - 6);
+            break;
+        }
+    let href = '?field=' + field + (MULTI_LEVEL ? '&level=' + levelInput.value : '');
+    if (searchInput.value.length > 0)
+        href += '&search=' + searchInput.value;
+    if (agencyPage && searchInput.value === search)
+        href += '&agency=1';
+    location.href = href;
 }
 
 let done = 0;
 let json;
 let metadataJson, urlJson, sitemapJson, robotsJson, securityJson;
 const show = field => {
-    if (!json || (field === 'overview' && done !== 5)) return;
+    if (!json || (field === 'overview' && done !== 6)) return;
 
     if (paginationElements.length === 0)
         showPagination(json.length);
@@ -284,7 +282,7 @@ if (field === 'overview' || field === 'url')
             showScore(total / count / (3 - !CHECK_WWW), 3 - !CHECK_WWW, 'elements');
             show('url');
         }
-        else if (done === 5)
+        else if (done === 6)
             overviewScore();
     });
 if (field === 'overview' || field === 'sitemap')
@@ -323,7 +321,7 @@ if (field === 'overview' || field === 'sitemap')
             showScore(total / data.length / 3, 3, 'elements');
             show('sitemap');
         }
-        else if (done === 5)
+        else if (done === 6)
             overviewScore();
     });
 if (field === 'overview' || field === 'robots')
@@ -362,7 +360,7 @@ if (field === 'overview' || field === 'robots')
             showScore(total / data.length / 3, 3, 'elements');
             show('robots');
         }
-        else if (done === 5)
+        else if (done === 6)
             overviewScore();
     });
 if (field === 'overview' || field === 'security')
@@ -402,9 +400,52 @@ if (field === 'overview' || field === 'security')
             showScore(total / data.length / 4, 4, 'elements');
             show('security');
         }
-        else if (done === 5)
+        else if (done === 6)
             overviewScore();
     });
+// begin performance
+if (field === 'overview' || field === 'performance')
+    getData('performance').then(data => {
+        data = filterDomains(data);
+
+        let total = 0, count = 0;
+        for (let i = 0; i < data.length; i++) {
+            const domain = data[i];
+
+            domain.successes = [];
+            domain.failures = [];
+            (domain.ttfb ? domain.successes : domain.failures).push('TTFB');
+            (domain.fcp ? domain.successes : domain.failures).push('FCP');
+            (domain.lcp ? domain.successes : domain.failures).push('LCP');
+            (domain.cls ? domain.successes : domain.failures).push('CLS');
+            (domain.inp ? domain.successes : domain.failures).push('INP');
+            domain.score = Math.round(100 * domain.successes.length / (domain.successes.length + domain.failures.length));
+            domain.grade = getGrade(domain.score);
+
+            total += domain.successes.length;
+            count++;
+        }
+
+        if (field === 'performance') {
+            data = data.sort((a, b) => {
+                if (a.score === b.score)
+                    return a.url.localeCompare(b.url);
+                return b.score - a.score;
+            });
+            json = data;
+        }
+        else
+            updateJson(data, 'performance');
+
+        done++;
+        if (field === 'performance') {
+            showScore(total / data.length / 5, 5, 'elements');
+            show('performance');
+        }
+        else if (done === 6)
+            overviewScore();
+    });
+// end performance    
 if (field === 'overview' || field === 'metadata')
     getData('metadata').then(data => {
         data = filterDomains(data);
@@ -462,6 +503,7 @@ if (field === 'overview' || field === 'metadata')
             showScore(total / count / variables.length, variables.length, 'tags');
             show('metadata');
         }
-        else if (done === 5)
+        else if (done === 6) {
             overviewScore();
+        }
     });

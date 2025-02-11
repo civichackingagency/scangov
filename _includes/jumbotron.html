@@ -19,7 +19,7 @@
             </div>
             <!-- single-level delete start -->
             <label class="pb-2 mt-3" for="filter">Filter:</label>
-            <select class="form-select form-control-lg" aria-label="Default select example" id="filter">
+            <select class="form-select form-control-lg" aria-label="Default select example" name="level" id="filter">
               <option value="1">all domains</option>
               <option value="2">federal domains</option>
               <option value="3">state domains</option>
@@ -28,24 +28,24 @@
           </div>
           <div class="col-sm-12 col-lg-6 mt-3">
             <label for="overview-radio" class="d-block">
-              <input type="radio" name="field" id="overview-radio" value="overview"> Overview</label>
+              <input type="radio" name="field" value="overview" id="overview-radio" value="overview"> Overview</label>
             <label for="url-radio" class="d-block">
               <label for="metadata-radio" class="d-block">
-                <input type="radio" name="field" id="metadata-radio" value="metadata"> Metadata</label>
+                <input type="radio" name="field" value="metadata" id="metadata-radio" value="metadata"> Metadata</label>
               <label for="url-radio" class="d-block">
                 <input type="radio" name="field" id="url-radio"> URL
                         </label>
               <label for="sitemap-radio" class="d-block">
-                <input type="radio" name="field" id="sitemap-radio"> Sitemap
+                <input type="radio" name="field" value="sitemap" id="sitemap-radio"> Sitemap
                         </label>
               <label for="robots-radio" class="d-block">
-                <input type="radio" name="field" id="robots-radio"> Robots
+                <input type="radio" name="field" value="robots" id="robots-radio"> Robots
                         </label>
               <label for="security-radio" class="d-block">
-                <input type="radio" name="field" id="security-radio"> Security
+                <input type="radio" name="field" value="security" id="security-radio"> Security
                         </label>
               <label for="performance-radio" class="d-block">
-                <input type="radio" name="field" id="performance-radio"> Performance
+                <input type="radio" name="field" value="performance" id="performance-radio"> Performance
                         </label>
               <input type="submit" value="Go" class="mt-2 btn btn-primary">
             </div>
@@ -62,9 +62,14 @@
             }
             let pregenSearches = ['metadata','robots','url','sitemap','security','performance'];
             document.getElementById('search-form').addEventListener('submit',function(e) {
-              if(document.getElementById('search').value.trim() == '') {
+              if(document.getElementById('search').value.trim() == '' && document.getElementById('filter').selectedIndex === 0
+) {
                 let redirecting = false;
                 let destination = '';
+                if(document.getElementById(`overview-radio`).checked) { 
+                  redirecting = true;
+                  destination = `/`
+                }
                 pregenSearches.forEach(p => {                  
                   if(document.getElementById(`${p}-radio`).checked) { 
                     redirecting = true;
