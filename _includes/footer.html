@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <footer class="pt-5 border-top">
+<div class="container">
+  <footer class="mt-5 pt-5 border-top">
     <div class="row">
       <div class="col-4 mb-3">
         <ul class="nav flex-column">
@@ -39,33 +39,32 @@
       </div>
     </div>
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p class="small">{{ site.title }}
-        by
-        <a href="{{ site.org-url }}">{{ site.org }}</a>
+      <p class="small">
+        <a href="{{ site.org-url }}" style="text-decoration: none;">ScanGov</a>
+        2025
       </p>
-      <ul class="list-unstyled d-flex">
-        {% if site.repo %}
-          <li class="ms-3">
-            <a href="{{ site.repo }}">
-              <span class="sr-only">GitHub</span>
-              <i class="fa-brands fa-github sizeicon-xl" aria-hidden="true"></i>
-            </a>
-          </li>
-        {% endif %}
-        {% if site.rss %}
-          <li class="ms-3">
-            <a href="{{ site.rss }}">
-              <span class="sr-only">RSS</span>
-              <i class="fa-solid fa-rss sizeicon-xl" aria-hidden="true"></i>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
     </div>
   </footer>
 </div>
+<a
+  href="https://docs.scangov.org/contact"
+  id="feedback-button"
+  aria-label="Contact us"
+  class="feedback"
+  style="">
+  Contact us
+  <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+</a>
+<script>
+  const feedbackButton = document.getElementById("feedback-button");
+  window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > window.innerHeight * .3) 
+      feedbackButton.style.opacity = '1';
+    else
+      feedbackButton.style.opacity = '0';
+  });
+</script>
 {% if jekyll.environment == 'production' %}
   <!-- TODO: add analytics -->
 {% endif %}
-{% include "js.html" %}</body>
-</html>
+{% include "js.html" %}</body></html>
