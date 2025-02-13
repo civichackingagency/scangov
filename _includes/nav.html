@@ -26,7 +26,7 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         {% for item in site.nav %}
           {% if item.url %}
-            <li class="nav-item me-3 me-lg-0">
+            <li class="nav-item me-3 me-lg-0 small">
               <a class="nav-item nav-link mx-1 {% if page.url in item.url %}active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">
                 <i class="fa-solid fa-{{ item.icon }}"></i>
                 {{ item.title }}
@@ -34,7 +34,7 @@
             </li>
           {% endif %}
         {% endfor %}
-        <li class="nav-item me-3 me-lg-0" id="toggle-theme">
+        <li class="nav-item me-3 me-lg-0 small" id="toggle-theme">
           <a
             class="nav-item nav-link mx-1"
             href="javascript:void(0)"
@@ -55,6 +55,7 @@
                 document.querySelector('#toggle-theme img').src = '/assets/img/' + (colorTheme == 'light' ? 'moon' : 'sun') + '.svg';
               }
             </script>
+            Mode
           </a>
       </ul>
     </div>
