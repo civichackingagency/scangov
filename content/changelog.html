@@ -9,9 +9,34 @@ redirect_from:
 
 <div class="col-12">
   <section class="py-4">
-    <ul class="timeline" id="timeline"></ul>
+    <ul class="timeline" id="timeline">
+        {% for item in history %}
+            <li class="timeline-item">
+                <h5 class="fw-bold">{{ item.date }}</h5>
+                <div class="text-muted">
+                    {% for domain in item.domains %}
+                    <p class="timeline-domain">
+                        {{ domain[0] }}:
+                        <ul>
+                            {% for field in domain[1] %}
+                            <li>
+                                {% set oldPercent = field.oldScore / field.newTotal * 100 %}
+                                {% set newPercent = field.newScore / field.newTotal * 100 %}
+                                <a href="/profile/{{ domain[0] | slugify }}/details/?attr={{ field.name | lower }}">{{ field.name }}</a>: Grade: {{ oldPercent | gradify }} → {{ newPercent | gradify }} /
+                                Score: {{ oldPercent | percentify }} → {{ newPercent | percentify }}
+                                ({{ field.newScore }} of {{ field.newTotal }} elements)
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </p>
+                    {% endfor %}
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
   </section>
 </div>
+{#
 <script src="/scripts/util.js"></script>
 <script>
   fetch('/data/metadata.json').then(res => res.json()).then(data => {
@@ -78,6 +103,7 @@ redirect_from:
   });
 </script>
 <script src="/scripts/variables.js"></script>
+#}
 </body>
 
 </html>

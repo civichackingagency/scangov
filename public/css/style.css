@@ -146,6 +146,10 @@ main#home img {
   content: '';
 }
 
+.timeline-domain {
+    margin-bottom: 0.25rem;
+}
+
 /* Anchor links */
 
 h2 a#heading-hashtag,
