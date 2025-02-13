@@ -1,14 +1,14 @@
 import { metaDataVariables, robotsDataVariables, sitemapDataVariables, securityDataVariables, urlDataVariables, performanceDataVariables } from './variables.js';
 import { readFileSync } from 'fs'
 
-const metaData = JSON.parse(readFileSync('./public/data/metadata.json'));
-const robotsData = JSON.parse(readFileSync('./public/data/robots.json'));
-const securityData = JSON.parse(readFileSync('./public/data/security.json'));
-const sitemapData = JSON.parse(readFileSync('./public/data/sitemap.json'));
-const urlData = JSON.parse(readFileSync('./public/data/url.json'));
-const performanceData = JSON.parse(readFileSync('./public/data/performance.json'));
-
 export default function () {
+    const metaData = JSON.parse(readFileSync('./public/data/metadata.json'));
+    const robotsData = JSON.parse(readFileSync('./public/data/robots.json'));
+    const securityData = JSON.parse(readFileSync('./public/data/security.json'));
+    const sitemapData = JSON.parse(readFileSync('./public/data/sitemap.json'));
+    const urlData = JSON.parse(readFileSync('./public/data/url.json'));
+    const performanceData = JSON.parse(readFileSync('./public/data/performance.json'));
+
     let devModeDomainLimit = 100;
 
     let allDataMap = new Map();

@@ -1,13 +1,6 @@
 import { metaDataVariables, robotsDataVariables, sitemapDataVariables, SITEMAP_COMPLETION_THRESHOLD, securityDataVariables, urlDataVariables, performanceDataVariables } from './variables.js';
 import { readFileSync } from 'fs'
 
-const metaData = JSON.parse(readFileSync('./public/data/metadata.json'));
-const robotsData = JSON.parse(readFileSync('./public/data/robots.json'));
-const securityData = JSON.parse(readFileSync('./public/data/security.json'));
-const sitemapData = JSON.parse(readFileSync('./public/data/sitemap.json'));
-const urlData = JSON.parse(readFileSync('./public/data/url.json'));
-const performanceData = JSON.parse(readFileSync('./public/data/performance.json'));
-
 const createDateNumber = time => {
     const date = new Date(time);
     // Shift year 4 digits, month 2
@@ -17,7 +10,6 @@ const createDateNumber = time => {
 
 const datesMap = new Map();
 const updateMap = (data, variables, name) => {
-    console.log('updateMap', name)
     data.forEach(d => {
         if (d.history.length === 0)
             return;
@@ -80,7 +72,13 @@ const updateMap = (data, variables, name) => {
 };
 
 export default function () {
-    console.log('history.js default call')
+    const metaData = JSON.parse(readFileSync('./public/data/metadata.json'));
+    const robotsData = JSON.parse(readFileSync('./public/data/robots.json'));
+    const securityData = JSON.parse(readFileSync('./public/data/security.json'));
+    const sitemapData = JSON.parse(readFileSync('./public/data/sitemap.json'));
+    const urlData = JSON.parse(readFileSync('./public/data/url.json'));
+    const performanceData = JSON.parse(readFileSync('./public/data/performance.json'));
+
     updateMap(metaData, metaDataVariables, 'Metadata')
     updateMap(urlData, urlDataVariables, 'URL')
     updateMap(sitemapData, sitemapDataVariables, 'Sitemap')
